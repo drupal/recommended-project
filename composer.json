@@ -15,7 +15,6 @@
         "drupal/core-composer-scaffold": "^8.8"
     },
     "require-dev": {
-        "drupal/dev-dependencies": "^8.8"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -26,7 +25,7 @@
         "sort-packages": true
     },
     "extra": {
-        "composer-scaffold": {
+        "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
             }
