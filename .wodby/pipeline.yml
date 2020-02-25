@@ -1,0 +1,15 @@
+version: 0.1
+
+workflows:
+  main:
+    jobs:
+    - build
+
+jobs:
+  build:
+    steps:
+    - clone
+    - cache:
+        path: ~/.composer/cache
+        key: composer.lock
+    - run: composer install -n
