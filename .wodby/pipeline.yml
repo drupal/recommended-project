@@ -12,10 +12,10 @@ jobs:
     - cache:
         path: ~/.composer/cache
         key: composer.lock
-    - run: wget -qO- https://api.wodby.com/api/v1/get/cli?version=2.0 | sh
-    - run: wodby ci init $WODBY_INSTANCE_UUID
+    - run: wget -qO- https://api.wodby.com/api/v1/get/cli?version=dev | sh
+    - run: wodby ci init $WODBY_APP_INSTANCE_ID
     - run: wodby ci run -v $HOME/.composer:$HOME/.composer -s php -- composer install -n
     - run: wodby ci build php .
-    - run: wodby ci build nginx web
+    - run: wodby ci build nginx web --to /var/www/html/web
     - run: wodby ci release
     - run: wodby ci deploy
