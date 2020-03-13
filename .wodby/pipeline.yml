@@ -14,7 +14,7 @@ jobs:
         key: 'composer-{{ hash "composer.lock" }}-v1'
     - run: wget -qO- https://api.wodby.com/api/v1/get/cli?version=2.0 | sh
     - run: wodby ci init $WODBY_BUILD_ID
-    - run: wodby ci run -v $HOME/.composer:$HOME/.composer -s php -- composer install -n
+    - run: wodby ci run -v $HOME/.composer:/home/wodby/.composer -s php -- composer install -n
     - run: wodby ci build php
     - run: wodby ci build nginx --from web --to /var/www/html/web
     - run: wodby ci release
