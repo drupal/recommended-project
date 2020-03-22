@@ -1,21 +1,94 @@
+# version: 0.1
+
+# workflows:
+#   main:
+#     jobs:
+#     - build
+
+# jobs:
+#   build:
+#     steps:
+#     - clone
+#     - cache:
+#         path: ~/.composer/cache
+#         key: 'composer-{{ hash "composer.lock" }}-v1'
+#     - run: wget -qO- https://api.wodby.com/api/v1/get/cli?version=2.0 | sh
+#     - run: wodby ci init $WODBY_BUILD_ID
+#     - run: wodby ci run -v $HOME/.composer:/home/wodby/.composer -s php -- composer install -n
+#     - run: wodby ci build php
+#     - run: wodby ci build nginx --from web --to /var/www/html/web
+#     - run: wodby ci release
+#     - run: wodby ci deploy
+
+  
 version: 0.1
 
 workflows:
-  main:
+  on-commit:
     jobs:
-    - build
+    - job-a
+    - job-b:
+        after:
+        - job-c
+    - job-c
+    - job-d:
+        after:
+          - job-a
+          - job-b
+    - job-e:
+        after:
+        - job-c
+    - job-f:
+        after:
+        - job-c
+    - job-g:
+        after:
+        - job-d
+        - job-e
+        - job-f
+    - job-h
+    - job-i:
+        after:
+        - job-h
+    - job-j:
+        after:
+        - job-h
+    - job-k:
+        after:
+        - job-h
 
 jobs:
-  build:
+  job-a:
     steps:
-    - clone
-    - cache:
-        path: ~/.composer/cache
-        key: 'composer-{{ hash "composer.lock" }}-v1'
-    - run: wget -qO- https://api.wodby.com/api/v1/get/cli?version=2.0 | sh
-    - run: wodby ci init $WODBY_BUILD_ID
-    - run: wodby ci run -v $HOME/.composer:/home/wodby/.composer -s php -- composer install -n
-    - run: wodby ci build php
-    - run: wodby ci build nginx --from web --to /var/www/html/web
-    - run: wodby ci release
-    - run: wodby ci deploy
+    - run: sleep 5
+  job-b:
+    steps:
+    - run: sleep 5
+  job-c:
+    steps:
+    - run: sleep 5
+  job-d:
+    steps:
+    - run: sleep 5
+  job-e:
+    steps:
+    - run: sleep 5
+  job-f:
+    steps:
+    - run: sleep 5
+  job-g:
+    steps:
+    - run: sleep 5
+  job-h:
+    steps:
+    - run: sleep 5
+  job-i:
+    steps:
+    - run: sleep 5
+  job-j:
+    steps:
+    - run: sleep 5
+  job-k:
+    steps:
+    - run: sleep 5
+
