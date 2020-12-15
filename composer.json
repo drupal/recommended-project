@@ -12,16 +12,30 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "aangelinsf/open_social",
+                "version": "10.0.x-dev",
+                "type": "drupal-profile",
+                "source": {
+                    "url": "https://github.com/aangelinsf/open_social.git",
+                    "type": "git",
+                    "reference": "10.0.x"
+                }
+            }
         }
     ],
     "require": {
         "composer/installers": "^1.2",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "^8.8"
+        "drupal/core-composer-scaffold": "^8.9",
+        "drupal/core-project-message": "^8.9",
+        "drupal/core-recommended": "^8.9",
+        "aangelinsf/open_social": "10.0.x-dev"
     },
     "require-dev": {
-        "drupal/core-dev": "^8.8"
+        "drupal/core-dev": "^8.9"
     },
     "conflict": {
         "drupal/drupal": "*"
