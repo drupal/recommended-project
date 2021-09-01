@@ -41,6 +41,12 @@
         "sort-packages": true
     },
     "extra": {
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "3230541: Fix queue items not being leased by cron for proper time segments": "https://git.drupalcode.org/project/drupal/-/commit/2ad24e4525c0a03f444733d26b5af7fc0427fcf9.diff"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "docroot/"
