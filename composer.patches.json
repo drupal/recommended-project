@@ -1,1 +1,7 @@
-{}
+{
+  "patches": {
+    "drupal/module_id": {
+      "Patch description and URL / or issue #": "URL to patch file" 
+    }
+  }
+}
