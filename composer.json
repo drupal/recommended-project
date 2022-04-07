@@ -131,6 +131,9 @@
         ],
         "post-update-cmd": [
             "@remove-git-folders"
+        ],
+        "post-drupal-scaffold-cmd": [
+            "patch -p1 < patches/example.settings.local.php.patch"
         ]
     }
 }
