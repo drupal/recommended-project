@@ -1,0 +1,20 @@
+_core:
+  default_config_hash: 2v5R3I9tNatGzKQjuZWh1y_955xK09313Vn-IIuedyI
+smtp_on: true
+smtp_host: localhost
+smtp_hostbackup: ''
+smtp_port: '25'
+smtp_protocol: standard
+smtp_autotls: true
+smtp_timeout: 30
+smtp_username: ''
+smtp_password: ''
+smtp_from: ''
+smtp_fromname: ''
+smtp_client_hostname: ''
+smtp_client_helo: ''
+smtp_allowhtml: '0'
+smtp_test_address: ''
+smtp_debugging: false
+prev_mail_system: php_mail
+smtp_keepalive: false

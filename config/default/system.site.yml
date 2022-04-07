@@ -2,7 +2,7 @@ _core:
   default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
 langcode: en
 uuid: 64b88f66-435e-425a-94ca-480cbffd974e
-name: 'Recommended project'
+name: TODO
 mail: root@localhost
 slogan: ''
 page:
@@ -12,3 +12,4 @@ page:
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
+mail_notification: ''

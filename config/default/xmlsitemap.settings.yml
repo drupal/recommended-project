@@ -1,0 +1,16 @@
+_core:
+  default_config_hash: 58nI4vVTGv677fB42ySkQN9iTenfZvvW-xJlXODHdV4
+minimum_lifetime: 0
+xsl: 1
+prefetch_aliases: 1
+chunk_size: auto
+batch_limit: 100
+path: xmlsitemap
+frontpage_priority: !!float 1
+frontpage_changefreq: 86400
+lastmod_format: 'Y-m-d\TH:i\Z'
+gz: false
+clean_url: 0
+disable_cron_regeneration: false
+i18n_selection_mode: simple
+metatag_exclude_noindex: true

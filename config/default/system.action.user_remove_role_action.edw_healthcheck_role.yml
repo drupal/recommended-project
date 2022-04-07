@@ -1,0 +1,14 @@
+uuid: 81136874-5fe0-4300-88d2-7899167f1dac
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.edw_healthcheck_role
+  module:
+    - user
+id: user_remove_role_action.edw_healthcheck_role
+label: 'Remove the EDW HealthCheck Access Role role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: edw_healthcheck_role

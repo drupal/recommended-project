@@ -1,0 +1,42 @@
+_core:
+  default_config_hash: azWBxQFowXKyqUvvROIrMBXpwGaxz4JxhL6xz420P3Q
+applies_admin_routes: true
+include_invalid_paths: false
+excluded_paths: ''
+replaced_titles: ''
+custom_paths: ''
+include_home_segment: true
+alternative_title_field: field_breadcrumb_title
+home_segment_title: Home
+home_segment_keep: false
+include_title_segment: true
+title_from_page_when_available: true
+title_segment_as_link: false
+use_menu_title_as_fallback: false
+use_page_title_as_menu_title_fallback: false
+remove_repeated_segments: true
+language_path_prefix_as_segment: false
+absolute_paths: false
+hide_single_home_item: false
+term_hierarchy: false
+use_site_title: false
+add_structured_data_json_ld: false
+capitalizator_mode: ucwords
+capitalizator_ignored_words:
+  - of
+  - and
+  - or
+  - de
+  - del
+  - 'y'
+  - o
+  - a
+capitalizator_forced_words: {  }
+capitalizator_forced_words_case_sensitivity: true
+capitalizator_forced_words_first_letter: false
+follow_redirects: true
+limit_segment_display: false
+segment_display_limit: ''
+truncator_mode: false
+truncator_length: 100
+truncator_dots: true

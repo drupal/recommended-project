@@ -1,0 +1,16 @@
+_core:
+  default_config_hash: 9bVDfWSa_In6VzTXmy04jJ_3ZQobihKjO9isuuUCPaw
+protect_all_forms: true
+unprotected_forms:
+  - user_login_form
+  - search_form
+  - search_block_form
+  - views_exposed_form
+  - honeypot_settings_form
+log: false
+element_name: hpid
+time_limit: 5
+expire: 300
+form_settings:
+  user_register_form: false
+  user_pass: false

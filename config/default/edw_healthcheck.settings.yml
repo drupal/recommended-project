@@ -1,0 +1,26 @@
+_core:
+  default_config_hash: U3t4auCdLFqQWPc5m-QWgbtOxoy3lqP1ITfcOovreh4
+edw_healthcheck:
+  status:
+    ok: 0
+    warning: 1
+    critical: 2
+    unknown: 3
+  min_report_severity: 1
+  components:
+    core:
+      enabled: true
+    modules:
+      enabled: true
+    themes:
+      enabled: true
+    last_cron:
+      enabled: true
+    enabled_modules:
+      enabled: true
+    status_report:
+      enabled: 0
+  statuspage:
+    path: edw_healthcheck
+    enabled: true
+    controller: '\Drupal\edw_healthcheck\Controller\EDWHealthCheckPageController::content'

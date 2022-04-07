@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: SX6DIiIBBvqmyHSrvYf-cCkJe38EsqTTnsgc806M2qU
+mail_login_enabled: 1
+mail_login_email_only: 1
+mail_login_override_login_labels: 1
+mail_login_username_title: 'Login by username/email address'
+mail_login_username_description: 'You can use your username or email address to login.'
+mail_login_email_only_title: 'Email address'
+mail_login_email_only_description: 'Enter your email address.'
+mail_login_password_only_description: 'Enter your password or use the reset password form.'

@@ -1,0 +1,12 @@
+_core:
+  default_config_hash: _UaIWu0_ZD3lUs97wlFC2Koi-o7Bex69Xr9q36nJtkY
+enabled_default: 0
+default_challenge: captcha/Math
+description: 'This question is for testing whether or not you are a human visitor and to prevent automated spam submissions.'
+administration_mode: false
+allow_on_admin_pages: false
+add_captcha_description: true
+default_validation: 1
+persistence: 1
+enable_stats: false
+log_wrong_responses: false

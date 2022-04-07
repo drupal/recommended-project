@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: kO5fDGTDu1JqYpxKrtzjdzwObU2Ko_3CxABNjqBbYos
+attributes:
+  class:
+    label: ''
+    description: ''
+  target:
+    label: ''
+    description: ''
+    options:
+      _blank: 'New window (_blank)'
+      _self: 'Same window (_self)'
+    default_value: ''

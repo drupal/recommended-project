@@ -1,0 +1,12 @@
+uuid: a7790e70-8332-4325-a412-6641a6cc23ae
+langcode: en
+status: true
+dependencies:
+  module:
+    - edw_healthcheck
+id: edw_healthcheck_role
+label: 'EDW HealthCheck Access Role'
+weight: 2
+is_admin: null
+permissions:
+  - 'edw healthcheck access'

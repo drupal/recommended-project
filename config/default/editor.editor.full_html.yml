@@ -1,0 +1,67 @@
+uuid: c968c1f0-67ec-4659-8c43-f19210b47688
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Undo
+            - Redo
+            - Bold
+            - Underline
+            - Italic
+            - Strike
+            - Superscript
+            - Subscript
+            - JustifyRight
+            - JustifyCenter
+            - JustifyLeft
+            - Indent
+            - Outdent
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+            - DrupalMediaLibrary
+        -
+          name: Tools
+          items:
+            - Table
+            - SpecialChar
+            - Format
+            - Source
+            - Styles
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

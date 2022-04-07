@@ -1,18 +1,85 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
+  admin_toolbar: 0
+  admin_toolbar_links_access_filter: 0
+  admin_toolbar_tools: 0
+  advagg: 0
+  advagg_bundler: 0
+  advagg_css_minify: 0
+  advagg_js_minify: 0
+  ajax_loader: 0
+  allowed_formats: 0
+  backup_migrate: 0
+  basic_auth: 0
+  big_pipe: 0
   block: 0
+  block_content: 0
+  breakpoint: 0
+  captcha: 0
+  ckeditor: 0
+  config_translation: 0
+  contextual: 0
+  ctools: 0
+  datetime: 0
+  datetime_range: 0
   dblog: 0
+  drimage: 0
   dynamic_page_cache: 0
+  easy_breadcrumb: 0
+  editor: 0
+  editor_advanced_link: 0
+  edw_healthcheck: 0
   field: 0
+  field_group: 0
+  field_ui: 0
+  file: 0
   filter: 0
+  honeypot: 0
+  image: 0
+  image_captcha: 0
+  language: 0
+  layout_builder: 0
+  layout_discovery: 0
+  link: 0
+  link_attributes: 0
+  locale: 0
+  mail_login: 0
+  media: 0
+  media_library: 0
+  menu_link_attributes: 0
+  menu_link_content: 0
+  menu_ui: 0
+  metatag: 0
+  metatag_facebook: 0
+  metatag_open_graph: 0
+  metatag_twitter_cards: 0
   node: 0
-  page_cache: 0
+  optional_end_date: 0
+  options: 0
+  path: 0
   path_alias: 0
+  redirect: 0
+  redirect_404: 0
+  shortcut: 0
+  smart_trim: 0
+  smtp: 0
+  spamspan: 0
   system: 0
+  taxonomy: 0
   text: 0
+  token: 0
+  toolbar: 0
+  twig_tweak: 0
   update: 0
   user: 0
+  views_ui: 0
+  webform: 0
+  webform_ui: 0
+  pathauto: 1
+  xmlsitemap: 1
+  content_translation: 10
+  views: 10
   minimal: 1000
 theme:
   stark: 0
