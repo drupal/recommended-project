@@ -1,7 +1,7 @@
 {
   "patches": {
-    "drupal/module_id": {
-      "Patch description and URL / or issue #": "URL to patch file" 
+    "drupal/backup_migrate": {
+      "#3228379 Failed network - error": "https://www.drupal.org/files/issues/2022-02-02/3228379-download-errors-19.patch"
     }
   }
 }
