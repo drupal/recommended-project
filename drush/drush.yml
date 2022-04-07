@@ -1,0 +1,15 @@
+#
+# A minimalist Drush config file.
+# See https://www.drush.org/latest/using-drush-configuration/ for lots more documentation.
+#
+
+# Global options.
+options:
+  uri: todo-changeme.localhost
+
+# Command-specific options.
+command:
+  sql:
+    dump:
+      options:
+        structure-tables-key: common
