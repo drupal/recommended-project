@@ -1,15 +1,13 @@
-uuid: 2cb53c91-e6d3-4224-a1d7-bb7930fdfefb
+uuid: ef93126e-7788-49dc-adcd-7d2f4ac9a91b
 langcode: en
 status: true
 dependencies:
   theme:
-    - stark
-_core:
-  default_config_hash: ABoKnlk20KHqZRw_2Qr4EvaFvH4lnQ2nuhunHeE1JIU
-id: stark_local_actions
-theme: stark
+    - edwt
+id: primaryadminactions
+theme: edwt
 region: content
-weight: -10
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:

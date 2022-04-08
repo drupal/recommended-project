@@ -1,0 +1,22 @@
+uuid: 6a0373ba-1d56-4433-aab2-5de6ba76766a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - frontend
+_core:
+  default_config_hash: QQv1nvd32hPNaI3oIMMFwMi98sOShVato7mVc_xnZRQ
+id: frontend_local_tasks
+theme: frontend
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

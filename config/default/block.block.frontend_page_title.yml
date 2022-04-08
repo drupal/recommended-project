@@ -1,0 +1,20 @@
+uuid: 29b80c3d-0b15-4914-a8b8-f14013ea0d2e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - frontend
+_core:
+  default_config_hash: Htpvmk-tXinrnv8IKwWx3kEfZZ2e0NNvvdske7a1cBk
+id: frontend_page_title
+theme: frontend
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

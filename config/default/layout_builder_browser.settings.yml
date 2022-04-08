@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: fFtMJuqkP65BjEBqTnAa-5fVJMy3cUCpJRv0FwXuDcE
+enabled_section_storages:
+  - defaults
+  - overrides
+use_modal: true
+auto_added_reusable_block_content_bundles:
+  html: html

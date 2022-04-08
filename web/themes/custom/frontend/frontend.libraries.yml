@@ -1,0 +1,154 @@
+# Libraries for the configuration the Eau de Web Theme theme.
+
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/script.js: {}
+
+theme-fonts:
+  css:
+    theme:
+      'https://fonts.googleapis.com/css2?family=Mulish&family=Raleway:wght@600;700;900&display=swap': { type: external, minified: true }
+
+js-latest:
+  version: '5.1.1'
+  js:
+    https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js: { type: external, minified: true }
+  dependencies:
+    - core/popperjs
+
+
+# Bootstrap components.
+bc--accordion:
+  css:
+    component:
+      css/bootstrap/accordion.css: {}
+
+bc--alert:
+  css:
+    component:
+      css/bootstrap/alert.css: {}
+  dependencies:
+    - edwt/bc--close
+
+bc--toasts:
+  css:
+    component:
+      css/bootstrap/toasts.css: {}
+  js:
+    js/toast.js: {}
+  dependencies:
+    - edwt/bc--close
+    - core/drupal
+
+bc--badge:
+  css:
+    component:
+      css/bootstrap/badge.css: {}
+
+bc--breadcrumb:
+  css:
+    component:
+      css/bootstrap/breadcrumb.css: {}
+
+bc--button-group:
+  css:
+    component:
+      css/bootstrap/button-group.css: {}
+
+bc--card:
+  css:
+    component:
+      css/bootstrap/card.css: {}
+
+bc--carousel:
+  css:
+    component:
+      css/bootstrap/carousel.css: {}
+
+bc--close:
+  css:
+    component:
+      css/bootstrap/close.css: {}
+
+bc--dropdowns:
+  css:
+    component:
+      css/bootstrap/dropdowns.css: {}
+
+bc--forms:
+  css:
+    component:
+      css/bootstrap/forms.css: {}
+
+bc--list-group:
+  css:
+    component:
+      css/bootstrap/list-group.css: {}
+
+bc--modal:
+  css:
+    component:
+      css/bootstrap/modal.css: {}
+  dependencies:
+    - edwt/bc--close
+
+bc--nav:
+  css:
+    component:
+      css/bootstrap/nav.css: {}
+
+bc--navbar:
+  css:
+    component:
+      css/bootstrap/navbar.css: {}
+
+bc--pagination:
+  css:
+    component:
+      css/bootstrap/pagination.css: {}
+
+bc--popover:
+  css:
+    component:
+      css/bootstrap/popover.css: {}
+
+bc--progress:
+  css:
+    component:
+      css/bootstrap/progress.css: {}
+
+bc--spinner:
+  css:
+    component:
+      css/bootstrap/spinner.css: {}
+
+bc--table:
+  css:
+    component:
+      css/bootstrap/table.css: {}
+
+bc--tooltip:
+  css:
+    component:
+      css/bootstrap/tooltip.css: {}
+
+# Theme layout
+t--layout:
+  css:
+    layout:
+      css/layout/layout.css: {}
+
+# # Custom layout
+# cl--layout:
+#   css:
+#     layout:
+#       css/layout/layout.css: {}
+
+# # Custom library.
+# cl--custom:
+#   css:
+#     layout:
+#       css/custom/custom.css: {}

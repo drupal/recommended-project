@@ -1,0 +1,21 @@
+name: 'Project front-end theme'
+type: theme
+description: 'Front-end theme based on Bootstrap 5 theme.'
+core_version_requirement: '^8.9 || ^9'
+'base theme': edwt
+libraries:
+  - frontend/global-styling
+
+regions:
+  branding: 'Branding'
+  nav_main: 'Main navigation region'
+  header: Header
+  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
+  hero: 'Hero (full width)'
+  highlighted: Highlighted
+  breadcrumb: Breadcrumbs
+  content: 'Main content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+  disable_region: 'Disabled Region'

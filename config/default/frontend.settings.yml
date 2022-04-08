@@ -1,0 +1,106 @@
+features:
+  node_user_picture: false
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+sg__container: container
+sg__status_message_type: toast
+sr__clean_branding: 0
+sr__class_branding: ''
+sr__container_branding: none
+sr__container_position_branding: before
+sr__extra_class_branding: ''
+sr__clean_nav_main: 0
+sr__class_nav_main: ''
+sr__container_nav_main: none
+sr__container_position_nav_main: before
+sr__extra_class_nav_main: ''
+sr__clean_header: 0
+sr__class_header: ''
+sr__container_header: none
+sr__container_position_header: before
+sr__extra_class_header: ''
+sr__clean_nav_additional: 0
+sr__class_nav_additional: ''
+sr__container_nav_additional: none
+sr__container_position_nav_additional: before
+sr__extra_class_nav_additional: ''
+sr__clean_hero: 0
+sr__class_hero: ''
+sr__container_hero: none
+sr__container_position_hero: before
+sr__extra_class_hero: ''
+sr__clean_highlighted: 0
+sr__class_highlighted: ''
+sr__container_highlighted: none
+sr__container_position_highlighted: before
+sr__extra_class_highlighted: ''
+sr__clean_breadcrumb: 0
+sr__class_breadcrumb: ''
+sr__container_breadcrumb: none
+sr__container_position_breadcrumb: before
+sr__extra_class_breadcrumb: ''
+sr__clean_content: 0
+sr__class_content: ''
+sr__container_content: none
+sr__container_position_content: before
+sr__extra_class_content: ''
+sr__clean_sidebar_first: 0
+sr__class_sidebar_first: ''
+sr__container_sidebar_first: none
+sr__container_position_sidebar_first: before
+sr__extra_class_sidebar_first: ''
+sr__clean_sidebar_second: 0
+sr__class_sidebar_second: ''
+sr__container_sidebar_second: none
+sr__container_position_sidebar_second: before
+sr__extra_class_sidebar_second: ''
+sr__clean_footer: 0
+sr__class_footer: ''
+sr__container_footer: none
+sr__container_position_footer: before
+sr__extra_class_footer: ''
+sr__clean_disable_region: 0
+sr__class_disable_region: ''
+sr__container_disable_region: none
+sr__container_position_disable_region: before
+sr__extra_class_disable_region: ''
+ns__navbar_position: '0'
+ns__navbar_expand: navbar-expand-sm
+ns__navbar_align: me-auto
+ns__navbar_color: navbar-light
+ns__navbar_bg: '0'
+ns__navbar_out: '0'
+sf__sans_serif: Roboto
+sf__family: ''
+sf__size: ''
+sf__weight: ''
+sc__white: '#000000'
+sc__black: '#000000'
+sc__gray_100: '#000000'
+sc__gray_200: '#000000'
+sc__gray_300: '#000000'
+sc__gray_400: '#000000'
+sc__gray_500: '#000000'
+sc__gray_600: '#000000'
+sc__gray_700: '#000000'
+sc__gray_800: '#000000'
+sc__gray_900: '#000000'
+sc__primary: '#000000'
+sc__secondary: '#000000'
+sc__success: '#000000'
+sc__info: '#000000'
+sc__warning: '#000000'
+sc__danger: '#000000'
+sc__light: '#000000'
+sc__dark: '#000000'
+sl__custom: 0
+sl__color: '#000000'
+sl__h_color: '#000000'
+sl__decoration: ''
+sl__h_decoration: ''
+fs__form_input_group: ''

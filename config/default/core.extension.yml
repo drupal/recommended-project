@@ -12,12 +12,14 @@ module:
   allowed_formats: 0
   backup_migrate: 0
   basic_auth: 0
-  big_pipe: 0
   block: 0
   block_content: 0
+  bootstrap_layout_builder: 0
+  bootstrap_styles: 0
   breakpoint: 0
   captcha: 0
   ckeditor: 0
+  color: 0
   config_translation: 0
   contextual: 0
   ctools: 0
@@ -40,6 +42,10 @@ module:
   image_captcha: 0
   language: 0
   layout_builder: 0
+  layout_builder_browser: 0
+  layout_builder_modal: 0
+  layout_builder_restrictions: 0
+  layout_builder_st: 0
   layout_discovery: 0
   link: 0
   link_attributes: 0
@@ -47,6 +53,8 @@ module:
   mail_login: 0
   media: 0
   media_library: 0
+  media_library_form_element: 0
+  media_library_theme_reset: 0
   menu_link_attributes: 0
   menu_link_content: 0
   menu_ui: 0
@@ -82,6 +90,8 @@ module:
   views: 10
   minimal: 1000
 theme:
-  stark: 0
   seven: 0
+  edwt: 0
+  claro: 0
+  frontend: 0
 profile: minimal

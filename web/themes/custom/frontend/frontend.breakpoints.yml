@@ -1,0 +1,89 @@
+edwt.screen.xs-max:
+  label: xs-max
+  mediaQuery: '(max-width: 575.98px)'
+  weight: 1
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.sm-min:
+  label: sm-min
+  mediaQuery: '(min-width: 576px)'
+  weight: 2
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.sm-max:
+  label: sm-max
+  mediaQuery: '(max-width: 767.98px)'
+  weight: 3
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.md-min:
+  label: md-min
+  mediaQuery: '(min-width: 768px)'
+  weight: 4
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.md-max:
+  label: md-max
+  mediaQuery: '(max-width: 991.98px)'
+  weight: 5
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.lg-min:
+  label: lg-min
+  mediaQuery: '(min-width: 992px)'
+  weight: 6
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.lg-max:
+  label: lg-max
+  mediaQuery: '(max-width: 1199.98px)'
+  weight: 7
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.xl-min:
+  label: xl-min
+  mediaQuery: '(min-width: 1200px)'
+  weight: 8
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.xl-max:
+  label: xl-max
+  mediaQuery: '(max-width: 1399.98px)'
+  weight: 9
+  group: screen
+  multipliers:
+    - 1x
+    - 2x
+
+edwt.screen.xxl-min:
+  label: xxl-min
+  mediaQuery: '(min-width: 1400px)'
+  weight: 10
+  group: screen
+  multipliers:
+    - 1x
+    - 2x

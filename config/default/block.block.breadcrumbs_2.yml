@@ -1,0 +1,24 @@
+uuid: 6432932c-bd31-422a-94de-1f78bd0502b3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - edwt
+id: breadcrumbs_2
+theme: edwt
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

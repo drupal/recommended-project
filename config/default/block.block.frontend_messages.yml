@@ -1,22 +1,22 @@
-uuid: b1b1543c-50b9-49a5-bc37-a33c1bdd5181
+uuid: 26017ef0-2333-4aac-beee-5a8a53806453
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - stark
+    - frontend
 _core:
-  default_config_hash: aeqlWs7HwctZeZC7ADcbxfqehJzBRfZKmuZz3DsH3_4
-id: stark_messages
-theme: stark
-region: highlighted
-weight: 0
+  default_config_hash: 8tCNHgb8qWDcU_Qy9c6o3WZJFqhUVpPjd4joNNpFrCQ
+id: frontend_messages
+theme: frontend
+region: content
+weight: -7
 provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: 'Status messages'
+  label: Messages
   label_display: '0'
   provider: system
 visibility: {  }

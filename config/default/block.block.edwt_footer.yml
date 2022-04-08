@@ -1,0 +1,27 @@
+uuid: 764e6050-24c5-4ebd-8b51-7f8e7b460b3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - edwt
+_core:
+  default_config_hash: '-u_NUQqb8N0u61Y55WmPx5VK43RuXEI4AzrOZ6KotXw'
+id: edwt_footer
+theme: edwt
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

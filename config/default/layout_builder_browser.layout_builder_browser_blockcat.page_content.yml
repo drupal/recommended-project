@@ -1,0 +1,7 @@
+uuid: 2861cfe2-fce1-434e-a2bf-ed45fb96f964
+langcode: en
+status: true
+dependencies: {  }
+id: page_content
+label: 'Page content'
+weight: null

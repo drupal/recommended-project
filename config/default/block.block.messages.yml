@@ -1,0 +1,20 @@
+uuid: 1144d132-c78a-43b5-82ff-2bb978b7a541
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - edwt
+id: messages
+theme: edwt
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

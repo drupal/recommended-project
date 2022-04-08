@@ -1,0 +1,11 @@
+uuid: c48c82d6-802f-4c16-a4f8-758368374b09
+langcode: en
+status: true
+dependencies: {  }
+id: html
+block_id: 'inline_block:html'
+category: page_content
+label: HTML
+image_path: ''
+image_alt: ''
+weight: null
