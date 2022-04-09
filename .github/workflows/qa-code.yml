@@ -1,0 +1,19 @@
+####
+# 1. Configure below the triggers when the checks are running
+####
+
+on: [pull_request]
+# on: [push, pull_request]
+name: 'Quality assurance'
+jobs:
+  qa-code:
+    name: 'Check code quality'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: eaudeweb/drupal-install-action@main
+        with:
+          dev: true
+      - uses: eaudeweb/drupal-code-qa-action@main

@@ -1,0 +1,34 @@
+####
+# 1. Configure below the triggers when the checks are running
+####
+
+on: [pull_request]
+# on: [push, pull_request]
+name: 'Drupal instance testing'
+jobs:
+  qa-tests:
+    name: 'Execute Drupal tests'
+    runs-on: ubuntu-latest
+    services:
+      mariadb:
+        image: mariadb:latest
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: drupal
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - uses: eaudeweb/drupal-install-action@main
+        with:
+          dev: true
+
+      - name: 'Execute tests'
+        run: |
+          cp example.phpunit.xml phpunit.xml
+          ./vendor/bin/phpunit web/modules/custom

@@ -1,0 +1,82 @@
+####
+# 1. Configuration Requirements (for the DevOps setup)
+#   * Configure the web server virtual host with document root on ${TEST_PROJECT_DIR}/live directory
+#   * Create the ${TEST_PROJECT_DIR} directory on the target server owned by ${TEST_SSH_USER}
+#   * Create the ${TEST_PROJECT_DIR}/files/default to store the public files for the project
+#   * Create the ${TEST_PROJECT_DIR}/settings.local.default.php to store the default settings.php custom settings
+#   * Set up the repository secrets
+#       - TEST_PROJECT_DIR - Absolute path to the project root directory for the deployments (including `live` symlink)
+#       - TEST_SSH_USER - SSH account to connect to the server
+#       - TEST_SSH_KEY  - Private SSH key to connect to the server (public key configured on the server)
+#       - TEST_SSH_HOST - SSH host IP or public hostname
+# 2. Configure below the triggers when deployment is running
+####
+
+on:
+  push:
+    branches:
+      - 'test'
+
+name: 'Deploy test instance'
+jobs:
+  build:
+    name: 'Build artifact'
+    runs-on: ubuntu-latest
+    outputs:
+      filename: ${{ steps.artifact.outputs.filename }}
+      base: ${{ steps.artifact.outputs.base }}
+      sha: ${{ steps.artifact.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: eaudeweb/drupal-install-action@main
+        with:
+          dev: false
+      - id: artifact
+        uses: eaudeweb/drupal-artifact-action@main
+
+  deploy:
+    name: 'Deploy on test server'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: 'Download artifact'
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ needs.build.outputs.filename }}
+
+      - name: 'Configure SSH'
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/server.key
+          chmod 600 ~/.ssh/server.key
+          cat >>~/.ssh/config <<END
+          Host server
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/server.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.TEST_SSH_USER }}
+          SSH_KEY: ${{ secrets.TEST_SSH_KEY }}
+          SSH_HOST: ${{ secrets.TEST_SSH_HOST }}
+
+      - name: 'Deploy release to the server'
+        run: |
+          ssh server 'rm -rf ${{ secrets.TEST_PROJECT_DIR }}/${{ needs.build.outputs.base }} && mkdir -p ${{ secrets.TEST_PROJECT_DIR }}/${{ needs.build.outputs.base }}'
+          scp ${{ needs.build.outputs.filename }} server:${{ secrets.TEST_PROJECT_DIR }}/${{ needs.build.outputs.base }}/
+          ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }}/${{ needs.build.outputs.base }} && tar zxf ${{ needs.build.outputs.filename }} && rm ${{ needs.build.outputs.filename }}'
+          ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }} && ln -s ${{ secrets.TEST_PROJECT_DIR }}/settings.local.php ./${{ needs.build.outputs.base }}/web/sites/default/settings.local.php'
+          ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }} && ln -s ${{ secrets.TEST_PROJECT_DIR }}/files ./${{ needs.build.outputs.base }}/web/sites/default/files'
+          ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }} && rm -f live && ln -s ${{ needs.build.outputs.base }} live'
+
+      - name: 'Update instance'
+        id: release
+        uses: eaudeweb/drupal-update-action@v1
+        with:
+          path: ${{ secrets.TEST_PROJECT_DIR }}/live
+
+      - name: 'Clean releases older than 90 days'
+        run:  ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }} && find release-* -maxdepth 1 -type d -mtime +90 -prune -exec rm -rf {} \;'
