@@ -3,22 +3,11 @@
 ####
 
 on: [pull_request]
-# on: [push, pull_request]
-name: 'Drupal instance testing'
+name: "Run project tests"
 jobs:
   qa-tests:
-    name: 'Execute Drupal tests'
+    name: "Run Drupal tests"
     runs-on: ubuntu-latest
-    services:
-      mariadb:
-        image: mariadb:latest
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: drupal
-        ports:
-          - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -28,7 +17,5 @@ jobs:
         with:
           dev: true
 
-      - name: 'Execute tests'
-        run: |
-          cp example.phpunit.xml phpunit.xml
-          ./vendor/bin/phpunit web/modules/custom
+      - name: 'Run Drupal tests'
+        uses: eaudeweb/drupal-runtests-action@main
