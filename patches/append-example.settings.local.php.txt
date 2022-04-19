@@ -1,0 +1,31 @@
+#
+# Project specific settings
+#
+
+$settings['file_private_path'] = realpath($app_root . '/../private');
+# $settings['hash_salt'] = '';
+
+/** Customize to your local configuration */
+$databases['default']['default'] = array (
+  'database' => 'drupal',
+  'username' => 'root',
+  'password' => 'root',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+
+# SMTP configuration
+$config['smtp.settings']['smtp_host'] = 'localhost';
+$config['smtp.settings']['smtp_port'] = 25;
+$config['smtp.settings']['smtp_protocol'] = 'standard';
+$config['smtp.settings']['smtp_from'] = 'user@example.com';
+$config['smtp.settings']['smtp_username'] = 'user@example.com';
+$config['smtp.settings']['smtp_password'] = '';
+
+# Project trusted host pattern
+$settings['trusted_host_patterns'] = [
+  '^example\.localhost',
+];

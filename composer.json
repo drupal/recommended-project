@@ -73,13 +73,18 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            },
+            "file-mapping": {
+                "[web-root]/sites/example.settings.local.php": {
+                    "append": "patches/append-example.settings.local.php.txt"
+                }
             }
         },
         "installer-paths": {
@@ -112,6 +117,7 @@
             ]
         },
         "enable-patching": true,
+        "patches-file": "composer.patches.json"
     },
     "scripts": {
         "remove-git-folders": [
@@ -123,8 +129,6 @@
         "post-update-cmd": [
             "@remove-git-folders"
         ],
-        "post-drupal-scaffold-cmd": [
-            "patch -p1 < patches/example.settings.local.php.patch"
-        ]
+        "post-drupal-scaffold-cmd": []
     }
 }
