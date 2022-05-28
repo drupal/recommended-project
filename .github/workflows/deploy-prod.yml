@@ -28,9 +28,36 @@ on:
 
 name: 'Deploy production instance'
 jobs:
+  check:
+    name: 'Check for configuration changes'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Configure SSH'
+        if: ${{ github.event.inputs.check_config == 'true' }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/server.key
+          chmod 600 ~/.ssh/server.key
+          cat >>~/.ssh/config <<END
+          Host server
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/server.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.PROD_SSH_USER }}
+          SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
+          SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
+
+      - name: 'Check for Drupal schema changes in prod'
+        if: ${{ github.event.inputs.check_config == 'true' }}
+        run: ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }}/live && CONFIG_STATUS=$(./vendor/bin/drush config:status -n 2>&1) && echo ${CONFIG_STATUS} | grep -i -q -s "No differences"'
+
   build:
     name: 'Build artifact'
     runs-on: ubuntu-latest
+    needs: check
     outputs:
       filename: ${{ steps.artifact.outputs.filename }}
       base: ${{ steps.artifact.outputs.base }}
