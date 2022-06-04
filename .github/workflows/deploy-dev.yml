@@ -1,0 +1,57 @@
+on:
+  push:
+    branches:
+      - 'develop'
+
+name: 'Deploy dev instance'
+jobs:
+  deploy:
+    name: 'Deploy on dev server'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - uses: eaudeweb/drupal-install-action@main
+        with:
+          dev: false
+
+      - id: artifact
+        uses: eaudeweb/drupal-artifact-action@test
+
+      - name: 'Configure SSH'
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/server.key
+          chmod 600 ~/.ssh/server.key
+          cat >>~/.ssh/config <<END
+          Host server
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/server.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.DEV_SSH_USER }}
+          SSH_KEY: ${{ secrets.DEV_SSH_KEY }}
+          SSH_HOST: ${{ secrets.DEV_SSH_HOST }}
+
+      - name: 'Deploy release to the server'
+        run: |
+          ssh server 'rm -rf ${{ secrets.DEV_PROJECT_DIR }}/${{ steps.artifact.outputs.base }} && mkdir -p ${{ secrets.DEV_PROJECT_DIR }}/${{ steps.artifact.outputs.base }}'
+          scp ${{ steps.artifact.outputs.filename }} server:${{ secrets.DEV_PROJECT_DIR }}/${{ steps.artifact.outputs.base }}/
+          rm ${{ steps.artifact.outputs.filename }}
+          ssh server 'cd ${{ secrets.DEV_PROJECT_DIR }}/${{ steps.artifact.outputs.base }} && tar zxf ${{ steps.artifact.outputs.filename }} && rm ${{ steps.artifact.outputs.filename }}'
+          ssh server 'cd ${{ secrets.DEV_PROJECT_DIR }} && ln -s ${{ secrets.DEV_PROJECT_DIR }}/settings.local.php ./${{ steps.artifact.outputs.base }}/web/sites/default/settings.local.php'
+          ssh server 'cd ${{ secrets.DEV_PROJECT_DIR }} && ln -s ${{ secrets.DEV_PROJECT_DIR }}/files ./${{ steps.artifact.outputs.base }}/web/sites/default/files'
+          ssh server 'cd ${{ secrets.DEV_PROJECT_DIR }} && rm -f live && ln -s ${{ steps.artifact.outputs.base }} live'
+
+      - name: 'Update instance'
+        id: release
+        uses: eaudeweb/drupal-update-action@v1
+        with:
+          path: ${{ secrets.DEV_PROJECT_DIR }}/live
+
+      - name: 'Clean releases older than 90 days'
+        run:  ssh server 'cd ${{ secrets.DEV_PROJECT_DIR }} && find release-* -maxdepth 1 -type d -mtime +90 -prune -exec rm -rf {} \;'

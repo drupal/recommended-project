@@ -73,14 +73,20 @@ jobs:
         uses: eaudeweb/drupal-artifact-action@main
 
   deploy:
-    name: 'Deploy release'
+    name: 'Deploy on prod server'
     runs-on: ubuntu-latest
-    needs: build
+
     steps:
-      - name: 'Download artifact'
-        uses: actions/download-artifact@v3
+      - uses: actions/checkout@v2
         with:
-          name: ${{ needs.build.outputs.filename }}
+          fetch-depth: 1
+
+      - uses: eaudeweb/drupal-install-action@main
+        with:
+          dev: false
+
+      - id: artifact
+        uses: eaudeweb/drupal-artifact-action@test
 
       - name: 'Configure SSH'
         run: |
@@ -107,14 +113,15 @@ jobs:
         if:  ${{ github.event.inputs.sql_backup == 'true' }}
         run: ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }}/live && ./vendor/bin/drush sql:dump --structure-tables-list=cache,cache_*,watchdog,sessions,history --result-file=${{ secrets.PROD_PROJECT_DIR }}/database-before-${{ needs.build.outputs.base }}.sql --gzip'
 
-      - name: 'Copy release to the server'
+      - name: 'Deploy release to the server'
         run: |
-          ssh server 'rm -rf ${{ secrets.PROD_PROJECT_DIR }}/${{ needs.build.outputs.base }} && mkdir -p ${{ secrets.PROD_PROJECT_DIR }}/${{ needs.build.outputs.base }}'
-          scp ${{ needs.build.outputs.filename }} server:${{ secrets.PROD_PROJECT_DIR }}/${{ needs.build.outputs.base }}/
-          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }}/${{ needs.build.outputs.base }} && tar zxf ${{ needs.build.outputs.filename }} && rm ${{ needs.build.outputs.filename }}'
-          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && ln -s ${{ secrets.PROD_PROJECT_DIR }}/settings.local.php ./${{ needs.build.outputs.base }}/web/sites/default/settings.local.php'
-          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && ln -s ${{ secrets.PROD_PROJECT_DIR }}/files ./${{ needs.build.outputs.base }}/web/sites/default/files'
-          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && rm -f live && ln -s ${{ needs.build.outputs.base }} live'
+          ssh server 'rm -rf ${{ secrets.PROD_PROJECT_DIR }}/${{ steps.artifact.outputs.base }} && mkdir -p ${{ secrets.PROD_PROJECT_DIR }}/${{ steps.artifact.outputs.base }}'
+          scp ${{ steps.artifact.outputs.filename }} server:${{ secrets.PROD_PROJECT_DIR }}/${{ steps.artifact.outputs.base }}/
+          rm ${{ steps.artifact.outputs.filename }}
+          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }}/${{ steps.artifact.outputs.base }} && tar zxf ${{ steps.artifact.outputs.filename }} && rm ${{ steps.artifact.outputs.filename }}'
+          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && ln -s ${{ secrets.PROD_PROJECT_DIR }}/settings.local.php ./${{ steps.artifact.outputs.base }}/web/sites/default/settings.local.php'
+          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && ln -s ${{ secrets.PROD_PROJECT_DIR }}/files ./${{ steps.artifact.outputs.base }}/web/sites/default/files'
+          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && rm -f live && ln -s ${{ steps.artifact.outputs.base }} live'
 
       - name: 'Update Drupal instance'
         id: release
