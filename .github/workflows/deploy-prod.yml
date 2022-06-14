@@ -26,108 +26,40 @@ on:
         required: true
         default: true
 
-name: 'Deploy production instance'
+name: 'production instance'
 jobs:
-  check:
-    name: 'Check for configuration changes'
-    runs-on: ubuntu-latest
+  deploy:
+    name: 'deployment'
+    runs-on: self-hosted
     steps:
-      - name: 'Configure SSH'
-        if: ${{ github.event.inputs.check_config == 'true' }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/server.key
-          chmod 600 ~/.ssh/server.key
-          cat >>~/.ssh/config <<END
-          Host server
-            HostName $SSH_HOST
-            User $SSH_USER
-            IdentityFile ~/.ssh/server.key
-            StrictHostKeyChecking no
-          END
-        env:
-          SSH_USER: ${{ secrets.PROD_SSH_USER }}
-          SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
-          SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
-
-      - name: 'Check for Drupal schema changes in prod'
-        if: ${{ github.event.inputs.check_config == 'true' }}
-        run: ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }}/live && CONFIG_STATUS=$(./vendor/bin/drush config:status -n 2>&1) && echo ${CONFIG_STATUS} | grep -i -q -s "No differences"'
-
-  build:
-    name: 'Build artifact'
-    runs-on: ubuntu-latest
-    needs: check
-    outputs:
-      filename: ${{ steps.artifact.outputs.filename }}
-      base: ${{ steps.artifact.outputs.base }}
-      sha: ${{ steps.artifact.outputs.sha }}
-    steps:
-      - uses: actions/checkout@v2
+      - name: 'Checkout source code'
+        uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - uses: eaudeweb/drupal-install-action@main
+
+      - name: 'Install dependencies'
+        uses: eaudeweb/drupal-install-action@main
         with:
           dev: false
-      - id: artifact
+
+      - name: 'Create release archive'
+        id: artifact
         uses: eaudeweb/drupal-artifact-action@main
 
-  deploy:
-    name: 'Deploy on prod server'
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
+      - name: 'Deploy release on the server'
+        uses: eaudeweb/drupal-deploy-action@main
         with:
-          fetch-depth: 1
+          project_dir:      ${{ secrets.PROD_PROJECT_DIR }}
+          release_id:       ${{ steps.artifact.outputs.base }}
+          release_filename: ${{ steps.artifact.outputs.filename }}
+          ssh_user:         ${{ secrets.PROD_SSH_USER }}
+          ssh_host:         ${{ secrets.PROD_SSH_HOST }}
+          ssh_key:          ${{ secrets.PROD_SSH_KEY }}
+          check_config: ${{ github.event.inputs.check_config }}
+          sql_backup: ${{ github.event.inputs.sql_backup }}
 
-      - uses: eaudeweb/drupal-install-action@main
-        with:
-          dev: false
-
-      - id: artifact
-        uses: eaudeweb/drupal-artifact-action@test
-
-      - name: 'Configure SSH'
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/server.key
-          chmod 600 ~/.ssh/server.key
-          cat >>~/.ssh/config <<END
-          Host server
-            HostName $SSH_HOST
-            User $SSH_USER
-            IdentityFile ~/.ssh/server.key
-            StrictHostKeyChecking no
-          END
-        env:
-          SSH_USER: ${{ secrets.PROD_SSH_USER }}
-          SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
-          SSH_HOST: ${{ secrets.PROD_SSH_HOST }}
-
-      - name: 'Check for Drupal schema changes in prod'
-        if:  ${{ github.event.inputs.check_config == 'true' }}
-        run: ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }}/live && CONFIG_STATUS=$(./vendor/bin/drush config:status -n 2>&1) && echo ${CONFIG_STATUS} | grep -i -q -s "No differences"'
-
-      - name: 'Create SQL backup'
-        if:  ${{ github.event.inputs.sql_backup == 'true' }}
-        run: ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }}/live && ./vendor/bin/drush sql:dump --structure-tables-list=cache,cache_*,watchdog,sessions,history --result-file=${{ secrets.PROD_PROJECT_DIR }}/database-before-${{ needs.build.outputs.base }}.sql --gzip'
-
-      - name: 'Deploy release to the server'
-        run: |
-          ssh server 'rm -rf ${{ secrets.PROD_PROJECT_DIR }}/${{ steps.artifact.outputs.base }} && mkdir -p ${{ secrets.PROD_PROJECT_DIR }}/${{ steps.artifact.outputs.base }}'
-          scp ${{ steps.artifact.outputs.filename }} server:${{ secrets.PROD_PROJECT_DIR }}/${{ steps.artifact.outputs.base }}/
-          rm ${{ steps.artifact.outputs.filename }}
-          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }}/${{ steps.artifact.outputs.base }} && tar zxf ${{ steps.artifact.outputs.filename }} && rm ${{ steps.artifact.outputs.filename }}'
-          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && ln -s ${{ secrets.PROD_PROJECT_DIR }}/settings.local.php ./${{ steps.artifact.outputs.base }}/web/sites/default/settings.local.php'
-          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && ln -s ${{ secrets.PROD_PROJECT_DIR }}/files ./${{ steps.artifact.outputs.base }}/web/sites/default/files'
-          ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && rm -f live && ln -s ${{ steps.artifact.outputs.base }} live'
-
-      - name: 'Update Drupal instance'
+      - name: 'Update the Drupal instance'
         id: release
         uses: eaudeweb/drupal-update-action@v1
         with:
           path: ${{ secrets.PROD_PROJECT_DIR }}/live
-
-      - name: 'Clean releases older than 90 days'
-        run:  ssh server 'cd ${{ secrets.PROD_PROJECT_DIR }} && find release-* -maxdepth 1 -type d -mtime +90 -prune -exec rm -rf {} \;'

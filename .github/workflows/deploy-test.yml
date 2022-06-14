@@ -1,62 +1,54 @@
+####
+# 1. Configuration Requirements (for the DevOps setup)
+#   * Configure the web server virtual host with document root on ${TEST_PROJECT_DIR}/live directory
+#   * Create the ${TEST_PROJECT_DIR} directory on the target server owned by ${TEST_SSH_USER}
+#   * Create the ${TEST_PROJECT_DIR}/files/default to store the public files for the project
+#   * Create the ${TEST_PROJECT_DIR}/settings.local.default.php to store the default settings.php custom settings
+#   * Set up the repository secrets
+#       - TEST_PROJECT_DIR - Absolute path to the project root directory for the deployments (including `live` symlink)
+#       - TEST_SSH_USER - SSH account to connect to the server
+#       - TEST_SSH_KEY  - Private SSH key to connect to the server (public key configured on the server)
+#       - TEST_SSH_HOST - SSH host IP or public hostname
+# 2. Configure below the triggers when deployment is running
+####
+
 on:
   push:
     branches:
       - 'test'
 
-name: 'Deploy test instance'
+name: 'test instance'
 jobs:
   deploy:
-    name: 'Deploy on test server'
-    runs-on: ubuntu-latest
+    name: 'deployment'
+    runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
+      - name: 'Checkout source code'
+        uses: actions/checkout@v2
         with:
           fetch-depth: 1
 
-      - uses: eaudeweb/drupal-install-action@main
+      - name: 'Install dependencies'
+        uses: eaudeweb/drupal-install-action@main
         with:
           dev: false
 
-      - id: artifact
-        uses: eaudeweb/drupal-artifact-action@test
+      - name: 'Create release archive'
+        id: artifact
+        uses: eaudeweb/drupal-artifact-action@main
 
-      - name: 'Configure SSH'
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/server.key
-          chmod 600 ~/.ssh/server.key
-          cat >>~/.ssh/config <<END
-          Host server
-            HostName $SSH_HOST
-            User $SSH_USER
-            IdentityFile ~/.ssh/server.key
-            StrictHostKeyChecking no
-          END
-        env:
-          SSH_USER: ${{ secrets.TEST_SSH_USER }}
-          SSH_KEY: ${{ secrets.TEST_SSH_KEY }}
-          SSH_HOST: ${{ secrets.TEST_SSH_HOST }}
+      - name: 'Deploy release on the server'
+        uses: eaudeweb/drupal-deploy-action@main
+        with:
+          project_dir:      ${{ secrets.TEST_PROJECT_DIR }}
+          release_id:       ${{ steps.artifact.outputs.base }}
+          release_filename: ${{ steps.artifact.outputs.filename }}
+          ssh_user:         ${{ secrets.TEST_SSH_USER }}
+          ssh_host:         ${{ secrets.TEST_SSH_HOST }}
+          ssh_key:          ${{ secrets.TEST_SSH_KEY }}
 
-      - name: 'Deploy release to the server'
-        run: |
-          ssh server 'rm -rf ${{ secrets.TEST_PROJECT_DIR }}/${{ steps.artifact.outputs.base }} && mkdir -p ${{ secrets.TEST_PROJECT_DIR }}/${{ steps.artifact.outputs.base }}'
-          scp ${{ steps.artifact.outputs.filename }} server:${{ secrets.TEST_PROJECT_DIR }}/${{ steps.artifact.outputs.base }}/
-          rm ${{ steps.artifact.outputs.filename }}
-          ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }}/${{ steps.artifact.outputs.base }} && tar zxf ${{ steps.artifact.outputs.filename }} && rm ${{ steps.artifact.outputs.filename }}'
-          ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }} && ln -s ${{ secrets.TEST_PROJECT_DIR }}/settings.local.php ./${{ steps.artifact.outputs.base }}/web/sites/default/settings.local.php'
-          ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }} && ln -s ${{ secrets.TEST_PROJECT_DIR }}/files ./${{ steps.artifact.outputs.base }}/web/sites/default/files'
-          ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }} && rm -f live && ln -s ${{ steps.artifact.outputs.base }} live'
-
-      - name: 'Update instance'
+      - name: 'Update the Drupal instance'
         id: release
         uses: eaudeweb/drupal-update-action@v1
         with:
           path: ${{ secrets.TEST_PROJECT_DIR }}/live
-
-      - name: 'Clean releases older than 90 days'
-        run:  ssh server 'cd ${{ secrets.TEST_PROJECT_DIR }} && find release-* -maxdepth 1 -type d -mtime +90 -prune -exec rm -rf {} \;'
-
-      - name: 'Remove artifact'
-        uses: geekyeggo/delete-artifact@v1
-        with:
-          name: ${{ needs.build.outputs.filename }}
