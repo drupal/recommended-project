@@ -58,9 +58,12 @@
         "tubalmartin/cssmin": "^4.1"
     },
     "require-dev": {
+        "drupal/coder": "^8.3",
         "drupal/core-dev": "^9.4",
         "drupal/stage_file_proxy": "^1.2",
-        "drupal/twig_vardumper": "^3.0"
+        "drupal/twig_vardumper": "^3.0",
+        "overtrue/phplint": "^3.2",
+        "phpmd/phpmd": "^2.12"
     },
     "conflict": {
         "drupal/drupal": "*"
