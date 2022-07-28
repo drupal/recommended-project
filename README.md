@@ -1,7 +1,7 @@
 # How to use this project
 
 
-1. Create a new project on your computer
+1. Create a new project on your computer. This works with php7.4, not php8.0.
 
 
 ```
