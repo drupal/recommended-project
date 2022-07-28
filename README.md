@@ -8,8 +8,11 @@
 composer create-project eaudeweb/recommended-project:9.x-dev [project-name]
 ```
 
-2. Copy `web/sites/example.settings.local.php` to `web/sites/default/settings.local.php` and configure the file to your local setup
+2. When asked "**Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]?**" choose `Y`
 
 
-3. Configure the project in Apache/NGINX and enjoy
+3. Copy `web/sites/example.settings.local.php` to `web/sites/default/settings.local.php` and configure the file to your local setup
+
+
+4. Configure the project in Apache/NGINX and enjoy
 
