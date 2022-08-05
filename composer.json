@@ -24,6 +24,7 @@
         "drupal/core-composer-scaffold": "~9.3.0",
         "drupal/core-project-message": "~9.3.0",
         "drupal/core-recommended": "~9.3.0",
+        "drupal/pathauto": "^1.10",
         "drush/drush": "^10.1",
         "getdkan/dkan": "^2.0"
     },
