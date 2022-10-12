@@ -14,13 +14,12 @@ composer create-project eaudeweb/recommended-project:9.x-dev [project-name]
 3. Copy `web/sites/example.settings.local.php` to `web/sites/default/settings.local.php` and configure the file to your local setup
 
 
-> Please set the transaction isolation level in the database settings array.
-setttings.php / settings.local.php should contain the following line:
-
- `$databases['default']['default'] = [`
-&nbsp;&nbsp;&nbsp;&nbsp;**`'init_commands' => ['isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"],`**
-&nbsp;&nbsp;&nbsp;&nbsp;`...`
-`];`
+> **Note:** Please set the transaction isolation level in the database settings array.
+> <br>setttings.php / settings.local.php should contain the following line:
+> <br>`$databases['default']['default'] = [`
+> <br>&nbsp;&nbsp;&nbsp;&nbsp;**`'init_commands' => ['isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"],`**
+> <br>&nbsp;&nbsp;&nbsp;&nbsp;`...`
+> <br>`];`
 
 4. Configure the project in Apache/NGINX and enjoy
 
