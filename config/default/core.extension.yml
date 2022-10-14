@@ -86,6 +86,7 @@ module:
   webform: 0
   webform_ui: 0
   pathauto: 1
+  simple_pass_reset: 1
   xmlsitemap: 1
   content_translation: 10
   views: 10
