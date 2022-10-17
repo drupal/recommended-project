@@ -1,17 +1,3 @@
-####
-# 1. Configuration Requirements (for the DevOps setup)
-#   * Configure the web server virtual host with document root on ${PROD_PROJECT_DIR}/live directory
-#   * Create the ${PROD_PROJECT_DIR} directory on the target server owned by ${PROD_SSH_USER}
-#   * Create the ${PROD_PROJECT_DIR}/files/default to store the public files for the project
-#   * Create the ${PROD_PROJECT_DIR}/settings.local.default.php to store the default settings.php custom settings
-#   * Set up the repository secrets
-#       - PROD_PROJECT_DIR - Absolute path to the project root directory for the deployments (including `live` symlink)
-#       - PROD_SSH_USER - SSH account to connect to the server
-#       - PROD_SSH_KEY  - Private SSH key to connect to the server (public key configured on the server)
-#       - PROD_SSH_HOST - SSH host IP or public hostname
-# 2. Trigger manual deployment
-####
-
 on:
   workflow_dispatch:
     inputs:
@@ -26,40 +12,53 @@ on:
         required: true
         default: true
 
-name: 'production instance'
+name: 'Deploy production instance'
 jobs:
   deploy:
     name: 'deployment'
     runs-on: self-hosted
     steps:
       - name: 'Checkout source code'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 1
 
       - name: 'Install dependencies'
-        uses: eaudeweb/drupal-install-action@main
+        uses: eaudeweb/drupal-install-action@1.x
         with:
           dev: false
 
       - name: 'Create release archive'
         id: artifact
-        uses: eaudeweb/drupal-artifact-action@main
+        uses: eaudeweb/drupal-artifact-action@1.x
 
       - name: 'Deploy release on the server'
-        uses: eaudeweb/drupal-deploy-action@main
+        uses: eaudeweb/drupal-deploy-action@v2.1.0
         with:
-          project_dir:      ${{ secrets.PROD_PROJECT_DIR }}
-          release_id:       ${{ steps.artifact.outputs.base }}
-          release_filename: ${{ steps.artifact.outputs.filename }}
-          ssh_user:         ${{ secrets.PROD_SSH_USER }}
-          ssh_host:         ${{ secrets.PROD_SSH_HOST }}
-          ssh_key:          ${{ secrets.PROD_SSH_KEY }}
-          check_config: ${{ github.event.inputs.check_config }}
-          sql_backup: ${{ github.event.inputs.sql_backup }}
+          ssh_user:           ${{ secrets.PROD_SSH_USER }}
+          ssh_host:           ${{ secrets.PROD_SSH_HOST }}
+          ssh_key:            ${{ secrets.PROD_SSH_KEY }}
+          release_id:         ${{ steps.artifact.outputs.base }}
+          release_filename:   ${{ steps.artifact.outputs.filename }}
+          project_dir:        /var/www/html/todo.example.org
+          artifacts_dir:      /var/www/artifacts/todo.example.org
+          settings_file:      /var/www/config/todo.example.org/settings.local.php
+          robo_file:          /var/www/config/todo.example.org/robo.yml
+          public_files_dir:   /var/www/config/todo.example.org/files
+          database_dump_dir:  /var/www/config/todo.example.org/sync
+          artifacts_lifespan: 30
 
       - name: 'Update the Drupal instance'
         id: release
         uses: eaudeweb/drupal-update-action@v1
         with:
-          path: ${{ secrets.PROD_PROJECT_DIR }}/live
+          path: /var/www/html/todo.example.org
+
+      - name: 'Discord notification'
+        run: >
+          curl -X POST -F "content=${{ github.repository }} has been deployed on prod." ${{ secrets.DISCORD_WEBHOOK }}
+
+      - name: 'Discord notification on failed deploy'
+        if: failure()
+        run: >
+          curl -X POST -F "content=ERROR: ${{ github.repository }} failed to deploy on prod." ${{ secrets.DISCORD_WEBHOOK }}
