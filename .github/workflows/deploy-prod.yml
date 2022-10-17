@@ -38,7 +38,7 @@ jobs:
           ssh_user:           ${{ secrets.PROD_SSH_USER }}
           ssh_host:           ${{ secrets.PROD_SSH_HOST }}
           ssh_key:            ${{ secrets.PROD_SSH_KEY }}
-          release_id:         ${{ steps.artifact.outputs.base }}
+          release_id:         ${{ github.ref_name }}
           release_filename:   ${{ steps.artifact.outputs.filename }}
           project_dir:        /var/www/html/todo.example.org
           artifacts_dir:      /var/www/artifacts/todo.example.org
@@ -58,9 +58,12 @@ jobs:
 
       - name: 'Discord notification'
         run: >
-          curl -X POST -F "content=${{ github.repository }} has been deployed on prod." ${{ secrets.DISCORD_WEBHOOK }}
+          curl -X POST -F "content=${{ github.repository }} release **${{ github.ref_name }}** has been deployed on prod." ${{ secrets.DISCORD_WEBHOOK }}
 
       - name: 'Discord notification on failed deploy'
         if: failure()
         run: >
-          curl -X POST -F "content=ERROR: ${{ github.repository }} failed to deploy on prod." ${{ secrets.DISCORD_WEBHOOK }}
+          curl -X POST -F
+          "content=ERROR: ${{ github.repository }} failed to deploy release **${{ github.ref_name }}** on prod.
+          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          ${{ secrets.DISCORD_WEBHOOK }}
