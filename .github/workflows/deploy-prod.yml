@@ -47,6 +47,8 @@ jobs:
           public_files_dir:   /var/www/config/todo.example.org/files
           database_dump_dir:  /var/www/config/todo.example.org/sync
           artifacts_lifespan: 30
+          check_config:       ${{ inputs.check_config }}
+          sql_backup:         ${{ inputs.sql_backup }}
 
       - name: 'Update the Drupal instance'
         id: release
