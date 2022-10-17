@@ -14,11 +14,11 @@
 - `TEST_SSH_KEY` - SSH private key. Generate one with: `ssh-keygen -t ed25519 -f server.key`
 - `TEST_SSH_HOST` - Server hostname or IP address
 
-## deploy-prod.yml
+## deploy-staging.yml
 
-- `PROD_SSH_USER` - SSH username
-- `PROD_SSH_KEY` - SSH private key. Generate one with: `ssh-keygen -t ed25519 -f server.key`
-- `PROD_SSH_HOST` - Server hostname or IP address
+- `STAGING_SSH_USER` - SSH username
+- `STAGING_SSH_KEY` - SSH private key. Generate one with: `ssh-keygen -t ed25519 -f server.key`
+- `STAGING_SSH_HOST` - Server hostname or IP address
 
 
 ## deploy-prod.yml
