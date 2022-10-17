@@ -1,54 +1,53 @@
-####
-# 1. Configuration Requirements (for the DevOps setup)
-#   * Configure the web server virtual host with document root on ${DEV_PROJECT_DIR}/live directory
-#   * Create the ${DEV_PROJECT_DIR} directory on the target server owned by ${DEV_SSH_USER}
-#   * Create the ${DEV_PROJECT_DIR}/files/default to store the public files for the project
-#   * Create the ${DEV_PROJECT_DIR}/settings.local.default.php to store the default settings.php custom settings
-#   * Set up the repository secrets
-#       - DEV_PROJECT_DIR - Absolute path to the project root directory for the deployments (including `live` symlink)
-#       - DEV_SSH_USER - SSH account to connect to the server
-#       - DEV_SSH_KEY  - Private SSH key to connect to the server (public key configured on the server)
-#       - DEV_SSH_HOST - SSH host IP or public hostname
-# 2. Configure below the triggers when deployment is running
-####
-
 on:
   push:
     branches:
       - 'develop'
 
-name: 'development instance'
+name: 'Deploy dev instance'
 jobs:
   deploy:
     name: 'deployment'
     runs-on: self-hosted
     steps:
       - name: 'Checkout source code'
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 1
 
       - name: 'Install dependencies'
-        uses: eaudeweb/drupal-install-action@main
+        uses: eaudeweb/drupal-install-action@1.x
         with:
           dev: false
 
       - name: 'Create release archive'
         id: artifact
-        uses: eaudeweb/drupal-artifact-action@main
+        uses: eaudeweb/drupal-artifact-action@1.x
 
       - name: 'Deploy release on the server'
-        uses: eaudeweb/drupal-deploy-action@main
+        uses: eaudeweb/drupal-deploy-action@2.x
         with:
-          project_dir:      ${{ secrets.DEV_PROJECT_DIR }}
-          release_id:       ${{ steps.artifact.outputs.base }}
-          release_filename: ${{ steps.artifact.outputs.filename }}
-          ssh_user:         ${{ secrets.DEV_SSH_USER }}
-          ssh_host:         ${{ secrets.DEV_SSH_HOST }}
-          ssh_key:          ${{ secrets.DEV_SSH_KEY }}
+          ssh_user:           ${{ secrets.DEV_SSH_USER }}
+          ssh_host:           ${{ secrets.DEV_SSH_HOST }}
+          ssh_key:            ${{ secrets.DEV_SSH_KEY }}
+          release_id:         ${{ steps.artifact.outputs.base }}
+          release_filename:   ${{ steps.artifact.outputs.filename }}
+          project_dir:        /var/www/html/dev.example.org
+          artifacts_dir:      /var/www/artifacts/dev.example.org
+          settings_file:      /var/www/config/dev.example.org/settings.local.php
+          public_files_dir:   /var/www/config/dev.example.org/files
+          robo_file:          /var/www/config/dev.example.org/robo.yml
+          artifacts_lifespan: 30
 
       - name: 'Update the Drupal instance'
         id: release
         uses: eaudeweb/drupal-update-action@v1
         with:
-          path: ${{ secrets.DEV_PROJECT_DIR }}/live
+          path: /var/www/html/dev.example.org
+
+      - name: 'Discord notification on failed deploy'
+        if: failure()
+        run: >
+          curl -X POST -F
+          "content=ERROR: ${{ github.repository }} failed to deploy release **${{ github.ref_name }}** on dev.
+          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          ${{ secrets.DISCORD_WEBHOOK }}
