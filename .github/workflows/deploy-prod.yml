@@ -33,7 +33,7 @@ jobs:
         uses: eaudeweb/drupal-artifact-action@1.x
 
       - name: 'Deploy release on the server'
-        uses: eaudeweb/drupal-deploy-action@v2.1.0
+        uses: eaudeweb/drupal-deploy-action@v2.1.1
         with:
           ssh_user:             ${{ secrets.PROD_SSH_USER }}
           ssh_host:             ${{ secrets.PROD_SSH_HOST }}
@@ -56,14 +56,14 @@ jobs:
         with:
           path: /var/www/html/recommended-project
 
-      - name: 'Discord notification'
-        run: >
-          curl -X POST -F "content=${{ github.repository }} release **${{ github.ref_name }}** has been deployed on prod." ${{ secrets.DISCORD_WEBHOOK }}
-
-      - name: 'Discord notification on failed deploy'
-        if: failure()
-        run: >
-          curl -X POST -F
-          "content=ERROR: ${{ github.repository }} failed to deploy release **${{ github.ref_name }}** on prod.
-          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          ${{ secrets.DISCORD_WEBHOOK }}
+#      - name: 'Discord notification'
+#        run: >
+#          curl -X POST -F "content=${{ github.repository }} release **${{ github.ref_name }}** has been deployed on prod." ${{ secrets.DISCORD_WEBHOOK }}
+#
+#      - name: 'Discord notification on failed deploy'
+#        if: failure()
+#        run: >
+#          curl -X POST -F
+#          "content=ERROR: ${{ github.repository }} failed to deploy release **${{ github.ref_name }}** on prod.
+#          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+#          ${{ secrets.DISCORD_WEBHOOK }}
