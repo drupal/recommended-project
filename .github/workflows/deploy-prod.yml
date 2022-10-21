@@ -35,20 +35,20 @@ jobs:
       - name: 'Deploy release on the server'
         uses: eaudeweb/drupal-deploy-action@v2.1.0
         with:
-          ssh_user:           ${{ secrets.PROD_SSH_USER }}
-          ssh_host:           ${{ secrets.PROD_SSH_HOST }}
-          ssh_key:            ${{ secrets.PROD_SSH_KEY }}
-          release_id:         'release-${{ github.ref_name }}'
-          release_filename:   ${{ steps.artifact.outputs.filename }}
-          project_dir:        /var/www/html/todo.example.org
-          artifacts_dir:      /var/www/artifacts/todo.example.org
-          settings_file:      /var/www/config/todo.example.org/settings.local.php
-          robo_file:          /var/www/config/todo.example.org/robo.yml
-          public_files_dir:   /var/www/config/todo.example.org/files
-          database_dump_dir:  /var/www/config/todo.example.org/sync
-          artifacts_lifespan: 30
-          check_config:       ${{ inputs.check_config }}
-          sql_backup:         ${{ inputs.sql_backup }}
+          ssh_user:             ${{ secrets.PROD_SSH_USER }}
+          ssh_host:             ${{ secrets.PROD_SSH_HOST }}
+          ssh_key:              ${{ secrets.PROD_SSH_KEY }}
+          release_id:           'release-${{ github.ref_name }}'
+          release_filename:     ${{ steps.artifact.outputs.filename }}
+          project_dir:          /var/www/html/example.org
+          artifacts_dir:        /var/www/artifacts/example.org
+          settings_file:        /var/www/config/example.org/settings.local.php
+          public_files_dir:     /var/www/config/example.org/files
+          # robo_file:          /var/www/config/example.org/robo.yml
+          # database_dump_dir:  /var/www/config/example.org/sync
+          check_config:         ${{ inputs.check_config }}
+          sql_backup:           ${{ inputs.sql_backup }}
+          # artifacts_lifespan:   30
 
       - name: 'Update the Drupal instance'
         id: release

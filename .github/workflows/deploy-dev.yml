@@ -26,16 +26,18 @@ jobs:
       - name: 'Deploy release on the server'
         uses: eaudeweb/drupal-deploy-action@2.x
         with:
-          ssh_user:           ${{ secrets.DEV_SSH_USER }}
-          ssh_host:           ${{ secrets.DEV_SSH_HOST }}
-          ssh_key:            ${{ secrets.DEV_SSH_KEY }}
-          release_id:         ${{ steps.artifact.outputs.base }}
-          release_filename:   ${{ steps.artifact.outputs.filename }}
-          project_dir:        /var/www/html/dev.example.org
-          artifacts_dir:      /var/www/artifacts/dev.example.org
-          settings_file:      /var/www/config/dev.example.org/settings.local.php
-          public_files_dir:   /var/www/config/dev.example.org/files
-          robo_file:          /var/www/config/dev.example.org/robo.yml
+          ssh_user:             ${{ secrets.DEV_SSH_USER }}
+          ssh_host:             ${{ secrets.DEV_SSH_HOST }}
+          ssh_key:              ${{ secrets.DEV_SSH_KEY }}
+          release_id:           ${{ steps.artifact.outputs.base }}
+          release_filename:     ${{ steps.artifact.outputs.filename }}
+          project_dir:          /var/www/html/dev.example.org
+          artifacts_dir:        /var/www/artifacts/dev.example.org
+          settings_file:        /var/www/config/dev.example.org/settings.local.php
+          public_files_dir:     /var/www/config/dev.example.org/files
+          # env_file:           /var/www/config/dev.example.org/.env
+          # robo_file:          /var/www/config/dev.example.org/robo.yml
+          # database_dump_dir:  /var/www/config/dev.example.org/sync
           artifacts_lifespan: 30
 
       - name: 'Update the Drupal instance'
