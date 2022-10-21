@@ -54,7 +54,7 @@ jobs:
         id: release
         uses: eaudeweb/drupal-update-action@v1
         with:
-          path: /var/www/html/todo.example.org
+          path: /var/www/html/example.org
 
       - name: 'Discord notification'
         run: >
