@@ -1,3 +1,8 @@
+# How to use automated deployment
+
+When setting up a new project with automated deployment, copy the relevant files from the templates directory here
+depending on what you wish to automate. GitHub will automatically execute any YAML in this folder.
+
 # Secrets
 
 - `DISCORD_WEBHOOK` - Discord webhook to send notifications. To obtain URL: `Edit channel > Integrations > Webhooks > Copy webhook URL from there`
