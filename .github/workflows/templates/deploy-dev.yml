@@ -50,6 +50,6 @@ jobs:
         if: failure()
         run: >
           curl -X POST -F
-          "content=ERROR: ${{ github.repository }} failed to deploy release **${{ github.ref_name }}** on dev.
+          "content=ERROR: ${{ github.repository }} failed to deploy release **${{ steps.artifact.outputs.base }}** on dev.
           ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           ${{ secrets.DISCORD_WEBHOOK }}
