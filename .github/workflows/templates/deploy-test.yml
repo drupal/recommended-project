@@ -24,7 +24,7 @@ jobs:
         uses: eaudeweb/drupal-artifact-action@1.x
 
       - name: 'Deploy release on the server'
-        uses: eaudeweb/drupal-deploy-action@2.1.1
+        uses: eaudeweb/drupal-deploy-action@v2.1.1
         with:
           ssh_user:             ${{ secrets.TEST_SSH_USER }}
           ssh_host:             ${{ secrets.TEST_SSH_HOST }}
