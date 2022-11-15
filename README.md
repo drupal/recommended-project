@@ -27,7 +27,7 @@ https://www.project.org
 ## I. Prerequisites
 
 * PHP  8.1.6+ (see https://www.drupal.org/node/3295154)
-* MySQL 5.7.8+ / MariaDB MariaDB 10.3.7+
+* MySQL 5.7.8+ / MariaDB 10.3.7+
 * Apache / NGINX
 * Composer (https://getcomposer.org)
 * NVM (https://github.com/nvm-sh/nvm)
