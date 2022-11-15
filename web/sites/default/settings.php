@@ -255,6 +255,9 @@ if (is_readable($app_root . '/../../hash-salt-default.txt')) {
 if (is_readable($app_root . '/../hash-salt-default.txt')) {
   $settings['hash_salt'] = file_get_contents($app_root . '/../hash-salt-default.txt');
 }
+if (is_readable($app_root . '/../salt.txt')) {
+    $settings['hash_salt'] = file_get_contents($app_root . '/../salt.txt');
+}
 
 /**
  * Deployment identifier.
