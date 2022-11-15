@@ -127,7 +127,8 @@
             "scripts/composer/remove-git-folders.sh"
         ],
         "post-install-cmd": [
-            "@remove-git-folders"
+            "@remove-git-folders",
+            "cd .git/hooks && ln -sf ../../.git-hooks/* ."
         ],
         "post-update-cmd": [
             "@remove-git-folders"
