@@ -8,23 +8,13 @@ composer create-project eaudeweb/recommended-project:9.x-dev [project-name]
 
 2. When asked "**Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]?**" choose `Y`
 
-3. Copy `web/sites/example.settings.local.php` to `web/sites/default/settings.local.php` and configure the file to your local setup
-
-**Note:** Please set the transaction isolation level in the database settings array of `settings.local.php`.
-
-```php
-$databases['default']['default'] = [
-    'init_commands' => ['isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"],
-    ...
-];
-```
 4. Create the `example.salt.txt` file with an example hash salt:
 
 ```
 drush php-eval 'echo \Drupal\Component\Utility\Crypt::randomBytesBase64(55)' > example.salt.txt
 ```
+5. Run `./vendor/bin/robo site:config` and customize `example.robo.yml`
 
-6. Configure the project in Apache/NGINX and enjoy
 
 ### Below you will find the default README template, please update the README file after creating the project.
 
@@ -54,6 +44,15 @@ https://www.project.org
 * Copy `example.salt.txt` to `salt.txt`
 * Copy `example.robo.yml` to `robo.yml` and customize `username`, `password` and `admin_username`
 * (optional) Copy `drush/sites/example.self.site.yml` to `drush/sites/self.site.yml` add configure the ssh user.
+
+**Note:** Please set the transaction isolation level in the database settings array of `settings.local.php`.
+
+```php
+$databases['default']['default'] = [
+    'init_commands' => ['isolation' => "SET SESSION tx_isolation='READ-COMMITTED'"],
+    ...
+];
+```
 
 ## III. Installation
 
