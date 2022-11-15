@@ -128,7 +128,7 @@
         ],
         "post-install-cmd": [
             "@remove-git-folders",
-            "cd .git/hooks && ln -sf ../../.git-hooks/* ."
+            "[ -d \".git\" ] && cd .git/hooks && ln -sf ../../.git-hooks/* ."
         ],
         "post-update-cmd": [
             "@remove-git-folders"

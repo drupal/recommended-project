@@ -18,8 +18,13 @@ $databases['default']['default'] = [
     ...
 ];
 ```
+4. Create the `example.salt.txt` file with an example hash salt:
 
-4. Configure the project in Apache/NGINX and enjoy
+```
+drush php-eval 'echo \Drupal\Component\Utility\Crypt::randomBytesBase64(55)' > example.salt.txt
+```
+
+6. Configure the project in Apache/NGINX and enjoy
 
 ### Below you will find the default README template, please update the README file after creating the project.
 
