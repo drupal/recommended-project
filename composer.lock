@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de927ca92ee1542904fbf8776a506850",
+    "content-hash": "3182a9b50f0ef08f729436807bfdfa0b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4271,6 +4271,96 @@
                 }
             ],
             "time": "2022-04-16T12:01:55+00:00"
+        },
+        {
+            "name": "eaudeweb/heavy-lifter",
+            "version": "2.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eaudeweb/heavy-lifter.git",
+                "reference": "5e7020035591e7eb3a5a2995192a262c46c72c8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eaudeweb/heavy-lifter/zipball/5e7020035591e7eb3a5a2995192a262c46c72c8a",
+                "reference": "5e7020035591e7eb3a5a2995192a262c46c72c8a",
+                "shasum": ""
+            },
+            "require": {
+                "eaudeweb/robo-curl": "2.0.0-alpha2",
+                "ext-json": "*",
+                "php": ">=7.3",
+                "webflo/drupal-finder": "^1.2"
+            },
+            "suggest": {
+                "eaudeweb/gdpr-dump": "1.0.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EauDeWeb\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Cristian Romanescu",
+                    "email": "cristian@romanescu.ro"
+                }
+            ],
+            "description": "Common commands for your Drupal project to get you up to speed",
+            "support": {
+                "issues": "https://github.com/eaudeweb/heavy-lifter/issues",
+                "source": "https://github.com/eaudeweb/heavy-lifter/tree/2.0.0-alpha2"
+            },
+            "time": "2022-01-27T18:42:39+00:00"
+        },
+        {
+            "name": "eaudeweb/robo-curl",
+            "version": "2.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eaudeweb/robo-curl.git",
+                "reference": "134505c64fd3c485be014a11c6db651a5bbc6173"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eaudeweb/robo-curl/zipball/134505c64fd3c485be014a11c6db651a5bbc6173",
+                "reference": "134505c64fd3c485be014a11c6db651a5bbc6173",
+                "shasum": ""
+            },
+            "require": {
+                "consolidation/robo": "^3",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "robo-tasks",
+            "autoload": {
+                "psr-4": {
+                    "EauDeWeb\\Robo\\Task\\Curl\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cristian Romanescu",
+                    "email": "cristian@romanescu.ro"
+                }
+            ],
+            "description": "Robo command wrapper for cURL command line client",
+            "support": {
+                "issues": "https://github.com/eaudeweb/robo-curl/issues",
+                "source": "https://github.com/eaudeweb/robo-curl/tree/2.0.0-alpha2"
+            },
+            "time": "2022-01-27T18:37:54+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -13413,5 +13503,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
