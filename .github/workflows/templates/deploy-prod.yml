@@ -58,12 +58,15 @@ jobs:
 
       - name: 'Discord notification'
         run: >
-          curl -X POST -F "content=${{ github.repository }} release **${{ github.ref_name }}** has been deployed on prod." ${{ secrets.DISCORD_WEBHOOK }}
+          curl -X POST -F "content=:white_check_mark: ${{ github.repository }} release **${{ github.ref_name }}** was
+          successfully deployed on https://example.org.
+          [view action run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+          ${{ secrets.DISCORD_WEBHOOK }}
 
       - name: 'Discord notification on failed deploy'
         if: failure()
         run: >
           curl -X POST -F
-          "content=ERROR: ${{ github.repository }} failed to deploy release **${{ github.ref_name }}** on prod.
-          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          "content=:octagonal_sign: ${{ github.repository }} release **${{ github.ref_name }}** failed to deploy on https://example.org.
+          [view action run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
           ${{ secrets.DISCORD_WEBHOOK }}
