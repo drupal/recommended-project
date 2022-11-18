@@ -50,7 +50,6 @@ module:
   link: 0
   link_attributes: 0
   locale: 0
-  mail_login: 0
   media: 0
   media_library: 0
   media_library_form_element: 0

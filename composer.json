@@ -39,7 +39,6 @@
         "drupal/layout_builder_restrictions": "^2.12",
         "drupal/layout_builder_st": "^1.0@alpha",
         "drupal/link_attributes": "^1.11",
-        "drupal/mail_login": "^2.6",
         "drupal/menu_link_attributes": "^1.2",
         "drupal/metatag": "^1.19",
         "drupal/optional_end_date": "^1.2",

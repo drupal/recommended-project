@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb7d432a690cf9ee725b114b7cc65612",
+    "content-hash": "88ec18230c2d3c8925c3acd85e8fd39f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3027,58 +3027,6 @@
             "homepage": "https://www.drupal.org/project/link_attributes",
             "support": {
                 "source": "https://git.drupalcode.org/project/link_attributes"
-            }
-        },
-        {
-            "name": "drupal/mail_login",
-            "version": "2.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/mail_login.git",
-                "reference": "8.x-2.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/mail_login-8.x-2.6.zip",
-                "reference": "8.x-2.6",
-                "shasum": "1cb038bba09f5c8b9e6972b6f09caef773255a7a"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.6",
-                    "datestamp": "1640215989",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Mohammad AlQanneh",
-                    "homepage": "https://www.drupal.org/u/mqanneh",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "This module enables users to login by email address.",
-            "homepage": "https://www.drupal.org/project/mail_login",
-            "keywords": [
-                "drupal",
-                "php",
-                "user"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/mail_login",
-                "issues": "http://drupal.org/project/issues/mail_login",
-                "email": "mqanneh@gmail.com"
             }
         },
         {
