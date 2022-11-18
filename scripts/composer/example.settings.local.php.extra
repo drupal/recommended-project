@@ -3,7 +3,6 @@
 #
 
 $settings['file_private_path'] = realpath($app_root . '/../private');
-# $settings['hash_salt'] = '';
 
 /** Customize to your local configuration */
 $databases['default']['default'] = array (
