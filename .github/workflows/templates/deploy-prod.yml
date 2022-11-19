@@ -67,6 +67,6 @@ jobs:
         if: failure()
         run: >
           curl -X POST -F
-          "content=:octagonal_sign: ${{ github.repository }} release **${{ github.ref_name }}** failed to deploy on https://example.org.
+          "content=:octagonal_sign: **${{ github.repository }}** release **${{ github.ref_name }}** failed to deploy on https://example.org.
           [view action run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
           ${{ secrets.DISCORD_WEBHOOK }}
