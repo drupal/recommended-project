@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  create-project:
+    docker:
+      - image: cimg/php:8.0
+    steps:
+      - checkout
+      - run:
+          name: "composer create-project"
+          command: "composer create-project"
+
+workflows:
+  create-project-workflow:
+    jobs:
+      - create-project
