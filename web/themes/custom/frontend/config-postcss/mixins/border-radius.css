@@ -1,0 +1,39 @@
+@define-mixin border-radius $radius {
+  border-radius: $radius;
+}
+
+@define-mixin border-top-radius $radius {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@define-mixin border-end-radius $radius {
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@define-mixin border-bottom-radius $radius {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@define-mixin border-start-radius $radius {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@define-mixin border-top-start-radius $radius {
+  border-top-left-radius: $radius;
+}
+
+@define-mixin border-top-end-radius $radius {
+  border-top-right-radius: $radius;
+}
+
+@define-mixin border-bottom-end-radius $radius {
+  border-bottom-right-radius: $radius;
+}
+
+@define-mixin border-bottom-start-radius $radius {
+  border-bottom-left-radius: $radius;
+}

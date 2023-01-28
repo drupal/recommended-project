@@ -1,0 +1,86 @@
+html {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.align-center {
+  display: inline-block;
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
+}
+
+.region-content .block + .block {
+    margin-top: var(--spacer);
+  }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.region-content .form-item:not(:last-child) {
+      margin-bottom: var(--spacer);
+    }
+
+.nav-tabs {
+  margin-bottom: 1.875rem;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(218, 127, 52, 0.2);
+  border-color: var(--link-color);
+}
+
+.media-library-widget-modal .media-library-item__attributes:hover .media-library-item__name,
+  .media-library-widget-modal .media-library-item--grid.is-focus .media-library-item__name,
+  .media-library-widget-modal .media-library-item--grid.checked .media-library-item__name {
+    word-wrap: anywhere;
+  }
+
+.ui-layout-builder-modal h4.label {
+    color: #FFF;
+  }
+
+.ui-layout-builder-modal #layout-builder-modal button.link.tabledrag-toggle-weight {
+    background: transparent;
+  }
+
+.ui-layout-builder-modal .media-library-edit__link {
+    background: url(/modules/contrib/media_library_edit/icons/pencil.svg) #fff center no-repeat !important;
+    font-size: 0 !important;
+  }
+
+.ui-layout-builder-modal .media-library-edit__link {
+    position: absolute;
+    z-index: 1;
+    top: 2.5rem;
+    right: 0.625rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.3125rem;
+    padding: 0;
+    transition: 0.2s border-color;
+    color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 1.25rem;
+    background-size: 1rem 1rem;
+    text-shadow: none;
+    box-sizing: border-box;
+  }
+
+.media.media--bundle--youtube-video.is-b-loading,
+.oembed-lazyload--youtube .oembed-lazyload__button {
+  background: linear-gradient(90deg, var(--link-color) 0%, var(--link-color) 100%);
+  background: rgb(215, 125, 67);
+}
+
+.is-b-loading:not(.is-b-loaded):not([data-animation])::before {
+  background: var(--link-color);
+}

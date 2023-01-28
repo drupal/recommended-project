@@ -68,3 +68,5 @@
 /.editorconfig
 /.gitattributes
 phpunit.xml
+
+.idea

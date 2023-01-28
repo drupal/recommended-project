@@ -1,0 +1,1 @@
+!function($,Drupal){Drupal.behaviors.frontend_general={attach:function(context,settings){}}}(jQuery,Drupal);

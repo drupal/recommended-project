@@ -1,0 +1,7 @@
+@define-mixin black-link {
+  color: var(--body-color);
+
+  &:hover, &:focus {
+    color: var(--link-color);
+  }
+}

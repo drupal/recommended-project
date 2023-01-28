@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9146617c2dbca5144566793357d4a7b",
+    "content-hash": "0f1aca904f3dd6881e327f5e2c620432",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2489,26 +2489,26 @@
         },
         {
             "name": "drupal/edwt",
-            "version": "1.0.0-beta2",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/edwt.git",
-                "reference": "1.0.0-beta2"
+                "reference": "2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/edwt-1.0.0-beta2.zip",
-                "reference": "1.0.0-beta2",
-                "shasum": "0373851f26bdb5bc5ece068e81e5bb9288f61d06"
+                "url": "https://ftp.drupal.org/files/projects/edwt-2.2.0.zip",
+                "reference": "2.2.0",
+                "shasum": "13a31c7d3bcfdcfb19021bb29e29d4399ed14e77"
             },
             "require": {
-                "drupal/core": "^8.9 || ^9.0"
+                "drupal/core": "^9 || ^10"
             },
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta2",
-                    "datestamp": "1646696305",
+                    "version": "2.2.0",
+                    "datestamp": "1674922891",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2527,6 +2527,14 @@
                 {
                     "name": "jonsecret",
                     "homepage": "https://www.drupal.org/user/932520"
+                },
+                {
+                    "name": "mara.predescu",
+                    "homepage": "https://www.drupal.org/user/3539946"
+                },
+                {
+                    "name": "stefan.butura",
+                    "homepage": "https://www.drupal.org/user/3535177"
                 }
             ],
             "description": "Theme with Bootstrap 5 css library",
@@ -13544,12 +13552,11 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/edwt": 10,
         "drupal/layout_builder_st": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.1.0"
 }

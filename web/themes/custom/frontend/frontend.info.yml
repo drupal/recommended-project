@@ -1,8 +1,12 @@
-name: 'Project front-end theme'
+name: Frontend Theme
 type: theme
-description: 'Front-end theme based on Bootstrap 5 theme.'
-core_version_requirement: '^8.9 || ^9'
-'base theme': edwt
+description: 'Theme with Bootstrap 5 css library'
+core_version_requirement: ^8.9 || ^9.0
+base theme: edwt
+
+stylesheets-remove:
+  - '@classy/css/components/tabs.css'
+
 libraries:
   - frontend/global-styling
 
@@ -18,4 +22,5 @@ regions:
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
   footer: Footer
+  footer_second: Footer Second
   disable_region: 'Disabled Region'

@@ -1,0 +1,93 @@
+html {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.align-center {
+  display: inline-block;
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
+}
+
+.region-content {
+  & .block + .block {
+    margin-top: var(--spacer);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.region-content {
+  & .form-item {
+    &:not(:last-child) {
+      margin-bottom: var(--spacer);
+    }
+  }
+}
+
+.nav-tabs {
+  margin-bottom: 30px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgb(218 127 52 / 20%);
+  border-color: var(--link-color);
+}
+
+.media-library-widget-modal {
+  & .media-library-item__attributes:hover .media-library-item__name,
+  & .media-library-item--grid.is-focus .media-library-item__name,
+  & .media-library-item--grid.checked .media-library-item__name {
+    overflow-wrap: anywhere;
+  }
+}
+
+.ui-layout-builder-modal {
+  & h4.label {
+    color: #FFF;
+  }
+
+  & #layout-builder-modal button.link.tabledrag-toggle-weight {
+    background: transparent;
+  }
+
+  & .media-library-edit__link {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+    padding: 0;
+    transition: 0.2s border-color;
+    color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background: url(/modules/contrib/media_library_edit/icons/pencil.svg) #fff center no-repeat !important;
+    background-size: 16px 16px;
+    text-shadow: none;
+    box-sizing: border-box;
+    font-size: 0 !important;
+  }
+}
+
+.media.media--bundle--youtube-video.is-b-loading,
+.oembed-lazyload--youtube .oembed-lazyload__button {
+  background: linear-gradient(90deg, var(--link-color) 0%, var(--link-color) 100%);
+  background: rgb(215, 125, 67);
+}
+
+.is-b-loading:not(.is-b-loaded):not([data-animation])::before {
+  background: var(--link-color);
+}

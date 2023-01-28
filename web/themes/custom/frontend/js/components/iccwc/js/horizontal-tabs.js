@@ -1,0 +1,1 @@
+!function($,Drupal){Drupal.behaviors.horizontal_tabs={attach:function(context,settings){$(".node--view-mode-full [data-horizontal-tab-parent-id]").once("moveHorizontalTabContent").each(function(){var parent_id=$(this).attr("data-horizontal-tab-parent-id"),parent_id=$('[data-tab-content-id="'+parent_id+'"]'),element=$(this).detach();parent_id.append(element)})}}}(jQuery,Drupal);

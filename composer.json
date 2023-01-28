@@ -30,7 +30,7 @@
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.0",
         "drupal/edw_healthcheck": "1.10.0",
-        "drupal/edwt": "^1.0@beta",
+        "drupal/edwt": "^2.2",
         "drupal/environment_indicator": "^4.0",
         "drupal/facets": "^2.0",
         "drupal/field_group": "^3.2",
