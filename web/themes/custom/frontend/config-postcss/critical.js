@@ -26,7 +26,7 @@ if (fs.existsSync(filename)) {
 }
 critical.generate({
   base: '.',
-  src: url,
+  src: url + '/node/' + node_id,
   target: filename,
   width: 1300,
   height: 800,
