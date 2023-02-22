@@ -59,7 +59,7 @@ function frontend_form_system_theme_settings_alter(&$form, FormStateInterface $f
   // Rad variables file.
   $content = file_get_contents($cssFilePath);
 
-  $ca = new CssArray();
+  $ca = new FrontendCssArray();
   $b = $ca->convert($content);
 
   $form['style']['general'] = [

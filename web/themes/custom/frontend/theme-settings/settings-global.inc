@@ -49,8 +49,8 @@ $form['settings']['global']['sg__status_message_type'] = [
                 ]))->toString(),
   ]),
   '#options' => [
-    'alerts' => 'Alerts',
-    'toast' => 'Toasts',
+    'alerts' => t('Alerts'),
+    'toast' => t('Toasts'),
   ],
 ];
 
@@ -103,9 +103,9 @@ foreach ($region_list as $name => $description) {
       ],
     ],
     '#options' => [
-      'none' => 'None',
-      'container' => 'Fixed',
-      'container-fluid' => 'Fluid',
+      'none' => t('None'),
+      'container' => t('Fixed'),
+      'container-fluid' => t('Fluid'),
     ],
   ];
 
@@ -123,8 +123,8 @@ foreach ($region_list as $name => $description) {
       ],
     ],
     '#options' => [
-      'before' => 'Before',
-      'after' => 'After',
+      'before' => t('Before'),
+      'after' => t('After'),
     ],
   ];
 

@@ -5,15 +5,15 @@
  *
  * Example usage:
  * $css = file_get_contents($file);
- * $ca = new CssArray();
+ * $ca = new FrontendCssArray();
  * $cssArray = $ca->convert($css);
  * print_r($cssArray);
  *
- * @package CssArray
+ * @package FrontendCssArray
  * @version $Revision: 1.0 $
  * @access public
  */
-class CssArray {
+class FrontendCssArray {
 
   /**
    * Start to process the css string.
