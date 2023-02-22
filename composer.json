@@ -56,8 +56,7 @@
         "drupal/webform": "^6.1",
         "drupal/xmlsitemap": "^1.2",
         "drush/drush": "^11.0",
-        "eaudeweb/heavy-lifter": "*",
-        "tubalmartin/cssmin": "^4.1"
+        "eaudeweb/heavy-lifter": "*"
     },
     "require-dev": {
         "drupal/coder": "^8.3",
