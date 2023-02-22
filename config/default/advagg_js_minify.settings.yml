@@ -1,6 +1,6 @@
 _core:
   default_config_hash: k7-AYL8Wmk2amLGnCXfc-tTxZGCaduwh8RFMUPW8Tq0
 add_license: false
-minifier: 5
+minifier: 4
 ratio_max: 0.9
 ratio_min: 0.1
