@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Eau de Web Theme theme file.

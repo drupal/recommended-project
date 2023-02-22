@@ -13,31 +13,32 @@
  * @version $Revision: 1.0 $
  * @access public
  */
-
 class CssArray {
+
   /**
    * Start to process the css string.
    *
-   * @param [string] $css
-   *  [CSS style].
+   * @param string $css
+   *   [CSS style].
    *
-   * @return [array]      [PHP Array containing CSS information].
+   * @return [array]
+   *   [PHP Array containing CSS information].
    */
-  public function convert($css) {
-    $css = $this->cleanCSS($css);
-    $css = $this->parseCSS($css);
+  public function convert(string $css) {
+    $css = $this->cleanCss($css);
+    $css = $this->parseCss($css);
     return $css;
   }
 
   /**
    * This is used to recursive the CSS style.
    *
-   * @param [array] $style
+   * @param array $style
    *   [CSS Style].
-   * @param [array] $result
+   * @param array $result
    *   [Result reference from the main function].
    */
-  private function setStyleRecursive($style, &$result) {
+  private function setStyleRecursive(array $style, array &$result) {
     foreach ($style as $name => $val) {
       if (is_array($val)) {
         if (!isset($result[$name])) {
@@ -55,12 +56,13 @@ class CssArray {
   /**
    * Break @media CSS.
    *
-   * @param [array] $style
+   * @param array $style
    *   [CSS media style].
    *
-   * @return [array]        [Array of the media CSS Style].
+   * @return [array]
+   *   [Array of the media CSS Style].
    */
-  private function processMediaStyle($style) {
+  private function processMediaStyle(array $style) {
     $result = [];
     preg_match_all('/(?ims)([a-z0-9\s\,\.\:#_\-@*()\[\]"=]+)\{([^\}]*)\}(?:\s\})?/', $style, $matches);
     foreach ($matches[0] as $content) {
@@ -72,14 +74,12 @@ class CssArray {
   /**
    * Process CSS @media Content.
    *
-   * @param [string] $content
-   *   [string that start with @media].
-   * @param [array] $result
+   * @param string $content
+   *   String that starts with @media.
+   * @param array $result
    *   [Result reference from the main function].
-   *
-   * @return [null]          [update the result directly].
    */
-  private function processMediaContent($content, &$result) {
+  private function processMediaContent(string $content, array &$result) {
     $tmp = explode('{', $content);
     $mediaClass = explode(',', array_shift($tmp));
     $mediaStyleContent = $this->processMediaStyle(substr(implode('{', $tmp), 0, -1));
@@ -101,12 +101,13 @@ class CssArray {
   /**
    * Break Style into array.
    *
-   * @param [string] $style
+   * @param string $style
    *   [CSS Style].
    *
-   * @return [array]        [Array contain the CSS style name and value].
+   * @return [array]
+   *   [Array contain the CSS style name and value].
    */
-  private function processStyles($style) {
+  private function processStyles(string $style) {
     $result = [];
     $tmp = explode(';', $style);
     foreach ($tmp as $s) {
@@ -128,14 +129,12 @@ class CssArray {
   /**
    * Process CSS style (not for @media query CSS style)
    *
-   * @param [string] $content
+   * @param string $content
    *   [String content].
-   * @param [array] $result
+   * @param array $result
    *   [Reference from the main function].
-   *
-   * @return [null]          [Update the results directly using reference].
    */
-  private function processContent($content, &$result) {
+  private function processContent(string $content, array &$result) {
     if (strpos($content, '@media')) {
       $this->processMediaContent($content, $result);
     }
@@ -160,15 +159,15 @@ class CssArray {
   }
 
   /**
-   * Parsing CSS (not legal way)
-   * Using regular expression to break the css
+   * Parsing CSS (not legal way) using regular expression to break the css.
    *
-   * @param [string] $css
+   * @param string $css
    *   [CSS content].
    *
-   * @return [array]      [PHP array contain CSS information].
+   * @return [array]
+   *   [PHP array contain CSS information].
    */
-  private function parseCSS($css) {
+  private function parseCss(string $css) {
     $result = [];
     preg_match_all('/(?ims)([a-z0-9\s\,\.\:#_\-@*()\[\]"=]+)\{([^\}]*)\}(?:\s\})?/', $css, $matches);
     $countBraces = 0;
@@ -195,7 +194,7 @@ class CssArray {
   }
 
   /**
-   *
+   * Remove space.
    */
   private function removeSpace($matches) {
     return str_replace(' ', '', $matches[0]);
@@ -204,12 +203,13 @@ class CssArray {
   /**
    * Clean CSS. Normalize the string for this class to process.
    *
-   * @param [string] $css
+   * @param string $css
    *   [CSS string].
    *
-   * @return [string] [Fixed CSS string].
+   * @return [string]
+   *   [Fixed CSS string].
    */
-  private function cleanCSS($css) {
+  private function cleanCss(string $css) {
     // Remove font-face.
     $css = preg_replace('/\@font\-face\s?\{[^}]*\}/m', '', $css);
 
@@ -283,4 +283,5 @@ class CssArray {
 
     return $css;
   }
+
 }
