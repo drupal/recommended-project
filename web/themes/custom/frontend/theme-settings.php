@@ -26,7 +26,7 @@ function frontend_form_system_theme_settings_alter(&$form, FormStateInterface $f
   $form['settings'] = [
     '#type' => 'details',
     '#title' => t('Main'),
-    //'#description'  => t('some description'),
+    // '#description'  => t('some description'),
     '#group' => 'edwt',
     '#weight' => 1,
   ];
@@ -41,15 +41,15 @@ function frontend_form_system_theme_settings_alter(&$form, FormStateInterface $f
   ];
   include 'theme-settings/settings-sections.inc';
 
-  // Style settings
-  $form['style'] = array(
+  // Style settings.
+  $form['style'] = [
     '#type'         => 'details',
     '#title'        => t('Style'),
     '#description'  => t('Style colors, sizes etc'),
     '#group' => 'edwt',
     '#weight' => 3,
-    '#tree' => true,
-  );
+    '#tree' => TRUE,
+  ];
 
   $themeHandler = \Drupal::service('theme_handler');
   $themePath = $themeHandler->getTheme($themeHandler->getDefault())->getPath();
@@ -59,7 +59,7 @@ function frontend_form_system_theme_settings_alter(&$form, FormStateInterface $f
   // Rad variables file.
   $content = file_get_contents($cssFilePath);
 
-  $ca = new CssArray();
+  $ca = new FrontendCssArray();
   $b = $ca->convert($content);
 
   $form['style']['general'] = [
@@ -67,7 +67,7 @@ function frontend_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#title' => t('General'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
-    '#tree' => true,
+    '#tree' => TRUE,
   ];
 
   $form['style']['colors'] = [
@@ -75,7 +75,7 @@ function frontend_form_system_theme_settings_alter(&$form, FormStateInterface $f
     '#title' => t('Colors'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
-    '#tree' => true,
+    '#tree' => TRUE,
   ];
 
   $rows = [];

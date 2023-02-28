@@ -19,7 +19,9 @@ module:
   breakpoint: 0
   captcha: 0
   ckeditor: 0
+  ckeditor_bs_grid: 0
   color: 0
+  conditional_fields: 0
   config_translation: 0
   contextual: 0
   ctools: 0
@@ -53,8 +55,10 @@ module:
   locale: 0
   media: 0
   media_library: 0
+  media_library_edit: 0
   media_library_form_element: 0
   media_library_theme_reset: 0
+  media_responsive_thumbnail: 0
   menu_link_attributes: 0
   menu_link_content: 0
   menu_ui: 0
@@ -64,13 +68,15 @@ module:
   metatag_twitter_cards: 0
   mysql: 0
   node: 0
+  oembed_lazyload: 0
   optional_end_date: 0
   options: 0
   path: 0
   path_alias: 0
-  remove_username: 0
   redirect: 0
   redirect_404: 0
+  remove_username: 0
+  responsive_image: 0
   shortcut: 0
   smart_trim: 0
   smtp: 0
@@ -86,6 +92,7 @@ module:
   views_ui: 0
   webform: 0
   webform_ui: 0
+  webp: 0
   pathauto: 1
   xmlsitemap: 1
   content_translation: 10

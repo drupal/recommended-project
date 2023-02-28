@@ -8,8 +8,6 @@
 use Drupal\Core\Serialization\Yaml;
 use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
 use Drupal\Core\Asset\Exception\InvalidLibraryFileException;
-use Drupal\node\NodeInterface;
-use Drupal\Core\Render\Element;
 
 /**
  * Implements hook_library_info_alter().
@@ -92,4 +90,3 @@ function frontend_library_info_alter(&$libraries, $extension) {
     }
   }
 }
-
