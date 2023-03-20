@@ -56,6 +56,15 @@ jobs:
         with:
           path: /var/www/html/example.org
 
+      - name: 'Cleanup old releases'
+        uses: eaudeweb/drupal-cleanup-action@1.x
+        with:
+          ssh_user:             ${{ secrets.TEST_SSH_USER }}
+          ssh_host:             ${{ secrets.TEST_SSH_HOST }}
+          ssh_key:              ${{ secrets.TEST_SSH_KEY }}
+          cleanup_dir:          /var/www/artifacts/example.org
+          retain:               5
+
       - name: 'Discord notification'
         run: >
           curl -X POST -F "content=:white_check_mark: ${{ github.repository }} release **${{ github.ref_name }}** was
