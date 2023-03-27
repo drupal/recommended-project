@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+
+name: 'Check PROD config management'
+jobs:
+  deploy:
+    name: 'Show Drupal config status'
+    runs-on: self-hosted
+    steps:
+      - name: 'Check Drupal configuration'
+        uses: eaudeweb/drupal-config-status-action@1.x
+        with:
+          ssh_user:           ${{ secrets.PROD_SSH_USER }}
+          ssh_host:           ${{ secrets.PROD_SSH_HOST }}
+          ssh_key:            ${{ secrets.PROD_SSH_KEY }}
+          project_dir:        /var/www/html/planetgold.org
