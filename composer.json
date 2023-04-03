@@ -14,7 +14,7 @@
         "drupal/core-composer-scaffold": "~10.0.0",
         "drupal/core-recommended": "~10.0.0",
         "drush/drush": "^11.5",
-        "getdkan/dkan": "dev-13523-php-81"
+        "getdkan/dkan": "2.x-dev"
     },
     "require-dev": {
         "drupal/core-dev": "~10.0.0",
