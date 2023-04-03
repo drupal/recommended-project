@@ -1,15 +1,30 @@
 version: 2.1
+orbs:
+  php: circleci/php@1.1.0
+
 jobs:
-  create-project:
-    docker:
-      - image: cimg/php:8.0
+  composer-create-project:
+    executor:
+      name: php/default
+      tag: << parameters.php_version >>
+    parameters:
+      php_version:
+        default: "8.0"
+        description: The `cimg/php` Docker image version tag.
+        type: string
     steps:
       - checkout
       - run:
           name: "composer create-project"
-          command: "composer create-project"
+          command: |
+            composer create-project
+            php --version
 
 workflows:
   create-project-workflow:
     jobs:
-      - create-project
+      - composer-create-project:
+          # Note: PHP versions will be different for different branches.
+          matrix:
+            parameters:
+              php_version: [ "8.1" ]
