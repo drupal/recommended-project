@@ -39,7 +39,7 @@
         "drupal/allowed_formats": "^1.5",
         "drupal/backup_migrate": "^5.0",
         "drupal/bootstrap_layout_builder": "^2.0",
-        "drupal/captcha": "1.2.0",
+        "drupal/captcha": "^2.0@beta",
         "drupal/ckeditor_bs_grid": "^2.0",
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/core-composer-scaffold": "^10",
@@ -72,7 +72,7 @@
         "drupal/simple_search_form": "dev-custom",
         "drupal/smart_trim": "^2.0",
         "drupal/smtp": "^1.0",
-        "drupal/spamspan": "^1.2",
+        "drupal/spamspan": "^3.0@beta",
         "drupal/token": "^1.10",
         "drupal/twig_tweak": "^3.1",
         "drupal/upgrade_status": "^4.0",
@@ -100,7 +100,9 @@
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-project-message": true,
+            "phpstan/extension-installer": true
         },
         "platform": {
             "php": "8.1"
