@@ -1,7 +1,7 @@
 name: Frontend Theme
 type: theme
 description: 'Theme with Bootstrap 5 css library'
-core_version_requirement: ^8.9 || ^9.0
+core_version_requirement: ^8.9 || ^9.0 || ^10
 base theme: edwt
 
 stylesheets-remove:

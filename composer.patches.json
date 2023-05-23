@@ -4,12 +4,11 @@
       "#3228379 Failed network - error": "https://www.drupal.org/files/issues/2022-02-02/3228379-download-errors-19.patch"
     },
     "drupal/core": {
-      "#3015152 - Support third party settings for components within a section": "https://www.drupal.org/files/issues/2022-05-09/3015152-150.patch",
-      "#2689459 - If you don't want to translate your URL alias, the original URL alias won't work with your translations": "https://www.drupal.org/files/issues/2022-02-01/2689459-147.patch",
-      "#3044117 - Add getter for layout object in Layout Builder's ConfigureSectionForm": "https://www.drupal.org/files/issues/2021-10-18/expose-properties-config-section-form-3044117-34.patch",
+      "#3015152 - Support third party settings for components within a section": "https://www.drupal.org/files/issues/2023-02-03/3015152-191.patch",
+      "#2689459 - If you don't want to translate your URL alias, the original URL alias won't work with your translations": "https://www.drupal.org/files/issues/2022-12-20/2689459-161.patch",
       "#3101231 - Fix multilingual site's layout edit context issue with TypeError: Argument 1 passed to UrlHelper::buildQuery() must be of the type array, null given": "https://www.drupal.org/files/issues/2022-02-16/layout-builder-translation-issue-3101231-34.patch",
       "#3267870 - Order image mappings by breakpoint ID and numeric multiplier": "https://www.drupal.org/files/issues/2022-05-19/3267870-9.5.x-47.patch",
-      "#3192234 - Apply width and height attributes to allow responsive image tag use loading=lazy": "https://www.drupal.org/files/issues/2022-05-10/3192234-191.patch",
+      "#3192234 - Apply width and height attributes to allow responsive image tag use loading=lazy": "https://www.drupal.org/files/issues/2022-09-30/3192234-228-9.5.x.patch",
       "#2842858 - Basic Auth module conflicts with server-level \"Site Lock\" implementations": "https://www.drupal.org/files/issues/2021-01-19/basic_auth_1.patch"
     },
     "drupal/layout_builder_modal": {
