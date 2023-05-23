@@ -154,15 +154,13 @@ element:
   default_empty_option: true
   default_empty_option_required: ''
   default_empty_option_optional: ''
-  default_algolia_places_app_id: ''
-  default_algolia_places_api_key: ''
   excluded_elements:
     password: password
     password_confirm: password_confirm
 html_editor:
   disabled: false
-  element_format: ''
-  mail_format: ''
+  element_format: webform_default
+  mail_format: webform_default
   tidy: true
   make_unused_managed_files_temporary: true
 file:

@@ -6,4 +6,4 @@ _core:
   default_config_hash: crLwyc9uwZ8Bv8lpMLIOEQYHOxW_mS49jaDf_95-o4I
 formId: user_login_form
 captchaType: default
-label: null
+label: user_login_form
