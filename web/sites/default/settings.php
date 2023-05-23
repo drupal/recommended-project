@@ -778,3 +778,15 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 $settings['config_sync_directory'] = $app_root . '/../config/default';
+$databases['default']['default'] = array (
+  'database' => 'd10',
+  'username' => 'root',
+  'password' => 'root',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
+  'driver' => 'mysql',
+  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
+);
+$settings['hash_salt'] = '16FDIK46YjUM2u2rl3Qktgmldqs49GJfMC2NJlJo5FCAhYouJZqP49jDB74J_OUzuXqp3Gp3bQ';
