@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ab60250cb510ff1f4a46c4bd13c315a",
+    "content-hash": "8f2335590792af162becedb6482a4d16",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2488,26 +2488,26 @@
         },
         {
             "name": "drupal/edw_healthcheck",
-            "version": "1.10.0",
+            "version": "1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/edw_healthcheck.git",
-                "reference": "8.x-1.10"
+                "reference": "8.x-1.18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/edw_healthcheck-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "b6c23be8d094275d40ab9b00613361fe0d66fe87"
+                "url": "https://ftp.drupal.org/files/projects/edw_healthcheck-8.x-1.18.zip",
+                "reference": "8.x-1.18",
+                "shasum": "2aa679bb36d1740995d83bb3047a7ed17387e2c3"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1632380035",
+                    "version": "8.x-1.18",
+                    "datestamp": "1684850630",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -3850,47 +3850,13 @@
         },
         {
             "name": "drupal/simple_search_form",
-            "version": "1.4.0",
+            "version": "dev-custom",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/simple_search_form.git",
-                "reference": "8.x-1.4"
+                "url": "https://git.drupalcode.org/issue/simple_search_form-3289653.git",
+                "reference": "8.x-1.x"
             },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_search_form-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "bce0083ed54fae6c25fbbc370e5ac34a26c2140c"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1639145468",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Antonnavi",
-                    "homepage": "https://www.drupal.org/user/875410"
-                }
-            ],
-            "description": "Implements search form block for redirecting to a path with a parameter.",
-            "homepage": "https://www.drupal.org/project/simple_search_form",
-            "support": {
-                "source": "https://git.drupalcode.org/project/simple_search_form"
-            }
+            "type": "drupal-module"
         },
         {
             "name": "drupal/smart_trim",
@@ -10900,26 +10866,29 @@
         },
         {
             "name": "drupal/stage_file_proxy",
-            "version": "1.5.0",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/stage_file_proxy.git",
-                "reference": "8.x-1.5"
+                "reference": "2.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-8.x-1.5.zip",
-                "reference": "8.x-1.5",
-                "shasum": "a8d38b724a2d69e16a986e8cbbf0e93220c82de9"
+                "url": "https://ftp.drupal.org/files/projects/stage_file_proxy-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "187019fdbb7b805a66068c6ca93d211f439d288b"
             },
             "require": {
-                "drupal/core": "^9"
+                "drupal/core": "^9 || ^10"
+            },
+            "require-dev": {
+                "drush/drush": "^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.5",
-                    "datestamp": "1669762106",
+                    "version": "2.0.2",
+                    "datestamp": "1670369228",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10927,7 +10896,7 @@
                 },
                 "drush": {
                     "services": {
-                        "stage_file_proxy.drush.services.yml": "^9 || ^10"
+                        "stage_file_proxy.drush.services.yml": "^11"
                     }
                 }
             },
@@ -14279,6 +14248,7 @@
         "drupal/advagg": 15,
         "drupal/conditional_fields": 15,
         "drupal/layout_builder_st": 15,
+        "drupal/simple_search_form": 20,
         "drupal/webp": 10
     },
     "prefer-stable": true,

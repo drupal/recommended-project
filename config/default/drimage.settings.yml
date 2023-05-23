@@ -3,4 +3,6 @@ ratio_distortion: 60
 upscale: 320
 downscale: 3840
 lazy_offset: 100
+imageapi_optimize_webp: ''
+automated_crop: null
 multiplier: 1

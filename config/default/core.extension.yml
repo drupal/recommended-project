@@ -14,13 +14,10 @@ module:
   basic_auth: 0
   block: 0
   block_content: 0
-  bootstrap_layout_builder: 0
-  bootstrap_styles: 0
   breakpoint: 0
   captcha: 0
-  ckeditor: 0
+  ckeditor5: 0
   ckeditor_bs_grid: 0
-  color: 0
   conditional_fields: 0
   config_translation: 0
   contextual: 0
@@ -57,7 +54,6 @@ module:
   media_library: 0
   media_library_edit: 0
   media_library_form_element: 0
-  media_library_theme_reset: 0
   media_responsive_thumbnail: 0
   menu_link_attributes: 0
   menu_link_content: 0
@@ -99,7 +95,6 @@ module:
   views: 10
   minimal: 1000
 theme:
-  seven: 0
   edwt: 0
   claro: 0
   frontend: 0

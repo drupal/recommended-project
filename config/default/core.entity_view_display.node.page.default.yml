@@ -35,6 +35,7 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 0
             additional: {  }
+            third_party_settings: {  }
           c98dc11c-f884-4971-add2-a9a0fb0a2460:
             uuid: c98dc11c-f884-4971-add2-a9a0fb0a2460
             region: content
@@ -50,6 +51,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+            third_party_settings: {  }
           f750b72a-4d04-4114-96f4-16a310f01465:
             uuid: f750b72a-4d04-4114-96f4-16a310f01465
             region: content
@@ -65,6 +67,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
@@ -74,7 +77,7 @@ third_party_settings:
         - 'bootstrap_layout_builder:blb_col_2'
         - 'bootstrap_layout_builder:blb_col_3'
         - 'bootstrap_layout_builder:blb_col_4'
-      blacklisted_blocks:
+      denylisted_blocks:
         'Content fields':
           - 'field_block:node:page:uid'
           - 'field_block:node:page:created'
@@ -113,7 +116,7 @@ third_party_settings:
           - 'field_block:user:user:timezone'
           - 'field_block:user:user:uid'
           - 'field_block:user:user:status'
-      whitelisted_blocks:
+      allowlisted_blocks:
         Webform:
           - webform_block
         core:
