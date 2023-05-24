@@ -8,3 +8,11 @@ global-styling:
       css/dark-mode.css: {}
   js:
     js/script.js: {}
+
+# News teaser styling.
+news--teaser:
+  css:
+    component:
+      css/components/news/news-teaser.css: {}
+  js:
+    js/components/news/news-teaser.js: {}

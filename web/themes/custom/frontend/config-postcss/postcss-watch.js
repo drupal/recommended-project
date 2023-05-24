@@ -12,11 +12,12 @@ const chokidar = require('chokidar');
 const changeOrAdded = require('./changeOrAdded');
 const log = require('./log');
 
-// Match only on .pcss.css files.
+// Match only on .pcss.css and .js files.
 const fileMatch = [
   './dev/**/*.pcss.css',
   './templates/**/*.pcss.css',
-  './dev/**/*.js'
+  './dev/**/*.js',
+  './templates/**/*.js'
 ];
 // Ignore everything in node_modules
 const watcher = chokidar.watch(fileMatch, {
