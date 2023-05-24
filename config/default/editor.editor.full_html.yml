@@ -36,6 +36,7 @@ settings:
       - '|'
       - removeFormat
       - '|'
+      - Accordion
   plugins:
     ckeditor5_alignment:
       enabled_alignments:

@@ -17,6 +17,7 @@ module:
   breakpoint: 0
   captcha: 0
   ckeditor5: 0
+  ckeditor_accordion: 0
   ckeditor_bs_grid: 0
   conditional_fields: 0
   config_translation: 0
