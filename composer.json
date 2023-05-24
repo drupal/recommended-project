@@ -88,6 +88,7 @@
         "drupal/core-dev": "^10",
         "drupal/stage_file_proxy": "^2.0",
         "drupal/twig_vardumper": "^3.0",
+        "overtrue/phplint": "^9",
         "phpmd/phpmd": "^2.12"
     },
     "conflict": {
