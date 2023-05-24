@@ -11,14 +11,15 @@ const check = require('./check');
 // const log = require('./log');
 
 // Match only on .pcss.css files.
-const fileMatch = './**/*.pcss.css';
+const fileMatch = './{dev,templates}/**/*.pcss.css';
 // Match js files.
-const fileMatchJs = './dev/**/*.js';
-// Match js files.
-const fileMatchJsComponents = './templates/**/*.js';
+const fileMatchJs = './{dev,templates}/**/*.js';
 // Ignore everything in node_modules
-const globOptions = {
+const cssGlobOptions = {
   ignore: './node_modules/**'
+};
+const jsGlobOptions = {
+  ignore: './**/dist/*.js'
 };
 const processFiles = (error, filePaths) => {
   if (error) {
@@ -36,8 +37,7 @@ if (argv.file) {
   processFiles(null, [].concat(argv.file));
 }
 else {
-  glob(fileMatch, globOptions, processFiles);
-  glob(fileMatchJs, globOptions, processFiles);
-  glob(fileMatchJsComponents, globOptions, processFiles);
+  glob(fileMatch, cssGlobOptions, processFiles);
+  glob(fileMatchJs, jsGlobOptions, processFiles);
 }
 process.exitCode = 0;

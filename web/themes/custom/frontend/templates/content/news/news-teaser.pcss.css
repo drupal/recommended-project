@@ -1,3 +1,5 @@
 .news-teaser {
-  width: 33%;
+  .image {
+    background: url('../../../assets/cat.png');
+  }
 }

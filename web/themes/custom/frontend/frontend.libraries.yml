@@ -6,6 +6,7 @@ global-styling:
       css/vars.css: {}
       css/general.css: {}
       css/dark-mode.css: {}
+      css/content/news/news-teaser.css: {}
   js:
     js/script.js: {}
 
