@@ -13,7 +13,8 @@
  * @version $Revision: 1.0 $
  * @access public
  */
-class FrontendCssArray {
+// phpcs:ignoreFile
+class CssArray {
 
   /**
    * Start to process the css string.

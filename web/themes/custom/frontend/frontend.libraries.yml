@@ -13,6 +13,6 @@ global-styling:
 news--teaser:
   css:
     component:
-      css/components/news/news-teaser.css: {}
+      css/content/news/news-teaser.css: {}
   js:
-    js/components/news/news-teaser.js: {}
+    js/content/news/news-teaser.js: {}

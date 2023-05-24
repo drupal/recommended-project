@@ -17,18 +17,18 @@ Install development dependencies by running
 
 #### CSS compilation
 
-To compile once, use `rpm run build:css`
-To run the watcher, use `npm run watch:css`
+To compile once, use `rpm run theme:build`
+To run the watcher, use `npm run theme:watch`
 
-#### Adding general CSS that is applied to every page (e.g. header, footer, fonts)
+#### Adding general CSS/JS that is applied to every page (e.g. header, footer, fonts)
 
-- Type your SCSS in an existing component in dev/pcss
-- OR create a new component in dev/pcss and use it by adding it in frontend.libraries.yml under global-styling.
+- Type your CSS/JS code in an existing file in dev/pcss or dev/js
+- OR create a new file in dev/pcss or dev/js and use it by adding it in frontend.libraries.yml under global-styling.
 
 #### Adding CSS specific to sections of the site
 
-- Create a new library in frontend.libraries.yml OR dev/components/*/libraries.yml
-- Create your SCSS or JS files in the same folder
+- Create a .pcss.css or .js file in templates/xyz for Drupal elements or in templates/components/xyz for smaller components (e.g. buttons)
+- Create a new library in frontend.libraries.yml, the path to CSS/JS is css/xyz/file.css or css/components/xyz/file.css
 - Include this library wherever it is needed using Twig files: {{ attach_library('frontend/LIBRARY_NAME') }}
 
 #### Critical CSS
