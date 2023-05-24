@@ -777,9 +777,10 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
+
 $settings['config_sync_directory'] = $app_root . '/../config/default';
 $databases['default']['default'] = array (
-  'database' => 'd10',
+  'database' => 'rp',
   'username' => 'root',
   'password' => 'root',
   'prefix' => '',
@@ -789,4 +790,4 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
-$settings['hash_salt'] = '16FDIK46YjUM2u2rl3Qktgmldqs49GJfMC2NJlJo5FCAhYouJZqP49jDB74J_OUzuXqp3Gp3bQ';
+$settings['hash_salt'] = 'C6V01E6DlXX-1beegDgvZ4KEEDhIrr-Ox6E3h6s2xEbBcFefG1aTQLcoguKsOYJ4_1Q5SRag1Q';
