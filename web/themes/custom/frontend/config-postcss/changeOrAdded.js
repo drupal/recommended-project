@@ -73,9 +73,4 @@ module.exports = (filePath) => {
         });
     });
   }
-  else if (filePath.endsWith('.svg') || filePath.endsWith('.png') || filePath.endsWith('.jpg') || filePath.endsWith('.jpeg') || filePath.endsWith('.gif')) {
-    compress_images(filePath).then(() => {
-      log(`'${filePath}' is finished.`);
-    });
-  }
 };
