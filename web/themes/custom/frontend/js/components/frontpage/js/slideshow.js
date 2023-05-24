@@ -1,1 +1,0 @@
-!function($,Drupal){Drupal.behaviors.iccwc_slideshow={attach(context,settings){$(".slideshow-flipster").flipster({touch:!0})}}}(jQuery,Drupal);
