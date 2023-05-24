@@ -779,15 +779,4 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 }
 
 $settings['config_sync_directory'] = $app_root . '/../config/default';
-$databases['default']['default'] = array (
-  'database' => 'rp',
-  'username' => 'root',
-  'password' => 'root',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'driver' => 'mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
-);
-$settings['hash_salt'] = 'C6V01E6DlXX-1beegDgvZ4KEEDhIrr-Ox6E3h6s2xEbBcFefG1aTQLcoguKsOYJ4_1Q5SRag1Q';
+
