@@ -1,0 +1,61 @@
+label: 重定向
+display:
+  default:
+    display_title: 主
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 过滤
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      pager:
+        options:
+          tags:
+            previous: '‹ 上一页'
+            next: '下一页 ›'
+            first: '« 第一页'
+            last: '末页 »'
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      fields:
+        redirect_bulk_form:
+          action_title: 对所选项目
+        redirect_source__path:
+          label: 源自
+          separator: ', '
+        created:
+          label: 已建立
+      filters:
+        redirect_source__path:
+          expose:
+            label: 源自
+        redirect_redirect__uri:
+          expose:
+            label: 到
+        status_code:
+          group_info:
+            group_items:
+              1:
+                title: 300多种选择
+              2:
+                title: 301永久移动
+              3:
+                title: 302临时重定向
+              4:
+                title: 303查看其它位置
+              5:
+                title: 304未修改
+              6:
+                title: 305使用代理
+              7:
+                title: 307临时重定向
+        language:
+          expose:
+            label: 原始语言
+      title: 重定向
+  page_1:
+    display_title: 页面

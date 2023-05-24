@@ -1,0 +1,77 @@
+label: 人员
+description: 查找并管理和站点进行交互的用户。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      title: 人员
+      fields:
+        user_bulk_form:
+          label: 批量更新
+        name:
+          label: 用户名
+        status:
+          label: 状态
+          settings:
+            format_custom_false: 阻止
+            format_custom_true: 有效
+        roles_target_id:
+          label: 角色
+        created:
+          label: 注册了
+        access:
+          label: 上次访问
+          settings:
+            past_format: '@interval 前'
+        operations:
+          label: 操作
+        mail:
+          separator: ', '
+      pager:
+        options:
+          tags:
+            next: '下一个 ›'
+            first: '« 首页'
+            last: '末页 »'
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      exposed_form:
+        options:
+          submit_button: 过滤
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: 没有用户可用。
+      filters:
+        combine:
+          expose:
+            label: 名称或电子邮件含有
+        status:
+          group_info:
+            label: 状态
+            group_items:
+              1:
+                title: 有效
+              2:
+                title: 阻止
+        roles_target_id:
+          expose:
+            label: 角色
+        permission:
+          expose:
+            label: 权限
+      use_more_text: 更多
+  page_1:
+    display_title: 页面
+    display_options:
+      menu:
+        title: 列表
+        description: 查找并管理和站点进行交互的用户。
+      tab_options:
+        title: 人员
+        description: 管理用户账号、角色和权限。

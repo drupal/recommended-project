@@ -1,0 +1,36 @@
+label: 术语表
+description: 所有内容，按字母排序。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      fields:
+        title:
+          label: 标题
+        name:
+          label: 作者
+        changed:
+          label: 最近更新
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      exposed_form:
+        options:
+          submit_button: 应用
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+  attachment_1:
+    display_title: 附件
+  page_1:
+    display_title: 页面
+    display_options:
+      menu:
+        title: 术语表

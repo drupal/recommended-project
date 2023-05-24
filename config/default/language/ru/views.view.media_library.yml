@@ -1,0 +1,120 @@
+label: Медиа-библиотека
+description: 'Найти и управлять медиа.'
+display:
+  default:
+    display_title: 'По умолчанию'
+    display_options:
+      title: Мультимедиа
+      fields:
+        media_bulk_form:
+          action_title: Действие
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      exposed_form:
+        options:
+          submit_button: 'Применить фильтры'
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      empty:
+        area_text_custom:
+          content: 'Мультимедийных файлов не найдено.'
+      sorts:
+        created:
+          expose:
+            label: 'Новые сначала'
+        name:
+          expose:
+            label: 'Имя (А-Я)'
+        name_1:
+          expose:
+            label: 'Имя (Я-А)'
+      filters:
+        status:
+          expose:
+            label: 'Статус публикации'
+          group_info:
+            label: Опубликовано
+            group_items:
+              1:
+                title: Опубликовано
+              2:
+                title: 'Снято с публикации'
+        name:
+          expose:
+            label: Название
+        bundle:
+          expose:
+            label: 'Тип медиа'
+          group_info:
+            label: 'Тип медиа'
+        langcode:
+          expose:
+            label: Язык
+  page:
+    display_title: Страница
+    display_options:
+      fields:
+        media_bulk_form:
+          action_title: Действие
+        name:
+          separator: ', '
+        edit_media:
+          alter:
+            text: 'Редактировать {{ name }}'
+            alt: 'Редактировать {{ name }}'
+          text: Редактировать
+        delete_media:
+          alter:
+            text: 'Удалить {{ name }}'
+            alt: 'Удалить {{ name }}'
+          text: Удалить
+  widget:
+    display_title: Виджет
+    display_options:
+      arguments:
+        bundle:
+          exception:
+            title: Все
+      filters:
+        name:
+          expose:
+            label: Название
+      header:
+        display_link_grid:
+          label: Сетка
+        display_link_table:
+          label: Таблица
+  widget_table:
+    display_title: 'Виджет (таблица)'
+    display_options:
+      fields:
+        thumbnail__target_id:
+          label: Миниатюра
+        name:
+          label: Название
+        uid:
+          label: Автор
+        changed:
+          label: Обновлено
+      arguments:
+        bundle:
+          exception:
+            title: Все
+      filters:
+        name:
+          expose:
+            label: Название
+      header:
+        display_link_grid:
+          label: Сетка
+        display_link_table:
+          label: Таблица

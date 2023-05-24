@@ -1,0 +1,41 @@
+display:
+  default:
+    display_title: Máster
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtro
+          reset_button_label: Restablecer
+          exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elementos por página'
+            items_per_page_options_all_label: '- Todo -'
+            offset_label: Desplazamiento
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        path:
+          label: Ruta
+        count:
+          label: Número
+        timestamp:
+          label: 'último acceso'
+        langcode:
+          label: Idioma
+        redirect_404_operations:
+          label: Operaciones
+      filters:
+        path:
+          expose:
+            label: Ruta
+        langcode:
+          expose:
+            label: Idioma
+      title: 'Arreglar páginas con error 404'
+  page_1:
+    display_title: Página

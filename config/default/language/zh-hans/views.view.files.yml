@@ -1,0 +1,85 @@
+label: 文件
+description: 查找与管理文件。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      title: 文件
+      fields:
+        filename:
+          label: 名称
+          separator: ', '
+        filemime:
+          label: MIME类型
+        filesize:
+          label: 大小
+        status:
+          label: 状态
+          settings:
+            format_custom_false: 临时
+            format_custom_true: 永久
+        created:
+          label: 上传日期
+        changed:
+          label: 更改的日期
+        count:
+          label: 用于
+      pager:
+        options:
+          tags:
+            next: '下一个 ›'
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      exposed_form:
+        options:
+          submit_button: 过滤
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: 无可用的文件。
+      filters:
+        filename:
+          expose:
+            label: 文件名
+        filemime:
+          expose:
+            label: MIME类型
+        status:
+          expose:
+            label: 状态
+  page_1:
+    display_title: 文件概览
+    display_options:
+      menu:
+        title: 文件
+  page_2:
+    display_title: 文件用法
+    display_options:
+      title: 文件用法
+      fields:
+        entity_label:
+          label: 实体
+        type:
+          label: 实体类型
+        module:
+          label: 注册模块
+        count:
+          label: 使用次数
+      pager:
+        options:
+          tags:
+            next: '下一个 ›'
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      arguments:
+        fid:
+          exception:
+            title: 全部
+          title: '文件使用信息 {{ arguments.fid }}'

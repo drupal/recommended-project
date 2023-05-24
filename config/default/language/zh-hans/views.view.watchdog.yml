@@ -1,0 +1,56 @@
+label: 监控
+description: 最新日志信息
+display:
+  default:
+    display_title: 默认
+    display_options:
+      title: 最新日志信息
+      fields:
+        nothing:
+          admin_label: 图标
+        wid:
+          label: WID
+        severity:
+          label: 严重性
+        type:
+          label: 类型
+        timestamp:
+          label: 日期
+        message:
+          label: 消息
+          alter:
+            alt: '{{ message }}'
+        name:
+          label: 用户
+          separator: ', '
+        link:
+          label: 操作
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      exposed_form:
+        options:
+          submit_button: 过滤
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area:
+          admin_label: 无可用日志消息。
+          content: 无可用日志消息。
+      filters:
+        type:
+          expose:
+            label: 类型
+        severity:
+          expose:
+            label: 严重性
+  page:
+    display_title: 页面

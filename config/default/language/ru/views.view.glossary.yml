@@ -1,0 +1,36 @@
+label: Глоссарий
+description: 'Все материалы, по алфавиту.'
+display:
+  default:
+    display_title: 'По умолчанию'
+    display_options:
+      fields:
+        title:
+          label: Заголовок
+        name:
+          label: Автор
+        changed:
+          label: 'Последнее обновление'
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      exposed_form:
+        options:
+          submit_button: Применить
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+  attachment_1:
+    display_title: Вложение
+  page_1:
+    display_title: Страница
+    display_options:
+      menu:
+        title: Глоссарий

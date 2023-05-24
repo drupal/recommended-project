@@ -1,0 +1,36 @@
+uuid: 99d61b21-37fe-43eb-9617-f89602b73595
+langcode: en
+status: true
+dependencies:
+  module:
+    - simple_search_form
+  theme:
+    - edwt
+id: simplesearchform
+theme: edwt
+region: header
+weight: 0
+provider: null
+plugin: simple_search_form_block
+settings:
+  id: simple_search_form_block
+  label: 'Simple search form'
+  label_display: '0'
+  provider: simple_search_form
+  action_path: /search
+  get_parameter: search_api_fulltext
+  input_type: search
+  search_api_autocomplete:
+    search_id: ''
+    display: ''
+    arguments: ''
+    filter: ''
+  input_label: Search
+  input_label_display: invisible
+  input_placeholder: 'enter search keywords'
+  input_css_classes: ''
+  submit_display: false
+  submit_label: Find
+  input_keep_value: false
+  preserve_url_query_parameters: {  }
+visibility: {  }

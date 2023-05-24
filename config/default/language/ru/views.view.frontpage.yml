@@ -1,0 +1,30 @@
+label: 'Главная страница'
+description: 'Все материалы, выведенные на главную страницу.'
+display:
+  default:
+    display_title: 'По умолчанию'
+    display_options:
+      pager:
+        options:
+          tags:
+            previous: '‹ Предыдущий'
+            first: '« Первая'
+            last: 'Последняя »'
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      exposed_form:
+        options:
+          submit_button: Применить
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      empty:
+        area_text_custom:
+          content: 'Материалов для отображения на главной странице еще не создано.<br>Следуйте <a target="_blank" href="https://www.drupal.org/ru/docs/user_guide/ru/index.html">Руководству Пользователя</a> для начала создания сайта.'
+  feed_1:
+    display_title: 'Поток данных'
+  page_1:
+    display_title: Страница

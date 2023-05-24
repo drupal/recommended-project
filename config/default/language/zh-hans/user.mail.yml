@@ -1,0 +1,25 @@
+cancel_confirm:
+  subject: '[site:name] 上 [user:display-name] 帐户取消请求。'
+password_reset:
+  subject: '[site:name] [user:display-name] 更换登录信息.'
+  body: "[user:display-name],\r\n\r\n重置在[site:name]上的本帐号密码的请求已提交。\r\n\r\n您现在可以通过点击或复制以下地址以登录：\r\n\r\n[user:one-time-login-url]\r\n\r\n这个链接仅能使用一次并会引导您前往重置密码的页面。这个链接将在24小时后过期且如果您不使用的话到期它将会无效。\r\n\r\n--  [site:name] 团队"
+register_admin_created:
+  subject: '一个站点管理员为您在 [site:name] 上创建了一个账户'
+  body: "[user:display-name]，\r\n\r\n[site:name] 的管理员为您创建了一个帐户。您可以点击下面的链接登录，或者把它复制到浏览器地址栏：\r\n\r\n[user:one-time-login-url]\r\n\r\n此链接只能用于登录一次，它会带您到一个页面让您来设置您的密码。\r\n\r\n设置了密码之后，您以后就可以在 [site:login-url] ，使用如下信息登录：\r\n\r\n用户名： [user:name]\r\n密码： 您设置的密码\r\n\r\n--  [site:name] 团队"
+register_no_approval_required:
+  subject: '账户信息 [user:display-name] 在 [site:name]'
+  body: "[user:display-name]，\r\n\r\n谢谢您在 [site:name] 注册。您现在可以点击下面的链接登录，或者把它复制到浏览器地址栏：\r\n\r\n[user:one-time-login-url]\r\n\r\n此链接只能用于登录一次，它会带您到一个页面让您来设置您的密码。\r\n\r\n设置了密码之后，您以后就可以在 [site:login-url] ，使用如下信息登录：\r\n\r\n用户名： [user:name]\r\n密码： 您设置的密码\r\n\r\n--  [site:name] 团队"
+register_pending_approval:
+  subject: '账户信息 [user:display-name] 在 [site:name] (待审批)'
+register_pending_approval_admin:
+  subject: '账户信息 [user:display-name] 在 [site:name] (待审批)'
+  body: "[user:display-name] 申请了一个帐户。\r\n\r\n[user:edit-url]"
+status_activated:
+  subject: '帐号信息 [user:display-name] 在 [site:name] (核对成功)'
+  body: "[user:display-name]，\r\n\r\n您在 [site:name] 的帐户已经激活。\r\n\r\n您可以点击下面的链接登录，或者把它复制到浏览器地址栏：\r\n\r\n[user:one-time-login-url]\r\n\r\n此链接只能用于登录一次，它会带您到一个页面让您来设置您的密码。\r\n\r\n设置了密码之后，您以后就可以在 [site:login-url] ，使用如下信息登录：\r\n\r\n用户名： [user:account-name]\r\n密码： 您设置的密码\r\n\r\n--  [site:name] 团队"
+status_blocked:
+  subject: '帐号信息 [user:display-name] 在 [site:name] (已冻结)'
+  body: "[user:display-name]，\r\n\r\n您在网站 [site:name] 的帐号已被冻结。\r\n\r\n--  [site:name] 团队"
+status_canceled:
+  subject: '帐号信息 [user:display-name] 在 [site:name] (已注销)'
+  body: "[user:display-name],\r\n\r\n你的帐号在网站 [site:name] 已被取消。\r\n\r\n--  [site:name] 团队"

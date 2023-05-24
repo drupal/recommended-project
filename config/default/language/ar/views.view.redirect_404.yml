@@ -1,0 +1,34 @@
+display:
+  default:
+    display_title: الرئيسي
+    display_options:
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      fields:
+        path:
+          label: المسار
+        count:
+          label: العدد
+        langcode:
+          label: اللغة
+        redirect_404_operations:
+          label: عمليات
+      filters:
+        path:
+          expose:
+            label: المسار
+        langcode:
+          expose:
+            label: اللغة
+  page_1:
+    display_title: الصفحة

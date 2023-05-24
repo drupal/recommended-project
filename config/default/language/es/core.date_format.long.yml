@@ -1,0 +1,2 @@
+label: 'Fecha larga por defecto'
+pattern: 'l, F j, Y - H:i'

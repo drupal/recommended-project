@@ -1,0 +1,31 @@
+label: القاموس
+display:
+  default:
+    display_title: الافتراضي
+    display_options:
+      fields:
+        title:
+          label: العنوان
+        name:
+          label: المؤلف
+        changed:
+          label: 'آخر تحديث'
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      exposed_form:
+        options:
+          submit_button: تطبيق
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+  attachment_1:
+    display_title: المرفق
+  page_1:
+    display_title: الصفحة
+    display_options:
+      menu:
+        title: القاموس

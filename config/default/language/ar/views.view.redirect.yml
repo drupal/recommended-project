@@ -1,0 +1,36 @@
+display:
+  default:
+    display_title: الرئيسي
+    display_options:
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      pager:
+        options:
+          tags:
+            previous: '‹ السابقة'
+            next: 'التالية ›'
+            first: '« الأولى'
+            last: 'الأخيرة »'
+          expose:
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      fields:
+        redirect_source__path:
+          label: من
+          separator: ', '
+        created:
+          label: الإنشاء
+      filters:
+        redirect_source__path:
+          expose:
+            label: من
+        redirect_redirect__uri:
+          expose:
+            label: إلى
+  page_1:
+    display_title: الصفحة

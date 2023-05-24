@@ -1,0 +1,23 @@
+label: 最新内容
+description: 最近的内容。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      title: 最新内容
+      fields:
+        changed:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: 应用
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: 没有可用的内容。
+      use_more_text: 更多
+  block_1:
+    display_title: 区块

@@ -1,0 +1,2 @@
+label: 默认长日期
+pattern: 'l, F j, Y - H:i'

@@ -1,0 +1,67 @@
+label: Переадресация
+display:
+  default:
+    display_title: Основной
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Фильтр
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      pager:
+        options:
+          tags:
+            previous: '‹ предыдущая'
+            next: 'следующая ›'
+            first: '« первая'
+            last: 'последняя »'
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      fields:
+        redirect_bulk_form:
+          action_title: 'С выделенным'
+        redirect_source__path:
+          label: От
+          separator: ', '
+        created:
+          label: Создано
+      filters:
+        redirect_source__path:
+          expose:
+            label: От
+        redirect_redirect__uri:
+          expose:
+            label: Кому
+        status_code:
+          expose:
+            label: 'Код состояния'
+          group_info:
+            label: 'Код состояния'
+            group_items:
+              1:
+                title: '300 Множество Выборов'
+              2:
+                title: '301 Перемещёно Окончательно'
+              3:
+                title: '302 Найдено'
+              4:
+                title: '303 Смотреть Другое'
+              5:
+                title: '304 Не Изменялось'
+              6:
+                title: '305 Использовать Прокси'
+              7:
+                title: '307 - Временно перемещено'
+        language:
+          expose:
+            label: 'Язык оригинала'
+      title: Переадресация
+      empty:
+        area_text_custom:
+          content: 'Перенаправлений пока нет.'
+  page_1:
+    display_title: Страница

@@ -1,0 +1,68 @@
+label: 内容
+description: 查找及管理内容。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      title: 内容
+      fields:
+        title:
+          label: 标题
+        type:
+          label: 内容类型
+          separator: ', '
+        name:
+          label: 作者
+        status:
+          label: 状态
+          settings:
+            format_custom_false: 未发布
+            format_custom_true: 已发布
+        changed:
+          label: 已更新
+        operations:
+          label: 操作
+      pager:
+        options:
+          tags:
+            next: '下一个 ›'
+            first: '« 首页'
+            last: '末页 »'
+      exposed_form:
+        options:
+          submit_button: 过滤
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: 没有可用的内容。
+      filters:
+        title:
+          expose:
+            label: 标题
+        type:
+          expose:
+            label: 内容类型
+        status:
+          expose:
+            label: 状态
+          group_info:
+            label: 发布状态
+            group_items:
+              1:
+                title: 已发布
+              2:
+                title: 未发布
+        langcode:
+          expose:
+            label: 语言
+  page_1:
+    display_title: 页面
+    display_options:
+      menu:
+        title: 内容
+      tab_options:
+        title: 内容
+        description: 查找与管理内容

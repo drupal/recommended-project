@@ -1,0 +1,68 @@
+label: الأشخاص
+description: 'بحث وإدارة الأشخاص المتفاعلين مع موقعك.'
+display:
+  default:
+    display_title: الافتراضي
+    display_options:
+      title: الأشخاص
+      fields:
+        name:
+          label: 'اسم المستخدم'
+        status:
+          label: الحالة
+          settings:
+            format_custom_false: ممنوع
+            format_custom_true: نشط
+        roles_target_id:
+          label: الأدوار
+        created:
+          label: 'مسجل بالموقع منذ'
+        access:
+          label: 'آخر وصول'
+        operations:
+          label: عمليات
+        mail:
+          separator: ', '
+      pager:
+        options:
+          tags:
+            next: 'التالي ›'
+            previous: '‹ السابق'
+          expose:
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      empty:
+        area_text_custom:
+          content: 'لا يوجد أشخاص.'
+      filters:
+        status:
+          group_info:
+            label: الحالة
+            group_items:
+              1:
+                title: نشط
+              2:
+                title: ممنوع
+        roles_target_id:
+          expose:
+            label: الدور
+        permission:
+          expose:
+            label: الصلاحية
+      use_more_text: المزيد
+  page_1:
+    display_title: الصفحة
+    display_options:
+      menu:
+        title: لائحة
+        description: 'بحث وإدارة الأشخاص المتفاعلين مع موقعك.'
+      tab_options:
+        title: الأشخاص
+        description: 'إدارة حسابات المستخدمين والأدوار والصلاحيات.'

@@ -1,0 +1,119 @@
+label: 媒体库
+description: 查找和管理媒体。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      title: 媒体
+      fields:
+        media_bulk_form:
+          action_title: 动作
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      exposed_form:
+        options:
+          submit_button: 应用过滤器
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: 没有可用媒体
+      sorts:
+        created:
+          expose:
+            label: 由新到旧
+        name:
+          expose:
+            label: '名称 (A-Z)'
+        name_1:
+          expose:
+            label: '名称 (Z-A)'
+      filters:
+        status:
+          expose:
+            label: 发布状态
+          group_info:
+            label: 已发布
+            group_items:
+              1:
+                title: 已发布
+              2:
+                title: 未发布
+        name:
+          expose:
+            label: 名称
+        bundle:
+          expose:
+            label: 媒体类型
+          group_info:
+            label: 媒体类型
+        langcode:
+          expose:
+            label: 语言
+  page:
+    display_title: 页面
+    display_options:
+      fields:
+        media_bulk_form:
+          action_title: 动作
+        name:
+          separator: ', '
+        edit_media:
+          alter:
+            text: '编辑 {{ name }}'
+            alt: '编辑 {{ name }}'
+          text: 编辑
+        delete_media:
+          alter:
+            text: '删除 {{ name }}'
+            alt: '删除 {{ name }}'
+          text: 删除
+  widget:
+    display_title: 控件
+    display_options:
+      arguments:
+        bundle:
+          exception:
+            title: 全部
+      filters:
+        name:
+          expose:
+            label: 名称
+      header:
+        display_link_grid:
+          label: 格子
+        display_link_table:
+          label: 表格
+  widget_table:
+    display_options:
+      fields:
+        thumbnail__target_id:
+          label: 缩略图
+        name:
+          label: 名称
+        uid:
+          label: 作者
+        changed:
+          label: 已更新
+      arguments:
+        bundle:
+          exception:
+            title: 全部
+      filters:
+        name:
+          expose:
+            label: 名称
+      header:
+        display_link_grid:
+          label: 格子
+        display_link_table:
+          label: 表格

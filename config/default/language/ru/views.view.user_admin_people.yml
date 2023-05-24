@@ -1,0 +1,81 @@
+label: Пользователи
+description: 'Поиск и управление людьми, взаимодействующих с вашим сайтом.'
+display:
+  default:
+    display_title: 'По умолчанию'
+    display_options:
+      title: Пользователи
+      fields:
+        user_bulk_form:
+          label: 'Массовое обновление'
+        name:
+          label: 'Имя пользователя'
+        status:
+          label: Статус
+          settings:
+            format_custom_false: Заблокировано
+            format_custom_true: Активно
+        roles_target_id:
+          label: Роли
+        created:
+          label: 'Зарегистрирован на сайте'
+          settings:
+            future_format: '@interval'
+            past_format: '@interval'
+        access:
+          label: 'Последнее посещение'
+          settings:
+            future_format: '@interval с этих пор'
+            past_format: '@interval назад'
+        operations:
+          label: Операции
+        mail:
+          separator: ', '
+      pager:
+        options:
+          tags:
+            previous: '‹ Предыдущий'
+            first: '« Первая'
+            last: 'Последняя »'
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      exposed_form:
+        options:
+          submit_button: Фильтр
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      empty:
+        area_text_custom:
+          content: 'Нет доступных людей.'
+      filters:
+        combine:
+          expose:
+            label: 'Имя или email содержит'
+        status:
+          group_info:
+            label: Статус
+            group_items:
+              1:
+                title: Активно
+              2:
+                title: Заблокировано
+        roles_target_id:
+          expose:
+            label: Роль
+        permission:
+          expose:
+            label: 'Право доступа'
+      use_more_text: ещё
+  page_1:
+    display_title: Страница
+    display_options:
+      menu:
+        title: Список
+        description: 'Поиск и управление людьми, взаимодействующих с вашим сайтом.'
+      tab_options:
+        title: Пользователи
+        description: 'Управление учётными записями, ролями и правами пользователей.'

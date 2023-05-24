@@ -1,0 +1,47 @@
+description: 'آخر رسائل السجل'
+display:
+  default:
+    display_title: الافتراضي
+    display_options:
+      title: 'آخر رسائل السجل'
+      fields:
+        nothing:
+          admin_label: أيقونة
+        severity:
+          label: الحدة
+        type:
+          label: النوع
+        timestamp:
+          label: التاريخ
+        message:
+          label: الرسالة
+        name:
+          label: المستخدم
+          separator: ', '
+        link:
+          label: عمليات
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      empty:
+        area:
+          admin_label: 'لا توجد رسائل سجل.'
+          content: 'لا توجد رسائل سجل.'
+      filters:
+        type:
+          expose:
+            label: النوع
+        severity:
+          expose:
+            label: الحدة
+  page:
+    display_title: الصفحة

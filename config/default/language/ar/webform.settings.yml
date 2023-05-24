@@ -1,0 +1,13 @@
+settings:
+  default_submit_button_label: إضافة
+  default_reset_button_label: 'إعادة الضبط'
+  default_delete_button_label: حذف
+  default_preview_next_button_label: معاينة
+  default_preview_label: معاينة
+  dialog_options:
+    normal:
+      title: طبيعي
+    wide:
+      title: واسع
+element:
+  default_more_title: المزيد

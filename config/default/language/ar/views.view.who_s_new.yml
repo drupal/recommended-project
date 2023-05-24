@@ -1,0 +1,18 @@
+label: 'المستخدمون الجدد'
+display:
+  default:
+    display_title: الافتراضي
+    display_options:
+      title: 'المستخدمون الجدد'
+      exposed_form:
+        options:
+          submit_button: تطبيق
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+  block_1:
+    display_title: 'المستخدمون الجدد'
+    display_options:
+      block_description: 'المستخدمون الجدد'
+      block_category: المستخدم

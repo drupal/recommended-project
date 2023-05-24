@@ -1,0 +1,15 @@
+settings:
+  default_submit_button_label: 提交
+  default_reset_button_label: 重置
+  default_delete_button_label: 删除
+  default_preview_next_button_label: 预览
+  default_preview_label: 预览
+  dialog_options:
+    narrow:
+      title: 窄
+    normal:
+      title: 标准的
+    wide:
+      title: 宽
+element:
+  default_more_title: 更多

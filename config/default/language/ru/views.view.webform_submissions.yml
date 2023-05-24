@@ -1,0 +1,142 @@
+display:
+  default:
+    display_title: Основной
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Применить
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      pager:
+        options:
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« Первая'
+            last: 'Последняя »'
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
+      fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        created:
+          label: Создано
+          separator: ', '
+        remote_addr:
+          label: IP-адрес
+          separator: ', '
+        view_webform_submission:
+          label: Операции
+          text: представление
+      header:
+        result:
+          content: 'Отображается с @start по @end из @total'
+      arguments:
+        in_draft:
+          exception:
+            title: Все
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Действие
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: Прикреплено
+          separator: ', '
+        locked:
+          label: Заблокировано
+          separator: ', '
+        created:
+          label: Создано
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: IP-адрес
+          separator: ', '
+        operations:
+          label: Операции
+      filters:
+        sticky:
+          expose:
+            label: Прикреплено
+        locked:
+          expose:
+            label: Заблокировано
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Действие
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: Прикреплено
+          separator: ', '
+        locked:
+          label: Заблокировано
+          separator: ', '
+        created:
+          label: Создано
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: IP-адрес
+          separator: ', '
+        view_webform_submission:
+          label: Операции
+          text: представление
+        edit_webform_submission:
+          label: Операции
+          text: изменить
+      filters:
+        sticky:
+          expose:
+            label: Прикреплено
+        locked:
+          expose:
+            label: Заблокировано
+  embed_review:
+    display_options:
+      fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: Прикреплено
+          separator: ', '
+        locked:
+          label: Заблокировано
+          separator: ', '
+        created:
+          label: Создано
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: IP-адрес
+          separator: ', '
+        view_webform_submission:
+          label: Операции
+          text: представление
+      filters:
+        sticky:
+          expose:
+            label: Прикреплено
+        locked:
+          expose:
+            label: Заблокировано

@@ -1,0 +1,41 @@
+display:
+  default:
+    display_title: 主
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 过滤
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      pager:
+        options:
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        path:
+          label: 路径
+        count:
+          label: 计数
+        timestamp:
+          label: 上次访问
+        langcode:
+          label: 语言
+        redirect_404_operations:
+          label: 操作
+      filters:
+        path:
+          expose:
+            label: 路径
+        langcode:
+          expose:
+            label: 语言
+      title: 修正404页
+  page_1:
+    display_title: 页面

@@ -1,0 +1,142 @@
+display:
+  default:
+    display_title: 主
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 应用
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      pager:
+        options:
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« 首页'
+            last: '末页 »'
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        created:
+          label: 已建立
+          separator: ', '
+        remote_addr:
+          label: IP地址
+          separator: ', '
+        view_webform_submission:
+          label: 操作
+          text: 查看
+      header:
+        result:
+          content: '正在显示第 @start - @end 项（共 @total 项）'
+      arguments:
+        in_draft:
+          exception:
+            title: 全部
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: 动作
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: 置顶
+          separator: ', '
+        locked:
+          label: 锁定
+          separator: ', '
+        created:
+          label: 已建立
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: IP地址
+          separator: ', '
+        operations:
+          label: 操作
+      filters:
+        sticky:
+          expose:
+            label: 置顶
+        locked:
+          expose:
+            label: 锁定
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: 动作
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: 置顶
+          separator: ', '
+        locked:
+          label: 锁定
+          separator: ', '
+        created:
+          label: 已建立
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: IP地址
+          separator: ', '
+        view_webform_submission:
+          label: 操作
+          text: 查看
+        edit_webform_submission:
+          label: 操作
+          text: 编辑
+      filters:
+        sticky:
+          expose:
+            label: 置顶
+        locked:
+          expose:
+            label: 锁定
+  embed_review:
+    display_options:
+      fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: 置顶
+          separator: ', '
+        locked:
+          label: 锁定
+          separator: ', '
+        created:
+          label: 已建立
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: IP地址
+          separator: ', '
+        view_webform_submission:
+          label: 操作
+          text: 查看
+      filters:
+        sticky:
+          expose:
+            label: 置顶
+        locked:
+          expose:
+            label: 锁定

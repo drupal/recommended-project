@@ -1,0 +1,15 @@
+settings:
+  default_submit_button_label: Отправить
+  default_reset_button_label: Сбросить
+  default_delete_button_label: Удалить
+  default_preview_next_button_label: Предпросмотр
+  default_preview_label: Предпросмотр
+  dialog_options:
+    narrow:
+      title: Узкий
+    normal:
+      title: Нормальный
+    wide:
+      title: Широкий
+element:
+  default_more_title: Ещё

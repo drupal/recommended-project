@@ -1,0 +1,20 @@
+label: 'Nouveaux membres'
+description: 'Affiche la liste des utilisateurs les plus récents sur le site.'
+display:
+  default:
+    display_title: 'Par défaut'
+    display_options:
+      title: 'Nouveaux membres'
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+  block_1:
+    display_title: 'Nouveaux membres'
+    display_options:
+      display_description: 'Une liste des nouveaux utilisateurs'
+      block_description: 'Nouveaux membres'
+      block_category: Utilisateur

@@ -1,0 +1,82 @@
+label: Personnes
+description: 'Trouver et gérer les personnes interagissant avec votre site.'
+display:
+  default:
+    display_title: 'Par défaut'
+    display_options:
+      title: Personnes
+      fields:
+        user_bulk_form:
+          label: 'Mise à jour en masse'
+        name:
+          label: "Nom d'utilisateur"
+        status:
+          label: État
+          settings:
+            format_custom_false: Bloqué
+            format_custom_true: Actif
+        roles_target_id:
+          label: Rôles
+        created:
+          label: 'Membre depuis'
+          settings:
+            future_format: '@interval'
+            past_format: '@interval'
+        access:
+          label: 'Dernier accès'
+          settings:
+            future_format: 'Dans @interval'
+            past_format: 'Il y a @interval'
+        operations:
+          label: Actions
+        mail:
+          separator: ', '
+      pager:
+        options:
+          tags:
+            next: 'Suivant ›'
+            previous: '‹ Précédent'
+            first: '« Premier'
+            last: 'Dernier »'
+          expose:
+            items_per_page_label: 'Éléments par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
+      exposed_form:
+        options:
+          submit_button: Filtrer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      empty:
+        area_text_custom:
+          content: "Personne n'est disponible."
+      filters:
+        combine:
+          expose:
+            label: 'Nom ou courriel contenant'
+        status:
+          group_info:
+            label: État
+            group_items:
+              1:
+                title: Actif
+              2:
+                title: Bloqué
+        roles_target_id:
+          expose:
+            label: Rôle
+        permission:
+          expose:
+            label: Droit
+      use_more_text: plus
+  page_1:
+    display_title: Page
+    display_options:
+      menu:
+        title: Lister
+        description: 'Trouver et gérer les personnes interagissant avec votre site.'
+      tab_options:
+        title: Personnes
+        description: 'Gérer les comptes utilisateurs, les rôles et les droits.'

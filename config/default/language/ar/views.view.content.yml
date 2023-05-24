@@ -1,0 +1,65 @@
+label: المحتوى
+description: 'إيجاد وإدارة المحتوى'
+display:
+  default:
+    display_title: الافتراضي
+    display_options:
+      title: المحتوى
+      fields:
+        title:
+          label: العنوان
+        type:
+          label: 'نوع المحتوى'
+          separator: ', '
+        name:
+          label: المؤلف
+        status:
+          label: الحالة
+          settings:
+            format_custom_false: 'غير منشور'
+            format_custom_true: منشور
+        changed:
+          label: التحديث
+        operations:
+          label: عمليات
+      pager:
+        options:
+          tags:
+            next: 'التالي ›'
+            previous: '‹ السابق'
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      empty:
+        area_text_custom:
+          content: 'لا يوجد محتوى.'
+      filters:
+        title:
+          expose:
+            label: العنوان
+        type:
+          expose:
+            label: 'نوع المحتوى'
+        status:
+          expose:
+            label: الحالة
+          group_info:
+            group_items:
+              1:
+                title: منشور
+              2:
+                title: 'غير منشور'
+        langcode:
+          expose:
+            label: اللغة
+  page_1:
+    display_title: الصفحة
+    display_options:
+      menu:
+        title: المحتوى
+      tab_options:
+        title: المحتوى

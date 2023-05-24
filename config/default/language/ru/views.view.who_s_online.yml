@@ -1,0 +1,30 @@
+label: 'Блок «Кто на сайте?»'
+description: 'Показывает имена пользователей, которые были активными в последнее время, и общее число активных пользователей.'
+display:
+  default:
+    display_title: 'По умолчанию'
+    display_options:
+      title: 'Сейчас на сайте'
+      exposed_form:
+        options:
+          submit_button: Применить
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      empty:
+        area_text_custom:
+          content: 'Сейчас 0 пользователей онлайн.'
+      filters:
+        access:
+          expose:
+            label: 'Последнее посещение'
+            description: 'Пользователь считается находящимся на сайте в течение этого периода, начиная со времени последнего просмотра им страницы.'
+      header:
+        result:
+          content: 'В данный момент пользователей онлайн: @total.'
+  who_s_online_block:
+    display_title: 'Сейчас на сайте'
+    display_options:
+      display_description: 'Список пользователей, авторизированных в данный момент.'
+      block_description: 'Сейчас на сайте'

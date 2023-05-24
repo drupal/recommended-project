@@ -1,0 +1,67 @@
+label: ميديا
+display:
+  default:
+    display_title: الافتراضي
+    display_options:
+      title: ميديا
+      fields:
+        media_bulk_form:
+          action_title: إجراء
+        thumbnail__target_id:
+          label: 'النسخة المصغرة'
+          separator: ', '
+        name:
+          separator: ', '
+        bundle:
+          label: النوع
+          separator: ', '
+        uid:
+          label: المؤلف
+          separator: ', '
+        status:
+          label: الحالة
+          settings:
+            format_custom_false: 'غير منشور'
+            format_custom_true: منشور
+          separator: ', '
+        changed:
+          label: التحديث
+          separator: ', '
+        operations:
+          label: عمليات
+      pager:
+        options:
+          tags:
+            next: 'التالي ›'
+            previous: '‹ السابق'
+          expose:
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      filters:
+        bundle:
+          expose:
+            label: النوع
+        status:
+          expose:
+            label: صحيح
+          group_info:
+            group_items:
+              1:
+                title: منشور
+              2:
+                title: 'غير منشور'
+        langcode:
+          expose:
+            label: اللغة
+  media_page_list:
+    display_title: ميديا
+    display_options:
+      menu:
+        title: ميديا

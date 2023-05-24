@@ -1,0 +1,20 @@
+label: 'Новые пользователи'
+description: 'Показывает список новых учётных записей пользователей на сайте.'
+display:
+  default:
+    display_title: 'По умолчанию'
+    display_options:
+      title: 'Новые пользователи'
+      exposed_form:
+        options:
+          submit_button: Применить
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+  block_1:
+    display_title: 'Новые пользователи'
+    display_options:
+      display_description: 'Список новых пользователей'
+      block_description: 'Новые пользователи'
+      block_category: Пользователь

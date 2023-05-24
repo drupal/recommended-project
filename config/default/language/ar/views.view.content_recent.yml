@@ -1,0 +1,22 @@
+label: 'أحدث المحتويات'
+display:
+  default:
+    display_title: الافتراضي
+    display_options:
+      title: 'أحدث المحتويات'
+      fields:
+        changed:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: تطبيق
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      empty:
+        area_text_custom:
+          content: 'لا يوجد محتوى.'
+      use_more_text: المزيد
+  block_1:
+    display_title: الصندوق

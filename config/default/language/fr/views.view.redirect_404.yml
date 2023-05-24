@@ -1,0 +1,52 @@
+label: 'Redirect 404'
+display:
+  default:
+    display_title: Maître
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filtrer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Éléments par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
+          tags:
+            previous: ‹‹
+            next: ››
+      fields:
+        path:
+          label: Chemin
+        count:
+          label: Décompte
+        daily_count:
+          label: 'Décompte quotidien'
+        timestamp:
+          label: 'Dernier accès'
+        langcode:
+          label: Langue
+        redirect_404_operations:
+          label: Actions
+      filters:
+        path:
+          expose:
+            label: Chemin
+        langcode:
+          expose:
+            label: Langue
+        resolved:
+          expose:
+            label: Résolu
+      title: 'Réparer les pages 404'
+      empty:
+        area_text_custom:
+          content: "Il n'y a aucune erreur 404 à corriger."
+  page_1:
+    display_title: Page
+    display_options:
+      display_description: "Liste les chemins d'erreur 404 sans aucune redirection assignée pour le moment."

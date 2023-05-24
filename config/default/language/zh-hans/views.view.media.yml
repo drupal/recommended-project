@@ -1,0 +1,78 @@
+label: 媒体
+description: 查找和管理媒体。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      title: 媒体
+      fields:
+        media_bulk_form:
+          action_title: 动作
+        thumbnail__target_id:
+          label: 缩略图
+          separator: ', '
+        name:
+          label: 媒体名称
+          separator: ', '
+        bundle:
+          label: 类型
+          separator: ', '
+        uid:
+          label: 作者
+          separator: ', '
+        status:
+          label: 状态
+          settings:
+            format_custom_false: 未发布
+            format_custom_true: 已发布
+          separator: ', '
+        changed:
+          label: 已更新
+          separator: ', '
+        operations:
+          label: 操作
+      pager:
+        options:
+          tags:
+            next: '下一个 ›'
+            first: '« 首页'
+            last: '末页 »'
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      exposed_form:
+        options:
+          submit_button: 过滤
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: 没有可用媒体
+      filters:
+        name:
+          expose:
+            label: 媒体名称
+        bundle:
+          expose:
+            label: 类型
+        status:
+          expose:
+            label: 真
+          group_info:
+            label: 发布状态
+            group_items:
+              1:
+                title: 已发布
+              2:
+                title: 未发布
+        langcode:
+          expose:
+            label: 语言
+  media_page_list:
+    display_title: 媒体
+    display_options:
+      menu:
+        title: 媒体

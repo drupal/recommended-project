@@ -1,0 +1,30 @@
+label: 首页
+description: 推荐到首页的全部内容。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      pager:
+        options:
+          tags:
+            next: '下一个 ›'
+            first: '« 首页'
+            last: '末页 »'
+          expose:
+            items_per_page_label: 每页条目数
+            items_per_page_options_all_label: '- 全部 -'
+            offset_label: 偏移量
+      exposed_form:
+        options:
+          submit_button: 应用
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: "尚未创建首页内容。\r\n请按照<a href=\"https://www.drupal.org/docs/user_guide/en/index.html\">用户指南</a>开始创建网站。"
+  feed_1:
+    display_title: Feed
+  page_1:
+    display_title: 页面

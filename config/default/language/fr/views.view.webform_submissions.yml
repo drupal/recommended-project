@@ -1,0 +1,142 @@
+display:
+  default:
+    display_title: Maître
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          tags:
+            previous: ‹‹
+            next: ››
+            first: '« Premier'
+            last: 'Dernier »'
+          expose:
+            items_per_page_label: 'Éléments par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
+      fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        created:
+          label: Créé
+          separator: ', '
+        remote_addr:
+          label: 'Adresse IP'
+          separator: ', '
+        view_webform_submission:
+          label: Actions
+          text: voir
+      header:
+        result:
+          content: 'Affichage de @start à @end sur @total'
+      arguments:
+        in_draft:
+          exception:
+            title: Tout
+  embed_administer:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Action
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: 'Épinglé (en haut des listes)'
+          separator: ', '
+        locked:
+          label: Verrouillé
+          separator: ', '
+        created:
+          label: Créé
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: 'Adresse IP'
+          separator: ', '
+        operations:
+          label: Actions
+      filters:
+        sticky:
+          expose:
+            label: 'Épinglé (en haut des listes)'
+        locked:
+          expose:
+            label: Verrouillé
+  embed_manage:
+    display_options:
+      fields:
+        webform_submission_bulk_form:
+          action_title: Action
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: 'Épinglé (en haut des listes)'
+          separator: ', '
+        locked:
+          label: Verrouillé
+          separator: ', '
+        created:
+          label: Créé
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: 'Adresse IP'
+          separator: ', '
+        view_webform_submission:
+          label: Actions
+          text: voir
+        edit_webform_submission:
+          label: Actions
+          text: modifier
+      filters:
+        sticky:
+          expose:
+            label: 'Épinglé (en haut des listes)'
+        locked:
+          expose:
+            label: Verrouillé
+  embed_review:
+    display_options:
+      fields:
+        sid:
+          separator: ', '
+        in_draft:
+          separator: ', '
+        sticky:
+          label: 'Épinglé (en haut des listes)'
+          separator: ', '
+        locked:
+          label: Verrouillé
+          separator: ', '
+        created:
+          label: Créé
+          separator: ', '
+        completed:
+          separator: ', '
+        remote_addr:
+          label: 'Adresse IP'
+          separator: ', '
+        view_webform_submission:
+          label: Actions
+          text: voir
+      filters:
+        sticky:
+          expose:
+            label: 'Épinglé (en haut des listes)'
+        locked:
+          expose:
+            label: Verrouillé

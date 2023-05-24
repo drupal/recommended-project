@@ -1,0 +1,30 @@
+label: “在线用户”区块
+description: 显示最近活跃用户和活跃用户总数。
+display:
+  default:
+    display_title: 默认
+    display_options:
+      title: 在线用户
+      exposed_form:
+        options:
+          submit_button: 应用
+          reset_button_label: 重置
+          exposed_sorts_label: 排序依据
+          sort_asc_label: 升序
+          sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: 目前没有用户在线。
+      filters:
+        access:
+          expose:
+            label: 上次访问
+            description: 浏览页面后在站点中保持特定时间的用户被认为在线
+      header:
+        result:
+          content: '目前有 @total 位用户在线。'
+  who_s_online_block:
+    display_title: 在线用户
+    display_options:
+      display_description: 当前已登录用户的列表。
+      block_description: 在线用户

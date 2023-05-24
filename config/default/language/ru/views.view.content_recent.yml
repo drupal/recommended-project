@@ -1,0 +1,23 @@
+label: 'Последние материалы'
+description: 'Последние материалы.'
+display:
+  default:
+    display_title: 'По умолчанию'
+    display_options:
+      title: 'Последние материалы'
+      fields:
+        changed:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Применить
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: 'По убыванию'
+      empty:
+        area_text_custom:
+          content: 'Нет доступных материалов.'
+      use_more_text: Ещё
+  block_1:
+    display_title: Блок
