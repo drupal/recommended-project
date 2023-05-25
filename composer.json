@@ -13,7 +13,8 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8",
             "exclude": [
-                "drupal/simple_search_form"
+                "drupal/simple_search_form",
+                "drupal/lang_dropdown"
             ]
         },
         {
@@ -26,6 +27,19 @@
                     "type": "git",
                     "url": "https://git.drupalcode.org/issue/simple_search_form-3289653.git",
                     "reference": "8.x-1.x"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupal/lang_dropdown",
+                "version": "dev-custom",
+                "type": "drupal-module",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/issue/lang_dropdown-3288198.git",
+                    "reference": "3288198-automated-drupal-10"
                 }
             }
         }
@@ -51,11 +65,12 @@
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.0",
         "drupal/edw_healthcheck": "^1.18",
-        "drupal/edwt": "^2.2.3",
+        "drupal/edwt": "^3.0",
         "drupal/environment_indicator": "^4.0",
         "drupal/facets": "^2.0",
         "drupal/field_group": "^3.4",
         "drupal/honeypot": "^2.0",
+        "drupal/lang_dropdown": "dev-custom",
         "drupal/layout_builder_browser": "^1.4",
         "drupal/layout_builder_modal": "^1.1",
         "drupal/layout_builder_restrictions": "^2.12",

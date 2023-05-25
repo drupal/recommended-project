@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7971aacc38ec1534434f96bde022325",
+    "content-hash": "34bd0787112ab749e273a45522ba6e50",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2615,17 +2615,17 @@
         },
         {
             "name": "drupal/edwt",
-            "version": "2.2.3",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/edwt.git",
-                "reference": "2.2.3"
+                "reference": "3.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/edwt-2.2.3.zip",
-                "reference": "2.2.3",
-                "shasum": "97f511dc8d377a9a24706dbebac3553f062e123d"
+                "url": "https://ftp.drupal.org/files/projects/edwt-3.0.0.zip",
+                "reference": "3.0.0",
+                "shasum": "83052324240b71faa1760fb3faf85bbc82d4d174"
             },
             "require": {
                 "drupal/core": "^9 || ^10"
@@ -2633,8 +2633,8 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "2.2.3",
-                    "datestamp": "1684931878",
+                    "version": "3.0.0",
+                    "datestamp": "1685003737",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2920,6 +2920,16 @@
                 "source": "https://git.drupalcode.org/project/honeypot",
                 "issues": "https://www.drupal.org/project/issues/honeypot"
             }
+        },
+        {
+            "name": "drupal/lang_dropdown",
+            "version": "dev-custom",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/issue/lang_dropdown-3288198.git",
+                "reference": "3288198-automated-drupal-10"
+            },
+            "type": "drupal-module"
         },
         {
             "name": "drupal/layout_builder_browser",
@@ -14511,6 +14521,7 @@
         "drupal/advagg": 15,
         "drupal/captcha": 10,
         "drupal/conditional_fields": 15,
+        "drupal/lang_dropdown": 20,
         "drupal/layout_builder_st": 15,
         "drupal/simple_search_form": 20,
         "drupal/spamspan": 10,
