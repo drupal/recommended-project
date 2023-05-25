@@ -47,6 +47,7 @@
         "drupal/core-project-message": "^10.0.9",
         "drupal/core-recommended": "^10.0.9",
         "drupal/drimage": "^2.0",
+        "drupal/dropdown_language": "^4.0",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.0",
         "drupal/edw_healthcheck": "^1.18",

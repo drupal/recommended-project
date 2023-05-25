@@ -20,7 +20,7 @@ sr__container_nav_main: none
 sr__container_position_nav_main: before
 sr__extra_class_nav_main: ''
 sr__clean_header: 0
-sr__class_header: ''
+sr__class_header: 'gap-md-3 align-items-md-center'
 sr__container_header: none
 sr__container_position_header: before
 sr__extra_class_header: ''
@@ -71,7 +71,7 @@ sr__container_position_disable_region: before
 sr__extra_class_disable_region: ''
 ns__navbar_position: '0'
 ns__navbar_expand: navbar-expand-sm
-ns__navbar_align: me-auto
+ns__navbar_align: ms-auto
 ns__navbar_color: navbar-light
 ns__navbar_bg: '0'
 ns__navbar_out: '0'
@@ -104,3 +104,13 @@ sl__h_color: '#000000'
 sl__decoration: ''
 sl__h_decoration: ''
 fs__form_input_group: ''
+sr__clean_footer_second: 0
+sr__class_footer_second: ''
+sr__container_footer_second: none
+sr__container_position_footer_second: before
+sr__extra_class_footer_second: ''
+style:
+  general:
+    table: ''
+  colors:
+    table: ''

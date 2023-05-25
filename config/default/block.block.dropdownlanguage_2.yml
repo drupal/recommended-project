@@ -1,0 +1,21 @@
+uuid: 0055715d-705f-406f-b747-b8329e4ed058
+langcode: en
+status: true
+dependencies:
+  module:
+    - dropdown_language
+  theme:
+    - frontend
+id: dropdownlanguage_2
+theme: frontend
+region: header
+weight: 0
+provider: null
+plugin: 'dropdown_language:language_interface'
+settings:
+  id: 'dropdown_language:language_interface'
+  label: 'Dropdown Language'
+  label_display: '0'
+  provider: dropdown_language
+  labels: null
+visibility: {  }

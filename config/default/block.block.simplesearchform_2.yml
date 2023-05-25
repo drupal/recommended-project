@@ -1,15 +1,15 @@
-uuid: 99d61b21-37fe-43eb-9617-f89602b73595
+uuid: e6d0b9ac-1b2a-45cb-8a96-912d8baf50ec
 langcode: en
 status: true
 dependencies:
   module:
     - simple_search_form
   theme:
-    - edwt
-id: simplesearchform
-theme: edwt
+    - frontend
+id: simplesearchform_2
+theme: frontend
 region: header
-weight: -3
+weight: 0
 provider: null
 plugin: simple_search_form_block
 settings:

@@ -1,0 +1,21 @@
+uuid: fc630190-282e-4a82-a323-317aa7215663
+langcode: en
+status: true
+dependencies:
+  module:
+    - dropdown_language
+  theme:
+    - edwt
+id: dropdownlanguage
+theme: edwt
+region: header
+weight: -4
+provider: null
+plugin: 'dropdown_language:language_interface'
+settings:
+  id: 'dropdown_language:language_interface'
+  label: 'Dropdown Language'
+  label_display: '0'
+  provider: dropdown_language
+  labels: null
+visibility: {  }

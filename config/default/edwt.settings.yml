@@ -5,9 +5,9 @@ sg__status_message__type: toast
 ns__navbar_position: '0'
 ns__navbar_expand: navbar-expand-md
 ns__navbar_align: me-auto
-ns__navbar_bg: bg-primary
+ns__navbar_bg: '0'
 ns__navbar_color: navbar-dark
-ns__navbar_out: shadow
+ns__navbar_out: '0'
 fs__form_input_group: search_block_form
 sf__sans_serif: 'system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif'
 sf__family: var(--font-sans-serif)
@@ -108,3 +108,13 @@ sf__size: ''
 sf__weight: ''
 sc__success: '#000000'
 sc__warning: '#000000'
+sr__clean_footer_second: 0
+sr__class_footer_second: ''
+sr__container_footer_second: none
+sr__container_position_footer_second: before
+sr__extra_class_footer_second: ''
+style:
+  general:
+    table: ''
+  colors:
+    table: ''

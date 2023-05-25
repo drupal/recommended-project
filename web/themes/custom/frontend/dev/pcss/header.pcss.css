@@ -1,0 +1,19 @@
+
+.region-header {
+  display: flex;
+}
+
+.navbar-collapse{
+  justify-content: flex-end!important;
+}
+
+.ms-auto{
+  position: absolute;
+  top: 100%;
+  display: flex;
+  justify-content: flex-end;
+  left: 0;
+  right: 0;
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}

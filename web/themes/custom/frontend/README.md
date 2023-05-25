@@ -17,7 +17,7 @@ Install development dependencies by running
 
 #### CSS compilation
 
-To compile once, use `rpm run theme:build`
+To compile once, use `npm run theme:build`
 To run the watcher, use `npm run theme:watch`
 
 #### Adding general CSS/JS that is applied to every page (e.g. header, footer, fonts)
