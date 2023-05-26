@@ -1,0 +1,22 @@
+.mt-auto{
+  background: forestgreen;
+  color:white;
+  width: auto;
+  padding: 3.75rem 0;
+}
+
+footer .nav {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 1.875rem;
+
+}
+
+footer .nav-item{
+  color:white;
+  padding-bottom: 2rem;
+}
+
+footer .col-md-6 {
+  border-: 1px solid black;
+}

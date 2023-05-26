@@ -1,0 +1,83 @@
+
+.lang-dropdown-select-element {
+  font-size:small!important;
+  width: 85px!important;
+  display: inline-block!important;
+  border: none;
+  box-shadow: none!important;
+  text-align: left;
+  height: 30px;
+  padding-left: 2px;
+
+  select {
+    box-shadow: none!important;
+  }
+}
+
+.simple-search-form {
+  display: inline-flex;
+  border-left: 1px solid black;
+  padding-left: 1rem;
+
+
+  input[type="search"] {
+    box-shadow: none;
+    inline-size: 100px;
+    padding-left: 5px;
+    background-color: white;
+    border-color: white;
+    border-radius: 0;
+    height: 30px;
+  }
+}
+
+header .form-search{
+  font-size: small;
+  display: inline-block!important;
+
+}
+
+
+header .form-actions {
+  background-color: white;
+  border-radius: 0;
+  padding-right: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+header .button {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 0;
+  border-color: white;
+  background-image: url('../assets/search.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+
+.ms-auto {
+  margin-top: 1em;
+}
+
+.nav-item{
+  padding-right: 0!important;
+  padding-left: 0.9em!important;
+  color: black;
+}
+
+
+header .nav-item:hover{
+  color: forestgreen;
+}
+
+.dropdown-menu{
+  border-top: 4px solid forestgreen;
+  border-radius: 0 0 0.625rem 0.625rem;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  padding: 0;
+  overflow: hidden;
+}

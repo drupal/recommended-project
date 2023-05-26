@@ -27,10 +27,10 @@ settings:
     filter: ''
   input_label: Search
   input_label_display: invisible
-  input_placeholder: 'enter search keywords'
+  input_placeholder: Search
   input_css_classes: ''
-  submit_display: false
-  submit_label: Find
-  input_keep_value: false
+  submit_display: true
+  submit_label: ''
+  input_keep_value: true
   preserve_url_query_parameters: {  }
 visibility: {  }

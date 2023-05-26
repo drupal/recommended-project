@@ -6,6 +6,9 @@ global-styling:
       css/vars.css: {}
       css/general.css: {}
       css/dark-mode.css: {}
+      css/header.css: {}
+      css/footer.css: {}
+
   js:
     js/script.js: {}
 
