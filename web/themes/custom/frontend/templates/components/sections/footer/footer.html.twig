@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Eau de Web Theme Component.
+ */
+#}
+
+<footer {{ footer_attribute.setAttribute('id', 'footer').addclass(footer_classes) }}>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        {{- page.footer -}}
+      </div>
+
+          <div class="col-md-6">
+            {{- page.footer_second -}}
+          </div>
+        </div>
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        {{- page.footer_third -}}
+      </div>
+
+      <div class="col-md-6">
+        {{- page.footer_fourth -}}
+      </div>
+    </div>
+  </div>
+
+</footer>

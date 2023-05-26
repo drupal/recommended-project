@@ -23,4 +23,6 @@ regions:
   sidebar_second: 'Sidebar second'
   footer: Footer
   footer_second: Footer Second
+  footer_third: Footer Third
+  footer_forth: Footer Forth
   disable_region: 'Disabled Region'

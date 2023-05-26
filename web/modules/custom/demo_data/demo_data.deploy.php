@@ -2,7 +2,7 @@
 
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 
-function demo_data_deploy_10002() {
+function demo_data_deploy_10001() {
   $nid = 1;
   $parent = MenuLinkContent::create([
     'title' => 'About',
