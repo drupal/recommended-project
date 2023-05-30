@@ -74,6 +74,8 @@ module:
   redirect_404: 0
   remove_username: 0
   responsive_image: 0
+  search_api: 0
+  search_api_db: 0
   shortcut: 0
   smart_trim: 0
   smtp: 0
