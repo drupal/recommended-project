@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_image
     - field.field.node.page.field_metatags
     - field.field.node.page.layout_builder__layout
     - field.field.node.page.layout_builder__translation
     - node.type.page
   module:
+    - media_library
     - metatag
     - path
     - text
@@ -32,6 +34,13 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: media_library_widget
+    weight: 26
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_metatags:
     type: metatag_firehose

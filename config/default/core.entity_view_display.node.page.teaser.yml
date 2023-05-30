@@ -5,11 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_image
     - field.field.node.page.field_metatags
     - field.field.node.page.layout_builder__layout
     - field.field.node.page.layout_builder__translation
+    - image.style.teaser
     - node.type.page
   module:
+    - media
     - text
     - user
 id: node.page.teaser
@@ -23,15 +26,27 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 1
+    region: content
+  field_image:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: content
+      image_style: teaser
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   field_metatags: true
   langcode: true
   layout_builder__layout: true
   layout_builder__translation: true
+  search_api_excerpt: true

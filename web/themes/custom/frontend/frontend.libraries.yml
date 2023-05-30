@@ -6,14 +6,11 @@ global-styling:
       css/vars.css: {}
       css/general.css: {}
       css/dark-mode.css: {}
-      css/content/news/news-teaser.css: {}
   js:
     js/script.js: {}
 
-# News teaser styling.
-news--teaser:
+# Content teaser styling.
+node--teaser:
   css:
     component:
-      css/content/news/news-teaser.css: {}
-  js:
-    js/content/news/news-teaser.js: {}
+      css/components/content/node--teaser.css: {}
