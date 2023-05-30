@@ -13,7 +13,7 @@ dependencies:
     - node.type.page
   module:
     - media
-    - text
+    - smart_trim
     - user
 id: node.page.teaser
 targetEntityType: node
@@ -21,10 +21,23 @@ bundle: page
 mode: teaser
 content:
   body:
-    type: text_summary_or_trimmed
+    type: smart_trim
     label: hidden
     settings:
-      trim_length: 600
+      trim_length: 80
+      trim_type: words
+      trim_suffix: ''
+      wrap_output: false
+      wrap_class: trimmed
+      more_link: false
+      more_class: more-link
+      more_text: More
+      more_aria_label: 'Read more about [node:title]'
+      summary_handler: trim
+      trim_options:
+        text: true
+        trim_zero: false
+        replace_tokens: false
     third_party_settings: {  }
     weight: 1
     region: content
