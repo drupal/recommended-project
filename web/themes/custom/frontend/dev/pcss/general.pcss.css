@@ -91,3 +91,37 @@ img {
 .is-b-loading:not(.is-b-loaded):not([data-animation])::before {
   background: var(--link-color);
 }
+
+.view-search-block{
+  & .views-row {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: solid 1px var(--c-gray);
+    }
+
+    border-top: solid 1px var(--c-gray);
+    align-items: center;
+    margin-top: 20px;
+  }
+}
+
+.max-3-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.max-2-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
