@@ -1,3 +1,12 @@
-.node--view-mode-teaser{
+.node--view-mode-teaser {
   margin: 20px 0;
+
+  .date-tags {
+    display: flex;
+    & *:not(:first-child){
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid black;
+    }
+  }
 }
