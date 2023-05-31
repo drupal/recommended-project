@@ -8,15 +8,15 @@
 footer .nav {
   display: inline-flex;
   flex-direction: row;
-  gap: 1.875rem;
+  gap: 1rem;
 
 }
 
 footer .nav-item{
   color:white;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
-footer .col-md-6 {
-  border-: 1px solid black;
+footer  .row {
+  border-bottom: 1px solid black;
 }
