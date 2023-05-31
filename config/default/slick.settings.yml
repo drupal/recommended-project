@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: 4ISRVks2VEK-JaTixwY3hW2lnWZd7NRZDAnhysjB1fk
+library: slick
+module_css: true
+slick_css: true
+disable_old_skins: false
+sitewide: 0

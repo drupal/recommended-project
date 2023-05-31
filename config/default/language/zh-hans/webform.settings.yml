@@ -2,8 +2,12 @@ settings:
   default_submit_button_label: 提交
   default_reset_button_label: 重置
   default_delete_button_label: 删除
+  default_wizard_start_label: 开始
+  default_wizard_confirmation_label: 完成
+  default_wizard_toggle_show_label: 显示全部
   default_preview_next_button_label: 预览
   default_preview_label: 预览
+  default_draft_button_label: 保存草稿
   dialog_options:
     narrow:
       title: 窄
@@ -13,3 +17,4 @@ settings:
       title: 宽
 element:
   default_more_title: 更多
+  default_section_title_tag: h2

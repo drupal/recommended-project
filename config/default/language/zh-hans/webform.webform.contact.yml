@@ -1,3 +1,6 @@
 title: 联络表
 settings:
   confirmation_message: 您的信息已被送出。
+handlers:
+  email_notification:
+    label: 电子邮件通知

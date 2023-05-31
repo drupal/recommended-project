@@ -1,1 +1,3 @@
+label: Mois
 category: 'Date et heure'
+options: "January: Janvier\r\nFebruary: Février\r\nMarch: Mars\r\nApril: Avril\r\nMay: Mai\r\nJune: Juin\r\nJuly: Juillet\r\nAugust: Août\r\nSeptember: Septembre\r\nOctober: Octobre\r\nNovember: Novembre\r\nDecember: Décembre\n"

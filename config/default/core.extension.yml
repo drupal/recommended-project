@@ -12,6 +12,7 @@ module:
   allowed_formats: 0
   backup_migrate: 0
   basic_auth: 0
+  blazy: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -26,6 +27,7 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
+  demo_data: 0
   drimage: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
@@ -79,6 +81,8 @@ module:
   search_api_db: 0
   shortcut: 0
   simple_search_form: 0
+  slick: 0
+  slick_views: 0
   smart_trim: 0
   smtp: 0
   spamspan: 0

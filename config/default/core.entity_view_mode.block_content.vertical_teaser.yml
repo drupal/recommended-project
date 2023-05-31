@@ -1,0 +1,10 @@
+uuid: 0009eb53-72d1-4c1d-a649-a7b94d279867
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.vertical_teaser
+label: 'Vertical Teaser'
+targetEntityType: block_content
+cache: true

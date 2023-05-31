@@ -1,3 +1,4 @@
+label: 'Soumissions de webform'
 display:
   default:
     display_title: Maître
@@ -22,8 +23,10 @@ display:
             offset_label: Décalage
       fields:
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: Brouillon
           separator: ', '
         created:
           label: Créé
@@ -41,14 +44,17 @@ display:
         in_draft:
           exception:
             title: Tout
+      title: 'Soumissions de webform'
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Action
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: Brouillon
           separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
@@ -60,6 +66,7 @@ display:
           label: Créé
           separator: ', '
         completed:
+          label: Terminé
           separator: ', '
         remote_addr:
           label: 'Adresse IP'
@@ -67,6 +74,9 @@ display:
         operations:
           label: Actions
       filters:
+        in_draft:
+          expose:
+            label: 'Est un brouillon'
         sticky:
           expose:
             label: 'Épinglé (en haut des listes)'
@@ -79,8 +89,10 @@ display:
         webform_submission_bulk_form:
           action_title: Action
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: Brouillon
           separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
@@ -92,6 +104,7 @@ display:
           label: Créé
           separator: ', '
         completed:
+          label: Terminé
           separator: ', '
         remote_addr:
           label: 'Adresse IP'
@@ -103,6 +116,9 @@ display:
           label: Actions
           text: modifier
       filters:
+        in_draft:
+          expose:
+            label: 'Est un brouillon'
         sticky:
           expose:
             label: 'Épinglé (en haut des listes)'
@@ -113,8 +129,10 @@ display:
     display_options:
       fields:
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: Brouillon
           separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
@@ -126,6 +144,7 @@ display:
           label: Créé
           separator: ', '
         completed:
+          label: Terminé
           separator: ', '
         remote_addr:
           label: 'Adresse IP'
@@ -134,6 +153,9 @@ display:
           label: Actions
           text: voir
       filters:
+        in_draft:
+          expose:
+            label: 'Est un brouillon'
         sticky:
           expose:
             label: 'Épinglé (en haut des listes)'

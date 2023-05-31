@@ -22,8 +22,10 @@ display:
             offset_label: 偏移量
       fields:
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: 草稿
           separator: ', '
         created:
           label: 已建立
@@ -47,8 +49,10 @@ display:
         webform_submission_bulk_form:
           action_title: 动作
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: 草稿
           separator: ', '
         sticky:
           label: 置顶
@@ -60,6 +64,7 @@ display:
           label: 已建立
           separator: ', '
         completed:
+          label: 完成的
           separator: ', '
         remote_addr:
           label: IP地址
@@ -79,8 +84,10 @@ display:
         webform_submission_bulk_form:
           action_title: 动作
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: 草稿
           separator: ', '
         sticky:
           label: 置顶
@@ -92,6 +99,7 @@ display:
           label: 已建立
           separator: ', '
         completed:
+          label: 完成的
           separator: ', '
         remote_addr:
           label: IP地址
@@ -113,8 +121,10 @@ display:
     display_options:
       fields:
         sid:
+          label: '#'
           separator: ', '
         in_draft:
+          label: 草稿
           separator: ', '
         sticky:
           label: 置顶
@@ -126,6 +136,7 @@ display:
           label: 已建立
           separator: ', '
         completed:
+          label: 完成的
           separator: ', '
         remote_addr:
           label: IP地址

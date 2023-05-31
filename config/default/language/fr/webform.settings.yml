@@ -1,9 +1,34 @@
 settings:
+  default_form_open_message: "Ce formulaire n'est actuellement pas ouvert aux soumissions."
+  default_form_close_message: 'Désolé... Ce formulaire est clos aux nouvelles soumissions.'
+  default_form_exception_message: "Il est impossible d'afficher ce webform. Veuillez contacter l'administrateur du site."
   default_submit_button_label: Soumettre
   default_reset_button_label: Réinitialiser
   default_delete_button_label: Supprimer
+  default_form_confidential_message: 'Ce formulaire est confidentiel. Vous devez vous <a href="[site:login-url]/logout?destination=[current-page:url:relative]">déconnecter</a> pour l''utiliser.'
+  default_form_access_denied_message: 'Veuillez vous connecter pour accéder à ce formulaire.'
+  default_form_required_label: 'Indique si le champs est requis'
+  default_wizard_prev_button_label: '< Précédent'
+  default_wizard_next_button_label: 'Suivant >'
+  default_wizard_start_label: Début
+  default_wizard_confirmation_label: Terminé
+  default_wizard_toggle_show_label: 'Tout afficher'
+  default_wizard_toggle_hide_label: 'Tout cacher'
   default_preview_next_button_label: Aperçu
+  default_preview_prev_button_label: '< Précédent'
   default_preview_label: Aperçu
+  default_preview_title: '[webform:title] : Prévisualisation'
+  default_draft_button_label: 'Enregistrer le brouillon'
+  default_draft_saved_message: 'Soumissions enregistrées. Vous pourrez revenir sur ce formulaire plus tard, cela restaurera les valeurs actuelles.'
+  default_draft_loaded_message: 'Un formulaire partiellement complété a été trouvé. Veuillez compléter les portions restantes.'
+  default_draft_pending_single_message: 'Vous avez un brouillon en attente pour ce webform. <a href="#">Charger le brouillon en attente</a>.'
+  default_draft_pending_multiple_message: 'Vous avez des brouillons en attente pour ce webform. <a href="#">Voir les brouillons en attente</a>.'
+  default_confirmation_message: 'Nouvelle soumission ajoutée à [webform:title]'
+  default_confirmation_back_label: 'Retour au formulaire'
+  default_submission_label: '[webform_submission:submitted-to]: Soumission #[webform_submission:serial]'
+  default_submission_access_denied_message: 'Veuillez vous connecter pour accéder à cette soumission.'
+  default_submission_locked_message: 'Cette soumission a été verrouillée.'
+  default_autofill_message: 'Cette soumission a été pré-remplie grâce à votre précédente soumission.'
   dialog_options:
     narrow:
       title: Étroit
@@ -12,6 +37,14 @@ settings:
     wide:
       title: Large
 element:
+  empty_message: '{Vide}'
   default_more_title: Plus
+  default_section_title_tag: h2
+file:
+  file_private_redirect_message: 'Veuillez vous connecter accéder au fichier transféré.'
 mail:
   default_from_name: '[site:name]'
+  default_body_html: "<p>Envoyé le [webform_submission:created]</p>\r\n<p>Envoyé par : [webform_submission:user]</p>\r\n<p>Les valeurs soumises sont :</p>\r\n[webform_submission:values]\n"
+test:
+  types: "checkbox:\r\n  - true\r\ncolor:\r\n  - '#ffffcc'\r\n  - '#ffffcc'\r\n  - '#ccffff'\r\nemail:\r\n  - 'example@example.com'\r\n  - 'test@test.com'\r\n  - 'random@random.com'\r\nlanguage_select:\r\n  - en\r\nmachine_name:\r\n  - 'loremipsum'\r\n  - 'oratione'\r\n  - 'dixisset'\r\ntel:\r\n  - '12-34-56-78-90'\r\n  - '09-87-65-43-21'\r\ntextarea:\r\n  - 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Negat esse eam, inquit, propter se expetendam. Primum Theophrasti, Strato, physicum se voluit; Id mihi magnum videtur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Quare hoc videndum est, possitne nobis hoc ratio philosophorum dare. Est enim tanti philosophi tamque nobilis audacter sua decreta defendere.'\r\n  - 'Huius, Lyco, oratione locuples, rebus ipsis ielunior. Duo Reges: constructio interrete. Sed haec in pueris; Sed utrum hortandus es nobis, Luci, inquit, an etiam tua sponte propensus es? Sapiens autem semper beatus est et est aliquando in dolore; Immo videri fortasse. Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Et ille ridens: Video, inquit, quid agas;'\r\n  - 'Quae cum dixisset, finem ille. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Progredientibus autem aetatibus sensim tardeve potius quasi nosmet ipsos cognoscimus. Gloriosa ostentatio in constituendo summo bono. Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Duarum enim vitarum nobis erunt instituta capienda. Comprehensum, quod cognitum non habet? Qui enim existimabit posse se miserum esse beatus non erit. Causa autem fuit huc veniendi ut quosdam hinc libros promerem. Nunc omni virtuti vitium contrario nomine opponitur.'\r\ntext_format:\r\n  - value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Negat esse eam, inquit, propter se expetendam. Primum Theophrasti, Strato, physicum se voluit; Id mihi magnum videtur. Itaque mihi non satis videmini considerare quod iter sit naturae quaeque progressio. Quare hoc videndum est, possitne nobis hoc ratio philosophorum dare. Est enim tanti philosophi tamque nobilis audacter sua decreta defendere.</p>'\r\n  - value: '<p>Huius, Lyco, oratione locuples, rebus ipsis ielunior. Duo Reges: constructio interrete. Sed haec in pueris; Sed utrum hortandus es nobis, Luci, inquit, an etiam tua sponte propensus es? Sapiens autem semper beatus est et est aliquando in dolore; Immo videri fortasse. Paulum, cum regem Persem captum adduceret, eodem flumine invectio? Et ille ridens: Video, inquit, quid agas;</p>'\r\n  - value: '<p>Quae cum dixisset, finem ille. Quamquam non negatis nos intellegere quid sit voluptas, sed quid ille dicat. Progredientibus autem aetatibus sensim tardeve potius quasi nosmet ipsos cognoscimus. Gloriosa ostentatio in constituendo summo bono. Qui-vere falsone, quaerere mittimus-dicitur oculis se privasse; Duarum enim vitarum nobis erunt instituta capienda. Comprehensum, quod cognitum non habet? Qui enim existimabit posse se miserum esse beatus non erit. Causa autem fuit huc veniendi ut quosdam hinc libros promerem. Nunc omni virtuti vitium contrario nomine opponitur.</p>'\r\nurl:\r\n  - 'http://example.com'\r\n  - 'http://test.com'\r\nwebform_email_confirm:\r\n  - 'example@example.com'\r\n  - 'test@test.com'\r\n  - 'random@random.com'\r\nwebform_email_multiple:\r\n  - 'example@example.com, test@test.com, random@random.com'\r\nwebform_time:\r\n  - '09:00'\r\n  - '17:00'\n"
+  names: "first_name:\r\n  - 'John'\r\n  - 'Paul'\r\n  - 'Ringo'\r\n  - 'George'\r\nlast_name:\r\n  - 'Lennon'\r\n  - 'McCartney'\r\n  - 'Starr'\r\n  - 'Harrison'\r\naddress:\r\n  - '10 Main Street'\r\n  - '11 Brook Alley Road. APT 1'\r\nzip:\r\n  - '11111'\r\n  - '12345'\r\n  - '12345-6789'\r\npostal_code:\r\n  - '11111'\r\n  - '12345'\r\n  - '12345-6789'\r\nphone:\r\n  - '123-456-7890'\r\n  - '098-765-4321'\r\nfax:\r\n  - '123-456-7890'\r\n  - '098-765-4321'\r\ncity:\r\n  - 'Springfield'\r\n  - 'Pleasantville'\r\n  - 'Hill Valley'\r\nurl:\r\n  - 'http://example.com'\r\n  - 'http://test.com'\r\ndefault:\r\n  - 'Loremipsum'\r\n  - 'Oratione'\r\n  - 'Dixisset'\n"

@@ -1,1 +1,3 @@
+label: Jours
 category: 'Date et heure'
+options: "Sunday: Dimanche\r\nMonday: Lundi\r\nTuesday: Mardi\r\nWednesday: Mercredi\r\nThursday: Jeudi\r\nFriday: Vendredi\r\nSaturday: Samedi\n"
