@@ -1,0 +1,13 @@
+.node--view-mode-teaser {
+  margin: 1.25rem 0;
+}
+
+  .node--view-mode-teaser .date-tags {
+    display: flex;
+  }
+
+  .node--view-mode-teaser .date-tags *:not(:first-child){
+      margin-left: 0.625rem;
+      padding-left: 0.625rem;
+      border-left: 1px solid black;
+    }

@@ -102,6 +102,7 @@
     "require-dev": {
         "drupal/coder": "^8.3",
         "drupal/core-dev": "^10",
+        "drupal/devel": "^5.1",
         "drupal/stage_file_proxy": "^2.0",
         "drupal/twig_vardumper": "^3.0",
         "overtrue/phplint": "^9",

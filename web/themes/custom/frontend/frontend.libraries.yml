@@ -6,8 +6,9 @@ global-styling:
       css/vars.css: {}
       css/general.css: {}
       css/dark-mode.css: {}
-      css/header.css: {}
-      css/footer.css: {}
+      css/header.css: { }
+      css/footer.css: { }
+      css/content/news/news-teaser.css: {}
 
   js:
     js/script.js: {}
@@ -19,3 +20,10 @@ news--teaser:
       css/content/news/news-teaser.css: {}
   js:
     js/content/news/news-teaser.js: {}
+
+# Content teaser styling.
+node--teaser:
+  css:
+    component:
+      css/components/content/node--teaser.css: { }
+
