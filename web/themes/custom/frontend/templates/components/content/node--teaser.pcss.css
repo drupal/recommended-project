@@ -3,6 +3,7 @@
 
   .date-tags {
     display: flex;
+
     & *:not(:first-child){
       margin-left: 10px;
       padding-left: 10px;

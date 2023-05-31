@@ -50,7 +50,7 @@
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.0",
         "drupal/edw_healthcheck": "^1.18",
-        "drupal/edwt": "^2.2.3",
+        "drupal/edwt": "^3.0",
         "drupal/environment_indicator": "^4.0",
         "drupal/facets": "^2.0",
         "drupal/field_group": "^3.4",
@@ -86,6 +86,7 @@
     "require-dev": {
         "drupal/coder": "^8.3",
         "drupal/core-dev": "^10",
+        "drupal/devel": "^5.1",
         "drupal/stage_file_proxy": "^2.0",
         "drupal/twig_vardumper": "^3.0",
         "overtrue/phplint": "^9",

@@ -1,4 +1,4 @@
-uuid: 2e7dfc20-28fb-4373-9d5d-796401e62b2c
+uuid: 6e48f762-394f-4856-a7c4-5d76faf76ef1
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,9 @@ dependencies:
     - search_api.index.index
   module:
     - search_api
-id: search_block
-label: 'Search Block'
+    - user
+id: search
+label: Search
 module: views
 description: ''
 tag: ''
@@ -89,8 +90,9 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: none
         options: {  }
@@ -173,6 +175,7 @@ display:
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
+        - user.permissions
       tags:
         - 'config:search_api.index.index'
         - 'search_api_list:index'
@@ -183,13 +186,14 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      block_description: 'Search Block'
+      block_description: Search
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
+        - user.permissions
       tags:
         - 'config:search_api.index.index'
         - 'search_api_list:index'

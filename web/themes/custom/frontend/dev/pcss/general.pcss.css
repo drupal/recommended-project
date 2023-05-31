@@ -92,7 +92,7 @@ img {
   background: var(--link-color);
 }
 
-.view-search-block{
+.view-search-block {
   & .views-row {
     &:first-child {
       margin-top: 0;
