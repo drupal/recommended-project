@@ -4,8 +4,9 @@
  * Eau de Web Theme Component.
  */
 #}
-
+ {% if page.footer or page.footer_second or page.footer_third or page.footer_fourth %}
 <footer {{ footer_attribute.setAttribute('id', 'footer').addclass(footer_classes) }}>
+  {% if page.footer or page.footer_second %}
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -17,7 +18,9 @@
           </div>
         </div>
     </div>
+  {% endif %}
 
+{% if page.footer_third or page.footer_fourth %}
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -29,5 +32,6 @@
       </div>
     </div>
   </div>
-
+ {% endif %}
 </footer>
+{% endif %}

@@ -17,6 +17,10 @@ footer .nav-item{
   padding-bottom: 1rem;
 }
 
-footer  .row {
+footer .container:not(:last-child) {
   border-bottom: 1px solid black;
+}
+
+footer .container:not(:first-child){
+  margin-top: 1rem;
 }
