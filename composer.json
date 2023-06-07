@@ -55,6 +55,7 @@
         "drupal/facets": "^2.0",
         "drupal/field_group": "^3.4",
         "drupal/honeypot": "^2.0",
+        "drupal/image_max_size_crop": "^2.0",
         "drupal/layout_builder_browser": "^1.4",
         "drupal/layout_builder_modal": "^1.1",
         "drupal/layout_builder_restrictions": "^2.12",

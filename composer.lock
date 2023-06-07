@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62d45a78aa0758b0f7a805e612e47c0f",
+    "content-hash": "fdbb7083ff4015d82991749cd25c18d5",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2865,6 +2865,62 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/honeypot",
                 "issues": "https://www.drupal.org/project/issues/honeypot"
+            }
+        },
+        {
+            "name": "drupal/image_max_size_crop",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/image_max_size_crop.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/image_max_size_crop-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "0dc7b29de8c8b955c0c31ee85e45072113e958f4"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1682422568",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "aluwani",
+                    "homepage": "https://www.drupal.org/user/2935989"
+                },
+                {
+                    "name": "mallezie",
+                    "homepage": "https://www.drupal.org/user/814290"
+                },
+                {
+                    "name": "nils.destoop",
+                    "homepage": "https://www.drupal.org/user/361625"
+                },
+                {
+                    "name": "pstewart",
+                    "homepage": "https://www.drupal.org/user/2491114"
+                }
+            ],
+            "description": "Crop image when larger than specified dimension(s).",
+            "homepage": "https://www.drupal.org/project/image_max_size_crop",
+            "support": {
+                "source": "https://git.drupalcode.org/project/image_max_size_crop"
             }
         },
         {

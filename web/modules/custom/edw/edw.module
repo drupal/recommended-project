@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * The edw module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function edw_theme($existing, $type, $theme, $path) {
+  return [
+    'banner_block' => [
+      'variables' => [
+        'title' => '',
+        'breadcrumb' => '',
+        'banner_image' => '',
+      ],
+    ],
+  ];
+}
