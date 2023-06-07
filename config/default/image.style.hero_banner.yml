@@ -1,0 +1,17 @@
+uuid: a3c8d8dd-952b-47a0-a9e7-939250bf0f1e
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_max_size_crop
+name: hero_banner
+label: 'Hero banner'
+effects:
+  c1bbb364-62ac-40a3-add2-e6ef3fa55c04:
+    uuid: c1bbb364-62ac-40a3-add2-e6ef3fa55c04
+    id: image_max_size_crop
+    weight: 1
+    data:
+      width: ''
+      height: '400'
+      anchor: center-center

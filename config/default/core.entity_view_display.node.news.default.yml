@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_banner_image
+    - field.field.node.news.field_banner_text
     - field.field.node.news.field_image
     - field.field.node.news.field_news_type
     - node.type.news
@@ -32,6 +33,13 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
+  field_banner_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
   field_image:
     type: entity_reference_entity_view
     label: above
@@ -56,3 +64,4 @@ content:
     region: content
 hidden:
   langcode: true
+  search_api_excerpt: true

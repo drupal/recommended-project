@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
     - field.field.node.news.field_banner_image
+    - field.field.node.news.field_banner_text
     - field.field.node.news.field_image
     - field.field.node.news.field_news_type
     - image.style.teaser
@@ -66,5 +67,6 @@ content:
     region: content
 hidden:
   field_banner_image: true
+  field_banner_text: true
   langcode: true
   search_api_excerpt: true

@@ -1,0 +1,25 @@
+uuid: 0220be83-1141-4070-98e7-91cd21c9df61
+langcode: en
+status: true
+dependencies:
+  module:
+    - edw
+    - system
+  theme:
+    - frontend
+id: herobanner
+theme: frontend
+region: hero
+weight: 0
+provider: null
+plugin: edw_hero_banner
+settings:
+  id: edw_hero_banner
+  label: 'Hero banner'
+  label_display: visible
+  provider: edw
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

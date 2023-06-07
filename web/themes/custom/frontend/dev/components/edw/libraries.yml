@@ -1,0 +1,4 @@
+banner_block:
+  css:
+    component:
+      css/dev/components/edw/banner-block.css: { }

@@ -31,6 +31,7 @@ module:
   easy_breadcrumb: 0
   editor: 0
   editor_advanced_link: 0
+  edw: 0
   edw_healthcheck: 0
   environment_indicator: 0
   field: 0
@@ -41,6 +42,7 @@ module:
   honeypot: 0
   image: 0
   image_captcha: 0
+  image_max_size_crop: 0
   language: 0
   layout_builder: 0
   layout_builder_browser: 0

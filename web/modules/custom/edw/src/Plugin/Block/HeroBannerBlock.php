@@ -90,7 +90,6 @@ class HeroBannerBlock extends EdwBlockBase {
           'responsive_image_style' => 'hero_banner',
         ],
       ]);
-      dump($summary);
       /** @var \Drupal\file\FileInterface $file */
     }
 
