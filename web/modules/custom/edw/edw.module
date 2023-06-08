@@ -5,6 +5,8 @@
  * The edw module.
  */
 
+use Drupal\node\NodeInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -20,4 +22,24 @@ function edw_theme($existing, $type, $theme, $path) {
       ],
     ],
   ];
+}
+
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function frontend_preprocess_block(&$variables) {
+  $banner_blocks = [
+    'system_breadcrumb_block',
+    'page_title_block',
+  ];
+  if (in_array($variables['plugin_id'], $banner_blocks)) {
+    $route_match = \Drupal::routeMatch();
+    $node = $route_match->getParameter('node');
+    if ($node instanceof NodeInterface
+      && $node->hasField('field_banner_image')
+      && !$node->get('field_banner_image')->isEmpty()
+    ) {
+      $variables['content']['#access'] = FALSE;
+    }
+  }
 }
