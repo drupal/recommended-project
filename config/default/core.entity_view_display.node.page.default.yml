@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_banner_image
+    - field.field.node.page.field_banner_text
     - field.field.node.page.field_image
     - field.field.node.page.field_metatags
     - field.field.node.page.layout_builder__layout
@@ -82,6 +84,37 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
+          7b0424a0-502f-4e3a-a460-b203f4103482:
+            uuid: 7b0424a0-502f-4e3a-a460-b203f4103482
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_banner_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          6707b081-9942-45b2-b342-67ebaf984176:
+            uuid: 6707b081-9942-45b2-b342-67ebaf984176
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_banner_text'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
@@ -151,6 +184,21 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_banner_image:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_banner_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_image:
     type: entity_reference_label
