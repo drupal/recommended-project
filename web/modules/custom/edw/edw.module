@@ -17,7 +17,7 @@ function edw_theme($existing, $type, $theme, $path) {
         'title' => '',
         'breadcrumb' => '',
         'banner_image' => '',
-        'image' => null,
+        'image' => NULL,
         'summary' => '',
       ],
     ],
