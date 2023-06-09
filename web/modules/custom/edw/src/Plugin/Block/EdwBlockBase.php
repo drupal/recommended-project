@@ -4,7 +4,6 @@ namespace Drupal\edw\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;
-use Drupal\Core\Datetime\DateFormatterInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\CurrentRouteMatch;
