@@ -1,0 +1,11 @@
+uuid: a6c9f9c6-bedc-434f-a27a-43ab7f1c3ea0
+langcode: en
+status: true
+dependencies: {  }
+id: search
+block_id: 'views_block:search-block_1'
+category: page_content
+label: Search
+image_path: ''
+image_alt: ''
+weight: null
