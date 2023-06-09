@@ -22,6 +22,7 @@ module:
   conditional_fields: 0
   config_translation: 0
   contextual: 0
+  crop: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
@@ -43,6 +44,7 @@ module:
   image: 0
   image_captcha: 0
   image_max_size_crop: 0
+  image_widget_crop: 0
   language: 0
   layout_builder: 0
   layout_builder_browser: 0

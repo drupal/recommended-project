@@ -27,7 +27,9 @@ function edw_theme($existing, $type, $theme, $path) {
 /**
  * Implements hook_preprocess_page_title().
  */
-function frontend_preprocess_block(&$variables) {
+function edw_preprocess_block(&$variables) {
+  // Hide the title and breadcrumbs block on pages
+  // which should display the HeroBannerBlock.
   $banner_blocks = [
     'system_breadcrumb_block',
     'page_title_block',

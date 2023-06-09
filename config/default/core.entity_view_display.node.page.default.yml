@@ -38,6 +38,7 @@ third_party_settings:
                 entity: layout_builder.entity
             weight: 0
             additional: {  }
+            third_party_settings: {  }
           c98dc11c-f884-4971-add2-a9a0fb0a2460:
             uuid: c98dc11c-f884-4971-add2-a9a0fb0a2460
             region: content
@@ -53,6 +54,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+            third_party_settings: {  }
           f750b72a-4d04-4114-96f4-16a310f01465:
             uuid: f750b72a-4d04-4114-96f4-16a310f01465
             region: content
@@ -68,6 +70,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 2
             additional: {  }
+            third_party_settings: {  }
           a66757fa-6e75-4a6d-ae3c-9520fa1ee994:
             uuid: a66757fa-6e75-4a6d-ae3c-9520fa1ee994
             region: content
@@ -84,6 +87,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 3
             additional: {  }
+            third_party_settings: {  }
           7b0424a0-502f-4e3a-a460-b203f4103482:
             uuid: 7b0424a0-502f-4e3a-a460-b203f4103482
             region: content
@@ -100,6 +104,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 4
             additional: {  }
+            third_party_settings: {  }
           6707b081-9942-45b2-b342-67ebaf984176:
             uuid: 6707b081-9942-45b2-b342-67ebaf984176
             region: content
@@ -115,6 +120,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }

@@ -1,0 +1,26 @@
+uuid: bc3fdc40-dde6-42c9-92f7-bb1098ec4f9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero_banner
+  module:
+    - crop
+name: hero_banner_mobile
+label: 'Hero banner (mobile) (768x400)'
+effects:
+  56f3e43f-fcfe-448b-b82d-06dd30c2cb67:
+    uuid: 56f3e43f-fcfe-448b-b82d-06dd30c2cb67
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: hero_banner
+      automatic_crop_provider: null
+  a5d36d66-b479-4a29-adaa-bd27435da3c6:
+    uuid: a5d36d66-b479-4a29-adaa-bd27435da3c6
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 400
+      anchor: center-center

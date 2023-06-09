@@ -30,13 +30,6 @@ abstract class EdwBlockBase extends BlockBase implements ContainerFactoryPluginI
   protected $entityTypeManager;
 
   /**
-   * The date formatter.
-   *
-   * @var \Drupal\Core\Datetime\DateFormatterInterface
-   */
-  protected $dateFormatter;
-
-  /**
    * EdwBlockBase constructor.
    *
    * @param array $configuration
@@ -49,15 +42,12 @@ abstract class EdwBlockBase extends BlockBase implements ContainerFactoryPluginI
    *   The current route match.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
-   * @param \Drupal\Core\Datetime\DateFormatterInterface $date_formatter
-   *   The date formatter.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route_match, EntityTypeManagerInterface $entity_type_manager, DateFormatterInterface $date_formatter) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, CurrentRouteMatch $route_match, EntityTypeManagerInterface $entity_type_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->routeMatch = $route_match;
     $this->entityTypeManager = $entity_type_manager;
-    $this->dateFormatter = $date_formatter;
   }
 
   /**
@@ -65,24 +55,21 @@ abstract class EdwBlockBase extends BlockBase implements ContainerFactoryPluginI
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(
-          $configuration,
-          $plugin_id,
-          $plugin_definition,
-          $container->get('current_route_match'),
-          $container->get('entity_type.manager'),
-          $container->get('date.formatter')
-      );
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('current_route_match'),
+      $container->get('entity_type.manager')
+    );
   }
 
   /**
    * {@inheritdoc}
    */
   public function getCacheContexts() {
-    return Cache::mergeContexts(
-          parent::getCacheContexts(), [
-            'url',
-          ]
-      );
+    return Cache::mergeContexts(parent::getCacheContexts(), [
+      'url',
+    ]);
   }
 
 }

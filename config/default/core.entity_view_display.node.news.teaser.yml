@@ -9,10 +9,10 @@ dependencies:
     - field.field.node.news.field_banner_text
     - field.field.node.news.field_image
     - field.field.node.news.field_news_type
-    - image.style.teaser
     - node.type.news
+    - responsive_image.styles.16_9
   module:
-    - media
+    - media_responsive_thumbnail
     - smart_trim
     - user
 id: node.news.teaser
@@ -42,13 +42,11 @@ content:
     weight: 1
     region: content
   field_image:
-    type: media_thumbnail
+    type: media_responsive_thumbnail
     label: hidden
     settings:
+      responsive_image_style: '16_9'
       image_link: content
-      image_style: teaser
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 2
     region: content

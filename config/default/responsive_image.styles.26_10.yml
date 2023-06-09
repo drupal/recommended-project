@@ -1,0 +1,21 @@
+uuid: 85570fba-fb01-431c-b789-22a336699980
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.26_10_768x295
+  theme:
+    - frontend
+id: '26_10'
+label: '26:10'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 26_10_768x295
+    breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: 26_10_768x295

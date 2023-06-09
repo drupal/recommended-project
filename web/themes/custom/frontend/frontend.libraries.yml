@@ -18,4 +18,4 @@ node--teaser:
 banner_block:
   css:
     component:
-      css/dev/components/edw/banner-block.css: { }
+      css/components/edw/banner-block.css: { }

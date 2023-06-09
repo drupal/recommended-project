@@ -25,18 +25,11 @@ class HeroBannerBlock extends EdwBlockBase {
   protected $breadcrumb;
 
   /**
-   * The form builder.
+   * The date formatter.
    *
-   * @var \Drupal\Core\Form\FormBuilderInterface
+   * @var \Drupal\Core\Datetime\DateFormatterInterface
    */
-  protected $formBuilder;
-
-  /**
-   * The renderer service.
-   *
-   * @var \Drupal\Core\Render\RendererInterface
-   */
-  protected $renderer;
+  protected $dateFormatter;
 
   /**
    * {@inheritdoc}
@@ -44,8 +37,7 @@ class HeroBannerBlock extends EdwBlockBase {
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     $instance = parent::create($container, $configuration, $plugin_id, $plugin_definition);
     $instance->breadcrumb = $container->get('breadcrumb');
-    $instance->formBuilder = $container->get('form_builder');
-    $instance->renderer = $container->get('renderer');
+    $instance->dateFormatter = $container->get('date.formatter');
     return $instance;
   }
 
@@ -54,11 +46,9 @@ class HeroBannerBlock extends EdwBlockBase {
    */
   public function build() {
     $image = NULL;
-
     $breadcrumb = $this->breadcrumb->build($this->routeMatch)->toRenderable();
 
     $node = $this->routeMatch->getParameter('node');
-
     if (!$node instanceof NodeInterface) {
       return [];
     }
@@ -71,7 +61,6 @@ class HeroBannerBlock extends EdwBlockBase {
     }
 
     $title = $node->get('title')->value;
-
     if (!$node->hasField('field_banner_image') || $node->get('field_banner_image')->isEmpty()) {
       return [];
     }
@@ -81,18 +70,13 @@ class HeroBannerBlock extends EdwBlockBase {
      */
     $media = $node->get('field_banner_image')->entity;
     if ($media instanceof MediaInterface) {
-      $image = $node->get('field_banner_image')->view(
-            [
-              'type' => 'media_responsive_thumbnail',
-              'label' => 'hidden',
-              'settings' => [
-                'responsive_image_style' => 'hero_banner',
-              ],
-            ]
-        );
-      /**
-       * @var \Drupal\file\FileInterface $file
-       */
+      $image = $node->get('field_banner_image')->view([
+        'type' => 'media_responsive_thumbnail',
+        'label' => 'hidden',
+        'settings' => [
+          'responsive_image_style' => 'hero_banner',
+        ],
+      ]);
     }
 
     return [
@@ -103,8 +87,6 @@ class HeroBannerBlock extends EdwBlockBase {
       '#image' => $image,
       '#date' => $this->dateFormatter->format($node->getCreatedTime(), 'european_date'),
       '#bundle' => $node->bundle(),
-      // For some reason, sending this as a renderable array breaks page CSS.
-      '#search_form' => $this->renderer->renderRoot($form),
     ];
   }
 

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - search_api.index.index
+    - search_api.index.global_index
   module:
     - search_api
 id: search_block
@@ -11,7 +11,7 @@ label: 'Search Block'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_index
+base_table: search_api_index_global_index
 base_field: search_api_id
 display:
   default:
@@ -174,7 +174,7 @@ display:
         - url
         - 'user.node_grants:view'
       tags:
-        - 'config:search_api.index.index'
+        - 'config:search_api.global_index.index'
         - 'search_api_list:index'
   block_1:
     id: block_1
@@ -191,5 +191,5 @@ display:
         - url
         - 'user.node_grants:view'
       tags:
-        - 'config:search_api.index.index'
+        - 'config:search_api.global_index.index'
         - 'search_api_list:index'

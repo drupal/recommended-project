@@ -55,6 +55,12 @@
   overflow: hidden;
 }
 
+.hero-block .field, .hero-block picture, .hero-block img {
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+
 .hero-block .title-subtitle .button.js-form-submit.form-submit.btn.btn-primary{
       left: 16.25rem;
       position: absolute;
@@ -117,30 +123,30 @@
     padding-left: 1.25rem;
   }
 
-.breadcrumb {
-  list-style-type: none;
-  color: var(--c-gray-500);
-  background-color: var(--c-dark);
-  display: inline-flex;
-  padding: 0.3125rem 0.625rem;
-}
-
-.breadcrumb .breadcrumb-item {
-    max-width: 18.75rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.hero-block .breadcrumb {
+    list-style-type: none;
+    color: var(--c-gray-500);
+    background-color: var(--c-dark);
+    display: inline-flex;
+    padding: 0.3125rem 0.625rem;
   }
 
-.breadcrumb .breadcrumb-item + .breadcrumb-item:before {
-        content: '/';
-        margin-left: 0.3125rem;
-      }
+.hero-block .breadcrumb .breadcrumb-item {
+      max-width: 18.75rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
-.breadcrumb a {
-    color: var(--c-white);
-  }
+.hero-block .breadcrumb .breadcrumb-item + .breadcrumb-item:before {
+          content: '/';
+          margin-left: 0.3125rem;
+        }
 
-.breadcrumb a:hover {
+.hero-block .breadcrumb a {
       color: var(--c-white);
     }
+
+.hero-block .breadcrumb a:hover {
+        color: var(--c-white);
+      }

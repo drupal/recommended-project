@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - image.style.hero_banner
+    - image.style.hero_banner_mobile
   theme:
     - frontend
 id: hero_banner
@@ -15,8 +16,11 @@ image_style_mappings:
     breakpoint_id: edwt.screen.md-min
     multiplier: 1x
   -
-    image_mapping_type: image_style
-    image_mapping: ''
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - hero_banner_mobile
     breakpoint_id: edwt.screen.sm-max
     multiplier: 1x
 breakpoint_group: screen
