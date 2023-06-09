@@ -1,0 +1,36 @@
+{{ attach_library('frontend/banner_block') }}
+
+<div class="hero-block">
+  {% if image %}
+    {{ image }}
+    <div class="container">
+      <div class="breadcrumbs">{{ breadcrumb }}</div>
+      <div class="title-subtitle {% if bundle == 'news' %} left-bar {% endif %}">
+        {% if bundle == 'news' %}
+          <div class="tags">
+            {% if tag %}
+              <div class="tag">{{ tag }}</div>
+            {% endif %}
+            {% if date %}
+              <div class="date">{{ date }}</div>
+            {% endif %}
+          </div>
+        {% endif %}
+        <h1>{{ title }}</h1>
+        {% if summary %}
+          <div class="summary">{{ summary | raw }}</div>
+        {% endif %}
+        {% if search_form %}
+          <div class="form">
+            {{ search_form }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="caption">{{ caption }}</div>
+    </div>
+  {% else %}
+    <div class="container">
+      <h1>{{ title }}</h1>
+    </div>
+  {% endif %}
+</div>

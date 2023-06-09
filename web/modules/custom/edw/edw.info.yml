@@ -1,0 +1,5 @@
+name: edw
+description: EDW custom functionality
+package: edw
+type: module
+core_version_requirement: ^8.8.0 || ^9 || ^10

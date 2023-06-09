@@ -1,6 +1,6 @@
 uuid: a4c2449a-89c6-4bbb-8521-e39c9f782b60
 langcode: en
-status: false
+status: true
 dependencies: {  }
 id: image
 label: Image

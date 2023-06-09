@@ -1,0 +1,26 @@
+uuid: 0c12d75a-ea36-40b9-8b01-9a47bbfb7c46
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.21_10
+  module:
+    - crop
+name: 21_10_768x365
+label: '21:10 (768x365)'
+effects:
+  ffa69087-becc-4f1b-a99d-7f765f1a8d02:
+    uuid: ffa69087-becc-4f1b-a99d-7f765f1a8d02
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 768
+      height: 365
+      anchor: center-center
+  bc700f7d-676f-4302-b9cb-55f0119ae860:
+    uuid: bc700f7d-676f-4302-b9cb-55f0119ae860
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: '21_10'
+      automatic_crop_provider: null

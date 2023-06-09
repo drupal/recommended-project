@@ -14,3 +14,8 @@ node--teaser:
   css:
     component:
       css/components/content/node--teaser.css: {}
+
+banner_block:
+  css:
+    component:
+      css/components/edw/banner-block.css: { }

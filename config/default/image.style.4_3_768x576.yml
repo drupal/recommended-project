@@ -1,0 +1,26 @@
+uuid: 2e442d1e-ed94-4af0-91d8-912588881250
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.4_3
+  module:
+    - crop
+name: 4_3_768x576
+label: '4:3 (768x576)'
+effects:
+  ddcbf898-93e3-4d89-ae6b-06f12c25989d:
+    uuid: ddcbf898-93e3-4d89-ae6b-06f12c25989d
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: '4_3'
+      automatic_crop_provider: null
+  b9a592db-526f-45c9-9fb2-8c66a04db468:
+    uuid: b9a592db-526f-45c9-9fb2-8c66a04db468
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 576
+      anchor: center-center

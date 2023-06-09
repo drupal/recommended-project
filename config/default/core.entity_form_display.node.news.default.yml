@@ -5,12 +5,14 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_banner_image
+    - field.field.node.news.field_banner_text
     - field.field.node.news.field_image
     - field.field.node.news.field_news_type
     - node.type.news
   module:
     - media_library
     - path
+    - select2
     - text
 id: node.news.default
 targetEntityType: node
@@ -40,6 +42,14 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+  field_banner_text:
+    type: text_textarea
+    weight: 126
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_image:
     type: media_library_widget
     weight: 124
@@ -48,14 +58,14 @@ content:
       media_types: {  }
     third_party_settings: {  }
   field_news_type:
-    type: entity_reference_autocomplete
+    type: select2_entity_reference
     weight: 122
     region: content
     settings:
+      width: 100%
+      autocomplete: false
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   langcode:
     type: language_select
