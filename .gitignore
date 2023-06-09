@@ -29,6 +29,7 @@
 /web/web.config
 /web/modules/contrib
 /web/themes/contrib
+/web/libraries
 /web/modules/README.txt
 /web/profiles/README.txt
 /web/themes/README.txt
