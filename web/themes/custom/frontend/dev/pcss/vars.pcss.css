@@ -10,8 +10,9 @@
   --base-font-weight: 400;
   --transition-base: all .2s ease-in-out;
 
-  --link-color: var(--c-primary);
-  --link-color-h: var(--c-secondary);
+  --link-color: #003adf;
+  --link-hover-color: #154eec;
+  --link-color-h: #154eec;
   --link-decoration: underline;
 
   --spacer: 1rem;
@@ -63,7 +64,6 @@
   --c-gray-700: #495057;
   --c-gray-800: #343a40;
   --c-gray-900: #212529;
-  --c-primary: #0b408f;
   --c-primary-h: #2a766a;
   --c-secondary: #6c757d;
   --c-success: #198754;
@@ -74,5 +74,7 @@
   --c-dark: #212529;
   --c-body-color: #212529;
   --c-body-bg: #fff;
-  --c-edw-green: #109E13;
+
+  --nav-link-color: #000;
+  --c-primary: #109E13;
 }

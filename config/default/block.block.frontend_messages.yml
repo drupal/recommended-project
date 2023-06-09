@@ -11,7 +11,7 @@ _core:
 id: frontend_messages
 theme: frontend
 region: content
-weight: -7
+weight: -5
 provider: null
 plugin: system_messages_block
 settings:

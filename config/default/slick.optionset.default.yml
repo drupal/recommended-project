@@ -26,13 +26,13 @@ options:
     instructionsText: ''
     adaptiveHeight: false
     autoplay: false
-    autoplaySpeed: 3000
     useAutoplayToggleButton: true
     pauseIcon: slick-pause-icon
     playIcon: slick-play-icon
     pauseOnHover: true
     pauseOnDotsHover: false
     pauseOnFocus: true
+    autoplaySpeed: 3000
     arrows: true
     prevArrow: Previous
     nextArrow: Next

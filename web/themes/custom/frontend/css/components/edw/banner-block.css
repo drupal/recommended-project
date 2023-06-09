@@ -14,7 +14,7 @@
     z-index: -1;
     margin-left: 50%;
     transform: translateX(-50%);
-    border-top: 4px solid var(--c-edw-green);
+    border-top: 4px solid var(--c-primary);
   }
 
   .block-edw-hero-banner img {
@@ -27,7 +27,7 @@
 
   .block-edw-hero-banner h1 {
     color: #fff;
-    text-shadow: 0px 0px 0.625rem rgba(0, 0, 0, 0.35);
+    text-shadow: 0px 0px 0.625rem var(--c-black);
   }
 
   .block-edw-hero-banner picture {
