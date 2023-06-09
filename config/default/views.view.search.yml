@@ -25,7 +25,7 @@ display:
       fields:
         search_api_id:
           id: search_api_id
-          table: search_api_index_index
+          table: search_api_global_index_index
           field: search_api_id
           relationship: none
           group_type: group
