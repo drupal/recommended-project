@@ -5,14 +5,16 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_banner_image
+    - field.field.node.page.field_banner_text
     - field.field.node.page.field_image
     - field.field.node.page.field_metatags
     - field.field.node.page.layout_builder__layout
     - field.field.node.page.layout_builder__translation
-    - image.style.teaser
     - node.type.page
+    - responsive_image.styles.16_9
   module:
-    - media
+    - media_responsive_thumbnail
     - smart_trim
     - user
 id: node.page.teaser
@@ -42,13 +44,11 @@ content:
     weight: 1
     region: content
   field_image:
-    type: media_thumbnail
+    type: media_responsive_thumbnail
     label: hidden
     settings:
+      responsive_image_style: '16_9'
       image_link: content
-      image_style: teaser
-      image_loading:
-        attribute: lazy
     third_party_settings: {  }
     weight: 2
     region: content
@@ -58,6 +58,8 @@ content:
     weight: 0
     region: content
 hidden:
+  field_banner_image: true
+  field_banner_text: true
   field_metatags: true
   langcode: true
   layout_builder__layout: true

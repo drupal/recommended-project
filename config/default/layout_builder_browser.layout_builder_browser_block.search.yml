@@ -1,4 +1,4 @@
-uuid: 7ac47379-9088-45de-88ca-7d4c69ec270b
+uuid: a6c9f9c6-bedc-434f-a27a-43ab7f1c3ea0
 langcode: en
 status: true
 dependencies: {  }
@@ -8,4 +8,4 @@ category: page_content
 label: Search
 image_path: ''
 image_alt: ''
-weight: -100
+weight: null

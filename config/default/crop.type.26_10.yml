@@ -1,0 +1,12 @@
+uuid: 79cd20b2-bf53-45bc-8c28-3a9d607366b1
+langcode: en
+status: true
+dependencies: {  }
+label: '26:10'
+id: '26_10'
+description: ''
+aspect_ratio: '26:10'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: 768
+hard_limit_height: 295

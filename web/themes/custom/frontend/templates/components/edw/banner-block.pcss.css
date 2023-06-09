@@ -1,0 +1,153 @@
+.block-edw-hero-banner {
+  height: 400px;
+  margin-bottom: 1px;
+
+  & .block-content {
+    height: 100%;
+  }
+
+  & .field--name-field-banner-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-top: 4px solid var(--c-edw-green);
+  }
+
+  & img {
+    max-width: none;
+  }
+
+  & .tags {
+    display: flex;
+  }
+
+  & h1 {
+    color: #fff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.35);
+  }
+
+  & picture {
+    display: block;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, rgba(35, 31, 32, 0.6) 29.09%, rgba(35, 31, 32, 0) 93.02%);
+    }
+  }
+}
+
+.hero-block {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  height: 100%;
+  position: relative;
+  box-sizing: content-box;
+  overflow: hidden;
+
+  .field, picture, img {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  & .title-subtitle {
+    & .button.js-form-submit.form-submit.btn.btn-primary{
+      left: 260px;
+      position: absolute;
+    }
+    & .form-text{
+      margin-top: 0;
+    }
+    position: relative;
+  }
+
+  & .edw-search-form input[type=text] {
+    padding: 10px;
+    width: 300px;
+    height: 45px;
+    border-radius: 20px;
+    justify-content: space-between;
+    gap: 85px;
+  }
+
+  & .caption {
+    margin-left: auto;
+    margin-top: auto;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  & .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .title-subtitle {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  & h1 {
+    margin-bottom: 20px;
+  }
+
+  & .summary {
+    max-lines: 3;
+  }
+
+  & .tag {
+    text-transform: uppercase;
+  }
+
+  & .tag + .date {
+    &:before {
+      content: '|';
+      margin: 0 5px;
+    }
+  }
+
+  & .left-bar {
+    border-left: 4px solid #FFF;
+    padding-left: 20px;
+  }
+
+  .breadcrumb {
+    list-style-type: none;
+    color: var(--c-gray-500);
+    background-color: var(--c-dark);
+    display: inline-flex;
+    padding: 5px 10px;
+
+    & .breadcrumb-item {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      & + .breadcrumb-item {
+        &:before {
+          content: '/';
+          margin-left: 5px;
+        }
+      }
+    }
+
+    & a {
+      color: var(--c-white);
+
+      &:hover {
+        color: var(--c-white);
+      }
+    }
+  }
+}

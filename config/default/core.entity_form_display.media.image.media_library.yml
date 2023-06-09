@@ -8,19 +8,30 @@ dependencies:
     - image.style.thumbnail
     - media.type.image
   module:
-    - image
+    - image_widget_crop
 id: media.image.media_library
 targetEntityType: media
 bundle: image
 mode: media_library
 content:
   field_media_image:
-    type: image_image
+    type: image_widget_crop
     weight: -50
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - hero_banner
+        - '16_9'
+        - '21_10'
+        - '26_10'
+        - '4_3'
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
     third_party_settings: {  }
 hidden:
   created: true

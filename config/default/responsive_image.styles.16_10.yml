@@ -1,0 +1,21 @@
+uuid: 664fdf53-3528-473f-bc19-5ec687cfa805
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.4_3_768x576
+  theme:
+    - frontend
+id: '16_10'
+label: '4:3'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 4_3_768x576
+    breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: 4_3_768x576

@@ -1,0 +1,26 @@
+uuid: a3c8d8dd-952b-47a0-a9e7-939250bf0f1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero_banner
+  module:
+    - crop
+name: hero_banner
+label: 'Hero banner'
+effects:
+  70bb43cb-8d74-458e-9426-db710978f8e0:
+    uuid: 70bb43cb-8d74-458e-9426-db710978f8e0
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: hero_banner
+      automatic_crop_provider: null
+  a412c441-9a23-4245-8247-8dd49b44c4cb:
+    uuid: a412c441-9a23-4245-8247-8dd49b44c4cb
+    id: image_scale_and_crop
+    weight: 3
+    data:
+      width: 1600
+      height: 400
+      anchor: center-center

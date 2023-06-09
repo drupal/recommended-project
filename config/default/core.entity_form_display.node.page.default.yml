@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_banner_image
+    - field.field.node.page.field_banner_text
     - field.field.node.page.field_image
     - field.field.node.page.field_metatags
     - field.field.node.page.layout_builder__layout
@@ -34,6 +36,21 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_banner_image:
+    type: media_library_widget
+    weight: 27
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_banner_text:
+    type: text_textarea
+    weight: 28
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_image:
     type: media_library_widget

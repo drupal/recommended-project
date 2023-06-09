@@ -6,10 +6,9 @@ dependencies:
     - search_api.server.default_server
   module:
     - node
-    - taxonomy
     - search_api
-id: index
-name: Index
+id: global_index
+name: 'Global Index'
 description: ''
 read_only: false
 field_settings:
@@ -21,26 +20,10 @@ field_settings:
     dependencies:
       module:
         - node
-  description:
-    label: Description
-    datasource_id: 'entity:taxonomy_term'
-    property_path: description
-    type: text
-    dependencies:
-      module:
-        - taxonomy
   language_with_fallback:
     label: 'Language (with fallback)'
     property_path: language_with_fallback
     type: string
-  name:
-    label: Name
-    datasource_id: 'entity:taxonomy_term'
-    property_path: name
-    type: string
-    dependencies:
-      module:
-        - taxonomy
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -75,20 +58,12 @@ field_settings:
       module:
         - node
   uid:
-    label: null
+    label: uid
     datasource_id: 'entity:node'
     property_path: uid
     type: integer
     indexed_locked: true
     type_locked: true
-    dependencies:
-      module:
-        - node
-  uuid:
-    label: UUID
-    datasource_id: 'entity:node'
-    property_path: uuid
-    type: string
     dependencies:
       module:
         - node
@@ -99,13 +74,6 @@ datasource_settings:
       selected:
         - news
         - page
-    languages:
-      default: true
-      selected: {  }
-  'entity:taxonomy_term':
-    bundles:
-      default: true
-      selected: {  }
     languages:
       default: true
       selected: {  }
@@ -122,24 +90,65 @@ processor_settings:
       preprocess_query: -15
     all_fields: false
     fields:
-      - description
       - language_with_fallback
-      - name
       - title
       - type
-      - uuid
     title: true
     alt: true
     tags:
       b: 2
-      em: 1
       h1: 5
       h2: 3
       h3: 2
       strong: 2
-      u: 1
+  ignore_character:
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+    all_fields: false
+    fields:
+      - language_with_fallback
+      - title
+      - type
+    ignorable: "['¿¡!?,.:;]"
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+  ignorecase:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+    all_fields: false
+    fields:
+      - language_with_fallback
+      - title
+      - type
   language_with_fallback: {  }
   rendered_item: {  }
+  tokenizer:
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+    all_fields: false
+    fields: {  }
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '3'
+  transliteration:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+    all_fields: false
+    fields:
+      - language_with_fallback
+      - title
+      - type
 tracker_settings:
   default:
     indexing_order: fifo

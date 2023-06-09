@@ -23,6 +23,7 @@ module:
   conditional_fields: 0
   config_translation: 0
   contextual: 0
+  crop: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
@@ -33,6 +34,7 @@ module:
   easy_breadcrumb: 0
   editor: 0
   editor_advanced_link: 0
+  edw: 0
   edw_healthcheck: 0
   environment_indicator: 0
   field: 0
@@ -43,6 +45,8 @@ module:
   honeypot: 0
   image: 0
   image_captcha: 0
+  image_max_size_crop: 0
+  image_widget_crop: 0
   lang_dropdown: 0
   language: 0
   layout_builder: 0
@@ -79,6 +83,7 @@ module:
   responsive_image: 0
   search_api: 0
   search_api_db: 0
+  select2: 0
   shortcut: 0
   simple_search_form: 0
   slick: 0

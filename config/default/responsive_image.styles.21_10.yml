@@ -1,0 +1,21 @@
+uuid: fb7d2d5d-72ae-4d97-83f5-40a8b0fa77e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.21_10_768x365
+  theme:
+    - frontend
+id: '21_10'
+label: '21:10'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - 21_10_768x365
+    breakpoint_id: edwt.screen.md-min
+    multiplier: 1x
+breakpoint_group: screen
+fallback_image_style: 21_10_768x365

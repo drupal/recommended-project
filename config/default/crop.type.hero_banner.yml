@@ -1,0 +1,12 @@
+uuid: a8bc4f69-926c-4a8f-9360-0831f78da454
+langcode: en
+status: true
+dependencies: {  }
+label: 'Hero banner'
+id: hero_banner
+description: ''
+aspect_ratio: '4:1'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: 1600
+hard_limit_height: 400

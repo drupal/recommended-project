@@ -8,18 +8,8 @@ global-styling:
       css/dark-mode.css: {}
       css/header.css: { }
       css/footer.css: { }
-      css/content/news/news-teaser.css: {}
-
   js:
     js/script.js: {}
-
-# News teaser styling.
-news--teaser:
-  css:
-    component:
-      css/content/news/news-teaser.css: {}
-  js:
-    js/content/news/news-teaser.js: {}
 
 # Content teaser styling.
 node--teaser:
@@ -27,3 +17,7 @@ node--teaser:
     component:
       css/components/content/node--teaser.css: { }
 
+banner_block:
+  css:
+    component:
+      css/components/edw/banner-block.css: { }
