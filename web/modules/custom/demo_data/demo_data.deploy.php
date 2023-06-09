@@ -16,7 +16,6 @@ function demo_data_deploy_10001() {
   $homepage->save();
 
   $homepage->id();
-
   $about = \Drupal::entityTypeManager()->getStorage('node')->create([
     'type' => 'page',
     'title' => 'Who we are',
@@ -24,7 +23,6 @@ function demo_data_deploy_10001() {
   $about->save();
 
   $about->id();
-
   $knowledge = \Drupal::entityTypeManager()->getStorage('node')->create([
     'type' => 'page',
     'title' => 'What we do',
@@ -32,7 +30,6 @@ function demo_data_deploy_10001() {
   $knowledge->save();
 
   $knowledge->id();
-
   $contact = \Drupal::entityTypeManager()->getStorage('node')->create([
     'type' => 'page',
     'title' => 'Contact Us',
@@ -40,7 +37,6 @@ function demo_data_deploy_10001() {
   $contact->save();
 
   $contact->id();
-
   $news = \Drupal::entityTypeManager()->getStorage('node')->create([
     'type' => 'page',
     'title' => 'News',
@@ -48,7 +44,6 @@ function demo_data_deploy_10001() {
   $news->save();
 
   $news->id();
-
   $policy = \Drupal::entityTypeManager()->getStorage('node')->create([
     'type' => 'page',
     'title' => 'Privacy/Site Policy',
@@ -56,7 +51,6 @@ function demo_data_deploy_10001() {
   $policy->save();
 
   $policy->id();
-
   $child = \Drupal::entityTypeManager()->getStorage('node')->create([
     'type' => 'page',
     'title' => 'Our approach',
@@ -64,7 +58,6 @@ function demo_data_deploy_10001() {
   $child->save();
 
   $child->id();
-
   $aboutMenu = \Drupal::entityTypeManager()
     ->getStorage('menu_link_content')
     ->create([
@@ -95,7 +88,6 @@ function demo_data_deploy_10001() {
     ]);
 
   $newsMenu->save();
-
   $childMenu = \Drupal::entityTypeManager()
     ->getStorage('menu_link_content')
     ->create([
@@ -116,7 +108,6 @@ function demo_data_deploy_10001() {
     ]);
 
   $contactMenu->save();
-
   $policyMenu = \Drupal::entityTypeManager()
     ->getStorage('menu_link_content')
     ->create([
@@ -124,6 +115,5 @@ function demo_data_deploy_10001() {
       'link' => [['uri' => 'internal:/node/' . $policy->id()]],
       'menu_name' => 'footer',
     ]);
-
   $policyMenu->save();
 }
