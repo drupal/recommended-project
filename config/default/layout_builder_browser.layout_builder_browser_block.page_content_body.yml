@@ -1,0 +1,11 @@
+uuid: 47c18263-dbf4-495a-bd48-45b2d917cdfd
+langcode: en
+status: true
+dependencies: {  }
+id: page_content_body
+block_id: 'field_block:node:page:body'
+category: field
+label: 'Page - Content body'
+image_path: ''
+image_alt: ''
+weight: -100

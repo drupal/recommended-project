@@ -1,8 +1,9 @@
-uuid: 28cdc64d-0a93-42b8-866a-8b0b8435d83b
+uuid: d964b06f-167d-479f-873a-25d274cf886a
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.compact_teaser
     - field.field.node.page.body
     - field.field.node.page.field_banner_image
     - field.field.node.page.field_banner_text
@@ -10,48 +11,25 @@ dependencies:
     - field.field.node.page.field_metatags
     - field.field.node.page.layout_builder__layout
     - field.field.node.page.layout_builder__translation
+    - image.style.16_9_768x432
     - node.type.page
   module:
     - layout_builder
     - layout_builder_restrictions
-    - layout_discovery
-    - metatag
-    - text
+    - media
     - user
 third_party_settings:
   layout_builder:
-    enabled: true
-    allow_custom: true
-    sections:
-      -
-        layout_id: layout_onecol
-        layout_settings:
-          label: ''
-          context_mapping: {  }
-        components:
-          65d8ffd3-151d-457d-8d4f-67ad2808e469:
-            uuid: 65d8ffd3-151d-457d-8d4f-67ad2808e469
-            region: content
-            configuration:
-              id: 'field_block:node:page:body'
-              label: Body
-              label_display: '0'
-              provider: layout_builder
-              context_mapping:
-                entity: layout_builder.entity
-                view_mode: view_mode
-              formatter:
-                type: text_default
-                label: hidden
-                settings: {  }
-                third_party_settings: {  }
-            weight: 0
-            additional: {  }
-        third_party_settings: {  }
+    enabled: false
+    allow_custom: false
   layout_builder_restrictions:
     allowed_block_categories: {  }
     entity_view_mode_restriction:
-      allowed_layouts: {  }
+      allowed_layouts:
+        - 'bootstrap_layout_builder:blb_col_1'
+        - 'bootstrap_layout_builder:blb_col_2'
+        - 'bootstrap_layout_builder:blb_col_3'
+        - 'bootstrap_layout_builder:blb_col_4'
       denylisted_blocks:
         'Content fields':
           - 'field_block:node:page:uid'
@@ -101,54 +79,32 @@ third_party_settings:
         - Forms
         - Menus
         - System
-id: node.page.default
+id: node.page.compact_teaser
 targetEntityType: node
 bundle: page
-mode: default
+mode: compact_teaser
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 101
-    region: content
-  field_banner_image:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 104
-    region: content
-  field_banner_text:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 105
-    region: content
   field_image:
-    type: entity_reference_label
-    label: above
+    type: media_thumbnail
+    label: hidden
     settings:
-      link: true
+      image_link: content
+      image_style: 16_9_768x432
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 103
-    region: content
-  field_metatags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  body: true
+  field_banner_image: true
+  field_banner_text: true
+  field_metatags: true
   langcode: true
   layout_builder__layout: true
   layout_builder__translation: true

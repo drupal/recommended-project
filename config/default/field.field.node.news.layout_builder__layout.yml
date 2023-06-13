@@ -1,0 +1,21 @@
+uuid: ab5cacf0-d037-4325-9834-ab8f8aec0061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.layout_builder__layout
+    - node.type.news
+  module:
+    - layout_builder
+id: node.news.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: node
+bundle: news
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

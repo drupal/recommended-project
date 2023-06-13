@@ -1,0 +1,11 @@
+uuid: 060f2866-5dbd-4ab2-a487-18b4a07c49f4
+langcode: en
+status: true
+dependencies: {  }
+id: news_content_body
+block_id: 'field_block:node:news:body'
+category: field
+label: 'News - Content body'
+image_path: ''
+image_alt: ''
+weight: -100

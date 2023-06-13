@@ -8,6 +8,8 @@ dependencies:
     - field.field.node.news.field_banner_text
     - field.field.node.news.field_image
     - field.field.node.news.field_news_type
+    - field.field.node.news.layout_builder__layout
+    - field.field.node.news.layout_builder__translation
     - node.type.news
   module:
     - media_library
@@ -124,4 +126,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true
+  layout_builder__translation: true
