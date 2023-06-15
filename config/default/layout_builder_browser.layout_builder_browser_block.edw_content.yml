@@ -1,0 +1,11 @@
+uuid: 4e12a502-58d8-4ec5-8502-4caa306562cc
+langcode: en
+status: true
+dependencies: {  }
+id: edw_content
+block_id: edw_content
+category: page_content
+label: 'EDW content'
+image_path: ''
+image_alt: ''
+weight: -100

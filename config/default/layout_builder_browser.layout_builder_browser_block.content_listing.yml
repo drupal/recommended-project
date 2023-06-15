@@ -1,0 +1,11 @@
+uuid: 99c8a0a6-6fce-4aa7-b80d-ff8da5e680b6
+langcode: en
+status: true
+dependencies: {  }
+id: content_listing
+block_id: 'views_block:content_listing-block_1'
+category: page_content
+label: 'Content listing'
+image_path: ''
+image_alt: ''
+weight: -100
