@@ -101,6 +101,11 @@ img {
     margin-top: 1.25rem;
 }
 
+.view-footer a{
+  display: flex;
+  justify-content: center;
+}
+
 .max-3-lines {
   overflow: hidden;
   text-overflow: ellipsis;

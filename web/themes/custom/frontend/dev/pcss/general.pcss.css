@@ -108,6 +108,10 @@ img {
     margin-top: 20px;
   }
 }
+.view-footer a{
+  display: flex;
+  justify-content: center;
+}
 
 .max-3-lines {
   overflow: hidden;
