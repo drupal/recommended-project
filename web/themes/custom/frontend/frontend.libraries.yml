@@ -16,3 +16,8 @@ node--teaser:
   css:
     component:
       css/components/content/node--teaser.css: { }
+
+slick:
+  css:
+    component:
+      css/components/slick/slick.css: {}

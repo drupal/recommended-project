@@ -1,0 +1,77 @@
+.slick-next:before {
+  background-image: url('../../../assets/arrow.svg');
+  transform: rotate(270deg);
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+  margin-left: -15px;
+}
+
+.slick-prev:before {
+  transform: rotate(90deg);
+  background-image: url('../../../assets/arrow.svg');
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.slick-list {
+  display: flex;
+}
+
+.slick__slide {
+  background-color: var(--color-white);
+  border-radius: 10px 10px 0 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 991px) {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+.slick__arrow {
+  width: calc(100% + 85px);
+  left: -40px;
+
+  @media (max-width: 991px) {
+    width: calc(100% + 64px);
+    left: -23px;
+  }
+}
+
+.slick-track {
+  display: flex;
+  gap: 15px;
+}
+
+.slide__caption {
+  padding: 0;
+}
+
+.slide__content {
+  height: 100%;
+  display: flex;
+}
+
+.slide__description {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  & > * {
+    height: 100%;
+  }
+}
+
+.slick-arrow {
+  background: transparent;
+}

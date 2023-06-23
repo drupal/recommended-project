@@ -87,6 +87,7 @@ module:
   shortcut: 0
   simple_search_form: 0
   slick: 0
+  slick_ui: 0
   slick_views: 0
   smart_trim: 0
   smtp: 0

@@ -8,7 +8,6 @@ display:
       fields:
         filename:
           label: 名称
-          separator: ', '
         filemime:
           label: MIME类型
         filesize:

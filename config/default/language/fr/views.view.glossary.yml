@@ -1,4 +1,3 @@
-label: Glossary
 description: 'Tous les contenus, triés par lettre.'
 display:
   default:
@@ -13,9 +12,6 @@ display:
           label: 'Dernière mise à jour'
       pager:
         options:
-          tags:
-            next: ››
-            previous: ‹‹
           expose:
             items_per_page_label: 'Éléments par page'
             items_per_page_options_all_label: '- Tout -'
@@ -25,12 +21,5 @@ display:
           submit_button: Appliquer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
   attachment_1:
     display_title: 'Élément joint'
-  page_1:
-    display_title: Page
-    display_options:
-      menu:
-        title: Glossary

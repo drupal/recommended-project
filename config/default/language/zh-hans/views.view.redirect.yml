@@ -26,7 +26,6 @@ display:
           action_title: 对所选项目
         redirect_source__path:
           label: 源自
-          separator: ', '
         created:
           label: 已建立
       filters:

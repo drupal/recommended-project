@@ -8,10 +8,8 @@ display:
       fields:
         info:
           label: 区块描述
-          separator: ', '
         type:
           label: 区块类型
-          separator: ', '
         changed:
           label: 已更新
         operations:

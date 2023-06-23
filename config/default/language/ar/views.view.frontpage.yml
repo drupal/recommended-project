@@ -17,6 +17,9 @@ display:
           exposed_sorts_label: 'الترتيب حسب'
           sort_asc_label: تصاعدي
           sort_desc_label: تنازلي
+      empty:
+        title:
+          title: 'Welcome to [site:name]'
   feed_1:
     display_title: التلقيمة
   page_1:

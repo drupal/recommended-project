@@ -1,18 +1,11 @@
-label: 'Media library'
 description: 'Trouver et gérer des media.'
 display:
   default:
     display_title: 'Par défaut'
     display_options:
       title: Média
-      fields:
-        media_bulk_form:
-          action_title: Action
       pager:
         options:
-          tags:
-            next: ››
-            previous: ‹‹
           expose:
             items_per_page_label: 'Éléments par page'
             items_per_page_options_all_label: '- Tout -'
@@ -22,8 +15,6 @@ display:
           submit_button: 'Appliquer les filtres'
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'Aucun média disponible.'
@@ -60,13 +51,8 @@ display:
           expose:
             label: Langue
   page:
-    display_title: Page
     display_options:
       fields:
-        media_bulk_form:
-          action_title: Action
-        name:
-          separator: ', '
         edit_media:
           alter:
             text: 'Modifier {{ name }}'
@@ -78,7 +64,6 @@ display:
             alt: 'Supprimer {{ name }}'
           text: Supprimer
   widget:
-    display_title: Widget
     display_options:
       arguments:
         bundle:

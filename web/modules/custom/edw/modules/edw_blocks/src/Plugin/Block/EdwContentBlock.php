@@ -4,6 +4,7 @@ namespace Drupal\edw_blocks\Plugin\Block;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Views;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a 'EDW Content' Block.
@@ -19,6 +20,22 @@ use Drupal\views\Views;
 class EdwContentBlock extends EdwBlockBase {
 
   /**
+   * The module handler.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   */
+  protected $moduleHandler;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    $instance = parent::create($container, $configuration, $plugin_id, $plugin_definition);
+    $instance->moduleHandler = $container->get('module_handler');
+    return $instance;
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function build() {
@@ -31,7 +48,9 @@ class EdwContentBlock extends EdwBlockBase {
 
     $view->setDisplay('block_generic_listing');
 
-    $contentTypesList = $config['content_type'] ?? 'all';
+    $contentTypesList = !empty($config['content_types'])
+      ? implode('+', $config['content_types'])
+      : 'all';
     // Set arguments based on the selected content types.
     $view->setArguments([$contentTypesList]);
 
@@ -40,7 +59,7 @@ class EdwContentBlock extends EdwBlockBase {
     // Set the number of items per page / total number of results.
     $view->display_handler->options['pager']['type'] = 'full';
     $pager['options']['items_per_page'] = $config['items_per_page'];
-    if (!empty($config['number_of_results'])) {
+    if (!empty($config['number_of_results']) || $config['display_mode'] == 'slick') {
       $pager['type'] = 'some';
       $pager['options']['items_per_page'] = $config['number_of_results'];
     }
@@ -48,10 +67,22 @@ class EdwContentBlock extends EdwBlockBase {
 
     // If Display mode is list, remove col-md-4 class.
     if ($config['display_mode'] == 'list') {
-      $style = $view->display_handler->getOption('style');
+      $style = $view->getDisplay()->getOption('style');
       $style['options']['col_class_custom'] = FALSE;
       $view->getDisplay()->setOption('style', $style);
     }
+    elseif ($config['display_mode'] == 'slick') {
+      $style = $view->getDisplay()->getOption('style');
+      $style['type'] = 'slick';
+      $style['options'] = [
+        'caption' => ['title' => 'title'],
+        'optionset' => 'carousel',
+        'skin' => 'fullwidth',
+        'style' => 'grid',
+      ];
+      $view->getDisplay()->setOption('style', $style);
+    }
+
     $footer = $view->display_handler->getOption('footer');
     $footer['area_text_custom']['content'] = '<a href="' . $config['see_more_link'] . '">' . $config['see_more_title'] . '</a>';
     $view->display_handler->setOption('footer', $footer);
@@ -102,6 +133,9 @@ class EdwContentBlock extends EdwBlockBase {
       ],
       '#default_value' => $config['display_mode'] ?? 'grid',
     ];
+    if ($this->moduleHandler->moduleExists('slick_views')) {
+      $form['display_mode']['#options']['slick'] = $this->t('Slick slideshow');
+    }
 
     $form['view_mode'] = [
       '#type' => 'radios',
@@ -135,6 +169,11 @@ class EdwContentBlock extends EdwBlockBase {
       '#type' => 'textfield',
       '#title' => $this->t('Items per page'),
       '#default_value' => $config['items_per_page'] ?? '',
+      '#states' => [
+        'invisible' => [
+          ':input[name="settings[display_mode]"]' => ['value' => 'slick'],
+        ]
+      ],
     ];
 
     $form['display_frontpage_promoted_items'] = [

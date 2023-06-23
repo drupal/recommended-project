@@ -9,8 +9,6 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       pager:
         options:
           tags:
@@ -27,7 +25,6 @@ display:
           action_title: 'Pour la sélection'
         redirect_source__path:
           label: 'A partir de'
-          separator: ', '
         created:
           label: Créé
       filters:
@@ -64,5 +61,3 @@ display:
       empty:
         area_text_custom:
           content: "Il n'y a pas encore de redirection."
-  page_1:
-    display_title: Page

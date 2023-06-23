@@ -24,7 +24,7 @@ display:
       empty:
         area_text_custom:
           content: "尚未创建首页内容。\r\n请按照<a href=\"https://www.drupal.org/docs/user_guide/en/index.html\">用户指南</a>开始创建网站。"
-  feed_1:
-    display_title: Feed
+        title:
+          title: 'Welcome to [site:name]'
   page_1:
     display_title: 页面

@@ -44,6 +44,18 @@
             }
         },
         {
+            "type": "package",
+            "package": {
+                "name": "slick/slick",
+                "version": "v1.9.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/kenwheeler/slick/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
@@ -75,9 +87,9 @@
         "drupal/facets": "^2.0",
         "drupal/field_group": "^3.4",
         "drupal/honeypot": "^2.0",
-        "drupal/lang_dropdown": "dev-custom",
         "drupal/image_max_size_crop": "^2.0",
         "drupal/image_widget_crop": "^2.4",
+        "drupal/lang_dropdown": "dev-custom",
         "drupal/layout_builder_browser": "^1.4",
         "drupal/layout_builder_modal": "^1.1",
         "drupal/layout_builder_restrictions": "^2.12",
@@ -108,7 +120,8 @@
         "drush/drush": "^11.0",
         "eaudeweb/heavy-lifter": "^2",
         "npm-asset/select2": "^4.0",
-        "oomphinc/composer-installers-extender": "^2.0"
+        "oomphinc/composer-installers-extender": "^2.0",
+        "slick/slick": "^1.9.0"
     },
     "require-dev": {
         "drupal/coder": "^8.3",

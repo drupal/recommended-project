@@ -24,6 +24,8 @@ display:
       empty:
         area_text_custom:
           content: 'Материалов для отображения на главной странице еще не создано.<br>Следуйте <a target="_blank" href="https://www.drupal.org/ru/docs/user_guide/ru/index.html">Руководству Пользователя</a> для начала создания сайта.'
+        title:
+          title: 'Welcome to [site:name]'
   feed_1:
     display_title: 'Поток данных'
   page_1:
