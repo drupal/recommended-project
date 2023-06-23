@@ -69,3 +69,6 @@
 phpunit.xml
 
 .idea
+
+salt.txt
+hash-salt-default.txt
