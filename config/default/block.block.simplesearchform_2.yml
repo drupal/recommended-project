@@ -18,7 +18,7 @@ settings:
   label_display: '0'
   provider: simple_search_form
   action_path: /search
-  get_parameter: search_api_fulltext
+  get_parameter: text
   input_type: search
   search_api_autocomplete:
     search_id: ''

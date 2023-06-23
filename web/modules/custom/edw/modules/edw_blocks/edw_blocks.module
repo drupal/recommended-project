@@ -6,6 +6,7 @@
  */
 
 use Drupal\node\NodeInterface;
+use Drupal\edw_blocks\Plugin\Block\EdwSearchBlock;
 
 /**
  * Implements hook_theme().
@@ -44,5 +45,14 @@ function edw_blocks_preprocess_block(&$variables) {
     ) {
       $variables['content']['#access'] = FALSE;
     }
+  }
+}
+
+/**
+ * Implements hook_block_alter().
+ */
+function edw_blocks_block_alter(&$definitions) {
+  if (!empty($definitions['views_block:search-block_1'])) {
+    $definitions['views_block:search-block_1']['class'] = EdwSearchBlock::class;
   }
 }

@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.body
     - search_api.server.default_server
   module:
     - node
@@ -12,6 +13,14 @@ name: 'Global Index'
 description: ''
 read_only: false
 field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
   created:
     label: 'Authored on'
     datasource_id: 'entity:node'
@@ -46,6 +55,15 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: string
+    dependencies:
+      module:
+        - node
+  title_fulltext:
+    label: 'Title fulltext'
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: 5.0
     dependencies:
       module:
         - node

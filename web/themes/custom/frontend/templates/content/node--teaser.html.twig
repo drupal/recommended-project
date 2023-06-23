@@ -9,12 +9,19 @@
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ] %}
 
+{% set main_class = 'col-md-8' %}
+{% if node.field_image.isEmpty %}
+  {% set main_class = 'col-md-12' %}
+{% endif %}
+
 <article{{ attributes.addClass(classes) }}>
   <div class="row" {{ content_attributes.addClass('node__content') }}>
-    <div class="col-md-4">
-      {{ content.field_image }}
-    </div>
-    <div class="col-md-8">
+    {% if not node.field_image.isEmpty %}
+      <div class="col-md-4">
+        {{ content.field_image }}
+      </div>
+    {% endif %}
+    <div class="{{ main_class }}">
       <div class="date-tags">
         {{ content.field_news_type }}
         <div>{{ node.getCreatedTime|format_date('european_date') }}</div>
