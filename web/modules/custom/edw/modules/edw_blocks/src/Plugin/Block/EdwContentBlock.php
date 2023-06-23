@@ -172,7 +172,7 @@ class EdwContentBlock extends EdwBlockBase {
       '#states' => [
         'invisible' => [
           ':input[name="settings[display_mode]"]' => ['value' => 'slick'],
-        ]
+        ],
       ],
     ];
 
