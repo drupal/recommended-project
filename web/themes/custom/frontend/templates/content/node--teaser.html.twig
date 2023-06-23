@@ -7,6 +7,7 @@
   node.isSticky() ? 'node--sticky',
   not node.isPublished() ? 'node--unpublished',
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'node-teaser',
 ] %}
 
 {% set main_class = 'col-md-8' %}
@@ -23,7 +24,11 @@
     {% endif %}
     <div class="{{ main_class }}">
       <div class="date-tags">
-        {{ content.field_news_type }}
+        {% if not node.field_news_type.isEmpty %}
+          <div class="field">
+            {{ content.field_news_type.0 }}
+          </div>
+        {% endif %}
         <div>{{ node.getCreatedTime|format_date('european_date') }}</div>
       </div>
       {{ title_prefix }}

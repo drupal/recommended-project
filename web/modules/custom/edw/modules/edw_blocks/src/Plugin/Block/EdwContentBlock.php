@@ -77,7 +77,7 @@ class EdwContentBlock extends EdwBlockBase {
       $style['options'] = [
         'caption' => ['title' => 'title'],
         'optionset' => 'carousel',
-        'skin' => 'fullwidth',
+        'skin' => 'default',
         'style' => 'grid',
       ];
       $view->getDisplay()->setOption('style', $style);

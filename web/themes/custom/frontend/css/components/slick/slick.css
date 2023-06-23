@@ -33,6 +33,10 @@
   flex-direction: column;
 }
 
+.slick__slide .node-teaser {
+    margin-bottom: 0;
+  }
+
 @media (max-width: 61.9375rem) {
 
 .slick__slide {

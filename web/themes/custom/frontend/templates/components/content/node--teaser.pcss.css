@@ -1,13 +1,31 @@
-.node--view-mode-teaser {
-  margin: 20px 0;
+.node-teaser {
+  margin-bottom: 30px;
+
+  .field--name-field-image {
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    a {
+      text-decoration: none;
+      color: var(--body-color);
+
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
+  }
 
   .date-tags {
     display: flex;
+    margin-bottom: 10px;
 
     & *:not(:first-child){
-      margin-left: 10px;
-      padding-left: 10px;
-      border-left: 1px solid black;
+      &:before {
+        content: '|';
+        margin-right: 5px;
+        margin-left: 5px;
+      }
     }
   }
 }

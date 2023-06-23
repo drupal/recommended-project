@@ -32,6 +32,10 @@
   display: flex;
   flex-direction: column;
 
+  .node-teaser {
+    margin-bottom: 0;
+  }
+
   @media (max-width: 991px) {
     margin-right: 10px;
     margin-left: 10px;

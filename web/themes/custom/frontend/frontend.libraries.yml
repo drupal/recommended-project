@@ -11,11 +11,10 @@ global-styling:
   js:
     js/script.js: {}
 
-# Content teaser styling.
 node--teaser:
   css:
     component:
-      css/components/content/node--teaser.css: { }
+      css/components/content/node--teaser.css: {}
 
 slick:
   css:
