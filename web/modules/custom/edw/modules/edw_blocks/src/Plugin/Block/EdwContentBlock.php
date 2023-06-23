@@ -31,25 +31,18 @@ class EdwContentBlock extends EdwBlockBase {
 
     $view->setDisplay('block_generic_listing');
 
-    if (is_array($config['content_types'])) {
-      $contentTypesList = implode('+', $config['content_types']);
-    }
-    else {
-      $contentTypesList = $config['content_type'];
-    }
+    $contentTypesList = $config['content_type'] ?? 'all';
     // Set arguments based on the selected content types.
     $view->setArguments([$contentTypesList]);
 
     $pager = $view->display_handler->getOption('pager');
 
     // Set the number of items per page / total number of results.
+    $view->display_handler->options['pager']['type'] = 'full';
+    $pager['options']['items_per_page'] = $config['items_per_page'];
     if (!empty($config['number_of_results'])) {
       $pager['type'] = 'some';
       $pager['options']['items_per_page'] = $config['number_of_results'];
-    }
-    else {
-      $view->display_handler->options['pager']['type'] = 'full';
-      $pager['options']['items_per_page'] = $config['items_per_page'];
     }
     $view->display_handler->setOption('pager', $pager);
 

@@ -9,6 +9,8 @@
 
 /**
  * Create demo data.
+ *
+ * @SuppressWarnings(PHPMD)
  */
 function edw_demo_data_deploy_10001() {
   $homepage = \Drupal::entityTypeManager()->getStorage('node')->create([
