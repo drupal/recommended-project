@@ -1,0 +1,7 @@
+name: 'EDW Blocks'
+description: EDW custom blocks
+package: edw
+type: module
+core_version_requirement: ^8.8.0 || ^9 || ^10
+dependencies:
+  - edw:edw

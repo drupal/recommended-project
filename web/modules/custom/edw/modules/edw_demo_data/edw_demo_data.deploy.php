@@ -5,10 +5,12 @@
  * Deploy hooks for demo data.
  */
 
+// phpcs:ignoreFile
+
 /**
  * Create demo data.
  */
-function demo_data_deploy_10001() {
+function edw_demo_data_deploy_10001() {
   $homepage = \Drupal::entityTypeManager()->getStorage('node')->create([
     'type' => 'page',
     'title' => 'Homepage',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\edw\Plugin\Block;
+namespace Drupal\edw_blocks\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Cache\Cache;

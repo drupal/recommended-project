@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\edw\Plugin\Block;
+namespace Drupal\edw_blocks\Plugin\Block;
 
 use Drupal\media\MediaInterface;
 use Drupal\node\NodeInterface;
@@ -9,13 +9,18 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a 'Hero banner' Block.
  *
+ * To function properly, this block needs the following:
+ *  - field_banner_text on node.
+ *  - field_banner_image media field on node.
+ *  - european_date date format.
+ *
  * @Block(
  *   id = "edw_hero_banner",
  *   admin_label = @Translation("Hero banner"),
  *   category = @Translation("EDW"),
  * )
  */
-class HeroBannerBlock extends EdwBlockBase {
+class EdwHeroBannerBlock extends EdwBlockBase {
 
   /**
    * The breadcrumb manager.
@@ -80,13 +85,18 @@ class HeroBannerBlock extends EdwBlockBase {
     }
 
     return [
-      '#theme' => 'banner_block',
+      '#theme' => 'edw_hero_banner_block',
       '#summary' => $summary,
       '#title' => $title,
       '#breadcrumb' => $breadcrumb,
       '#image' => $image,
       '#date' => $this->dateFormatter->format($node->getCreatedTime(), 'european_date'),
       '#bundle' => $node->bundle(),
+      '#attached' => [
+        'library' => [
+          'edw_blocks/hero_banner',
+        ],
+      ],
     ];
   }
 

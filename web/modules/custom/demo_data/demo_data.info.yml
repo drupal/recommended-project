@@ -1,5 +1,0 @@
-name: 'Demo data'
-type: module
-core_version_requirement: ^9 || ^10
-package: Custom
-description: 'Creates a demo data.'

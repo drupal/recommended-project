@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: european_date
+label: 'European date'
+locked: false
+pattern: 'd F Y'

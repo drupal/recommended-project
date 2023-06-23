@@ -10,15 +10,16 @@ use Drupal\node\NodeInterface;
 /**
  * Implements hook_theme().
  */
-function edw_theme($existing, $type, $theme, $path) {
+function edw_blocks_theme($existing, $type, $theme, $path) {
   return [
-    'banner_block' => [
+    'edw_hero_banner_block' => [
       'variables' => [
         'title' => '',
         'breadcrumb' => '',
         'banner_image' => '',
         'image' => NULL,
         'summary' => '',
+        'date' => '',
       ],
     ],
   ];
@@ -27,7 +28,7 @@ function edw_theme($existing, $type, $theme, $path) {
 /**
  * Implements hook_preprocess_page_title().
  */
-function edw_preprocess_block(&$variables) {
+function edw_blocks_preprocess_block(&$variables) {
   // Hide the title and breadcrumbs block on pages
   // which should display the HeroBannerBlock.
   $banner_blocks = [

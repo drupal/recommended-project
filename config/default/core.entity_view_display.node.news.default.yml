@@ -44,6 +44,7 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 0
             additional: {  }
+            third_party_settings: {  }
         third_party_settings: {  }
   layout_builder_restrictions:
     allowed_block_categories: {  }
@@ -104,4 +105,6 @@ content:
     region: content
 hidden:
   langcode: true
+  layout_builder__layout: true
+  layout_builder__translation: true
   search_api_excerpt: true

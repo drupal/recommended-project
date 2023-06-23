@@ -1,0 +1,19 @@
+<div class="hero-block">
+  {% if image %}
+    {{ image }}
+    <div class="container">
+      <div class="breadcrumbs">{{ breadcrumb }}</div>
+      <div class="title-subtitle">
+        {% if date %}
+          <div class="tags">
+            <div class="date">{{ date }}</div>
+          </div>
+        {% endif %}
+        <h1>{{ title }}</h1>
+        {% if summary %}
+          <div class="summary max-3-lines">{{ summary | raw }}</div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>

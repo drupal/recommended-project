@@ -28,13 +28,13 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
-  demo_data: 0
   drimage: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
   editor_advanced_link: 0
   edw: 0
+  edw_blocks: 0
   edw_healthcheck: 0
   environment_indicator: 0
   field: 0
