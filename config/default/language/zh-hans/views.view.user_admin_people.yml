@@ -19,16 +19,23 @@ display:
           label: 角色
         created:
           label: 注册了
+          settings:
+            future_format: '@interval'
+            past_format: '@interval'
         access:
           label: 上次访问
           settings:
+            future_format: '@interval 后'
             past_format: '@interval 前'
         operations:
           label: 操作
+        mail:
+          separator: ', '
       pager:
         options:
           tags:
             next: '下一个 ›'
+            previous: '‹ 上一个'
             first: '« 首页'
             last: '末页 »'
           expose:

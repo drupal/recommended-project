@@ -1,0 +1,22 @@
+uuid: b2d50e12-f140-4087-a4fb-3ae8b15b378e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_types
+id: taxonomy_term.news_types.status
+field_name: status
+entity_type: taxonomy_term
+bundle: news_types
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

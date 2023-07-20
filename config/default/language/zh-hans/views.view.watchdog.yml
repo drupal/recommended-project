@@ -8,6 +8,8 @@ display:
       fields:
         nothing:
           admin_label: 图标
+        wid:
+          label: WID
         severity:
           label: 严重性
         type:
@@ -16,12 +18,19 @@ display:
           label: 日期
         message:
           label: 消息
+          alter:
+            path: 'admin/reports/dblog/event/{{ wid }}'
+            alt: '{{ message }}'
         name:
           label: 用户
+          separator: ', '
         link:
           label: 操作
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 每页条目数
             items_per_page_options_all_label: '- 全部 -'

@@ -5,7 +5,7 @@
 
 # Global options.
 options:
-  uri: todo-changeme.localhost
+  uri: recommended.local
 
 # Command-specific options.
 command:

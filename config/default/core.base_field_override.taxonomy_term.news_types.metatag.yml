@@ -1,0 +1,18 @@
+uuid: 94a8053b-55e6-4595-9f83-08fabbba9918
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_types
+id: taxonomy_term.news_types.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: news_types
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
