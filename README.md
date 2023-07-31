@@ -1,9 +1,9 @@
 # How to use this project
 
-1. Create a new project on your computer. This works with php7.4, not php8.0.
+1. Create a new project on your computer.
 
 ```
-composer create-project eaudeweb/recommended-project:9.x-dev [project-name]
+composer create-project eaudeweb/recommended-project:10.x-dev [project-name]
 ```
 
 2. When asked "**Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]?**" choose `Y`
