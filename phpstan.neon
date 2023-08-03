@@ -1,0 +1,6 @@
+includes:
+	- phpstan-baseline.neon
+parameters:
+    level: 9
+    paths:
+        - web/modules/custom
