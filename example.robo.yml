@@ -21,6 +21,8 @@ sites:
         extra_commands: []
       develop:
         admin_username: username
-        config_split: FALSE
         modules:
+          - field_ui
+          - views_ui
+          - webform_ui
           - stage_file_proxy

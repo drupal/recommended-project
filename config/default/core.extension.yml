@@ -39,7 +39,6 @@ module:
   facets: 0
   field: 0
   field_group: 0
-  field_ui: 0
   file: 0
   filter: 0
   honeypot: 0
@@ -84,10 +83,8 @@ module:
   search_api: 0
   search_api_db: 0
   select2: 0
-  shortcut: 0
   simple_search_form: 0
   slick: 0
-  slick_ui: 0
   slick_views: 0
   smart_trim: 0
   smtp: 0
@@ -100,9 +97,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
-  views_ui: 0
   webform: 0
-  webform_ui: 0
   webp: 0
   pathauto: 1
   xmlsitemap: 1
