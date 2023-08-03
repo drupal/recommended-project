@@ -10,6 +10,9 @@
     },
     "drupal/layout_builder_modal": {
       "#3133695 - incompatibility with layout_builder_st, contextual links broken": "https://www.drupal.org/files/issues/2020-05-07/3133695-3.patch"
+    },
+    "drupal/layout_builder_browser": {
+      "#3378982 - TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in in_array()": "https://www.drupal.org/files/issues/2023-08-03/3378982-empty-attributes-class-2.patch"
     }
   }
 }
