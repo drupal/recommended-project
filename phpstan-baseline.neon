@@ -1,0 +1,47 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+			path: *.module
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+			path: *.module
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+			path: *.module
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+			path: *.theme
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+			path: *.theme
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+			path: *.theme
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+			path: *.profile
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+			path: *.profile
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+			path: *.profile
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+			path: *.inc
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+			path: *.inc
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+			path: *.inc
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+			path: *.deploy.php
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+			path: *.deploy.php
+		-
+			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+			path: *.deploy.php
