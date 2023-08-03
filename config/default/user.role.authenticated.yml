@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - file
     - media
     - system
 _core:
@@ -13,4 +14,5 @@ weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'delete own files'
   - 'view media'

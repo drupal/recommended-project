@@ -6,8 +6,11 @@ display:
     display_options:
       title: Archivos
       fields:
+        fid:
+          label: Fid
         filename:
           label: Nombre
+          separator: ', '
         filemime:
           label: 'Tipo MIME'
         filesize:
@@ -23,6 +26,8 @@ display:
           label: 'Fecha de modificación'
         count:
           label: 'Usado en'
+          alter:
+            path: 'admin/content/files/usage/{{ fid }}'
       pager:
         options:
           tags:
@@ -37,6 +42,8 @@ display:
           submit_button: Filtro
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'No hay archivos disponibles.'

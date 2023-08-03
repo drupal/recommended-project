@@ -5,8 +5,8 @@
  * The edw module.
  */
 
-use Drupal\node\NodeInterface;
 use Drupal\edw_blocks\Plugin\Block\EdwSearchBlock;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements hook_theme().

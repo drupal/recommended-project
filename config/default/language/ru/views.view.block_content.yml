@@ -1,15 +1,14 @@
-label: 'Пользовательские блоки'
-description: 'Поиск и управление пользовательскими блоками.'
 display:
   default:
     display_title: 'По умолчанию'
     display_options:
-      title: 'Пользовательские блоки'
       fields:
         info:
           label: 'Описание блока'
+          separator: ', '
         type:
           label: 'Тип блока'
+          separator: ', '
         changed:
           label: Обновлено
         operations:
@@ -29,9 +28,6 @@ display:
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'
           sort_desc_label: 'По убыванию'
-      empty:
-        area_text_custom:
-          content: 'Нет доступных пользовательских блоков.'
       filters:
         info:
           expose:
@@ -41,6 +37,3 @@ display:
             label: 'Тип блока'
   page_1:
     display_title: Страница
-    display_options:
-      menu:
-        title: 'Пользовательские блоки'

@@ -12,7 +12,6 @@ third_party_settings:
   allowed_formats:
     allowed_formats:
       - full_html
-      - plain_text
 id: node.news.field_banner_text
 field_name: field_banner_text
 entity_type: node
@@ -20,8 +19,9 @@ bundle: news
 label: 'Banner text'
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long
