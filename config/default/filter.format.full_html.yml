@@ -46,10 +46,18 @@ filters:
     weight: 0
     settings:
       spamspan_at: ' [at] '
-      spamspan_use_graphic: '0'
-      spamspan_dot_enable: '0'
+      spamspan_use_graphic: false
+      spamspan_dot_enable: false
       spamspan_dot: ' [dot] '
-      spamspan_use_form: '0'
+      spamspan_use_form: false
       spamspan_form_pattern: '<a href="%url?goto=%email">%displaytext</a>'
       spamspan_form_default_url: contact
       spamspan_form_default_displaytext: 'contact form'
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      media_switch: ''

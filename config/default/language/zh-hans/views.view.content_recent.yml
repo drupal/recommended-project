@@ -5,6 +5,9 @@ display:
     display_title: 默认
     display_options:
       title: 最新内容
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: 应用

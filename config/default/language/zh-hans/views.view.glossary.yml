@@ -13,6 +13,9 @@ display:
           label: 最近更新
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 每页条目数
             items_per_page_options_all_label: '- 全部 -'

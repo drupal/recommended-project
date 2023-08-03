@@ -38,6 +38,8 @@ elements: |
     '#type': textarea
     '#required': true
     '#test': 'Please ignore this email.'
+  captcha:
+    '#type': captcha
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'

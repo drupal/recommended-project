@@ -1,3 +1,8 @@
 title: Contacto
 settings:
   confirmation_message: 'Su mensaje ha sido enviado.'
+handlers:
+  email_confirmation:
+    label: 'Confirmación por correo electrónico'
+  email_notification:
+    label: 'Aviso por correo electrónico'

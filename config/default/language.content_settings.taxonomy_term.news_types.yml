@@ -8,11 +8,11 @@ dependencies:
     - content_translation
 third_party_settings:
   content_translation:
-    enabled: false
+    enabled: true
     bundle_settings:
       untranslatable_fields_hide: '0'
 id: taxonomy_term.news_types
 target_entity_type_id: taxonomy_term
 target_bundle: news_types
 default_langcode: site_default
-language_alterable: false
+language_alterable: true

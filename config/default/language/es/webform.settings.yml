@@ -1,14 +1,29 @@
 settings:
+  default_form_close_message: 'Lo sentimos ... Este formulario está cerrado a nuevos envíos.'
   default_submit_button_label: Enviar
   default_reset_button_label: Restablecer
   default_delete_button_label: Eliminar
   default_wizard_toggle_show_label: 'Mostrar todo'
+  default_wizard_prev_button_label: '< Anterior'
+  default_wizard_next_button_label: 'Siguiente >'
+  default_wizard_start_label: Comienzo
+  default_wizard_confirmation_label: Completo
+  default_wizard_toggle_hide_label: 'Ocultar todo'
   default_preview_next_button_label: 'Vista previa'
+  default_preview_prev_button_label: '< Anterior'
   default_preview_label: 'Vista previa'
+  default_draft_button_label: 'Guardar borrador'
+  default_draft_saved_message: 'Envío guardado. Usted puede volver a este formuario luego y recuperará sus valores actuales.'
+  default_confirmation_back_label: 'Volver al formulario'
   dialog_options:
     narrow:
       title: Estrecho
+    normal:
+      title: Normal
     wide:
       title: Ancho
 element:
   default_more_title: Más
+  default_section_title_tag: h2
+mail:
+  default_from_name: '[site:name]'
