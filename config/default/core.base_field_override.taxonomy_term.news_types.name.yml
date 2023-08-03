@@ -1,0 +1,18 @@
+uuid: 4528205e-86b3-43d4-8003-8adefc3f4139
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_types
+id: taxonomy_term.news_types.name
+field_name: name
+entity_type: taxonomy_term
+bundle: news_types
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: a4d2f569-b061-40ca-ba3c-29419bf27bc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: node.news.metatag
+field_name: metatag
+entity_type: node
+bundle: news
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map
