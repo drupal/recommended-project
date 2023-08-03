@@ -28,7 +28,6 @@ module:
   datetime: 0
   datetime_range: 0
   dblog: 0
-  drimage: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -46,7 +45,6 @@ module:
   honeypot: 0
   image: 0
   image_captcha: 0
-  image_max_size_crop: 0
   image_widget_crop: 0
   lang_dropdown: 0
   language: 0
