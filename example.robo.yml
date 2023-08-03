@@ -1,0 +1,26 @@
+version: "3.0"
+
+sites:
+  default:
+    sync:
+      username: username
+      password: password
+    sql:
+      dump:
+        location: web/sync/database.sql
+      sync:
+        source: https://srv.storage.com/sync/database.sql.gz
+    files:
+      dump:
+        location: web/sync/files.tar.gz
+      sync:
+        source: https://srv.storage.com/sync/files.tar.gz
+    site:
+      update:
+        excluded_commands: []
+        extra_commands: []
+      develop:
+        admin_username: username
+        config_split: FALSE
+        modules:
+          - stage_file_proxy
