@@ -1,0 +1,42 @@
+_core:
+  default_config_hash: dE7ohRe7gCL2n0BFaWfocJnskZdQ6wHnzaFTl3O0RJ0
+langcode: en
+enabled: false
+required_roles: {  }
+send_plugins: {  }
+login_plugins: {  }
+default_validation_plugin: ''
+validation_plugin_settings: {  }
+allowed_validation_plugins: {  }
+help_text: 'Contact support to reset your access'
+validation_skip: 3
+encryption: ''
+tfa_flood_uid_only: 1
+tfa_flood_window: 300
+tfa_flood_threshold: 6
+reset_pass_skip_enabled: false
+mail:
+  tfa_enabled_configuration:
+    subject: 'Your [site:name] account now has two-factor authentication'
+    body: |-
+      [user:display-name],
+
+      Thanks for configuring two-factor authentication on your [site:name] account!
+
+      This additional level of security will help to ensure that only you are able to log in to your account.
+
+      If you ever lose the device you configured, you should act quickly to delete its association with this account.
+
+      --
+      [site:name] team
+  tfa_disabled_configuration:
+    subject: 'Your [site:name] account no longer has two-factor authentication'
+    body: |-
+      [user:display-name],
+
+      Two-factor authentication has been disabled on your [site:name] account.
+
+      If you did not take this action, please contact a site administrator immediately.
+
+      --
+      [site:name] team

@@ -36,6 +36,7 @@ module:
   edw: 0
   edw_blocks: 0
   edw_healthcheck: 0
+  encrypt: 0
   environment_indicator: 0
   facets: 0
   field: 0
@@ -46,6 +47,7 @@ module:
   image: 0
   image_captcha: 0
   image_widget_crop: 0
+  key: 0
   lang_dropdown: 0
   language: 0
   layout_builder: 0
@@ -78,6 +80,7 @@ module:
   path: 0
   path_alias: 0
   phpass: 0
+  real_aes: 0
   recaptcha: 0
   redirect: 0
   redirect_404: 0
@@ -95,6 +98,7 @@ module:
   system: 0
   taxonomy: 0
   text: 0
+  tfa: 0
   token: 0
   toolbar: 0
   twig_tweak: 0

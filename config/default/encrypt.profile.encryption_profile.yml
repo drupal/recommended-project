@@ -1,0 +1,13 @@
+uuid: 539bf8c7-c8db-4952-9571-cbeb04adfe54
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.encryption_key
+  module:
+    - real_aes
+id: encryption_profile
+label: 'Encryption profile'
+encryption_method: real_aes
+encryption_method_configuration: {  }
+encryption_key: encryption_key
