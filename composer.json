@@ -14,8 +14,25 @@
             "url": "https://packages.drupal.org/8",
             "exclude": [
                 "drupal/simple_search_form",
-                "drupal/lang_dropdown"
+                "drupal/lang_dropdown",
+                "drupal/password_strength"
             ]
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupal/password_strength",
+                "version": "dev-custom",
+                "type": "drupal-module",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/issue/password_strength-3329409.git",
+                    "reference": "3329409-automated-drupal-10"
+                },
+                "require": {
+                    "drupal/password_policy": "^4.0"
+                }
+            }
         },
         {
             "type": "package",
@@ -98,6 +115,7 @@
         "drupal/metatag": "^1.19",
         "drupal/oembed_lazyload": "^2.0",
         "drupal/optional_end_date": "^1.2",
+        "drupal/password_strength": "dev-custom",
         "drupal/pathauto": "^1.9",
         "drupal/redirect": "^1.7",
         "drupal/remove_username": "^1.3",
