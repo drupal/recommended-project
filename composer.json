@@ -84,6 +84,7 @@
         "drupal/advagg": "^6.0@alpha",
         "drupal/ajax_loader": "^2.0",
         "drupal/allowed_formats": "^1.5",
+        "drupal/autologout": "^1.4",
         "drupal/backup_migrate": "^5.0",
         "drupal/bootstrap_layout_builder": "^2.0",
         "drupal/captcha": "^2.0@beta",
