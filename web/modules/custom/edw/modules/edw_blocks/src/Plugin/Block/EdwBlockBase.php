@@ -31,8 +31,9 @@ abstract class EdwBlockBase extends BlockBase implements ContainerFactoryPluginI
   /**
    * EdwBlockBase constructor.
    *
-   * @param array $configuration
-   *   The configuration.
+   * @param array<string, mixed> $configuration
+   *   The configuration.An array where keys are strings
+   *   and values can be of any type.
    * @param string $plugin_id
    *   The plugin id.
    * @param mixed $plugin_definition
@@ -51,6 +52,18 @@ abstract class EdwBlockBase extends BlockBase implements ContainerFactoryPluginI
 
   /**
    * {@inheritdoc}
+   *
+   * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
+   *   The service container.
+   * @param array<string, mixed> $configuration
+   *   An array where keys are strings and values can be of any type.
+   * @param string $plugin_id
+   *   The plugin id.
+   * @param mixed $plugin_definition
+   *   The plugin definition.
+   *
+   * @return static
+   *   A new instance of the class.
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     return new static(

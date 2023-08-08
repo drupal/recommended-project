@@ -1,48 +1,35 @@
 parameters:
-	reportUnmatchedIgnoredErrors: false
-	ignoreErrors:
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: web/modules/custom/**/*.module
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: web/modules/custom/**/*.module
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: web/modules/custom/**/*.module
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: web/modules/custom/**/*.theme
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: web/modules/custom/**/*.theme
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: web/modules/custom/**/*.theme
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: web/modules/custom/**/*.profile
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: web/modules/custom/**/*.profile
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: web/modules/custom/**/*.profile
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: web/modules/custom/**/*.inc
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: web/modules/custom/**/*.inc
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: web/modules/custom/**/*.inc
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: web/modules/custom/**/*.deploy.php
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: web/modules/custom/**/*.deploy.php
-		-
-			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: web/modules/custom/**/*.deploy.php
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        # new static() is a best practice in Drupal, so we cannot fix that.
+        - "#^Unsafe usage of new static#"
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+          path: web/modules/custom/**/*.module
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+          path: web/modules/custom/**/*.module
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+          path: web/modules/custom/**/*.module
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+          path: web/modules/custom/**/*.theme
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+          path: web/modules/custom/**/*.theme
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+          path: web/modules/custom/**/*.theme
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+          path: web/modules/custom/**/*.profile
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+          path: web/modules/custom/**/*.profile
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+          path: web/modules/custom/**/*.profile
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+          path: web/modules/custom/**/*.inc
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+          path: web/modules/custom/**/*.inc
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+          path: web/modules/custom/**/*.inc
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
+          path: web/modules/custom/**/*.deploy.php
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
+          path: web/modules/custom/**/*.deploy.php
+        - message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
+          path: web/modules/custom/**/*.deploy.php
