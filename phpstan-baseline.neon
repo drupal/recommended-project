@@ -1,47 +1,48 @@
 parameters:
+	reportUnmatchedIgnoredErrors: false
 	ignoreErrors:
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: *.module
+			path: web/modules/custom/**/*.module
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: *.module
+			path: web/modules/custom/**/*.module
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: *.module
+			path: web/modules/custom/**/*.module
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: *.theme
+			path: web/modules/custom/**/*.theme
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: *.theme
+			path: web/modules/custom/**/*.theme
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: *.theme
+			path: web/modules/custom/**/*.theme
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: *.profile
+			path: web/modules/custom/**/*.profile
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: *.profile
+			path: web/modules/custom/**/*.profile
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: *.profile
+			path: web/modules/custom/**/*.profile
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: *.inc
+			path: web/modules/custom/**/*.inc
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: *.inc
+			path: web/modules/custom/**/*.inc
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: *.inc
+			path: web/modules/custom/**/*.inc
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has no return type specified\./'
-			path: *.deploy.php
+			path: web/modules/custom/**/*.deploy.php
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified/'
-			path: *.deploy.php
+			path: web/modules/custom/**/*.deploy.php
 		-
 			message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter .* no type specified/'
-			path: *.deploy.php
+			path: web/modules/custom/**/*.deploy.php
