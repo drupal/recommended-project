@@ -1,5 +1,0 @@
-name: 'EDW Demo Data'
-type: module
-core_version_requirement: ^9 || ^10
-package: edw
-description: 'Creates demo data'
