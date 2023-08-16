@@ -790,6 +790,7 @@ $settings['config_exclude_modules'] = [
   'webform_ui',
   'purge_ui',
   'help',
+  'config',
 ];
 
 /**
@@ -811,18 +812,3 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 }
 
 $settings['config_sync_directory'] = $app_root . '/../config/default';
-
-/**
- * Exclude modules from configuration synchronization.
- */
-$settings['config_exclude_modules'] = [
-  'devel',
-  'devel_generate',
-  'stage_file_proxy',
-  'views_ui',
-  'webform_ui',
-  'purge_ui',
-  'help',
-  'config',
-  'field_ui'
-];

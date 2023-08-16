@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "004e31506640e79442815e9f7775e9da",
+    "content-hash": "3faabcd953aee81d5b49be377001e9ab",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5824,6 +5824,25 @@
                 }
             ],
             "time": "2023-06-06T18:46:18+00:00"
+        },
+        {
+            "name": "eaudeweb/edw_modules",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:eaudeweb/edw_modules.git",
+                "reference": "d94430b33aaf8995cb6b26765aba33c7946cd260"
+            },
+            "default-branch": true,
+            "type": "drupal-module",
+            "authors": [
+                {
+                    "name": "dtabirca",
+                    "email": "dtabirca@1029792.no-reply.drupal.org"
+                }
+            ],
+            "description": "A collection of custom modules",
+            "time": "2023-08-16T09:24:46+00:00"
         },
         {
             "name": "eaudeweb/heavy-lifter",

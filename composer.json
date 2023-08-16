@@ -73,6 +73,10 @@
             }
         },
         {
+            "type": "git",
+            "url": "git@github.com:eaudeweb/edw_modules.git"
+        },
+        {
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
@@ -137,6 +141,7 @@
         "drupal/webp": "^1.0@beta",
         "drupal/xmlsitemap": "^1.2",
         "drush/drush": "^11.0",
+        "eaudeweb/edw_modules": "dev-main",
         "eaudeweb/heavy-lifter": "^2",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0",
