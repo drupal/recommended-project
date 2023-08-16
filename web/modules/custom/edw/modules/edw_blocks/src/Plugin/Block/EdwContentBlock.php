@@ -36,13 +36,7 @@ class EdwContentBlock extends EdwBlockBase {
   }
 
   /**
-   * Builds the content for the block.
-   *
-   * This method returns an associative array with specific structure
-   * that Drupal understands for rendering the block content.
-   *
-   * @return array<string, mixed>
-   *   An associative array where keys are strings and values can be of any type
+   * {@inheritdoc}
    */
   public function build() {
     $config = $this->getConfiguration();
@@ -112,19 +106,7 @@ class EdwContentBlock extends EdwBlockBase {
   }
 
   /**
-   * Builds the block form configuration.
-   *
-   * @param array<string, mixed> $form
-   *   The form array where keys are strings and values can be of any type.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The form state instance.
-   *
-   * @return array<string, mixed>
-   *   The form array with additional configuration
-   *   where keys are strings and values can be of any type.
-   *
-   * @throws \Exception
-   *   Throws an exception.
+   * {@inheritdoc}
    */
   public function blockForm($form, FormStateInterface $form_state) {
     $config = $this->getConfiguration();
@@ -204,15 +186,7 @@ class EdwContentBlock extends EdwBlockBase {
   }
 
   /**
-   * Handles block form submission.
-   *
-   * @param array<string, mixed> $form
-   *   The form array where keys are strings and values can be of any type.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
-   *   The form state instance.
-   *
-   * @return void
-   *   Does not return anything.
+   * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
