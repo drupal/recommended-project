@@ -58,11 +58,15 @@ class EdwHeroBannerBlock extends EdwBlockBase {
       return [];
     }
 
+    $summary = '';
     if ($node->hasField('field_banner_text')) {
       $summary = $node->get('field_banner_text')->value;
     }
     if (empty($summary) && $node->hasField('body')) {
-      $summary = $node->get('body')->summary;
+      $body = $node->get('body')->getValue();
+      if (!empty($body[0]['summary'])) {
+        $summary = $body[0]['summary'];
+      }
     }
 
     $title = $node->get('title')->value;
