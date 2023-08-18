@@ -10,25 +10,19 @@ display:
           action_title: Действие
         thumbnail__target_id:
           label: Миниатюра
-          separator: ', '
         name:
           label: 'Название медиа'
-          separator: ', '
         bundle:
           label: Тип
-          separator: ', '
         uid:
           label: Автор
-          separator: ', '
         status:
           label: Статус
           settings:
             format_custom_false: 'Снято с публикации'
             format_custom_true: Опубликовано
-          separator: ', '
         changed:
           label: Обновлено
-          separator: ', '
         operations:
           label: Операции
       pager:

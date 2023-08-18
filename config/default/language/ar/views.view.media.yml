@@ -9,24 +9,17 @@ display:
           action_title: إجراء
         thumbnail__target_id:
           label: 'النسخة المصغرة'
-          separator: ', '
-        name:
-          separator: ', '
         bundle:
           label: النوع
-          separator: ', '
         uid:
           label: المؤلف
-          separator: ', '
         status:
           label: الحالة
           settings:
             format_custom_false: 'غير منشور'
             format_custom_true: منشور
-          separator: ', '
         changed:
           label: التحديث
-          separator: ', '
         operations:
           label: عمليات
       pager:

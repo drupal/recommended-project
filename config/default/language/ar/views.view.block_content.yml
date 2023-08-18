@@ -1,14 +1,15 @@
+label: 'Custom block library'
+description: 'Find and manage custom blocks.'
 display:
   default:
     display_title: الافتراضي
     display_options:
+      title: 'Custom block library'
       fields:
         info:
           label: 'وصف الصندوق'
-          separator: ', '
         type:
           label: 'نوع الصندوق'
-          separator: ', '
         changed:
           label: التحديث
         operations:
@@ -28,6 +29,9 @@ display:
           exposed_sorts_label: 'الترتيب حسب'
           sort_asc_label: تصاعدي
           sort_desc_label: تنازلي
+      empty:
+        area_text_custom:
+          content: 'There are no custom blocks available.'
       filters:
         info:
           expose:
@@ -37,3 +41,6 @@ display:
             label: 'نوع الصندوق'
   page_1:
     display_title: الصفحة
+    display_options:
+      menu:
+        description: 'Create and edit block content.'

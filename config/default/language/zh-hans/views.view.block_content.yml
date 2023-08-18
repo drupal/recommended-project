@@ -1,14 +1,15 @@
+label: 'Custom block library'
+description: 'Find and manage custom blocks.'
 display:
   default:
     display_title: 默认
     display_options:
+      title: 'Custom block library'
       fields:
         info:
           label: 区块描述
-          separator: ', '
         type:
           label: 区块类型
-          separator: ', '
         changed:
           label: 已更新
         operations:
@@ -29,6 +30,9 @@ display:
           exposed_sorts_label: 排序依据
           sort_asc_label: 升序
           sort_desc_label: 降序
+      empty:
+        area_text_custom:
+          content: 'There are no custom blocks available.'
       filters:
         info:
           expose:
@@ -38,3 +42,6 @@ display:
             label: 区块类型
   page_1:
     display_title: 页面
+    display_options:
+      menu:
+        description: 'Create and edit block content.'

@@ -6,11 +6,8 @@ display:
     display_options:
       title: Файлы
       fields:
-        fid:
-          label: Fid
         filename:
           label: Название
-          separator: ', '
         filemime:
           label: MIME-тип
         filesize:
@@ -26,8 +23,6 @@ display:
           label: 'Дата изменения'
         count:
           label: 'Используется в'
-          alter:
-            path: 'admin/content/files/usage/{{ fid }}'
       pager:
         options:
           tags:

@@ -19,9 +19,6 @@ display:
           label: Rôles
         created:
           label: 'Membre depuis'
-          settings:
-            future_format: '@interval'
-            past_format: '@interval'
         access:
           label: 'Dernier accès'
           settings:
@@ -29,8 +26,6 @@ display:
             past_format: 'Il y a @interval'
         operations:
           label: Actions
-        mail:
-          separator: ', '
       pager:
         options:
           tags:
@@ -47,8 +42,6 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: "Personne n'est disponible."
@@ -72,7 +65,6 @@ display:
             label: Droit
       use_more_text: plus
   page_1:
-    display_title: Page
     display_options:
       menu:
         title: Lister

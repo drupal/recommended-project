@@ -6,9 +6,6 @@ display:
     display_options:
       pager:
         options:
-          tags:
-            next: ››
-            previous: ‹‹
           expose:
             items_per_page_label: 'Elementos por página'
             items_per_page_options_all_label: '- Todo -'
@@ -18,13 +15,10 @@ display:
           submit_button: Aplicar
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       arguments:
         tid:
           exception:
             title: Todo(s)
-          title: '{{ arguments.tid }}'
   feed_1:
     display_title: 'Canal de noticias'
   page_1:
