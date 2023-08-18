@@ -136,6 +136,11 @@ $settings['skip_permissions_hardening'] = TRUE;
 
 $settings['file_private_path'] = realpath($app_root . '/../private');
 
+# Project trusted host pattern
+$settings['trusted_host_patterns'] = [
+  '^example\.localhost',
+];
+
 /** Customize to your local configuration */
 $databases['default']['default'] = array (
   'database' => 'drupal',
@@ -159,7 +164,7 @@ $config['smtp.settings']['smtp_password'] = '';
 
 $config['system.site']['mail'] = 'no-reply@example.com';
 
-# Project trusted host pattern
-$settings['trusted_host_patterns'] = [
-  '^example\.localhost',
-];
+# Recaptcha settings.
+$config['recaptcha.settings']['site_key'] = '';
+$config['recaptcha.settings']['secret_key'] = '';
+
