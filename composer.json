@@ -92,6 +92,7 @@
         "drupal/backup_migrate": "^5.0",
         "drupal/bootstrap_layout_builder": "^2.0",
         "drupal/captcha": "^2.0@beta",
+        "drupal/ckeditor5_paste_filter": "^1.0@alpha",
         "drupal/ckeditor_accordion": "^2.0",
         "drupal/ckeditor_bs_grid": "^2.0",
         "drupal/clamav": "^2.0.2@RC",

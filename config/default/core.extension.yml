@@ -19,6 +19,7 @@ module:
   breakpoint: 0
   captcha: 0
   ckeditor5: 0
+  ckeditor5_paste_filter: 0
   ckeditor_accordion: 0
   ckeditor_bs_grid: 0
   clamav: 0

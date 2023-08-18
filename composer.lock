@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7019edafd04c9b03e4b55cc6b44ccf74",
+    "content-hash": "8e85bb1299f1630f55440a49d3df1f44",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2155,6 +2155,50 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/captcha",
                 "issues": "https://www.drupal.org/project/issues/captcha"
+            }
+        },
+        {
+            "name": "drupal/ckeditor5_paste_filter",
+            "version": "1.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor5_paste_filter.git",
+                "reference": "1.0.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor5_paste_filter-1.0.0-alpha2.zip",
+                "reference": "1.0.0-alpha2",
+                "shasum": "e599c76de2e1f518d39fef59c4f2f24762054d96"
+            },
+            "require": {
+                "drupal/core": "^9.3 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-alpha2",
+                    "datestamp": "1689195191",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "star-szr",
+                    "homepage": "https://www.drupal.org/user/1167326"
+                }
+            ],
+            "description": "Filter content pasted into CKEditor 5",
+            "homepage": "https://www.drupal.org/project/ckeditor5_paste_filter",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor5_paste_filter"
             }
         },
         {
@@ -16204,6 +16248,7 @@
     "stability-flags": {
         "drupal/advagg": 15,
         "drupal/captcha": 10,
+        "drupal/ckeditor5_paste_filter": 15,
         "drupal/clamav": 5,
         "drupal/conditional_fields": 15,
         "drupal/lang_dropdown": 20,
