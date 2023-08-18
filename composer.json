@@ -94,7 +94,7 @@
         "drupal/captcha": "^2.0@beta",
         "drupal/ckeditor_accordion": "^2.0",
         "drupal/ckeditor_bs_grid": "^2.0",
-        "drupal/clamav": "^2.0",
+        "drupal/clamav": "^2.0.2@RC",
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/core-composer-scaffold": "^10.0.9",
         "drupal/core-project-message": "^10.0.9",

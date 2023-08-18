@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3faabcd953aee81d5b49be377001e9ab",
+    "content-hash": "7019edafd04c9b03e4b55cc6b44ccf74",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2251,17 +2251,17 @@
         },
         {
             "name": "drupal/clamav",
-            "version": "2.0.1",
+            "version": "2.0.2-rc1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/clamav.git",
-                "reference": "2.0.1"
+                "reference": "2.0.2-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/clamav-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "e35f8240c3240b2dba20b49a321c89577f6d0719"
+                "url": "https://ftp.drupal.org/files/projects/clamav-2.0.2-rc1.zip",
+                "reference": "2.0.2-rc1",
+                "shasum": "7e8248b53ff7f1389485b420aee75c5de187b0e8"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10"
@@ -2269,11 +2269,11 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1669299091",
+                    "version": "2.0.2-rc1",
+                    "datestamp": "1669989267",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -16204,13 +16204,15 @@
     "stability-flags": {
         "drupal/advagg": 15,
         "drupal/captcha": 10,
+        "drupal/clamav": 5,
         "drupal/conditional_fields": 15,
         "drupal/lang_dropdown": 20,
         "drupal/layout_builder_st": 15,
         "drupal/password_strength": 20,
         "drupal/simple_search_form": 20,
         "drupal/spamspan": 10,
-        "drupal/webp": 10
+        "drupal/webp": 10,
+        "eaudeweb/edw_modules": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

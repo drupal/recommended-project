@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: 8lFEG9XVghDf6aSd4WXsDEbAlBuvpTBI3gxmUUt_jyY
+enabled: true
+outage_action: 0
+overridden_schemes: {  }
+scan_mode: 1
+verbosity: 0
+mode_executable:
+  executable_path: /usr/bin/clamscan
+  executable_parameters: ''
+mode_daemon_tcpip:
+  hostname: localhost
+  port: 3310
+mode_daemon_unixsocket:
+  unixsocket: /var/clamav/clamd
