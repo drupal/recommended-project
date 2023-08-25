@@ -168,3 +168,7 @@ $config['system.site']['mail'] = 'no-reply@example.com';
 $config['recaptcha.settings']['site_key'] = '';
 $config['recaptcha.settings']['secret_key'] = '';
 
+// Enable 2FA login on prod.
+$config['tfa.settings']['enabled'] = TRUE;
+// Generate with `dd if=/dev/urandom bs=32 count=1 | base64 -i`.
+$config['key.key.encryption_key']['key_provider_settings']['key_value'] = 'ZGlBTZCuMC65j3QVeq/CenbHjOaaFGT7nKsvkmW4Cw4=';

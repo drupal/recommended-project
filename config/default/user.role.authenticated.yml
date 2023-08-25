@@ -6,6 +6,7 @@ dependencies:
     - file
     - media
     - system
+    - tfa
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
@@ -15,4 +16,5 @@ is_admin: false
 permissions:
   - 'access content'
   - 'delete own files'
+  - 'setup own tfa'
   - 'view media'
