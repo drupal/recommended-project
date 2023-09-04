@@ -33,7 +33,7 @@ jobs:
         uses: eaudeweb/drupal-artifact-action@1.x
 
       - name: 'Deploy release on the server'
-        uses: eaudeweb/drupal-deploy-action@v2.1.3
+        uses: eaudeweb/drupal-deploy-action@v2.1.4
         with:
           ssh_user:             ${{ secrets.PROD_SSH_USER }}
           ssh_host:             ${{ secrets.PROD_SSH_HOST }}
