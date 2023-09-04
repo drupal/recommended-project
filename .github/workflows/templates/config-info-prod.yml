@@ -13,4 +13,4 @@ jobs:
           ssh_user:           ${{ secrets.PROD_SSH_USER }}
           ssh_host:           ${{ secrets.PROD_SSH_HOST }}
           ssh_key:            ${{ secrets.PROD_SSH_KEY }}
-          project_dir:        /var/www/html/planetgold.org
+          project_dir:        /var/www/html/example.org
