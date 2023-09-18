@@ -1,0 +1,27 @@
+_core:
+  default_config_hash: vOaSYBgSyTzn8_p0MSY8B-ygp9V0Nc6qnX0vy9KYGeo
+extlink_use_external_js_file: false
+extlink_exclude_admin_routes: true
+extlink_target: true
+extlink_target_no_override: false
+extlink_nofollow: false
+extlink_noreferrer: true
+extlink_follow_no_override: false
+extlink_subdomains: false
+extlink_alert: false
+extlink_alert_text: 'This link will take you to an external web site. We are not responsible for their content.'
+extlink_exclude: ''
+extlink_include: ''
+extlink_class: '0'
+extlink_label: '(link is external)'
+extlink_img_class: false
+extlink_css_exclude: ''
+extlink_css_explicit: ''
+extlink_mailto_class: '0'
+extlink_mailto_label: '(link sends email)'
+extlink_use_font_awesome: false
+extlink_font_awesome_classes:
+  links: 'fa fa-external-link'
+  mailto: 'fa fa-envelope-o'
+extlink_icon_placement: append
+whitelisted_domains: {  }

@@ -40,6 +40,7 @@ module:
   edw_modules: 0
   encrypt: 0
   environment_indicator: 0
+  extlink: 0
   facets: 0
   field: 0
   field_group: 0
