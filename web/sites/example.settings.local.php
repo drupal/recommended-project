@@ -172,3 +172,8 @@ $config['recaptcha.settings']['secret_key'] = '';
 $config['tfa.settings']['enabled'] = TRUE;
 // Generate with `dd if=/dev/urandom bs=32 count=1 | base64 -i`.
 $config['key.key.encryption_key']['key_provider_settings']['key_value'] = 'ZGlBTZCuMC65j3QVeq/CenbHjOaaFGT7nKsvkmW4Cw4=';
+
+// Every cache table will have a maximum of 5000 rows.
+$settings['database_cache_max_rows']['default'] = 5000;
+// Override the cache_dynamic_page_cache table max rows setting, if it needs to be higher.
+// $settings['database_cache_max_rows']['bins']['dynamic_page_cache'] = 100000;
