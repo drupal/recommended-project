@@ -106,6 +106,7 @@
         "drupal/edw_healthcheck": "^1.18",
         "drupal/edwt": "^3.0",
         "drupal/environment_indicator": "^4.0",
+        "drupal/extlink": "^1.7",
         "drupal/facets": "^2.0",
         "drupal/field_group": "^3.4",
         "drupal/honeypot": "^2.0",
