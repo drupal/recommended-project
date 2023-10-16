@@ -105,6 +105,7 @@
         "drupal/editor_advanced_link": "^2.0",
         "drupal/edw_healthcheck": "^1.18",
         "drupal/edwt": "^3.0",
+        "drupal/elogger": "^1.1",
         "drupal/environment_indicator": "^4.0",
         "drupal/extlink": "^1.7",
         "drupal/facets": "^2.0",

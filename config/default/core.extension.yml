@@ -27,10 +27,12 @@ module:
   config_translation: 0
   contextual: 0
   crop: 0
+  csv_serialization: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
+  diff: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
   editor: 0
@@ -38,6 +40,7 @@ module:
   edw_blocks: 0
   edw_healthcheck: 0
   edw_modules: 0
+  elogger: 0
   encrypt: 0
   environment_indicator: 0
   extlink: 0
@@ -89,9 +92,11 @@ module:
   redirect_404: 0
   remove_username: 0
   responsive_image: 0
+  rest: 0
   search_api: 0
   search_api_db: 0
   select2: 0
+  serialization: 0
   simple_search_form: 0
   slick: 0
   slick_views: 0
@@ -107,6 +112,8 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  views_bulk_operations: 0
+  views_data_export: 0
   webform: 0
   webp: 0
   pathauto: 1
