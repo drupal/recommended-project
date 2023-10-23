@@ -1,0 +1,29 @@
+_core:
+  default_config_hash: E_p7Jpp6A913OMLyiPBQnMo8N5LColuIi56fpeLb4Cg
+format: 'Elogger: [elogger:event_type] ON [elogger:module] BY [user:[elogger:user:name] (ID:user:[elogger:user:uid]) with Roles: [elogger:user:roles:join:,] - Message: [elogger:log_message]'
+modules:
+  block: block
+  block_content: block_content
+  comment: comment
+  config: config
+  editor: editor
+  field: field
+  field_ui: field_ui
+  file: file
+  image: image
+  link: link
+  menu_link_content: menu_link_content
+  menu_ui: menu_ui
+  node: node
+  path_alias: path_alias
+  search: search
+  system: system
+  taxonomy: taxonomy
+  user: user
+  actions_forms: '*'
+log_message_templates:
+  entity_create: 'The <strong>{entity_type}</strong> {entity} was created by {user} on <em>[current-date:long]</em>.'
+  entity_update: 'The <strong>{entity_type}</strong> {entity} was updated by {user} on <em>[current-date:long]</em>.'
+  entity_delete: 'The <strong>{entity_type}</strong> {entity} was deleted by {user} on <em>[current-date:long]</em>.'
+  actions: 'The <strong>form</strong> <em>{form_id}</em> was submitted by {user} on <em>[current-date:long]</em>.'
+elogger_row_limit: '10000'
