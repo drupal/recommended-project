@@ -52,7 +52,7 @@ jobs:
 
       - name: 'Update the Drupal instance'
         id: release
-        uses: eaudeweb/drupal-update-action@v1
+        uses: eaudeweb/drupal-update-action@v1.0
         with:
           path: /var/www/html/example.org
 
