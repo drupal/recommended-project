@@ -6,15 +6,10 @@
 composer create-project eaudeweb/recommended-project:10.x-dev [project-name]
 ```
 
-2. When asked "**Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]?**" choose `Y`
-
-4. Create the `example.salt.txt` file with an example hash salt:
-
-```
-drush php-eval 'echo \Drupal\Component\Utility\Crypt::randomBytesBase64(55)' > example.salt.txt
-```
-5. Run `./vendor/bin/robo site:config` and customize `example.robo.yml`
-
+2. When asked `"Do you want to remove the existing VCS (.git, .svn..) history? [Y,n]?"` choose `Y`
+3. Customize `example.robo.yml`
+4. Update project name in `.ddev/config.yaml`
+5. Update `README.md`
 
 ### Below you will find the default README template, please update the README file after creating the project.
 

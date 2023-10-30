@@ -6,15 +6,11 @@ sites:
       username: username
       password: password
     sql:
-      dump:
-        location: web/sync/database.sql
       sync:
-        source: https://srv.storage.com/sync/database.sql.gz
+        source: https://www.example.com/sync/database.sql.gz
     files:
-      dump:
-        location: web/sync/files.tar.gz
       sync:
-        source: https://srv.storage.com/sync/files.tar.gz
+        source: https://www.example.com/sync/files.tar.gz
     site:
       update:
         excluded_commands: []

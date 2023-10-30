@@ -1,5 +1,4 @@
 parameters:
-  level: 5
   paths:
     - web/modules/custom
   reportUnmatchedIgnoredErrors: false
