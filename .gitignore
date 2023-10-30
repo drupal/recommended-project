@@ -10,6 +10,7 @@ web/libraries
 # Ignore Drupal's file directory #
 ##################################
 /web/sites/*/files/
+/web/sites/*/d7_files/
 /web/sites/*/private/
 /web/sites/*/private-files/
 /web/sites/*/tmp/
@@ -18,10 +19,12 @@ web/libraries
 
 # Ignore sensitive information #
 ################################
+.env
 artifacts
 robo.yml
 salt.txt
 .htpasswd
+test.php
 config/local
 drush/drush.yml
 drush/sites/self.site.yml
@@ -41,7 +44,9 @@ web/sites/*/settings.local.php
 web/sites/*/local.services.yml
 web/sites/local.services.yml
 web/themes/custom/*/node_modules
-test.php
+.ddev/xdebug
+public.key
+private.key
 
 # Ignore SimpleTest multi-site environment. #
 #############################################
@@ -51,10 +56,6 @@ test.php
 /.idea/
 /.vscode/
 /.phplint*
-
-# Ignore .env files as they are personal #
-##########################################
-/.env
 
 # Packages #
 ############
@@ -83,3 +84,42 @@ ehthumbs.db
 Icon\?
 Thumbs.db
 *.rej
+
+# DDEV generated files #
+########################
+.ddev/.gitignore
+.ddev/**/*.example
+.ddev/.dbimageBuild
+.ddev/.dbimageExtra
+.ddev/.ddev-docker-*.yaml
+.ddev/.*downloads
+.ddev/.global_commands
+.ddev/.homeadditions
+.ddev/.importdb*
+.ddev/.sshimageBuild
+.ddev/.venv
+.ddev/.webimageBuild
+.ddev/.webimageExtra
+.ddev/apache/apache-site.conf
+.ddev/commands/.gitattributes
+.ddev/commands/db/mysql
+.ddev/commands/host/launch
+.ddev/commands/web/xdebug
+.ddev/commands/web/live
+.ddev/config.local.y*ml
+.ddev/db_snapshots
+.ddev/import-db
+.ddev/import.yaml
+.ddev/mutagen/mutagen.yml
+.ddev/mutagen/.start-synced
+.ddev/nginx_full/nginx-site.conf
+.ddev/postgres/postgresql.conf
+.ddev/providers/platform.yaml
+.ddev/sequelpro.spf
+.ddev/settings/settings.ddev.py
+.ddev/traefik/config/OzonActionMeetings.yaml
+.ddev/traefik/certs/OzonActionMeetings.crt
+.ddev/traefik/certs/OzonActionMeetings.key
+.ddev/xhprof/xhprof_prepend.php
+.ddev/**/README.*
+web/sites/*/settings.ddev.php
