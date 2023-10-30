@@ -5,7 +5,8 @@ name: 'Check PROD config management'
 jobs:
   deploy:
     name: 'Show Drupal config status'
-    runs-on: self-hosted
+    runs-on:
+      labels: 'drupal'
     steps:
       - name: 'Check Drupal configuration'
         uses: eaudeweb/drupal-config-status-action@1.x

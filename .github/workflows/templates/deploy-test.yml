@@ -1,13 +1,14 @@
 on:
   push:
     branches:
-      - 'develop'
+      - 'test'
 
-name: 'Deploy DEV/TEST/STAGING instance'
+name: 'Deploy TEST instance'
 jobs:
   deploy:
     name: 'deployment'
-    runs-on: self-hosted
+    runs-on:
+      labels: 'drupal'
     steps:
       - name: 'Checkout source code'
         uses: actions/checkout@v3

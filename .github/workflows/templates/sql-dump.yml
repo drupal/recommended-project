@@ -5,7 +5,8 @@ name: 'Dump SQL database'
 jobs:
   deploy:
     name: 'Dump SQL database'
-    runs-on: self-hosted
+    runs-on:
+      labels: 'drupal'
     steps:
       - name: 'Dump SQL database'
         uses: eaudeweb/drupal-sql-dump-action@1.x
