@@ -3,7 +3,7 @@ _core:
 enabled: true
 outage_action: 0
 overridden_schemes: {  }
-scan_mode: 1
+scan_mode: 2
 verbosity: 0
 mode_executable:
   executable_path: /usr/bin/clamscan
@@ -12,4 +12,4 @@ mode_daemon_tcpip:
   hostname: localhost
   port: 3310
 mode_daemon_unixsocket:
-  unixsocket: /var/clamav/clamd
+  unixsocket: /run/clamd.scan/clamd.sock
