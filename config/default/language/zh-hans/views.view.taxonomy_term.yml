@@ -6,6 +6,9 @@ display:
     display_options:
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 每页条目数
             items_per_page_options_all_label: '- 全部 -'
@@ -21,5 +24,8 @@ display:
         tid:
           exception:
             title: 全部
+          title: '{{ arguments.tid }}'
+  feed_1:
+    display_title: Feed
   page_1:
     display_title: 页面

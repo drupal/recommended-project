@@ -5,8 +5,10 @@ display:
       fields:
         info:
           label: 'وصف الصندوق'
+          separator: ', '
         type:
           label: 'نوع الصندوق'
+          separator: ', '
         changed:
           label: التحديث
         operations:

@@ -5,6 +5,9 @@ display:
     display_title: 'По умолчанию'
     display_options:
       title: 'Последние материалы'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: Применить

@@ -17,6 +17,7 @@ display:
           label: الرسالة
         name:
           label: المستخدم
+          separator: ', '
         link:
           label: عمليات
       pager:
