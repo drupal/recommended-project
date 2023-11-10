@@ -11,6 +11,10 @@
     },
     "drupal/layout_builder_modal": {
       "#3133695 - incompatibility with layout_builder_st, contextual links broken": "https://www.drupal.org/files/issues/2020-05-07/3133695-3.patch"
+    },
+    "drupal/adequate_passwords": {
+      "#3400748 - The password validation error should not show the password score": "https://www.drupal.org/files/issues/2023-11-10/3400748-hide-password-score-patch-2.patch",
+      "#3400757 - If there are no roles selected, check anyway": "https://www.drupal.org/files/issues/2023-11-10/3400757-check-all-roles-patch-2.patch"
     }
   }
 }
