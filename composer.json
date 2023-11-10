@@ -63,6 +63,7 @@
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
+        "drupal/adequate_passwords": "^1.0",
         "drupal/admin_toolbar": "^3.1",
         "drupal/advagg": "^6.0@alpha",
         "drupal/ajax_loader": "^2.0",

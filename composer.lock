@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96d74b20c9fab29190d066968c402455",
+    "content-hash": "78b6f9d26e1f6234029ec22b9a527e95",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1142,6 +1142,50 @@
                 }
             ],
             "time": "2022-02-28T11:07:21+00:00"
+        },
+        {
+            "name": "drupal/adequate_passwords",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/adequate_passwords.git",
+                "reference": "1.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/adequate_passwords-1.0.1.zip",
+                "reference": "1.0.1",
+                "shasum": "2747633d94f106ad1e8891811bfb15ff787a2992"
+            },
+            "require": {
+                "drupal/core": "^8.8.0 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.1",
+                    "datestamp": "1681332787",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "nubeli",
+                    "homepage": "https://www.drupal.org/user/42333"
+                }
+            ],
+            "description": "Password validation to match Drupal's password suggestions.",
+            "homepage": "https://www.drupal.org/project/adequate_passwords",
+            "support": {
+                "source": "https://git.drupalcode.org/project/adequate_passwords"
+            }
         },
         {
             "name": "drupal/admin_toolbar",
@@ -15331,5 +15375,5 @@
     "platform-overrides": {
         "php": "8.1"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
