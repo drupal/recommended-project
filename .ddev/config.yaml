@@ -1,7 +1,7 @@
 name: recommended-project
 type: drupal10
 docroot: web
-php_version: "8.1"
+php_version: "8.2"
 webserver_type: nginx-fpm
 xdebug_enabled: false
 additional_hostnames: []
@@ -15,8 +15,8 @@ web_environment: []
 nodejs_version: "18"
 router_http_port: "18080"
 router_https_port: "14443"
-mailhog_port: "18025"
-mailhog_https_port: "18026"
+mailpit_http_port: "18025"
+mailpit_https_port: "18026"
 
 # Key features of DDEV's config.yaml:
 
