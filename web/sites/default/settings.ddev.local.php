@@ -44,6 +44,13 @@ $config['search_api.server.solr']['backend_config']['connector_config']['core'] 
 $config['search_api.server.solr']['backend_config']['connector_config']['solr_install_dir'] = '/opt/solr';
 
 /**
+ * ClamAV virus scanner configuration.
+ */
+$config['clamav.settings']['scan_mode'] = 0;
+$config['clamav.settings']['mode_daemon_tcpip']['hostname'] = 'clamav';
+$config['clamav.settings']['mode_daemon_tcpip']['port'] = 3310;
+
+/**
  * Assertions.
  *
  * The Drupal project primarily uses runtime assertions to enforce the
