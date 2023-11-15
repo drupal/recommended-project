@@ -37,6 +37,13 @@ $config['stage_file_proxy.settings']['use_imagecache_root'] = FALSE;
 $config['advagg.settings']['enabled'] = FALSE;
 
 /**
+ * SOLR server configuration.
+ */
+$config['search_api.server.solr']['backend_config']['connector_config']['host'] = 'solr';
+$config['search_api.server.solr']['backend_config']['connector_config']['core'] = 'dev';
+$config['search_api.server.solr']['backend_config']['connector_config']['solr_install_dir'] = '/opt/solr';
+
+/**
  * Assertions.
  *
  * The Drupal project primarily uses runtime assertions to enforce the
