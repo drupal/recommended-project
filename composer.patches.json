@@ -13,6 +13,10 @@
     },
     "drupal/layout_builder_browser": {
       "#3378982 - TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in in_array()": "https://www.drupal.org/files/issues/2023-08-03/3378982-empty-attributes-class-2.patch"
+    },
+    "drupal/adequate_passwords": {
+      "#3400748 - The password validation error should not show the password score": "https://www.drupal.org/files/issues/2023-11-10/3400748-hide-password-score-patch-2.patch",
+      "#3400757 - If there are no roles selected, check anyway": "https://www.drupal.org/files/issues/2023-11-10/3400757-check-all-roles-patch-2.patch"
     }
   }
 }
