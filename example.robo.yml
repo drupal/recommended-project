@@ -1,0 +1,24 @@
+version: "3.0"
+
+sites:
+  default:
+    sync:
+      username: username
+      password: password
+    sql:
+      sync:
+        source: https://www.example.com/sync/database.sql.gz
+    files:
+      sync:
+        source: https://www.example.com/sync/files.tar.gz
+    site:
+      update:
+        excluded_commands: []
+        extra_commands: []
+      develop:
+        admin_username: username
+        modules:
+          - field_ui
+          - views_ui
+          - webform_ui
+          - stage_file_proxy

@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch:
+
+name: 'Dump SQL database'
+jobs:
+  deploy:
+    name: 'Dump SQL database'
+    runs-on:
+      labels: 'drupal'
+    steps:
+      - name: 'Dump SQL database'
+        uses: eaudeweb/drupal-sql-dump-action@1.x
+        with:
+          ssh_user:             ${{ secrets.PROD_SSH_USER }}
+          ssh_host:             ${{ secrets.PROD_SSH_HOST }}
+          ssh_key:              ${{ secrets.PROD_SSH_KEY }}
+          project_dir:          /var/www/html/example.org
+          sql_dump_file:        /var/www/config/example.org/sync/database.sql

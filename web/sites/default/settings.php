@@ -761,6 +761,39 @@ $settings['entity_update_backup'] = TRUE;
 $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 /**
+ * Exclude modules from configuration synchronization.
+ *
+ * On config export sync, no config or dependent config of any excluded module
+ * is exported. On config import sync, any config of any installed excluded
+ * module is ignored. In the exported configuration, it will be as if the
+ * excluded module had never been installed. When syncing configuration, if an
+ * excluded module is already installed, it will not be uninstalled by the
+ * configuration synchronization, and dependent configuration will remain
+ * intact. This affects only configuration synchronization; single import and
+ * export of configuration are not affected.
+ *
+ * Drupal does not validate or sanity check the list of excluded modules. For
+ * instance, it is your own responsibility to never exclude required modules,
+ * because it would mean that the exported configuration can not be imported
+ * anymore.
+ *
+ * This is an advanced feature and using it means opting out of some of the
+ * guarantees the configuration synchronization provides. It is not recommended
+ * to use this feature with modules that affect Drupal in a major way such as
+ * the language or field module.
+ */
+$settings['config_exclude_modules'] = [
+  'devel',
+  'devel_generate',
+  'stage_file_proxy',
+  'views_ui',
+  'webform_ui',
+  'purge_ui',
+  'help',
+  'config',
+];
+
+/**
  * Load local development override configuration, if available.
  *
  * Create a settings.local.php file to override variables on secondary (staging,
@@ -778,5 +811,24 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
 
-$settings['config_sync_directory'] = $app_root . '/../config/default';
-
+// Automatically generated include for settings managed by ddev.
+$ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
+$ddev_local_settings = dirname(__FILE__) . '/settings.ddev.local.php';
+if (getenv('IS_DDEV_PROJECT') == 'true') {
+  if (is_readable($ddev_settings)) {
+    require $ddev_settings;
+  }
+  $private_files_path = $app_root . '/sites/default/private';
+  if (!is_dir($private_files_path)) {
+    mkdir($private_files_path, 0755);
+  }
+  $settings['file_private_path'] = $private_files_path;
+  $public_files_path = $app_root . '/sites/default/files';
+  if (!is_dir($public_files_path)) {
+    mkdir($public_files_path, 0755);
+  }
+  $settings['file_public_path'] = 'sites/default/files';
+  if (is_readable($ddev_local_settings)) {
+    require $ddev_local_settings;
+  }
+}

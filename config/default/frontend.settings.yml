@@ -8,7 +8,7 @@ logo:
 favicon:
   use_default: 1
 sg__container: container
-sg__status_message_type: toast
+sg__status_message_type: alerts
 sr__clean_branding: 0
 sr__class_branding: ''
 sr__container_branding: none
@@ -114,3 +114,13 @@ style:
     table: ''
   colors:
     table: ''
+sr__clean_footer_third: 0
+sr__class_footer_third: ''
+sr__container_footer_third: none
+sr__container_position_footer_third: before
+sr__extra_class_footer_third: ''
+sr__clean_footer_forth: 0
+sr__class_footer_forth: ''
+sr__container_footer_forth: none
+sr__container_position_footer_forth: before
+sr__extra_class_footer_forth: ''

@@ -16,7 +16,7 @@ mode: media_library
 content:
   field_media_image:
     type: image_widget_crop
-    weight: -50
+    weight: 1
     region: content
     settings:
       progress_indicator: throbber
@@ -33,10 +33,17 @@ content:
       show_crop_area: false
       show_default_crop: true
     third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   created: true
   langcode: true
-  name: true
   path: true
   status: true
   uid: true

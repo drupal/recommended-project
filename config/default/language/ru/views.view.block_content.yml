@@ -1,10 +1,10 @@
-label: 'Пользовательские блоки'
-description: 'Поиск и управление пользовательскими блоками.'
+label: 'Custom block library'
+description: 'Find and manage custom blocks.'
 display:
   default:
     display_title: 'По умолчанию'
     display_options:
-      title: 'Пользовательские блоки'
+      title: 'Custom block library'
       fields:
         info:
           label: 'Описание блока'
@@ -31,7 +31,7 @@ display:
           sort_desc_label: 'По убыванию'
       empty:
         area_text_custom:
-          content: 'Нет доступных пользовательских блоков.'
+          content: 'There are no custom blocks available.'
       filters:
         info:
           expose:
@@ -43,4 +43,4 @@ display:
     display_title: Страница
     display_options:
       menu:
-        title: 'Пользовательские блоки'
+        description: 'Create and edit block content.'

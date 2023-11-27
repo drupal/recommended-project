@@ -1,3 +1,4 @@
+label: 'Envíos de formulario web'
 display:
   default:
     display_title: Máster
@@ -17,6 +18,10 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
+        sid:
+          label: Nº
+        in_draft:
+          label: Borrador
         created:
           label: Creado
         remote_addr:
@@ -31,17 +36,24 @@ display:
         in_draft:
           exception:
             title: Todo(s)
+      title: 'Envíos de formulario web'
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
+        sid:
+          label: Nº
+        in_draft:
+          label: Borrador
         sticky:
           label: 'Fijo en cabeza de las listas'
         locked:
           label: Bloqueado
         created:
           label: Creado
+        completed:
+          label: Completado
         remote_addr:
           label: 'Direccion(es) IP'
         operations:
@@ -58,12 +70,18 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
+        sid:
+          label: Nº
+        in_draft:
+          label: Borrador
         sticky:
           label: 'Fijo en cabeza de las listas'
         locked:
           label: Bloqueado
         created:
           label: Creado
+        completed:
+          label: Completado
         remote_addr:
           label: 'Direccion(es) IP'
         view_webform_submission:
@@ -82,12 +100,18 @@ display:
   embed_review:
     display_options:
       fields:
+        sid:
+          label: Nº
+        in_draft:
+          label: Borrador
         sticky:
           label: 'Fijo en cabeza de las listas'
         locked:
           label: Bloqueado
         created:
           label: Creado
+        completed:
+          label: Completado
         remote_addr:
           label: 'Direccion(es) IP'
         view_webform_submission:

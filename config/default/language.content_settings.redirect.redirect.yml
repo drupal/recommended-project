@@ -10,4 +10,4 @@ id: redirect.redirect
 target_entity_type_id: redirect
 target_bundle: redirect
 default_langcode: und
-language_alterable: true
+language_alterable: false

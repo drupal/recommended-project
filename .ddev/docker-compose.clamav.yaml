@@ -1,0 +1,10 @@
+services:
+  clamav:
+    container_name: ddev-${DDEV_SITENAME}-clamav
+    image: clamav/clamav
+    expose:
+      - 3310
+      - 7357
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT

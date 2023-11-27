@@ -1,10 +1,10 @@
-label: 'Librería de bloques personalizada'
-description: 'Buscar y gestionar bloques personalizados.'
+label: 'Custom block library'
+description: 'Find and manage custom blocks.'
 display:
   default:
     display_title: 'Por defecto'
     display_options:
-      title: 'Librería de bloques personalizada'
+      title: 'Custom block library'
       fields:
         info:
           label: 'Descripción del bloque'
@@ -42,4 +42,4 @@ display:
     display_title: Página
     display_options:
       menu:
-        title: 'Librería de bloques personalizada'
+        description: 'Create and edit block content.'

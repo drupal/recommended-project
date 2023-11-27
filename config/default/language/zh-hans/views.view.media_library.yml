@@ -89,6 +89,7 @@ display:
         display_link_table:
           label: 表格
   widget_table:
+    display_title: 小组件（表格）
     display_options:
       fields:
         thumbnail__target_id:

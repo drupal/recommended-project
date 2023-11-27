@@ -14,8 +14,25 @@
             "url": "https://packages.drupal.org/8",
             "exclude": [
                 "drupal/simple_search_form",
-                "drupal/lang_dropdown"
+                "drupal/lang_dropdown",
+                "drupal/password_strength"
             ]
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "drupal/password_strength",
+                "version": "dev-custom",
+                "type": "drupal-module",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/issue/password_strength-3329409.git",
+                    "reference": "3329409-automated-drupal-10"
+                },
+                "require": {
+                    "drupal/password_policy": "^4.0"
+                }
+            }
         },
         {
             "type": "package",
@@ -56,6 +73,10 @@
             }
         },
         {
+            "type": "git",
+            "url": "git@github.com:eaudeweb/edw_modules.git"
+        },
+        {
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
@@ -68,27 +89,29 @@
         "drupal/advagg": "^6.0@alpha",
         "drupal/ajax_loader": "^2.0",
         "drupal/allowed_formats": "^1.5",
+        "drupal/autologout": "^1.4",
         "drupal/backup_migrate": "^5.0",
         "drupal/bootstrap_layout_builder": "^2.0",
         "drupal/captcha": "^2.0@beta",
+        "drupal/ckeditor5_paste_filter": "^1.0@alpha",
         "drupal/ckeditor_accordion": "^2.0",
         "drupal/ckeditor_bs_grid": "^2.0",
+        "drupal/clamav": "^2.0.2@RC",
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/core-composer-scaffold": "^10.0.9",
         "drupal/core-project-message": "^10.0.9",
         "drupal/core-recommended": "^10.0.9",
         "drupal/crop": "^2.3",
-        "drupal/drimage": "^2.0",
-        "drupal/dropdown_language": "^4.0",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.0",
         "drupal/edw_healthcheck": "^1.18",
         "drupal/edwt": "^3.0",
+        "drupal/elogger": "^1.1",
         "drupal/environment_indicator": "^4.0",
+        "drupal/extlink": "^1.7",
         "drupal/facets": "^2.0",
         "drupal/field_group": "^3.4",
         "drupal/honeypot": "^2.0",
-        "drupal/image_max_size_crop": "^2.0",
         "drupal/image_widget_crop": "^2.4",
         "drupal/lang_dropdown": "dev-custom",
         "drupal/layout_builder_browser": "^1.4",
@@ -102,7 +125,10 @@
         "drupal/metatag": "^1.19",
         "drupal/oembed_lazyload": "^2.0",
         "drupal/optional_end_date": "^1.2",
+        "drupal/password_strength": "dev-custom",
         "drupal/pathauto": "^1.9",
+        "drupal/real_aes": "^2.5",
+        "drupal/recaptcha": "^3.2",
         "drupal/redirect": "^1.7",
         "drupal/remove_username": "^1.3",
         "drupal/search_api": "^1.23",
@@ -112,13 +138,14 @@
         "drupal/smart_trim": "^2.0",
         "drupal/smtp": "^1.0",
         "drupal/spamspan": "^3.0@beta",
+        "drupal/tfa": "^1.2",
         "drupal/token": "^1.10",
         "drupal/twig_tweak": "^3.1",
-        "drupal/upgrade_status": "^4.0",
         "drupal/webform": "^6.1",
         "drupal/webp": "^1.0@beta",
         "drupal/xmlsitemap": "^1.2",
         "drush/drush": "^11.0",
+        "eaudeweb/edw_modules": "dev-main",
         "eaudeweb/heavy-lifter": "^2",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -130,8 +157,12 @@
         "drupal/devel": "^5.1",
         "drupal/stage_file_proxy": "^2.0",
         "drupal/twig_vardumper": "^3.0",
-        "overtrue/phplint": "^9",
-        "phpmd/phpmd": "^2.12"
+        "mglaman/phpstan-drupal": "^1.1",
+        "overtrue/phplint": "^9.0",
+        "phpmd/phpmd": "^2.13",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan": "^1.10",
+        "phpstan/phpstan-deprecation-rules": "^1.1"
     },
     "conflict": {
         "drupal/drupal": "*"

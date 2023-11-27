@@ -5,8 +5,8 @@
  * Eau de Web Theme theme file.
  */
 
-use Drupal\Core\Url;
 use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 // Section: Global settings.
 $form['settings']['global'] = [

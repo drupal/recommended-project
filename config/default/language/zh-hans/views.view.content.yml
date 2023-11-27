@@ -25,6 +25,7 @@ display:
         options:
           tags:
             next: '下一个 ›'
+            previous: '‹ 上一个'
             first: '« 首页'
             last: '末页 »'
       exposed_form:

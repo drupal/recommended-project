@@ -3,6 +3,7 @@ _core:
 langcode: en
 settings:
   default_status: open
+  default_categories: {  }
   default_page: true
   default_page_base_path: /form
   default_ajax: false
@@ -46,6 +47,7 @@ settings:
   default_draft_pending_multiple_message: 'You have pending drafts for this webform. <a href="#">View your pending drafts</a>.'
   default_confirmation_message: 'New submission added to [webform:title].'
   default_confirmation_back_label: 'Back to form'
+  default_confirmation_noindex: true
   default_limit_total_message: 'No more submissions are permitted.'
   default_limit_user_message: 'No more submissions are permitted.'
   default_submission_label: '[webform_submission:submitted-to]: Submission #[webform_submission:serial]'

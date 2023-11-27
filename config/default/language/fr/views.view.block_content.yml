@@ -1,10 +1,10 @@
-label: 'Bibliothèque de blocs personnalisés'
-description: 'Trouver et gérer les blocs personnalisés.'
+label: 'Custom block library'
+description: 'Find and manage custom blocks.'
 display:
   default:
     display_title: 'Par défaut'
     display_options:
-      title: 'Bibliothèque de blocs personnalisés'
+      title: 'Custom block library'
       fields:
         info:
           label: 'Description du bloc'
@@ -42,3 +42,4 @@ display:
     display_options:
       menu:
         title: 'Bibliothèque de blocs personnalisés'
+        description: 'Create and edit block content.'

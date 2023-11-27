@@ -1,0 +1,11 @@
+uuid: a14f0e81-fae9-4eb8-9031-1f4fc8395d37
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.hero_banner
+id: crop.hero_banner
+target_entity_type_id: crop
+target_bundle: hero_banner
+default_langcode: site_default
+language_alterable: false
