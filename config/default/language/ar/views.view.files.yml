@@ -7,7 +7,6 @@ display:
       fields:
         filename:
           label: الاسم
-          separator: ', '
         filemime:
           label: 'نوع MIME'
         filesize:

@@ -10,32 +10,25 @@ display:
           action_title: 动作
         thumbnail__target_id:
           label: 缩略图
-          separator: ', '
         name:
           label: 媒体名称
-          separator: ', '
         bundle:
           label: 类型
-          separator: ', '
         uid:
           label: 作者
-          separator: ', '
         status:
           label: 状态
           settings:
             format_custom_false: 未发布
             format_custom_true: 已发布
-          separator: ', '
         changed:
           label: 已更新
-          separator: ', '
         operations:
           label: 操作
       pager:
         options:
           tags:
             next: '下一个 ›'
-            previous: '‹ Previous'
             first: '« 首页'
             last: '末页 »'
           expose:

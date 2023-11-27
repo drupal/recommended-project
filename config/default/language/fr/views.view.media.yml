@@ -6,29 +6,19 @@ display:
     display_options:
       title: Média
       fields:
-        media_bulk_form:
-          action_title: Action
         thumbnail__target_id:
           label: Vignette
-          separator: ', '
         name:
           label: 'Nom du média'
-          separator: ', '
-        bundle:
-          label: Type
-          separator: ', '
         uid:
           label: Auteur
-          separator: ', '
         status:
           label: État
           settings:
             format_custom_false: 'Non publié'
             format_custom_true: Publié
-          separator: ', '
         changed:
           label: 'Mis à jour'
-          separator: ', '
         operations:
           label: Actions
       pager:
@@ -47,8 +37,6 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'Aucun média disponible.'
@@ -56,9 +44,6 @@ display:
         name:
           expose:
             label: 'Nom du média'
-        bundle:
-          expose:
-            label: Type
         status:
           expose:
             label: Vrai

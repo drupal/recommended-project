@@ -1,4 +1,3 @@
-label: 'Webform submissions'
 display:
   default:
     display_title: Máster
@@ -8,13 +7,9 @@ display:
           submit_button: Aplicar
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« Primero'
             last: 'Último »'
           expose:
@@ -22,18 +17,10 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
       fields:
-        sid:
-          label: '#'
-          separator: ', '
-        in_draft:
-          label: Draft
-          separator: ', '
         created:
           label: Creado
-          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
-          separator: ', '
         view_webform_submission:
           label: Operaciones
           text: vista
@@ -44,33 +31,19 @@ display:
         in_draft:
           exception:
             title: Todo(s)
-      title: 'Webform submissions'
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
-        sid:
-          label: '#'
-          separator: ', '
-        in_draft:
-          label: Draft
-          separator: ', '
         sticky:
           label: 'Fijo en cabeza de las listas'
-          separator: ', '
         locked:
           label: Bloqueado
-          separator: ', '
         created:
           label: Creado
-          separator: ', '
-        completed:
-          label: Completed
-          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
-          separator: ', '
         operations:
           label: Operaciones
       filters:
@@ -85,27 +58,14 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Acción
-        sid:
-          label: '#'
-          separator: ', '
-        in_draft:
-          label: Draft
-          separator: ', '
         sticky:
           label: 'Fijo en cabeza de las listas'
-          separator: ', '
         locked:
           label: Bloqueado
-          separator: ', '
         created:
           label: Creado
-          separator: ', '
-        completed:
-          label: Completed
-          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
-          separator: ', '
         view_webform_submission:
           label: Operaciones
           text: vista
@@ -122,27 +82,14 @@ display:
   embed_review:
     display_options:
       fields:
-        sid:
-          label: '#'
-          separator: ', '
-        in_draft:
-          label: Draft
-          separator: ', '
         sticky:
           label: 'Fijo en cabeza de las listas'
-          separator: ', '
         locked:
           label: Bloqueado
-          separator: ', '
         created:
           label: Creado
-          separator: ', '
-        completed:
-          label: Completed
-          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
-          separator: ', '
         view_webform_submission:
           label: Operaciones
           text: vista

@@ -22,7 +22,6 @@ display:
       fields:
         redirect_source__path:
           label: من
-          separator: ', '
         created:
           label: الإنشاء
       filters:

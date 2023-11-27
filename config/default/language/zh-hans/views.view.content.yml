@@ -10,7 +10,6 @@ display:
           label: 标题
         type:
           label: 内容类型
-          separator: ', '
         name:
           label: 作者
         status:
@@ -26,7 +25,6 @@ display:
         options:
           tags:
             next: '下一个 ›'
-            previous: '‹ Previous'
             first: '« 首页'
             last: '末页 »'
       exposed_form:

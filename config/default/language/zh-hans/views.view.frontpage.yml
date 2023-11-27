@@ -8,7 +8,6 @@ display:
         options:
           tags:
             next: '下一个 ›'
-            previous: '‹ Previous'
             first: '« 首页'
             last: '末页 »'
           expose:
@@ -27,7 +26,5 @@ display:
           content: "尚未创建首页内容。\r\n请按照<a href=\"https://www.drupal.org/docs/user_guide/en/index.html\">用户指南</a>开始创建网站。"
         title:
           title: 'Welcome to [site:name]'
-  feed_1:
-    display_title: Feed
   page_1:
     display_title: 页面

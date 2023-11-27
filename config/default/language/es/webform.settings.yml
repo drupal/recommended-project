@@ -1,29 +1,13 @@
 settings:
-  default_form_close_message: 'Sorry… This form is closed to new submissions.'
   default_submit_button_label: Enviar
   default_reset_button_label: Restablecer
   default_delete_button_label: Eliminar
-  default_wizard_prev_button_label: '< Previous'
-  default_wizard_next_button_label: 'Next >'
-  default_wizard_start_label: Start
-  default_wizard_confirmation_label: Complete
-  default_wizard_toggle_show_label: 'Show all'
-  default_wizard_toggle_hide_label: 'Hide all'
   default_preview_next_button_label: 'Vista previa'
-  default_preview_prev_button_label: '< Previous'
   default_preview_label: 'Vista previa'
-  default_draft_button_label: 'Save Draft'
-  default_draft_saved_message: 'Submission saved. You may return to this form later and it will restore the current values.'
-  default_confirmation_back_label: 'Back to form'
   dialog_options:
     narrow:
       title: Estrecho
-    normal:
-      title: Normal
     wide:
       title: Ancho
 element:
   default_more_title: Más
-  default_section_title_tag: h2
-mail:
-  default_from_name: '[site:name]'

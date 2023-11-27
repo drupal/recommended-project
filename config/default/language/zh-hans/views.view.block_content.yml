@@ -8,10 +8,8 @@ display:
       fields:
         info:
           label: 区块描述
-          separator: ', '
         type:
           label: 区块类型
-          separator: ', '
         changed:
           label: 已更新
         operations:
@@ -20,7 +18,6 @@ display:
         options:
           tags:
             next: '下一个 ›'
-            previous: '‹ Previous'
           expose:
             items_per_page_label: 每页条目数
             items_per_page_options_all_label: '- 全部 -'

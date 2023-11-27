@@ -8,13 +8,9 @@ display:
           submit_button: Appliquer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« Premier'
             last: 'Dernier »'
           expose:
@@ -22,18 +18,12 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
       fields:
-        sid:
-          label: '#'
-          separator: ', '
         in_draft:
           label: Brouillon
-          separator: ', '
         created:
           label: Créé
-          separator: ', '
         remote_addr:
           label: 'Adresse IP'
-          separator: ', '
         view_webform_submission:
           label: Actions
           text: voir
@@ -48,29 +38,18 @@ display:
   embed_administer:
     display_options:
       fields:
-        webform_submission_bulk_form:
-          action_title: Action
-        sid:
-          label: '#'
-          separator: ', '
         in_draft:
           label: Brouillon
-          separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
-          separator: ', '
         locked:
           label: Verrouillé
-          separator: ', '
         created:
           label: Créé
-          separator: ', '
         completed:
           label: Terminé
-          separator: ', '
         remote_addr:
           label: 'Adresse IP'
-          separator: ', '
         operations:
           label: Actions
       filters:
@@ -86,29 +65,18 @@ display:
   embed_manage:
     display_options:
       fields:
-        webform_submission_bulk_form:
-          action_title: Action
-        sid:
-          label: '#'
-          separator: ', '
         in_draft:
           label: Brouillon
-          separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
-          separator: ', '
         locked:
           label: Verrouillé
-          separator: ', '
         created:
           label: Créé
-          separator: ', '
         completed:
           label: Terminé
-          separator: ', '
         remote_addr:
           label: 'Adresse IP'
-          separator: ', '
         view_webform_submission:
           label: Actions
           text: voir
@@ -128,27 +96,18 @@ display:
   embed_review:
     display_options:
       fields:
-        sid:
-          label: '#'
-          separator: ', '
         in_draft:
           label: Brouillon
-          separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
-          separator: ', '
         locked:
           label: Verrouillé
-          separator: ', '
         created:
           label: Créé
-          separator: ', '
         completed:
           label: Terminé
-          separator: ', '
         remote_addr:
           label: 'Adresse IP'
-          separator: ', '
         view_webform_submission:
           label: Actions
           text: voir

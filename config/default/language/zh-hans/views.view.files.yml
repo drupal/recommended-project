@@ -6,11 +6,8 @@ display:
     display_options:
       title: 文件
       fields:
-        fid:
-          label: Fid
         filename:
           label: 名称
-          separator: ', '
         filemime:
           label: MIME类型
         filesize:
@@ -26,13 +23,10 @@ display:
           label: 更改的日期
         count:
           label: 用于
-          alter:
-            path: 'admin/content/files/usage/{{ fid }}'
       pager:
         options:
           tags:
             next: '下一个 ›'
-            previous: '‹ Previous'
           expose:
             items_per_page_label: 每页条目数
             items_per_page_options_all_label: '- 全部 -'
@@ -79,7 +73,6 @@ display:
         options:
           tags:
             next: '下一个 ›'
-            previous: '‹ Previous'
           expose:
             items_per_page_label: 每页条目数
             items_per_page_options_all_label: '- 全部 -'
