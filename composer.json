@@ -125,7 +125,6 @@
         "drupal/metatag": "^1.19",
         "drupal/oembed_lazyload": "^2.0",
         "drupal/optional_end_date": "^1.2",
-        "drupal/password_strength": "dev-custom",
         "drupal/pathauto": "^1.9",
         "drupal/real_aes": "^2.5",
         "drupal/recaptcha": "^3.2",

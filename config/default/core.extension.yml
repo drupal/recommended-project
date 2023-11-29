@@ -83,7 +83,6 @@ module:
   oembed_lazyload: 0
   optional_end_date: 0
   options: 0
-  password_strength: 0
   path: 0
   path_alias: 0
   phpass: 0
@@ -120,7 +119,6 @@ module:
   pathauto: 1
   xmlsitemap: 1
   content_translation: 10
-  password_policy: 10
   views: 10
   minimal: 1000
 theme:
