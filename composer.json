@@ -14,7 +14,7 @@
         "drupal/admin_toolbar": "^3",
         "drupal/core-composer-scaffold": "~10.1.0",
         "drupal/core-recommended": "~10.1.0",
-        "drush/drush": "^12.4.3",
+        "drush/drush": "^12.4.4",
         "getdkan/dkan": "^2.16.15"
     },
     "require-dev": {
