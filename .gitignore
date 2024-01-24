@@ -1,4 +1,6 @@
 .DS_Store
 .idea
 .ddev
+docroot
+vendor
 composer.lock
