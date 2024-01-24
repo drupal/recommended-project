@@ -9,7 +9,7 @@ jobs:
       tag: << parameters.php_version >>
     parameters:
       php_version:
-        default: "8.0"
+        default: "8.1"
         description: The `cimg/php` Docker image version tag.
         type: string
     steps:
@@ -27,4 +27,4 @@ workflows:
           # Note: PHP versions will be different for different branches.
           matrix:
             parameters:
-              php_version: [ "8.1" ]
+              php_version: [ "8.1", "8.2" ]
