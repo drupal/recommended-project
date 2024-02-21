@@ -1,3 +1,4 @@
+label: 'Redireccionar 404'
 display:
   default:
     display_title: Máster
@@ -7,12 +8,17 @@ display:
           submit_button: Filtro
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       pager:
         options:
           expose:
             items_per_page_label: 'Elementos por página'
             items_per_page_options_all_label: '- Todo -'
             offset_label: Desplazamiento
+          tags:
+            previous: ‹‹
+            next: ››
       fields:
         path:
           label: Ruta
@@ -31,6 +37,14 @@ display:
         langcode:
           expose:
             label: Idioma
+        resolved:
+          expose:
+            label: Resuelto
       title: 'Arreglar páginas con error 404'
+      empty:
+        area_text_custom:
+          content: 'No hay 404 errores que corregir.'
   page_1:
     display_title: Página
+    display_options:
+      display_description: 'Enumera 404 rutas de error sin redirección asignada todavía.'

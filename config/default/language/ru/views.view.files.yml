@@ -6,8 +6,11 @@ display:
     display_options:
       title: Файлы
       fields:
+        fid:
+          label: Fid
         filename:
           label: Название
+          separator: ', '
         filemime:
           label: MIME-тип
         filesize:
@@ -23,9 +26,13 @@ display:
           label: 'Дата изменения'
         count:
           label: 'Используется в'
+          alter:
+            path: 'admin/content/files/usage/{{ fid }}'
+          format_plural_string: !!binary QGNvdW50INC80LXRgdGC0L4DQGNvdW50INC80LXRgdGC0LADQGNvdW50WzJdINC80LXRgdGC
       pager:
         options:
           tags:
+            next: 'Следующий ›'
             previous: '‹ Предыдущий'
           expose:
             items_per_page_label: 'Элементов на страницу'
@@ -69,9 +76,11 @@ display:
           label: 'Регистрация модуля'
         count:
           label: 'Используемое количество'
+          format_plural_string: !!binary QGNvdW50A0Bjb3VudANAY291bnRbMl0=
       pager:
         options:
           tags:
+            next: 'Следующий ›'
             previous: '‹ Предыдущий'
           expose:
             items_per_page_label: 'Элементов на страницу'

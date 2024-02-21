@@ -1,3 +1,4 @@
+label: 'Отправленные формы'
 display:
   default:
     display_title: Основной
@@ -12,6 +13,8 @@ display:
       pager:
         options:
           tags:
+            previous: ‹‹
+            next: ››
             first: '« Первая'
             last: 'Последняя »'
           expose:
@@ -19,10 +22,18 @@ display:
             items_per_page_options_all_label: '- Все -'
             offset_label: Пропустить
       fields:
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Черновик
+          separator: ', '
         created:
           label: Создано
+          separator: ', '
         remote_addr:
           label: IP-адрес
+          separator: ', '
         view_webform_submission:
           label: Операции
           text: представление
@@ -33,22 +44,39 @@ display:
         in_draft:
           exception:
             title: Все
+      title: 'Отправленные формы'
   embed_administer:
     display_options:
       fields:
         webform_submission_bulk_form:
           action_title: Действие
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Черновик
+          separator: ', '
         sticky:
           label: Прикреплено
+          separator: ', '
         locked:
           label: Заблокировано
+          separator: ', '
         created:
           label: Создано
+          separator: ', '
+        completed:
+          label: Завершено
+          separator: ', '
         remote_addr:
           label: IP-адрес
+          separator: ', '
         operations:
           label: Операции
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено
@@ -60,14 +88,27 @@ display:
       fields:
         webform_submission_bulk_form:
           action_title: Действие
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Черновик
+          separator: ', '
         sticky:
           label: Прикреплено
+          separator: ', '
         locked:
           label: Заблокировано
+          separator: ', '
         created:
           label: Создано
+          separator: ', '
+        completed:
+          label: Завершено
+          separator: ', '
         remote_addr:
           label: IP-адрес
+          separator: ', '
         view_webform_submission:
           label: Операции
           text: представление
@@ -75,6 +116,9 @@ display:
           label: Операции
           text: изменить
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено
@@ -84,18 +128,34 @@ display:
   embed_review:
     display_options:
       fields:
+        sid:
+          label: '#'
+          separator: ', '
+        in_draft:
+          label: Черновик
+          separator: ', '
         sticky:
           label: Прикреплено
+          separator: ', '
         locked:
           label: Заблокировано
+          separator: ', '
         created:
           label: Создано
+          separator: ', '
+        completed:
+          label: Завершено
+          separator: ', '
         remote_addr:
           label: IP-адрес
+          separator: ', '
         view_webform_submission:
           label: Операции
           text: представление
       filters:
+        in_draft:
+          expose:
+            label: Черновик
         sticky:
           expose:
             label: Прикреплено

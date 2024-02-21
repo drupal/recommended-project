@@ -15,8 +15,13 @@ display:
           settings:
             format_custom_false: Bloqueado
             format_custom_true: Activo
+        roles_target_id:
+          label: Roles
         created:
           label: 'Miembro desde hace'
+          settings:
+            future_format: '@interval'
+            past_format: '@interval'
         access:
           label: 'Último acceso'
           settings:
@@ -24,6 +29,8 @@ display:
             past_format: 'Hace @interval'
         operations:
           label: Operaciones
+        mail:
+          separator: ', '
       pager:
         options:
           tags:
@@ -40,6 +47,11 @@ display:
           submit_button: Filtro
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      empty:
+        area_text_custom:
+          content: 'No people available.'
       filters:
         combine:
           expose:

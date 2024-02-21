@@ -59,8 +59,10 @@ settings:
         - heading5
         - heading6
     ckeditor5_list:
-      reversed: true
-      startIndex: true
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
     ckeditor5_paste_filter_pasteFilter:
       enabled: false
       filters:

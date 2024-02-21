@@ -1,3 +1,4 @@
+label: Watchdog
 description: 'Entrées récentes du journal'
 display:
   default:
@@ -7,18 +8,29 @@ display:
       fields:
         nothing:
           admin_label: Icône
+        wid:
+          label: WID
         severity:
           label: Importance
         type:
           label: Type
         timestamp:
           label: Date
+        message:
+          label: Message
+          alter:
+            path: 'admin/reports/dblog/event/{{ wid }}'
+            alt: '{{ message }}'
         name:
           label: Utilisateur
+          separator: ', '
         link:
           label: Actions
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Éléments par page'
             items_per_page_options_all_label: '- Tout -'
@@ -28,6 +40,8 @@ display:
           submit_button: Filtrer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area:
           admin_label: "Aucune entrée du journal n'est disponible."
@@ -39,3 +53,5 @@ display:
         severity:
           expose:
             label: Importance
+  page:
+    display_title: Page
