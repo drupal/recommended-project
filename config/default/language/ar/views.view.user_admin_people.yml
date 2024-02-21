@@ -21,8 +21,6 @@ display:
           label: 'آخر وصول'
         operations:
           label: عمليات
-        mail:
-          separator: ', '
       pager:
         options:
           tags:

@@ -11,27 +11,6 @@ name: 'Full HTML'
 format: full_html
 weight: 0
 filters:
-  blazy_filter:
-    id: blazy_filter
-    provider: blazy
-    status: false
-    weight: 3
-    settings:
-      media_switch: ''
-      hybrid_style: ''
-      box_style: ''
-      box_media_style: ''
-      box_caption: ''
-      filter_tags:
-        img: img
-        iframe: iframe
-      use_data_uri: '0'
-  filter_align:
-    id: filter_align
-    provider: filter
-    status: true
-    weight: 0
-    settings: {  }
   filter_html:
     id: filter_html
     provider: filter
@@ -41,12 +20,27 @@ filters:
       allowed_html: ''
       filter_html_help: true
       filter_html_nofollow: false
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter
     status: true
     weight: 10
     settings: {  }
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes: {  }
+      allowed_media_types: {  }
   filter_spamspan:
     id: filter_spamspan
     provider: spamspan
@@ -61,15 +55,6 @@ filters:
       spamspan_form_pattern: '<a href="%url?goto=%email">%displaytext</a>'
       spamspan_form_default_url: contact
       spamspan_form_default_displaytext: 'contact form'
-  media_embed:
-    id: media_embed
-    provider: media
-    status: true
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
-      allowed_media_types: {  }
   slick_filter:
     id: slick_filter
     provider: slick
@@ -78,6 +63,7 @@ filters:
     settings:
       optionset: default
       layout: ''
+      skin: ''
       background: false
       loading: ''
       preload: false
@@ -86,7 +72,6 @@ filters:
       media_switch: ''
       ratio: ''
       thumbnail_style: ''
-      skin: ''
       overridables:
         arrows: '0'
         autoplay: '0'
@@ -102,3 +87,17 @@ filters:
       thumbnail_effect: ''
       thumbnail_position: ''
       override: false
+  blazy_filter:
+    id: blazy_filter
+    provider: blazy
+    status: false
+    weight: 3
+    settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_caption: ''
+      filter_tags:
+        img: img
+        iframe: iframe
+      use_data_uri: '0'

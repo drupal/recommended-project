@@ -5,4 +5,3 @@ dependencies: {  }
 id: page_content
 label: 'Page content'
 weight: null
-opened: true

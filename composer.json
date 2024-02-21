@@ -91,7 +91,6 @@
         "drupal/allowed_formats": "^1.5",
         "drupal/autologout": "^1.4",
         "drupal/backup_migrate": "^5.0",
-        "drupal/blazy": "^2.22",
         "drupal/bootstrap_layout_builder": "^2.0",
         "drupal/captcha": "^2.0@beta",
         "drupal/ckeditor5_paste_filter": "^1.0@alpha",
@@ -99,9 +98,9 @@
         "drupal/ckeditor_bs_grid": "^2.0",
         "drupal/clamav": "^2.0.2@RC",
         "drupal/conditional_fields": "^4.0@alpha",
-        "drupal/core-composer-scaffold": "10.2.3",
-        "drupal/core-project-message": "10.2.3",
-        "drupal/core-recommended": "10.2.3",
+        "drupal/core-composer-scaffold": "^10.0.9",
+        "drupal/core-project-message": "^10.0.9",
+        "drupal/core-recommended": "^10.0.9",
         "drupal/crop": "^2.3",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.0",
@@ -134,7 +133,6 @@
         "drupal/search_api": "^1.23",
         "drupal/select2": "^1.15",
         "drupal/simple_search_form": "dev-custom",
-        "drupal/slick": "^2.10",
         "drupal/slick_views": "^2.6",
         "drupal/smart_trim": "^2.0",
         "drupal/smtp": "^1.0",
@@ -145,7 +143,7 @@
         "drupal/webform": "^6.1",
         "drupal/webp": "^1.0@beta",
         "drupal/xmlsitemap": "^1.2",
-        "drush/drush": "^12",
+        "drush/drush": "^11.0",
         "eaudeweb/edw_modules": "dev-main",
         "eaudeweb/heavy-lifter": "^2",
         "npm-asset/select2": "^4.0",
@@ -179,8 +177,7 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
-            "oomphinc/composer-installers-extender": true,
-            "php-http/discovery": true
+            "oomphinc/composer-installers-extender": true
         },
         "platform": {
             "php": "8.1"

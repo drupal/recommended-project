@@ -1,5 +1,4 @@
 label: 'Soumissions de webform'
-description: 'Vue par défaut des soumissions de webform.'
 display:
   default:
     display_title: Maître
@@ -9,13 +8,9 @@ display:
           submit_button: Appliquer
           reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trier par'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« Premier'
             last: 'Dernier »'
           expose:
@@ -23,64 +18,38 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset_label: Décalage
       fields:
-        sid:
-          label: '#'
-          separator: ', '
         in_draft:
           label: Brouillon
-          separator: ', '
         created:
           label: Créé
-          separator: ', '
         remote_addr:
           label: 'Adresse IP'
-          separator: ', '
         view_webform_submission:
           label: Actions
           text: voir
       header:
         result:
           content: 'Affichage de @start à @end sur @total'
-      empty:
-        area_text_custom:
-          content: "Aucune soumission n'est disponible."
       arguments:
         in_draft:
           exception:
             title: Tout
       title: 'Soumissions de webform'
-  embed_default:
-    display_title: 'Intégrer : Par défaut'
-    display_options:
-      display_description: 'Afficher les soumissions.'
   embed_administer:
-    display_title: 'Intégrer : Administrer'
     display_options:
-      display_description: 'Administrer les soumissions.'
       fields:
-        webform_submission_bulk_form:
-          action_title: Action
-        sid:
-          label: '#'
-          separator: ', '
         in_draft:
           label: Brouillon
-          separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
-          separator: ', '
         locked:
           label: Verrouillé
-          separator: ', '
         created:
           label: Créé
-          separator: ', '
         completed:
           label: Terminé
-          separator: ', '
         remote_addr:
           label: 'Adresse IP'
-          separator: ', '
         operations:
           label: Actions
       filters:
@@ -94,33 +63,20 @@ display:
           expose:
             label: Verrouillé
   embed_manage:
-    display_title: 'Intégrer : Gérer'
     display_options:
-      display_description: 'Gérer les soumissions.'
       fields:
-        webform_submission_bulk_form:
-          action_title: Action
-        sid:
-          label: '#'
-          separator: ', '
         in_draft:
           label: Brouillon
-          separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
-          separator: ', '
         locked:
           label: Verrouillé
-          separator: ', '
         created:
           label: Créé
-          separator: ', '
         completed:
           label: Terminé
-          separator: ', '
         remote_addr:
           label: 'Adresse IP'
-          separator: ', '
         view_webform_submission:
           label: Actions
           text: voir
@@ -138,31 +94,20 @@ display:
           expose:
             label: Verrouillé
   embed_review:
-    display_title: 'Intégrer : Évaluer'
     display_options:
-      display_description: 'Évaluer les soumissions.'
       fields:
-        sid:
-          label: '#'
-          separator: ', '
         in_draft:
           label: Brouillon
-          separator: ', '
         sticky:
           label: 'Épinglé (en haut des listes)'
-          separator: ', '
         locked:
           label: Verrouillé
-          separator: ', '
         created:
           label: Créé
-          separator: ', '
         completed:
           label: Terminé
-          separator: ', '
         remote_addr:
           label: 'Adresse IP'
-          separator: ', '
         view_webform_submission:
           label: Actions
           text: voir

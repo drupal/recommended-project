@@ -8,10 +8,8 @@ display:
       fields:
         info:
           label: 'Описание блока'
-          separator: ', '
         type:
           label: 'Тип блока'
-          separator: ', '
         changed:
           label: Обновлено
         operations:
@@ -19,7 +17,6 @@ display:
       pager:
         options:
           tags:
-            next: 'Следующий ›'
             previous: '‹ Предыдущий'
           expose:
             items_per_page_label: 'Элементов на страницу'
@@ -46,5 +43,4 @@ display:
     display_title: Страница
     display_options:
       menu:
-        title: Блоки
         description: 'Create and edit block content.'

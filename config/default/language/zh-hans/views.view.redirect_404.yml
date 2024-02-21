@@ -15,9 +15,6 @@ display:
             items_per_page_label: 每页条目数
             items_per_page_options_all_label: '- 全部 -'
             offset_label: 偏移量
-          tags:
-            previous: ‹‹
-            next: ››
       fields:
         path:
           label: 路径

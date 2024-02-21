@@ -2,11 +2,8 @@ uuid: 4397c0a3-a108-4c12-ae21-c65fee22d255
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.webform_default
   module:
     - file
-    - filter
     - media
     - system
     - tfa
@@ -20,5 +17,4 @@ permissions:
   - 'access content'
   - 'delete own files'
   - 'setup own tfa'
-  - 'use text format webform_default'
   - 'view media'

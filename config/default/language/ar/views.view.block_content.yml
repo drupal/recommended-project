@@ -8,10 +8,8 @@ display:
       fields:
         info:
           label: 'وصف الصندوق'
-          separator: ', '
         type:
           label: 'نوع الصندوق'
-          separator: ', '
         changed:
           label: التحديث
         operations:
@@ -45,5 +43,4 @@ display:
     display_title: الصفحة
     display_options:
       menu:
-        title: الصناديق
         description: 'Create and edit block content.'

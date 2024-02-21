@@ -6,6 +6,5 @@ dependencies:
     - media
 id: media.token
 label: Token
-description: ''
 targetEntityType: media
 cache: true

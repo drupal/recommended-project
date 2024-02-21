@@ -8,13 +8,9 @@ display:
           submit_button: Aplicar
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
-          sort_asc_label: Asc
-          sort_desc_label: Desc
       pager:
         options:
           tags:
-            previous: ‹‹
-            next: ››
             first: '« Primero'
             last: 'Último »'
           expose:
@@ -24,16 +20,12 @@ display:
       fields:
         sid:
           label: Nº
-          separator: ', '
         in_draft:
           label: Borrador
-          separator: ', '
         created:
           label: Creado
-          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
-          separator: ', '
         view_webform_submission:
           label: Operaciones
           text: vista
@@ -52,25 +44,18 @@ display:
           action_title: Acción
         sid:
           label: Nº
-          separator: ', '
         in_draft:
           label: Borrador
-          separator: ', '
         sticky:
           label: 'Fijo en cabeza de las listas'
-          separator: ', '
         locked:
           label: Bloqueado
-          separator: ', '
         created:
           label: Creado
-          separator: ', '
         completed:
           label: Completado
-          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
-          separator: ', '
         operations:
           label: Operaciones
       filters:
@@ -87,25 +72,18 @@ display:
           action_title: Acción
         sid:
           label: Nº
-          separator: ', '
         in_draft:
           label: Borrador
-          separator: ', '
         sticky:
           label: 'Fijo en cabeza de las listas'
-          separator: ', '
         locked:
           label: Bloqueado
-          separator: ', '
         created:
           label: Creado
-          separator: ', '
         completed:
           label: Completado
-          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
-          separator: ', '
         view_webform_submission:
           label: Operaciones
           text: vista
@@ -124,25 +102,18 @@ display:
       fields:
         sid:
           label: Nº
-          separator: ', '
         in_draft:
           label: Borrador
-          separator: ', '
         sticky:
           label: 'Fijo en cabeza de las listas'
-          separator: ', '
         locked:
           label: Bloqueado
-          separator: ', '
         created:
           label: Creado
-          separator: ', '
         completed:
           label: Completado
-          separator: ', '
         remote_addr:
           label: 'Direccion(es) IP'
-          separator: ', '
         view_webform_submission:
           label: Operaciones
           text: vista

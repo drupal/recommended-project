@@ -6,6 +6,5 @@ dependencies:
     - block_content
 id: block_content.vertical_teaser
 label: 'Vertical Teaser'
-description: ''
 targetEntityType: block_content
 cache: true
