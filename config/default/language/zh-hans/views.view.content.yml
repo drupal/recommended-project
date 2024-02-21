@@ -10,6 +10,7 @@ display:
           label: 标题
         type:
           label: 内容类型
+          separator: ', '
         name:
           label: 作者
         status:

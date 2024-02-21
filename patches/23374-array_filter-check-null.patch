@@ -1,0 +1,14 @@
+diff --git a/adequate_passwords.module b/adequate_passwords.module
+index 15d2eb8..5b3547e 100644
+--- a/adequate_passwords.module
++++ b/adequate_passwords.module
+@@ -71,7 +71,8 @@ function adequate_passwords_validate(array $element, FormStateInterface $form_st
+   $min_strength = $config->get('strength');
+   $required_roles = $config->get('roles');
+ 
+-  $roles = array_keys(array_filter($form_state->getValue('roles')));
++  $rolesValue = $form_state->getValue('roles') ?? [];
++  $roles = array_keys(array_filter($rolesValue));
+ 
+   if (is_array($required_roles) && empty(array_intersect($required_roles, $roles))) {
+     return;

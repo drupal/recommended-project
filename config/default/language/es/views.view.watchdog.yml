@@ -8,6 +8,8 @@ display:
       fields:
         nothing:
           admin_label: Icono
+        wid:
+          label: WID
         severity:
           label: Gravedad
         type:
@@ -16,12 +18,19 @@ display:
           label: Fecha
         message:
           label: Mensaje
+          alter:
+            path: 'admin/reports/dblog/event/{{ wid }}'
+            alt: '{{ message }}'
         name:
           label: Usuario
+          separator: ', '
         link:
           label: Operaciones
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Elementos por página'
             items_per_page_options_all_label: '- Todo -'
@@ -31,6 +40,8 @@ display:
           submit_button: Filtro
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area:
           admin_label: 'No hay mensajes de registro disponibles.'

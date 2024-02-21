@@ -1,3 +1,8 @@
 title: Контакт
 settings:
   confirmation_message: 'Ваше сообщение отправлено.'
+handlers:
+  email_confirmation:
+    label: 'Подтверждение почтой'
+  email_notification:
+    label: 'Уведомления по email'

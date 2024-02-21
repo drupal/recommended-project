@@ -18,7 +18,12 @@ settings:
   dialog_options:
     narrow:
       title: Estrecho
+    normal:
+      title: Normal
     wide:
       title: Ancho
 element:
   default_more_title: Más
+  default_section_title_tag: h2
+mail:
+  default_from_name: '[site:name]'

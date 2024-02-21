@@ -5,3 +5,4 @@ dependencies: {  }
 id: field
 label: Fields
 weight: null
+opened: true

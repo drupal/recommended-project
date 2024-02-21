@@ -1,1 +1,3 @@
 description: "Cette question sert à vérifier si vous êtes un visiteur humain ou non afin d'éviter les soumissions de pourriel (spam) automatisées."
+title: CAPTCHA
+wrong_captcha_response_message: 'La réponse saisie pour le CAPTCHA est incorrecte.'
