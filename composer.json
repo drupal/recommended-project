@@ -141,7 +141,7 @@
         "drupal/spamspan": "^3.0@beta",
         "drupal/tfa": "^1.2",
         "drupal/token": "^1.10",
-        "drupal/twig_tweak": "^3.1",
+        "drupal/twig_tweak": "^3.3",
         "drupal/webform": "^6.1",
         "drupal/webp": "^1.0@beta",
         "drupal/xmlsitemap": "^1.2",
