@@ -1,0 +1,68 @@
+display:
+  default:
+    display_title: الرئيسي
+    display_options:
+      fields:
+        log_message__value:
+          separator: ', '
+        module:
+          label: الوحدة
+          separator: ', '
+        diff:
+          separator: ', '
+      pager:
+        options:
+          expose:
+            items_per_page_options_all_label: '- الكل -'
+            offset_label: الإزاحة
+      exposed_form:
+        options:
+          submit_button: انتقاء
+          reset_button_label: 'إعادة الضبط'
+          exposed_sorts_label: 'الترتيب حسب'
+          sort_asc_label: تصاعدي
+          sort_desc_label: تنازلي
+      filters:
+        uid:
+          expose:
+            label: المستخدم
+        module:
+          expose:
+            label: الوحدة
+          group_info:
+            label: الوحدة
+  data_export_1:
+    display_options:
+      fields:
+        id:
+          separator: ', '
+        log_message__value:
+          separator: ', '
+        module:
+          label: الوحدة
+          separator: ', '
+        user_id:
+          label: المستخدم
+          separator: ', '
+        ip:
+          separator: ', '
+        user_agent:
+          separator: ', '
+  elogs:
+    display_options:
+      fields:
+        id:
+          separator: ', '
+        log_message__value:
+          separator: ', '
+        module:
+          label: الوحدة
+          separator: ', '
+        diff:
+          separator: ', '
+        view_elog:
+          text: عرض
+        ip:
+          separator: ', '
+        user_agent:
+          separator: ', '

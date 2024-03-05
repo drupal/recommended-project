@@ -8,8 +8,10 @@ display:
       fields:
         info:
           label: 区块描述
+          separator: ', '
         type:
           label: 区块类型
+          separator: ', '
         changed:
           label: 已更新
         operations:
@@ -44,4 +46,5 @@ display:
     display_title: 页面
     display_options:
       menu:
+        title: Blocks
         description: 'Create and edit block content.'

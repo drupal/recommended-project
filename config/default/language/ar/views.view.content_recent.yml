@@ -4,6 +4,9 @@ display:
     display_title: الافتراضي
     display_options:
       title: 'أحدث المحتويات'
+      fields:
+        changed:
+          separator: ', '
       exposed_form:
         options:
           submit_button: تطبيق

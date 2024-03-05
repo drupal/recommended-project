@@ -1,1 +1,3 @@
 label: Содержимое
+tags:
+  title: '[node:title] | [site:name]'

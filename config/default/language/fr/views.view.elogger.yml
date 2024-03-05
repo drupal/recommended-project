@@ -1,0 +1,76 @@
+display:
+  default:
+    display_title: Maître
+    display_options:
+      fields:
+        log_message__value:
+          separator: ', '
+        module:
+          label: Module
+          separator: ', '
+        diff:
+          label: Diff
+          separator: ', '
+      pager:
+        options:
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« Premier'
+            last: 'Dernier »'
+          expose:
+            items_per_page_label: 'Éléments par page'
+            items_per_page_options_all_label: '- Tout -'
+            offset_label: Décalage
+      exposed_form:
+        options:
+          submit_button: Filtrer
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      filters:
+        uid:
+          expose:
+            label: Utilisateur
+        module:
+          expose:
+            label: Module
+          group_info:
+            label: Module
+  data_export_1:
+    display_options:
+      fields:
+        id:
+          separator: ', '
+        log_message__value:
+          separator: ', '
+        module:
+          label: Module
+          separator: ', '
+        user_id:
+          label: Utilisateur
+          separator: ', '
+        ip:
+          separator: ', '
+        user_agent:
+          separator: ', '
+  elogs:
+    display_options:
+      fields:
+        id:
+          separator: ', '
+        log_message__value:
+          separator: ', '
+        module:
+          label: Module
+          separator: ', '
+        diff:
+          label: Diff
+          separator: ', '
+        view_elog:
+          text: voir
+        ip:
+          separator: ', '
+        user_agent:
+          separator: ', '

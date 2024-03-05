@@ -1,0 +1,28 @@
+uuid: 64114c4e-1f3a-4004-a81e-1d9674d7340b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pRtugufdcuY7Mt1qFFUc2exdM7_YyYmpv_GNbYN31lA
+id: member
+label: 'Member profile'
+description: 'Configuration for site members'
+conf:
+  usertab: false
+  extensions: 'jpg jpeg png bmp eps tif pict txt odf pdf doc docx ppt pptx xls xlsx mp4 m4a zip rar'
+  maxsize: null
+  quota: null
+  maxwidth: null
+  maxheight: null
+  replace: 0
+  thumbnail_style: ''
+  thumbnail_grid_style: false
+  ignore_usage: false
+  url_alter: false
+  folders:
+    -
+      path: inline-files
+      permissions:
+        browse_files: true
+        upload_files: true
+        delete_files: true

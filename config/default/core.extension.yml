@@ -54,6 +54,7 @@ module:
   image: 0
   image_captcha: 0
   image_widget_crop: 0
+  imce: 0
   key: 0
   lang_dropdown: 0
   language: 0

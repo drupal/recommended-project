@@ -113,6 +113,7 @@
         "drupal/field_group": "^3.4",
         "drupal/honeypot": "^2.0",
         "drupal/image_widget_crop": "^2.4",
+        "drupal/imce": "^3.0",
         "drupal/lang_dropdown": "dev-custom",
         "drupal/layout_builder_browser": "^1.4",
         "drupal/layout_builder_modal": "^1.1",
@@ -177,7 +178,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
-            "oomphinc/composer-installers-extender": true
+            "oomphinc/composer-installers-extender": true,
+            "php-http/discovery": true
         },
         "platform": {
             "php": "8.1"

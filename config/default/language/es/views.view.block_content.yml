@@ -8,8 +8,10 @@ display:
       fields:
         info:
           label: 'Descripción del bloque'
+          separator: ', '
         type:
           label: 'Tipo de bloque'
+          separator: ', '
         changed:
           label: Actualizado
         operations:
@@ -28,6 +30,8 @@ display:
           submit_button: Aplicar
           reset_button_label: Restablecer
           exposed_sorts_label: 'Ordenar por'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
       empty:
         area_text_custom:
           content: 'No hay bloques personalizados disponibles.'
@@ -42,4 +46,5 @@ display:
     display_title: Página
     display_options:
       menu:
+        title: Blocks
         description: 'Create and edit block content.'

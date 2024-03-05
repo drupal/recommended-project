@@ -27,9 +27,6 @@ display:
                 title: منشور
               2:
                 title: 'غير منشور'
-        name:
-          expose:
-            label: الاسم
         langcode:
           expose:
             label: اللغة
@@ -39,6 +36,8 @@ display:
       fields:
         media_bulk_form:
           action_title: إجراء
+        name:
+          separator: ', '
         edit_media:
           text: تحرير
         delete_media:
@@ -50,10 +49,6 @@ display:
         bundle:
           exception:
             title: الكل
-      filters:
-        name:
-          expose:
-            label: الاسم
       header:
         display_link_grid:
           label: شبكة
@@ -74,10 +69,6 @@ display:
         bundle:
           exception:
             title: الكل
-      filters:
-        name:
-          expose:
-            label: الاسم
       header:
         display_link_grid:
           label: شبكة
