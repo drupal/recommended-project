@@ -235,13 +235,12 @@
         }
     },
     "scripts": {
-        "cghooks": "vendor/bin/cghooks",
         "remove-git-folders": [
             "scripts/composer/remove-git-folders.sh"
         ],
         "post-install-cmd": [
             "@remove-git-folders",
-            "@cghooks update"
+            "bash -c 'vendor/bin/cghooks update > /dev/null 2>&1 || true'"
         ],
         "post-update-cmd": [
             "@remove-git-folders"
