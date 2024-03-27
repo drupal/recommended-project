@@ -152,6 +152,7 @@
         "slick/slick": "^1.9.0"
     },
     "require-dev": {
+        "brainmaestro/composer-git-hooks": "^3.0@alpha",
         "drupal/coder": "^8.3",
         "drupal/core-dev": "^10",
         "drupal/devel": "^5.1",
@@ -228,7 +229,12 @@
         },
         "installer-types": ["bower-asset", "npm-asset"],
         "enable-patching": true,
-        "patches-file": "composer.patches.json"
+        "patches-file": "composer.patches.json",
+        "hooks": {
+            "pre-commit": [
+                "./code-qa.sh"
+            ]
+        }
     },
     "scripts": {
         "remove-git-folders": [
@@ -236,7 +242,7 @@
         ],
         "post-install-cmd": [
             "@remove-git-folders",
-            "if [ -d \".git\" ]; then cd .git/hooks && ln -sf ../../.git-hooks/* .; fi"
+            "bash -c 'vendor/bin/cghooks update > /dev/null 2>&1 || true'"
         ],
         "post-update-cmd": [
             "@remove-git-folders"

@@ -21,14 +21,14 @@ https://www.project.org
 
 ## I. Prerequisites
 
-| Using DDEV                                   | Using LAMP stack                                  |
-|----------------------------------------------|---------------------------------------------------|
-| DDEV 1.22.0+ (https://ddev.com/get-started)  | PHP 8.2 (see https://www.drupal.org/node/3295154) |
-|                                              | MySQL 5.7.8+ / MariaDB 10.3.7+                    |
-|                                              | Apache / NGINX                                    |
-|                                              | Composer (https://getcomposer.org)                |
-|                                              | NVM (https://github.com/nvm-sh/nvm)               |
-|                                              | Node.js 18 (run `nvm use 18`)                     |
+| Using DDEV                                                                | Using LAMP stack                                  |
+|---------------------------------------------------------------------------|---------------------------------------------------|
+| [mkcert](https://github.com/FiloSottile/mkcert?tab=readme-ov-file#mkcert) | PHP 8.2 |
+| [DDEV 1.22.0+](https://ddev.com/get-started)                              | MySQL 5.7.8+ / MariaDB 10.3.7+                    |
+|                                                                           | Apache / NGINX                                    |
+|                                                                           | [Composer](https://getcomposer.org)              |
+|                                                                           | [NVM](https://github.com/nvm-sh/nvm)             |
+|                                                                           | Node.js 18 (run `nvm use 18`)                     |
 
 ## II. Project setup
 
