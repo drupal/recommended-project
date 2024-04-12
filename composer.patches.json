@@ -1,5 +1,8 @@
 {
   "patches": {
+    "drupal/advagg": {
+      "#3375725 Deprecated function: Creation of dynamic property": "https://www.drupal.org/files/issues/2024-01-16/deprecated-function-creation-of-dynamic-property-3375725-17.patch"
+    },
     "drupal/backup_migrate": {
       "#3228379 Failed network - error": "https://www.drupal.org/files/issues/2022-02-02/3228379-download-errors-19.patch"
     },

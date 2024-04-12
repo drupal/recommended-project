@@ -134,6 +134,7 @@
         "drupal/search_api": "^1.23",
         "drupal/select2": "^1.15",
         "drupal/simple_search_form": "dev-custom",
+        "drupal/slick": "^2.11",
         "drupal/slick_views": "^2.6",
         "drupal/smart_trim": "^2.0",
         "drupal/smtp": "^1.0",

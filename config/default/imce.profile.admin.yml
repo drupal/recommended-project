@@ -10,8 +10,8 @@ description: 'Configuration for site administrators'
 conf:
   usertab: false
   extensions: '*'
-  maxsize: 0
-  quota: 0
+  maxsize: 0.0
+  quota: 0.0
   maxwidth: 0
   maxheight: 0
   replace: 0
