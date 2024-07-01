@@ -15,6 +15,8 @@ settings:
   default_draft_button_label: 'Guardar borrador'
   default_draft_saved_message: 'Envío guardado. Usted puede volver a este formuario luego y recuperará sus valores actuales.'
   default_confirmation_back_label: 'Volver al formulario'
+  default_previous_submission_message: 'Ya ha enviado este formulario web. <a href="#">Ver su envío anterior</a>.'
+  default_previous_submissions_message: 'Ya ha enviado este formulario web. <a href="#">Ver sus envíos anteriores</a>.'
   dialog_options:
     narrow:
       title: Estrecho

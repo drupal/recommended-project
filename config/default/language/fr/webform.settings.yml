@@ -29,6 +29,8 @@ settings:
   default_submission_access_denied_message: 'Veuillez vous connecter pour accéder à cette soumission.'
   default_submission_locked_message: 'Cette soumission a été verrouillée.'
   default_autofill_message: 'Cette soumission a été pré-remplie grâce à votre précédente soumission.'
+  default_limit_total_message: 'Vous avez dépassé la limite de soumission du formulaire.'
+  default_limit_user_message: 'Vous avez dépassé la limite de soumission du formulaire.'
   dialog_options:
     narrow:
       title: Étroit

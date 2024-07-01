@@ -6,3 +6,5 @@ id: page_content
 label: 'Page content'
 weight: null
 opened: true
+image_path: null
+image_alt: null
