@@ -46,5 +46,5 @@ display:
     display_title: 页面
     display_options:
       menu:
-        title: Blocks
+        title: 区块
         description: 'Create and edit block content.'

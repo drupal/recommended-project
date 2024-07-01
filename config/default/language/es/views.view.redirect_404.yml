@@ -1,4 +1,4 @@
-label: 'Redirect 404'
+label: 'Redireccionar 404'
 display:
   default:
     display_title: Máster
@@ -39,12 +39,12 @@ display:
             label: Idioma
         resolved:
           expose:
-            label: Resolved
+            label: Resuelto
       title: 'Arreglar páginas con error 404'
       empty:
         area_text_custom:
-          content: 'There are no 404 errors to fix.'
+          content: 'No hay 404 errores que corregir.'
   page_1:
     display_title: Página
     display_options:
-      display_description: 'Lists 404 error paths with no redirect assigned yet.'
+      display_description: 'Enumera 404 rutas de error sin redirección asignada todavía.'

@@ -46,5 +46,5 @@ display:
     display_title: Page
     display_options:
       menu:
-        title: 'Bibliothèque de blocs personnalisés'
+        title: Blocs
         description: 'Create and edit block content.'

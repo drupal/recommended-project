@@ -1,4 +1,39 @@
 display:
+  data_export_1:
+    display_options:
+      fields:
+        id:
+          separator: ', '
+        log_message__value:
+          separator: ', '
+        module:
+          label: الوحدة
+          separator: ', '
+        user_id:
+          label: المستخدم
+          separator: ', '
+        ip:
+          separator: ', '
+        user_agent:
+          separator: ', '
+  elogs:
+    display_options:
+      fields:
+        id:
+          separator: ', '
+        view_elog:
+          text: عرض
+        log_message__value:
+          separator: ', '
+        module:
+          label: الوحدة
+          separator: ', '
+        diff:
+          separator: ', '
+        ip:
+          separator: ', '
+        user_agent:
+          separator: ', '
   default:
     display_title: الرئيسي
     display_options:
@@ -31,38 +66,3 @@ display:
             label: الوحدة
           group_info:
             label: الوحدة
-  data_export_1:
-    display_options:
-      fields:
-        id:
-          separator: ', '
-        log_message__value:
-          separator: ', '
-        module:
-          label: الوحدة
-          separator: ', '
-        user_id:
-          label: المستخدم
-          separator: ', '
-        ip:
-          separator: ', '
-        user_agent:
-          separator: ', '
-  elogs:
-    display_options:
-      fields:
-        id:
-          separator: ', '
-        log_message__value:
-          separator: ', '
-        module:
-          label: الوحدة
-          separator: ', '
-        diff:
-          separator: ', '
-        view_elog:
-          text: عرض
-        ip:
-          separator: ', '
-        user_agent:
-          separator: ', '

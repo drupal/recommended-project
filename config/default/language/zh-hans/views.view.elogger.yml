@@ -1,4 +1,44 @@
 display:
+  data_export_1:
+    display_options:
+      fields:
+        id:
+          label: '#'
+          separator: ', '
+        log_message__value:
+          separator: ', '
+        module:
+          label: 模块
+          separator: ', '
+        user_id:
+          label: 用户
+          separator: ', '
+        ip:
+          label: IP地址
+          separator: ', '
+        user_agent:
+          separator: ', '
+  elogs:
+    display_options:
+      fields:
+        id:
+          label: '#'
+          separator: ', '
+        view_elog:
+          text: 查看
+        log_message__value:
+          separator: ', '
+        module:
+          label: 模块
+          separator: ', '
+        diff:
+          label: 差异
+          separator: ', '
+        ip:
+          label: IP地址
+          separator: ', '
+        user_agent:
+          separator: ', '
   default:
     display_title: 主
     display_options:
@@ -38,41 +78,6 @@ display:
             label: 模块
           group_info:
             label: 模块
-  data_export_1:
-    display_options:
-      fields:
-        id:
-          label: '#'
-          separator: ', '
-        log_message__value:
-          separator: ', '
-        module:
-          label: 模块
-          separator: ', '
-        user_id:
-          label: 用户
-          separator: ', '
-        ip:
-          separator: ', '
-        user_agent:
-          separator: ', '
-  elogs:
-    display_options:
-      fields:
-        id:
-          label: '#'
-          separator: ', '
-        log_message__value:
-          separator: ', '
-        module:
-          label: 模块
-          separator: ', '
-        diff:
-          label: 差异
-          separator: ', '
-        view_elog:
-          text: 查看
-        ip:
-          separator: ', '
-        user_agent:
-          separator: ', '
+        event_type:
+          expose:
+            label: 事件类型

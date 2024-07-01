@@ -28,6 +28,7 @@ display:
           label: 用于
           alter:
             path: 'admin/content/files/usage/{{ fid }}'
+          format_plural_string: !!binary MSDlpIQDQGNvdW50IOWkhA==
       pager:
         options:
           tags:
@@ -75,6 +76,7 @@ display:
           label: 注册模块
         count:
           label: 使用次数
+          format_plural_string: !!binary MQNAY291bnQ=
       pager:
         options:
           tags:

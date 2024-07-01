@@ -12,3 +12,4 @@ backend_config:
   database: 'default:default'
   min_chars: 1
   matching: prefix
+  phrase: disabled

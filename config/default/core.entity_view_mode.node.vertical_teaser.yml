@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.vertical_teaser
 label: 'Vertical Teaser'
+description: ''
 targetEntityType: node
 cache: true

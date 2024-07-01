@@ -12,5 +12,6 @@ _core:
   default_config_hash: pqZNtad5J9THcdbYjwPD4qINqvrTxnOd8KCWn6tUBRs
 id: node.diff
 label: 'Revision comparison'
+description: ''
 targetEntityType: node
 cache: true

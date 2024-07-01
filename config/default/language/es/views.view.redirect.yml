@@ -1,5 +1,5 @@
 label: Redirección
-description: 'List of redirects'
+description: 'Lista de redirecciones'
 display:
   default:
     display_title: Máster
@@ -39,9 +39,9 @@ display:
             label: Para
         status_code:
           expose:
-            label: 'Status code'
+            label: 'Código de estado'
           group_info:
-            label: 'Status code'
+            label: 'Código de estado'
             group_items:
               1:
                 title: '300 Múltiples posibilidades'
@@ -63,6 +63,6 @@ display:
       title: Redirección
       empty:
         area_text_custom:
-          content: 'There is no redirect yet.'
+          content: 'Todavía no hay ninguna redirección.'
   page_1:
     display_title: Página

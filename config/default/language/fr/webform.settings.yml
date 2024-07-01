@@ -39,6 +39,7 @@ settings:
 element:
   empty_message: '{Vide}'
   default_more_title: Plus
+  default_section_title_tag: h2
 file:
   file_private_redirect_message: 'Veuillez vous connecter accéder au fichier transféré.'
 mail:

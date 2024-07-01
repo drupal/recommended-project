@@ -7,7 +7,7 @@
       "#3228379 Failed network - error": "https://www.drupal.org/files/issues/2022-02-02/3228379-download-errors-19.patch"
     },
     "drupal/core": {
-      "#2689459 - If you don't want to translate your URL alias, the original URL alias won't work with your translations": "https://www.drupal.org/files/issues/2022-12-20/2689459-161.patch",
+      "#2689459 - If you don't want to translate your URL alias, the original URL alias won't work with your translations": "https://www.drupal.org/files/issues/2024-02-21/2689459-188.patch",
       "#3101231 - Fix multilingual site's layout edit context issue with TypeError: Argument 1 passed to UrlHelper::buildQuery() must be of the type array, null given": "https://www.drupal.org/files/issues/2022-02-16/layout-builder-translation-issue-3101231-34.patch",
       "#2842858 - Basic Auth module conflicts with server-level \"Site Lock\" implementations": "https://www.drupal.org/files/issues/2021-01-19/basic_auth_1.patch"
     },
@@ -17,9 +17,8 @@
     "drupal/layout_builder_browser": {
       "#3378982 - TypeError: in_array(): Argument #2 ($haystack) must be of type array, null given in in_array()": "https://www.drupal.org/files/issues/2023-08-03/3378982-empty-attributes-class-2.patch"
     },
-    "drupal/adequate_passwords": {
-      "#3400748 - The password validation error should not show the password score": "https://www.drupal.org/files/issues/2023-11-10/3400748-hide-password-score-patch-2.patch",
-      "#3400757 - If there are no roles selected, check anyway": "https://www.drupal.org/files/issues/2023-11-10/3400757-check-all-roles-patch-2.patch"
+    "drupal/layout_builder_st": {
+      "#3420063 - Error: Call to a member function getConfig() OverridesSectionStorage.php": "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff"
     }
   }
 }

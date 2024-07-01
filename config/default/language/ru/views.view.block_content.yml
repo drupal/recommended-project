@@ -19,7 +19,7 @@ display:
       pager:
         options:
           tags:
-            next: 'Next ›'
+            next: 'Следующий ›'
             previous: '‹ Предыдущий'
           expose:
             items_per_page_label: 'Элементов на страницу'
@@ -46,5 +46,5 @@ display:
     display_title: Страница
     display_options:
       menu:
-        title: Blocks
+        title: Блоки
         description: 'Create and edit block content.'

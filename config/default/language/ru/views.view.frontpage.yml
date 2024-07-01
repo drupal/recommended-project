@@ -7,7 +7,7 @@ display:
       pager:
         options:
           tags:
-            next: 'Next ›'
+            next: 'Следующий ›'
             previous: '‹ Предыдущий'
             first: '« Первая'
             last: 'Последняя »'

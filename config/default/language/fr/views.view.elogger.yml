@@ -1,4 +1,45 @@
 display:
+  data_export_1:
+    display_options:
+      fields:
+        id:
+          label: '#'
+          separator: ', '
+        log_message__value:
+          separator: ', '
+        module:
+          label: Module
+          separator: ', '
+        user_id:
+          label: Utilisateur
+          separator: ', '
+        ip:
+          label: IP
+          separator: ', '
+        user_agent:
+          separator: ', '
+  elogs:
+    display_options:
+      fields:
+        id:
+          label: '#'
+          separator: ', '
+        view_elog:
+          text: voir
+        log_message__value:
+          separator: ', '
+        module:
+          label: Module
+          separator: ', '
+        diff:
+          label: Diff
+          separator: ', '
+        ip:
+          label: IP
+          separator: ', '
+        user_agent:
+          label: 'User Agent'
+          separator: ', '
   default:
     display_title: Maître
     display_options:
@@ -38,39 +79,6 @@ display:
             label: Module
           group_info:
             label: Module
-  data_export_1:
-    display_options:
-      fields:
-        id:
-          separator: ', '
-        log_message__value:
-          separator: ', '
-        module:
-          label: Module
-          separator: ', '
-        user_id:
-          label: Utilisateur
-          separator: ', '
-        ip:
-          separator: ', '
-        user_agent:
-          separator: ', '
-  elogs:
-    display_options:
-      fields:
-        id:
-          separator: ', '
-        log_message__value:
-          separator: ', '
-        module:
-          label: Module
-          separator: ', '
-        diff:
-          label: Diff
-          separator: ', '
-        view_elog:
-          text: voir
-        ip:
-          separator: ', '
-        user_agent:
-          separator: ', '
+        event_type:
+          expose:
+            label: "Type de l'Évènement"
