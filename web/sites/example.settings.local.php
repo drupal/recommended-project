@@ -151,7 +151,8 @@ $databases['default']['default'] = array (
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
-  'init_commands' => ['isolation_level' => "SET SESSION tx_isolation='READ-COMMITTED'"],
+  # 'init_commands' => ['isolation_level' => "SET SESSION tx_isolation='READ-COMMITTED'"], # MariaDB
+  # 'init_commands' => ['isolation_level' => "SET SESSION transaction_isolation='READ-COMMITTED'"], # MySQL
 );
 
 # SMTP configuration

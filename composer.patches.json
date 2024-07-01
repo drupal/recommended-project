@@ -1,10 +1,5 @@
 {
   "patches": {
-    "drupal/adequate_passwords": {
-      "#3400748 - The password validation error should not show the password score": "https://www.drupal.org/files/issues/2023-11-10/3400748-hide-password-score-patch-2.patch",
-      "#3400757 - If there are no roles selected, check anyway": "https://www.drupal.org/files/issues/2023-11-10/3400757-check-all-roles-patch-2.patch",
-      "#3423474 - TypeError on site install with --existing-config due to array_filter()": "https://git.drupalcode.org/project/adequate_passwords/-/merge_requests/6.diff"
-    },
     "drupal/advagg": {
       "#3375725 - Deprecated function creation of dynamic property": "https://www.drupal.org/files/issues/2024-01-16/deprecated-function-creation-of-dynamic-property-3375725-17.patch"
     },
