@@ -19,6 +19,9 @@
     },
     "drupal/layout_builder_st": {
       "#3420063 - Error: Call to a member function getConfig() OverridesSectionStorage.php": "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff"
+    },
+    "drupal/adequate_passwords" : {
+      "#3442322 - Skip password validation when installing a site via CLI" : "https://www.drupal.org/files/issues/2024-04-21/3442322-site-install-cli-skip-validation-2.patch"
     }
   }
 }
