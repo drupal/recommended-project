@@ -46,4 +46,5 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
-image_upload: {  }
+image_upload:
+  status: false

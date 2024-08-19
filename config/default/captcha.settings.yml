@@ -1,5 +1,6 @@
 _core:
   default_config_hash: _UaIWu0_ZD3lUs97wlFC2Koi-o7Bex69Xr9q36nJtkY
+langcode: en
 enable_globally: 0
 enable_globally_on_admin_routes: false
 default_challenge: captcha/Math

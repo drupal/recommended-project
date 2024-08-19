@@ -11,8 +11,8 @@ third_party_settings:
     parent: 'main:'
 name: News
 type: news
-description: ''
-help: ''
+description: null
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true

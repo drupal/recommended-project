@@ -1,5 +1,6 @@
 _core:
   default_config_hash: azWBxQFowXKyqUvvROIrMBXpwGaxz4JxhL6xz420P3Q
+langcode: en
 applies_admin_routes: true
 include_invalid_paths: false
 excluded_paths: ''
@@ -36,7 +37,7 @@ capitalizator_forced_words_case_sensitivity: true
 capitalizator_forced_words_first_letter: false
 follow_redirects: true
 limit_segment_display: false
-segment_display_limit: ''
+segment_display_limit: null
 truncator_mode: false
 truncator_length: 100
 truncator_dots: true

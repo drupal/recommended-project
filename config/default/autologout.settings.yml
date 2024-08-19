@@ -1,5 +1,6 @@
 _core:
   default_config_hash: kwGGKvKSU7cPTEgTMWrbW0o9Jwe6FSDmpgdUWmIXCdg
+langcode: en
 enabled: true
 timeout: 172800
 max_timeout: 172800
