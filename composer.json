@@ -95,7 +95,7 @@
         ],
         "patches": {
             "drupal/core": {
-                "2893933: claimItem in the database and memory queues does not use expire correctly": "https://www.drupal.org/files/issues/2023-06-26/2893933-queue_lease_time-11.x-67.patch"
+                "2893933: claimItem in the database and memory queues does not use expire correctly": "https://www.drupal.org/files/issues/2024-08-12/2893933-queue_lease_time-11.x-75.patch"
             }
         }
     }
