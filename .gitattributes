@@ -1,5 +1,6 @@
 # Leave these files out of the distribution.
 /.circleci      export-ignore
+/.editorconfig  export-ignore
 /.gitattributes export-ignore
 /.gitignore     export-ignore
 /README.md      export-ignore
