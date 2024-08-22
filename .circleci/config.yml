@@ -27,4 +27,4 @@ workflows:
           # Note: PHP versions will be different for different branches.
           matrix:
             parameters:
-              php_version: [ "8.1", "8.2" ]
+              php_version: [ "8.1", "8.2", "8.3" ]
