@@ -11,13 +11,20 @@ on:
         description: 'Create SQL backup'
         required: true
         default: true
+      enable_maintenance_mode:
+        type: boolean
+        description: 'Enable maintenance mode.'
+        required: true
+        default: true
 
-name: 'Deploy production instance'
+name: 'Deploy PROD instance'
 jobs:
-  deploy:
-    name: 'deployment'
+  create_release_archive:
+    name: 'Create release archive'
     runs-on:
-      labels: 'drupal'
+      labels: 'drupal-runner-v2'
+    outputs:
+      release_filename: ${{ steps.artifact.outputs.filename }}
     steps:
       - name: Fail if a branch was selected
         if: github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/tags/')
@@ -26,9 +33,15 @@ jobs:
           exit 1
 
       - name: 'Checkout source code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          ref: ${{ github.event.release.tag_name }}
+
+      # - name: 'Setup nodejs'
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version-file: 'web/themes/custom/frontend/.nvmrc'
 
       - name: 'Install dependencies'
         uses: eaudeweb/drupal-install-action@1.x
@@ -39,6 +52,12 @@ jobs:
         id: artifact
         uses: eaudeweb/drupal-artifact-action@1.x
 
+  deploy_release:
+    name: 'Deploy release on the server'
+    runs-on:
+      labels: 'drupal-runner-v2'
+    needs: create_release_archive
+    steps:
       - name: 'Deploy release on the server'
         uses: eaudeweb/drupal-deploy-action@v2.1.4
         with:
@@ -46,7 +65,7 @@ jobs:
           ssh_host:             ${{ secrets.PROD_SSH_HOST }}
           ssh_key:              ${{ secrets.PROD_SSH_KEY }}
           release_id:           'release-${{ github.ref_name }}'
-          release_filename:     ${{ steps.artifact.outputs.filename }}
+          release_filename:     ${{ needs.create_release_archive.outputs.release_filename }}
           project_dir:          /var/www/html/example.org
           artifacts_dir:        /var/www/artifacts/example.org
           settings_file:        /var/www/config/example.org/settings.local.php
@@ -57,11 +76,18 @@ jobs:
           sql_backup:           ${{ inputs.sql_backup }}
           # artifacts_lifespan:   30
 
+  update_instance:
+    name: 'Update Drupal instance'
+    runs-on:
+      labels: 'drupal-runner-v2'
+    needs: deploy_release
+    steps:          
       - name: 'Update the Drupal instance'
         id: release
-        uses: eaudeweb/drupal-update-action@v1.0
+        uses: eaudeweb/drupal-update-action@v1.2
         with:
           path: /var/www/html/example.org
+          enable_maintenance_mode: ${{ inputs.enable_maintenance_mode }}
 
       - name: 'Cleanup old releases'
         uses: eaudeweb/drupal-cleanup-action@1.x
@@ -79,8 +105,14 @@ jobs:
           [view action run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
           ${{ secrets.DISCORD_WEBHOOK }}
 
+  notify_failure:
+    name: 'Notify on failure'
+    runs-on:
+      labels: 'drupal-runner-v2'
+    needs: [create_release_archive, deploy_release, update_instance]
+    if: failure()
+    steps:
       - name: 'Discord notification on failed deploy'
-        if: failure()
         run: >
           curl -X POST -F
           "content=:octagonal_sign: **${{ github.repository }}** release **${{ github.ref_name }}** failed to deploy on https://example.org.

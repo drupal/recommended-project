@@ -17,7 +17,7 @@ jobs:
   db:
     name: 'Executing synchronization'
     runs-on:
-      labels: 'drupal'
+      labels: 'drupal-runner-v2'
     steps:
       - name: 'Running'
         uses: eaudeweb/drupal-sync-action@1.x
