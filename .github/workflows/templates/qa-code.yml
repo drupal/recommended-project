@@ -2,15 +2,29 @@ on:
   pull_request:
   push:
     branches:
-      - master
-name: 'QA - code quality'
+      - main
+name: 'Quality assurance'
 jobs:
   qa-code:
     name: 'Check code quality'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - uses: eaudeweb/drupal-install-action@v1.1
-      - uses: eaudeweb/drupal-code-qa-action@v2.0
+
+      - name: Setup PHP version
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+
+      - uses: eaudeweb/drupal-install-action@v1.0
+        with:
+          dev: true
+
+      - uses: eaudeweb/drupal-code-qa-action@2.x
+        with:
+          phplint: 'true'
+          phpmd: 'true'
+          phpcs: 'true'
+          phpstan: 'false'

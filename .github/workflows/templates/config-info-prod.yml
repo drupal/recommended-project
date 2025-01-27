@@ -6,7 +6,7 @@ jobs:
   deploy:
     name: 'Show Drupal config status'
     runs-on:
-      labels: 'drupal'
+      labels: 'drupal-runner-v2'
     steps:
       - name: 'Check Drupal configuration'
         uses: eaudeweb/drupal-config-status-action@1.x

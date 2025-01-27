@@ -5,15 +5,23 @@ on:
 
 name: 'Deploy TEST instance'
 jobs:
-  deploy:
-    name: 'deployment'
+  create_release_archive:
+    name: 'Create release archive'
     runs-on:
-      labels: 'drupal'
+      labels: 'drupal-runner-v2'
+    outputs:
+      release_id: ${{ steps.artifact.outputs.base }}
+      release_filename: ${{ steps.artifact.outputs.filename }}
     steps:
       - name: 'Checkout source code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
+      # - name: 'Setup nodejs'
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version-file: 'web/themes/custom/frontend/.nvmrc'
 
       - name: 'Install dependencies'
         uses: eaudeweb/drupal-install-action@1.x
@@ -24,14 +32,20 @@ jobs:
         id: artifact
         uses: eaudeweb/drupal-artifact-action@1.x
 
+  deploy_release:
+    name: 'Deploy release on the server'
+    runs-on:
+      labels: 'drupal-runner-v2'
+    needs: create_release_archive
+    steps:
       - name: 'Deploy release on the server'
         uses: eaudeweb/drupal-deploy-action@v2.1.4
         with:
           ssh_user:             ${{ secrets.TEST_SSH_USER }}
           ssh_host:             ${{ secrets.TEST_SSH_HOST }}
           ssh_key:              ${{ secrets.TEST_SSH_KEY }}
-          release_id:           ${{ steps.artifact.outputs.base }}
-          release_filename:     ${{ steps.artifact.outputs.filename }}
+          release_id:           ${{ needs.create_release_archive.outputs.release_id }}
+          release_filename:     ${{ needs.create_release_archive.outputs.release_filename }}
           project_dir:          /var/www/html/test.example.org
           artifacts_dir:        /var/www/artifacts/test.example.org
           settings_file:        /var/www/config/test.example.org/settings.local.php
@@ -41,9 +55,15 @@ jobs:
           # database_dump_dir:  /var/www/config/test.example.org/sync
           artifacts_lifespan: 30
 
+  update_instance:
+    name: 'Update Drupal instance'
+    runs-on:
+      labels: 'drupal-runner-v2'
+    needs: deploy_release
+    steps:
       - name: 'Update the Drupal instance'
         id: release
-        uses: eaudeweb/drupal-update-action@v1
+        uses: eaudeweb/drupal-update-action@v1.2
         with:
           path: /var/www/html/test.example.org
 
@@ -56,8 +76,14 @@ jobs:
           cleanup_dir:          /var/www/artifacts/test.example.org
           retain:               5
 
+  notify_failure:
+    name: 'Notify on failure'
+    runs-on:
+      labels: 'drupal-runner-v2'
+    needs: [create_release_archive, deploy_release, update_instance]
+    if: failure()
+    steps:
       - name: 'Discord notification on failed deploy'
-        if: failure()
         run: >
           curl -X POST -F
           "content=:octagonal_sign: **${{ github.repository }}** release **${{ github.ref_name }}** failed to deploy on https://test.example.org/.
