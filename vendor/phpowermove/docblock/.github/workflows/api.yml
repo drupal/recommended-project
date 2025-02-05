@@ -1,0 +1,28 @@
+name: Api Documentation
+on:
+  release:
+    types: [published]
+jobs:
+  build-api:
+    name: Build api
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Checkout api repository
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.2
+          extensions: mbstring, dom, json, libxml, xml, xmlwriter
+          coverage: none
+      - name: Download Sami
+        run: wget https://github.com/cristianoc72/Sami/releases/download/v4.1.3/sami.phar
+      - name: Build api documentation
+        run: php sami.phar update sami.php
+      - name: Deploy api documentation site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./api

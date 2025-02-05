@@ -1,0 +1,66 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Entity;
+
+use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
+
+/**
+ * Defines the {{ entity_type_label }} type configuration entity.
+ *
+ * @ConfigEntityType(
+ *   id = "{{ entity_type_id }}_type",
+ *   label = @Translation("{{ entity_type_label }} type"),
+ *   label_collection = @Translation("{{ entity_type_label }} types"),
+ *   label_singular = @Translation("{{ entity_type_label|lower }} type"),
+ *   label_plural = @Translation("{{ entity_type_label|pluralize|lower }} types"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count {{ entity_type_label|pluralize|lower }} type",
+ *     plural = "@count {{ entity_type_label|pluralize|lower }} types",
+ *   ),
+ *   handlers = {
+ *     "form" = {
+ *       "add" = "Drupal\{{ machine_name }}\Form\{{ class }}TypeForm",
+ *       "edit" = "Drupal\{{ machine_name }}\Form\{{ class }}TypeForm",
+ *       "delete" = "Drupal\Core\Entity\EntityDeleteForm",
+ *     },
+ *     "list_builder" = "Drupal\{{ machine_name }}\{{ class }}TypeListBuilder",
+ *     "route_provider" = {
+ *       "html" = "Drupal\Core\Entity\Routing\AdminHtmlRouteProvider",
+ *     },
+ *   },
+ *   admin_permission = "{{ permissions.administer }}",
+ *   bundle_of = "{{ entity_type_id }}",
+ *   config_prefix = "{{ entity_type_id }}_type",
+ *   entity_keys = {
+ *     "id" = "id",
+ *     "label" = "label",
+ *     "uuid" = "uuid",
+ *   },
+ *   links = {
+ *     "add-form" = "/admin/structure/{{ entity_type_id }}_types/add",
+ *     "edit-form" = "/admin/structure/{{ entity_type_id }}_types/manage/{{ '{' ~ entity_type_id ~ '_type}' }}",
+ *     "delete-form" = "/admin/structure/{{ entity_type_id }}_types/manage/{{ '{' ~ entity_type_id ~ '_type}' }}/delete",
+ *     "collection" = "/admin/structure/{{ entity_type_id }}_types",
+ *   },
+ *   config_export = {
+ *     "id",
+ *     "label",
+ *     "uuid",
+ *   },
+ * )
+ */
+final class {{ class }}Type extends ConfigEntityBundleBase {
+
+  /**
+   * The machine name of this {{ entity_type_label|lower }} type.
+   */
+  protected string $id;
+
+  /**
+   * The human-readable name of the {{ entity_type_label|lower }} type.
+   */
+  protected string $label;
+
+}

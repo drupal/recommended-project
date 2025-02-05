@@ -1,0 +1,24 @@
+# Create a release when a version tag is pushed
+name: Create Release
+on:
+  push:
+    tags:
+      - 'v*'
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: For changes in this release please see https://github.com/phootwork/phootwork/releases/tag/${{ github.ref }}
+          draft: false
+          prerelease: false

@@ -1,0 +1,37 @@
+{
+	"name" : "phootwork/collection",
+	"type" : "library",
+	"description" : "The phootwork library fills gaps in the php language and provides better solutions than the existing ones php offers.",
+	"authors" : [{
+			"name" : "Thomas Gossmann",
+			"homepage" : "http://gos.si"
+		}
+	],
+	"license" : "MIT",
+	"keywords" : [
+		"Text object",
+		"Array object",
+		"collection",
+		"collections",
+		"list",
+		"set",
+		"map",
+		"queue",
+		"stack",
+		"xml",
+		"json"
+	],
+	"support" : {
+		"issues" : "https://github.com/phootwork/phootwork/issues"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"phootwork\\collection\\" : ""
+		}
+	},
+	"require" : {
+		"php" : ">=8.0",
+		"phootwork/lang" : "^3.0"
+	},
+	"homepage" : "https://phootwork.github.io/collection/"
+}

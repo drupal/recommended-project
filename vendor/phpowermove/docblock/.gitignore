@@ -1,0 +1,10 @@
+.buildpath
+clover.xml
+composer.lock
+composer.phar
+*.cache
+sami.phar
+vendor/
+api/
+cache/
+coverage/

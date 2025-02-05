@@ -1,0 +1,28 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: {{ component_name }}
+status: stable
+{% if component_description %}
+description: {{ component_description }}
+{% endif %}
+{% if component_libraries|length > 0 %}
+libraryOverrides:
+  dependencies:
+    {% for library in component_libraries %}
+    - {{ library }}
+    {% endfor %}
+{% endif %}
+{% if component_props|length > 0 %}
+props:
+  type: object
+  properties:
+    {% for prop in component_props %}
+    {{ prop.name }}:
+      type: {{ prop.type }}
+      title: {{ prop.title }}
+      {% if prop.description %}
+      description: {{ prop.description }}
+      {% endif %}
+      # @todo Add examples here.
+      examples: []
+    {% endfor %}
+{% endif %}

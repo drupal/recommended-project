@@ -1,0 +1,61 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\QueueWorker;
+
+{% apply sort_namespaces %}
+use Drupal\Core\Queue\QueueWorkerBase;
+  {% if services %}
+{{ di.use(services) }}
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+  {% endif %}
+{% endapply %}
+
+/**
+ * Defines '{{ plugin_id }}' queue worker.
+ *
+ * @QueueWorker(
+ *   id = "{{ plugin_id }}",
+ *   title = @Translation("{{ plugin_label }}"),
+ *   cron = {"time" = 60},
+ * )
+ */
+final class {{ class }} extends QueueWorkerBase {% if services %}implements ContainerFactoryPluginInterface {% endif %}{
+
+{% if services %}
+  /**
+   * Constructs a new {{ class }} instance.
+   */
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+{{ di.signature(services) }}
+  ) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): self {
+    return new self(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+{{ di.container(services) }}
+    );
+  }
+
+{% endif %}
+  /**
+   * {@inheritdoc}
+   */
+  public function processItem($data): void {
+    // @todo Process data here.
+  }
+
+}

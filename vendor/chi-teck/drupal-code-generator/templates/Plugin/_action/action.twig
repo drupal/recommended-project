@@ -1,0 +1,123 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\Action;
+
+{% apply sort_namespaces %}
+use Drupal\Core\Access\AccessResultInterface;
+use Drupal\Core\Entity\ContentEntityInterface;
+  {% if configurable %}
+use Drupal\Core\Action\ConfigurableActionBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+  {% else %}
+use Drupal\Core\Action\ActionBase;
+use Drupal\Core\Session\AccountInterface;
+  {% endif %}
+  {% if services %}
+{{ di.use(services) }}
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+  {% endif %}
+{% endapply %}
+
+/**
+ * Provides {{ plugin_label|article }} action.
+ *
+ * @Action(
+ *   id = "{{ plugin_id }}",
+ *   label = @Translation("{{ plugin_label }}"),
+ *   type = "{{ entity_type }}",
+ *   category = @Translation("{{ category }}"),
+ * )
+ *
+ * @DCG
+ * For updating entity fields consider extending FieldUpdateActionBase.
+ * @see \Drupal\Core\Field\FieldUpdateActionBase
+ *
+ * @DCG
+ * In order to set up the action through admin interface the plugin has to be
+ * configurable.
+ * @see https://www.drupal.org/project/drupal/issues/2815301
+ * @see https://www.drupal.org/project/drupal/issues/2815297
+ *
+ * @DCG
+ * The whole action API is subject of change.
+ * @see https://www.drupal.org/project/drupal/issues/2011038
+ */
+final class {{ class }} extends {{ configurable ? 'ConfigurableActionBase' : 'ActionBase' }} {% if services %}implements ContainerFactoryPluginInterface {% endif %}{
+
+{% if services %}
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+{{ di.signature(services) }}
+  ) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): self {
+    return new self(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+{{ di.container(services) }}
+    );
+  }
+
+{% endif %}
+{% if configurable %}
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration(): array {
+    return ['example' => ''];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state): array {
+    $form['example'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Example'),
+      '#default_value' => $this->configuration['example'],
+    ];
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state): void {
+    $this->configuration['example'] = $form_state->getValue('example');
+  }
+
+{% endif %}
+  /**
+   * {@inheritdoc}
+   */
+  public function access($entity, AccountInterface $account = NULL, $return_as_object = FALSE): AccessResultInterface|bool {
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+    $access = $entity->access('update', $account, TRUE)
+      ->andIf($entity->get('field_example')->access('edit', $account, TRUE));
+    return $return_as_object ? $access : $access->isAllowed();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function execute(ContentEntityInterface $entity = NULL): void {
+    $entity->set('field_example', 'New value')->save();
+  }
+
+}

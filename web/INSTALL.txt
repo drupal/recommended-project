@@ -1,0 +1,3 @@
+
+Read core/INSTALL.txt for detailed installation instructions for your Drupal
+website.

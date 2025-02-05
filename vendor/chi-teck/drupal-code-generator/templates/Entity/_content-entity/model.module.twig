@@ -1,0 +1,104 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Provides {{ entity_type_label|article|lower }} entity type.
+ */
+
+{% apply sort_namespaces %}
+use Drupal\Core\Render\Element;
+  {% if author_base_field %}
+use Drupal\user\UserInterface;
+  {% endif %}
+{% endapply %}
+
+/**
+ * Implements hook_theme().
+ */
+function {{ machine_name }}_theme(): array {
+  return [
+    '{{ entity_type_id }}' => ['render element' => 'elements'],
+  ];
+}
+
+/**
+ * Prepares variables for {{ entity_type_label|lower }} templates.
+ *
+ * Default template: {{ template_name }}.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the {{ entity_type_label|lower }} information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_{{ entity_type_id }}(array &$variables): void {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+{% if author_base_field %}
+/**
+ * Implements hook_user_cancel().
+ */
+function {{ machine_name }}_user_cancel($edit, UserInterface $account, $method): void {
+  switch ($method) {
+  {% if status_base_field %}
+    case 'user_cancel_block_unpublish':
+      // Unpublish {{ entity_type_label|lower|pluralize }}.
+      $storage = \Drupal::entityTypeManager()->getStorage('{{ entity_type_id }}');
+      ${{ entity_type_id }}_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->condition('status', 1)
+        ->accessCheck(FALSE)
+        ->execute();
+      foreach ($storage->loadMultiple(${{ entity_type_id }}_ids) as ${{ entity_type_id }}) {
+        ${{ entity_type_id }}->set('status', FALSE)->save();
+      }
+      break;
+
+    {% endif %}
+    case 'user_cancel_reassign':
+      // Anonymize {{ entity_type_label|lower|pluralize }}.
+      $storage = \Drupal::entityTypeManager()->getStorage('{{ entity_type_id }}');
+      ${{ entity_type_id }}_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->accessCheck(FALSE)
+        ->execute();
+      foreach ($storage->loadMultiple(${{ entity_type_id }}_ids) as ${{ entity_type_id }}) {
+        ${{ entity_type_id }}->setOwnerId(0)->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function {{ machine_name }}_user_predelete(UserInterface $account): void {
+  // Delete {{ entity_type_label|lower|pluralize }} that belong to this account.
+  $storage = \Drupal::entityTypeManager()->getStorage('{{ entity_type_id }}');
+  ${{ entity_type_id }}_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->accessCheck(FALSE)
+    ->execute();
+  $storage->delete(
+    $storage->loadMultiple(${{ entity_type_id }}_ids)
+  );
+  {% if revisionable %}
+  // Delete old revisions.
+  ${{ entity_type_id }}_ids = $storage->getQuery()
+    ->allRevisions()
+    ->condition('uid', $account->id())
+    ->accessCheck(FALSE)
+    ->execute();
+  foreach (array_keys(${{ entity_type_id }}_ids) as $revision_id) {
+    $storage->deleteRevision($revision_id);
+  }
+  {% endif %}
+}
+{% endif %}

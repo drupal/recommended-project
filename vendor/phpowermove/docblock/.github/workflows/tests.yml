@@ -1,0 +1,38 @@
+name: Docblock Test Suite
+on: [push, pull_request]
+jobs:
+  test:
+    name: test
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-latest, windows-latest, macOS-latest]
+        php-versions: ['8.0']
+    runs-on: ${{ matrix.operating-system }}
+    steps:
+      - name: Fix autocrlf on Windows
+        if: matrix.operating-system == 'windows-latest'
+        run: git config --global core.autocrlf false
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, dom, json, libxml, xml, xmlwriter
+          coverage: none
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - name: Cache composer dependencies
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+      - name: Check code style
+        run: composer cs
+      - name: Test with phpunit
+        run: composer test

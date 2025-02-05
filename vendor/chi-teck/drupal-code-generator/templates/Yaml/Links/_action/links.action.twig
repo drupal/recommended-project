@@ -1,0 +1,10 @@
+{{ machine_name }}.add_example:
+  route_name: {{ machine_name }}.add_example
+  route_parameters:
+    node: 123
+  title: 'Add example'
+  options:
+    attributes: {target: _blank}
+  weight: 10
+  appears_on:
+    - system.admin_content

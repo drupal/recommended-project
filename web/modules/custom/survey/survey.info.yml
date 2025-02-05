@@ -1,0 +1,8 @@
+name: 'Survey Module'
+type: module
+description: 'A custom module for creating and managing surveys.'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - drupal:node
+  - drupal:views

@@ -1,0 +1,57 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Element;
+
+use Drupal\Core\Render\Element\RenderElement;
+
+/**
+ * Provides a render element to display {{ type|m2h|article|lower }}.
+ *
+ * Properties:
+ * - #foo: Property description here.
+ *
+ * Usage Example:
+ * @code
+ * $build['{{ type }}'] = [
+ *   '#type' => '{{ type }}',
+ *   '#foo' => 'Some value.',
+ * ];
+ * @endcode
+ *
+ * @RenderElement("{{ type }}")
+ */
+final class {{ class }} extends RenderElement {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getInfo(): array {
+    return [
+      // @DCG
+      // If the element is supposed to return a large piece of markup consider
+      // defining a theme function for it.
+      '#pre_render' => [
+        [self::class, 'preRenderEntityElement'],
+      ],
+      // @DCG Define element properties here.
+      '#foo' => 'bar',
+    ];
+  }
+
+  /**
+   * {{ type|m2h }} element pre render callback.
+   *
+   * @param array $element
+   *   An associative array containing the properties of the {{ type }} element.
+   *
+   * @return array
+   *   The modified element.
+   */
+  public static function preRenderEntityElement(array $element): array {
+    $element['#markup'] = $element['#foo'];
+    return $element;
+  }
+
+}

@@ -1,0 +1,26 @@
+{{ permissions.administer }}:
+{% if bundle %}
+  title: 'Administer {{ entity_type_label|lower }} types'
+  description: 'Maintain the types of {{ entity_type_id_short|replace({'_': ' '}) }} entity.'
+{% else %}
+  title: 'Administer {{ entity_type_label|lower|pluralize }}'
+{% endif %}
+  restrict access: true
+{% if access_controller %}
+{{ permissions.view }}:
+  title: 'View {{ entity_type_label|lower }}'
+{{ permissions.edit }}:
+  title: 'Edit {{ entity_type_label|lower }}'
+{{ permissions.delete }}:
+  title: 'Delete {{ entity_type_label|lower }}'
+{{ permissions.create }}:
+  title: 'Create {{ entity_type_label|lower }}'
+{% endif %}
+{% if revisionable and access_controller %}
+{{ permissions.view_revision }}:
+  title: 'View {{ entity_type_label|lower }} revision'
+{{ permissions.revert_revision }}:
+  title: 'Revert {{ entity_type_label|lower }} revision'
+{{ permissions.delete_revision }}:
+  title: 'Delete {{ entity_type_label|lower }} revision'
+{% endif %}

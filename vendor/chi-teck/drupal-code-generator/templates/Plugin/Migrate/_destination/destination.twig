@@ -1,0 +1,97 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\migrate\destination;
+
+{% apply sort_namespaces %}
+use Drupal\migrate\Plugin\migrate\destination\DestinationBase;
+use Drupal\migrate\Plugin\MigrationInterface;
+use Drupal\migrate\Row;
+  {% if services %}
+{{ di.use(services) }}
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+  {% endif %}
+{% endapply %}
+
+/**
+ * The '{{ plugin_id }}' destination plugin.
+ *
+ * @MigrateDestination(id = "{{ plugin_id }}")
+ */
+final class {{ class }} extends DestinationBase {% if services %}implements ContainerFactoryPluginInterface {% endif %}{
+
+{% if services %}
+  /**
+   * Constructs the plugin instance.
+   */
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    MigrationInterface $migration,
+{{ di.signature(services) }}
+  ) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(
+    ContainerInterface $container,
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+    MigrationInterface $migration = NULL,
+  ): self {
+    return new self(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $migration,
+{{ di.container(services) }}
+    );
+  }
+
+{% endif %}
+  /**
+   * {@inheritdoc}
+   */
+  public function getIds(): array {
+    $ids['id']['type'] = [
+      'type' => 'integer',
+      'unsigned' => TRUE,
+      'size' => 'big',
+    ];
+    return $ids;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function fields(MigrationInterface $migration = NULL): array {
+    return [
+      'id' => $this->t('The row ID.'),
+      // @todo Describe row fields here.
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function import(Row $row, array $old_destination_id_values = []): array|bool {
+    // @todo Import the row here.
+    return [$row->getDestinationProperty('id')];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function rollback(array $destination_identifier): void {
+    // @todo Rollback the row here.
+  }
+
+}

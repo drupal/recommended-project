@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Primary module hooks for {{ name }} module.
+ */
+
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Prepares variables for views-style-{{ plugin_id|u2h }}.html.twig template.
+ */
+function template_preprocess_views_style_{{ plugin_id }}(array &$variables): void {
+  $view = $variables['view'];
+  $options = $view->style_plugin->options;
+
+{% if configurable %}
+  // Fetch wrapper classes from handler options.
+  if ($options['wrapper_class']) {
+    $variables['attributes']['class'] = explode(' ', $options['wrapper_class']);
+  }
+
+{% endif %}
+  $variables['default_row_class'] = $options['default_row_class'];
+  foreach ($variables['rows'] as $id => $row) {
+    $variables['rows'][$id] = [
+      'content' => $row,
+      'attributes' => new Attribute(),
+    ];
+    if ($row_class = $view->style_plugin->getRowClass($id)) {
+      $variables['rows'][$id]['attributes']->addClass($row_class);
+    }
+  }
+}

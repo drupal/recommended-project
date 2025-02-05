@@ -1,0 +1,71 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }};
+
+{% apply sort_namespaces %}
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
+use Twig\TwigTest;
+  {% if services %}
+{{ di.use(services) }}
+  {% endif %}
+{% endapply %}
+
+/**
+ * Twig extension.
+ */
+final class {{ class }} extends AbstractExtension {
+{% if services %}
+
+  /**
+   * Constructs the extension object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {}
+{% endif %}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFunctions(): array {
+    $functions[] = new TwigFunction(
+      'example',
+      static function (string $argument): string {
+        return 'Example: ' . $argument;
+      },
+    );
+    return $functions;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFilters(): array {
+    $filters[] = new TwigFilter(
+      'example',
+      static function (string $text): string {
+        return str_replace('example', 'EXAMPLE', $text);
+      },
+    );
+    return $filters;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getTests(): array {
+    $tests[] = new TwigTest(
+      'example',
+      static function (string $text): bool {
+        return $text === 'example';
+      },
+    );
+    return $tests;
+  }
+
+}

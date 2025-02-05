@@ -1,0 +1,8 @@
+default: dev
+dev:
+  root: /dup/path/to/single
+alternate:
+  root: /dup/alternate/path/to/single
+common:
+  foo: dup
+

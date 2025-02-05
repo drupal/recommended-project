@@ -1,0 +1,37 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\EventSubscriber;
+
+{% apply sort_namespaces %}
+  {% if services %}
+{{ di.use(services) }}
+  {% endif %}
+use Drupal\Core\Routing\RouteSubscriberBase;
+use Symfony\Component\Routing\RouteCollection;
+{% endapply %}
+
+/**
+ * Route subscriber.
+ */
+final class {{ class }} extends RouteSubscriberBase {
+{% if services %}
+
+  /**
+   * Constructs {{ class|article }} object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {}
+{% endif %}
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function alterRoutes(RouteCollection $collection): void {
+    // @see https://www.drupal.org/node/2187643
+  }
+
+}

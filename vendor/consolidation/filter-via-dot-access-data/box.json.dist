@@ -1,0 +1,25 @@
+{
+  "alias": "dot-process.phar",
+  "chmod": "0755",
+  "compactors": [],
+  "directories": ["src"],
+  "files": ["dot-process", "README.md", "VERSION"],
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": [
+        "test",
+        "tests",
+        "Test",
+        "Tests",
+        "Tester"
+      ],
+      "in": "vendor"
+    }
+  ],
+  "git-commit": "git-commit",
+  "git-version": "git-version",
+  "output": "dot-process.phar",
+  "main": "dot-process",
+  "stub": true
+}

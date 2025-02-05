@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.eclipse.php.composer.corebuildpath.includes.excludes=<buildpathentry kind\="src" path\="vendor"/>\n

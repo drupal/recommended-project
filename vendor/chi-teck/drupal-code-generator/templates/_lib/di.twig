@@ -1,0 +1,24 @@
+{% macro arguments(services) %}
+  {% for service_id, service in services %}'@{{ service_id }}'{{ loop.last ? '' : ', ' }}{% endfor %}
+{% endmacro %}
+
+{% macro use(services) %}
+  {% apply sort_namespaces %}
+    {% for service in services %}
+use {{ service.type_fqn }};
+    {% endfor %}
+  {% endapply %}
+{% endmacro %}
+
+{% macro signature(services) %}
+  {% for service in services %}
+    private readonly {{ service.type }} ${{ service.name }},{{ loop.last ? '' : constant('PHP_EOL') }}
+  {%- endfor %}
+{% endmacro %}
+
+{% macro container(services) %}
+  {% for service_id, service in services %}
+      $container->get('{{ service_id }}'),{{ loop.last ? '' : constant('PHP_EOL') }}
+  {%- endfor %}
+{% endmacro %}
+

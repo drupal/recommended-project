@@ -1,0 +1,41 @@
+{% verbatim -%}
+{#
+/**
+ * @file
+ * Default theme implementation to display {% endverbatim %}{{ layout_name|lower }}{% verbatim %} layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout wrapper.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+
+  {# @DCG Drupal naming convention for CSS classes in layouts seems weird. Feel free to change it. #}
+  {%
+    set classes = [
+      'layout',
+      'layout--{% endverbatim %}{{ layout_machine_name|u2h }}'{% verbatim %},
+    ]
+  %}
+
+  <div{{ attributes.addClass(classes) }}>
+
+    {% if content.main %}
+      <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
+        {{ content.main }}
+      </div>
+    {% endif %}
+
+    {% if content.sidebar %}
+      <div {{ region_attributes.sidebar.addClass('layout__region', 'layout__region--sidebar') }}>
+        {{ content.sidebar }}
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endif %}
+{% endverbatim -%}

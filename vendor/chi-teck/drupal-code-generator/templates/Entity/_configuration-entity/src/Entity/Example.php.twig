@@ -1,0 +1,70 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Entity;
+
+{% apply sort_namespaces %}
+use Drupal\Core\Config\Entity\ConfigEntityBase;
+use Drupal\{{ machine_name }}\{{ class_prefix }}Interface;
+{% endapply %}
+
+/**
+ * Defines the {{ entity_type_label|lower }} entity type.
+ *
+ * @ConfigEntityType(
+ *   id = "{{ entity_type_id }}",
+ *   label = @Translation("{{ entity_type_label }}"),
+ *   label_collection = @Translation("{{ entity_type_label|pluralize }}"),
+ *   label_singular = @Translation("{{ entity_type_label|lower }}"),
+ *   label_plural = @Translation("{{ entity_type_label|pluralize|lower }}"),
+ *   label_count = @PluralTranslation(
+ *     singular = "@count {{ entity_type_label|lower }}",
+ *     plural = "@count {{ entity_type_label|pluralize|lower }}",
+ *   ),
+ *   handlers = {
+ *     "list_builder" = "Drupal\{{ machine_name }}\{{ class_prefix }}ListBuilder",
+ *     "form" = {
+ *       "add" = "Drupal\{{ machine_name }}\Form\{{ class_prefix }}Form",
+ *       "edit" = "Drupal\{{ machine_name }}\Form\{{ class_prefix }}Form",
+ *       "delete" = "Drupal\Core\Entity\EntityDeleteForm",
+ *     },
+ *   },
+ *   config_prefix = "{{ entity_type_id }}",
+ *   admin_permission = "administer {{ entity_type_id }}",
+ *   links = {
+ *     "collection" = "/admin/structure/{{ entity_type_id|u2h }}",
+ *     "add-form" = "/admin/structure/{{ entity_type_id|u2h }}/add",
+ *     "edit-form" = "/admin/structure/{{ entity_type_id|u2h }}/{{ '{' }}{{ entity_type_id }}{{ '}' }}",
+ *     "delete-form" = "/admin/structure/{{ entity_type_id|u2h }}/{{ '{' }}{{ entity_type_id }}{{ '}' }}/delete",
+ *   },
+ *   entity_keys = {
+ *     "id" = "id",
+ *     "label" = "label",
+ *     "uuid" = "uuid",
+ *   },
+ *   config_export = {
+ *     "id",
+ *     "label",
+ *     "description",
+ *   },
+ * )
+ */
+final class {{ class_prefix }} extends ConfigEntityBase implements {{ class_prefix }}Interface {
+
+  /**
+   * The example ID.
+   */
+  protected string $id;
+
+  /**
+   * The example label.
+   */
+  protected string $label;
+
+  /**
+   * The example description.
+   */
+  protected string $description;
+
+}

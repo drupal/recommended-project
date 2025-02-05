@@ -1,0 +1,32 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }};
+
+{% if services %}
+{{ di.use(services) }}
+{% endif %}
+/**
+ * @todo Add class description.
+ */
+final class {{ class }}{{ interface ? ' implements ' ~ interface }} {
+{% if services %}
+
+  /**
+   * Constructs {{ class|article }} object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {}
+{% endif %}
+
+  /**
+   * {{ interface ? '{@inheritdoc}' : '@todo Add method description.'}}
+   */
+  public function doSomething(): void {
+    // @todo Place your code here.
+  }
+
+}

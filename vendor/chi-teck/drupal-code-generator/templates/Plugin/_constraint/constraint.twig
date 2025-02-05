@@ -1,0 +1,44 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\Validation\Constraint;
+
+use Symfony\Component\Validator\Constraint;
+
+/**
+ * Provides {{ plugin_label|article }} constraint.
+ *
+ * @Constraint(
+ *   id = "{{ plugin_id }}",
+ *   label = @Translation("{{ plugin_label }}", context = "Validation"),
+ * )
+{% if input_type == 'entity' %}
+ *
+ * @see https://www.drupal.org/node/2015723.
+{% elseif input_type == 'item_list' %}
+ *
+ * @DCG
+ * To apply this constraint on third party entity types implement either
+ * hook_entity_base_field_info_alter() or hook_entity_bundle_field_info_alter().
+ *
+ * @see https://www.drupal.org/node/2015723
+{% elseif input_type == 'item' %}
+ *
+ * @DCG
+ * To apply this constraint on third party field types. Implement
+ * hook_field_info_alter() as follows.
+ * @code
+ * function {{ machine_name }}_field_info_alter(array &$info): void {
+ *   $info['FIELD_TYPE']['constraints']['{{ plugin_id }}'] = [];
+ * }
+ * @endcode
+ *
+ * @see https://www.drupal.org/node/2015723
+{% endif %}
+ */
+final class {{ class }} extends Constraint {
+
+  public string $message = '@todo Specify error message here.';
+
+}

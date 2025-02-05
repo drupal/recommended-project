@@ -1,0 +1,108 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\views\field;
+
+{% apply sort_namespaces %}
+use Drupal\Component\Render\MarkupInterface;
+use Drupal\views\Plugin\views\field\FieldPluginBase;
+use Drupal\views\ResultRow;
+  {% if configurable %}
+use Drupal\Core\Form\FormStateInterface;
+  {% endif %}
+  {% if services %}
+{{ di.use(services) }}
+use Symfony\Component\DependencyInjection\ContainerInterface;
+  {% endif %}
+{% endapply %}
+
+/**
+ * Provides {{ plugin_label }} field handler.
+ *
+ * @ViewsField("{{ plugin_id }}")
+ *
+ * @DCG
+ * The plugin needs to be assigned to a specific table column through
+ * hook_views_data() or hook_views_data_alter().
+ * Put the following code to {{ machine_name }}.views.inc file.
+ * @code
+ * function foo_views_data_alter(array &$data): void {
+ *   $data['node']['foo_example']['field'] = [
+ *     'title' => t('Example'),
+ *     'help' => t('Custom example field.'),
+ *     'id' => 'foo_example',
+ *   ];
+ * }
+ * @endcode
+ */
+final class {{ class }} extends FieldPluginBase {
+
+{% if services %}
+  /**
+   * Constructs a new {{ class }} instance.
+   */
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+{{ di.signature(services) }}
+  ) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): self {
+    return new self(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+{{ di.container(services) }}
+    );
+  }
+
+{% endif %}
+{% if configurable %}
+  /**
+   * {@inheritdoc}
+   */
+  protected function defineOptions(): array {
+    $options = parent::defineOptions();
+    $options['example'] = ['default' => ''];
+    return $options;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildOptionsForm(&$form, FormStateInterface $form_state): void {
+    parent::buildOptionsForm($form, $form_state);
+    $form['example'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Example'),
+      '#default_value' => $this->options['example'],
+    ];
+  }
+
+{% endif %}
+  /**
+   * {@inheritdoc}
+   */
+  public function query(): void {
+    // For non-existent columns (i.e. computed fields) this method must be
+    // empty.
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function render(ResultRow $values): string|MarkupInterface {
+    $value = parent::render($values);
+    // @todo Modify or replace the rendered value here.
+    return $value;
+  }
+
+}

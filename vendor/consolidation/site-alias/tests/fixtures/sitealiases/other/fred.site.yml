@@ -1,0 +1,4 @@
+dev:
+  root: /other/path/to/fred
+other:
+  root: /other/other/path/to/fred

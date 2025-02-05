@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace PHPSTORM_META {
+
+  registerArgumentsSet('configs',
+{% for config in configs %}
+    '{{ config }}',
+{% endfor %}
+  );
+  expectedArguments(\Drupal\Core\Config\ConfigFactoryInterface::get(), 0, argumentsSet('configs'));
+  expectedArguments(\Drupal\Core\Config\ConfigFactoryInterface::getEditable(), 0, argumentsSet('configs'));
+  expectedArguments(\Drupal\Core\Config\ConfigFactoryInterface::reset(), 0, argumentsSet('configs'));
+  expectedArguments(\Drupal::config(), 0, argumentsSet('configs'));
+  expectedArguments(\Drupal\Core\Form\ConfigFormBaseTrait::config(), 0, argumentsSet('configs'));
+
+}

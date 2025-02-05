@@ -1,0 +1,54 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }};
+
+{% apply sort_namespaces %}
+use Drupal\Core\Breadcrumb\Breadcrumb;
+use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+  {% if services %}
+{{ di.use(services) }}
+  {% endif %}
+{% endapply %}
+
+/**
+ * @todo Add description for this breadcrumb builder.
+ */
+final class {{ class }} implements BreadcrumbBuilderInterface {
+
+  use StringTranslationTrait;
+{% if services %}
+
+  /**
+   * Constructs {{ class|article }} object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {}
+{% endif %}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function applies(RouteMatchInterface $route_match): bool {
+    return $route_match->getRouteName() === 'example';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build(RouteMatchInterface $route_match): Breadcrumb {
+    $breadcrumb = new Breadcrumb();
+
+    $links[] = Link::createFromRoute($this->t('Home'), '<front>');
+    $links[] = Link::createFromRoute($this->t('Example'), '<none>');
+
+    return $breadcrumb->setLinks($links);
+  }
+
+}

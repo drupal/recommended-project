@@ -1,0 +1,79 @@
+{
+    "name": "consolidation/robo",
+    "description": "Modern task runner",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Davert",
+            "email": "davert.php@resend.cc"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Robo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Robo\\": "tests/src",
+            "RoboExample\\": "examples/src"
+        }
+    },
+    "bin": [
+        "robo"
+    ],
+    "require": {
+        "php": ">=8.0",
+        "consolidation/annotated-command": "^4.8.1",
+        "consolidation/config": "^2.0.1",
+        "consolidation/log": "^2.0.2 || ^3",
+        "consolidation/output-formatters": "^4.1.2",
+        "consolidation/self-update": "^2.0",
+        "league/container": "^3.3.1 || ^4.0",
+        "phpowermove/docblock": "^4.0",
+        "symfony/console": "^6",
+        "symfony/event-dispatcher": "^6",
+        "symfony/filesystem": "^6",
+        "symfony/finder": "^6",
+        "symfony/process": "^6",
+        "symfony/yaml": "^6"
+    },
+    "require-dev": {
+        "natxet/cssmin": "3.0.4",
+        "patchwork/jsqueeze": "^2",
+        "pear/archive_tar": "^1.4.4",
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpunit/phpunit": "^7.5.20 || ^8",
+        "yoast/phpunit-polyfills": "^0.2.0"
+    },
+    "scripts": {
+        "cs": "./robo sniff",
+        "unit": "phpunit",
+        "lint": "find src tests/src -name '*.php' -print0 | xargs -0 -n1 -P4 -- php -l",
+        "test": [
+            "@lint",
+            "@unit",
+            "@cs"
+        ],
+        "phpdoc": "build/tools/phpdoc",
+        "install-tools": [
+            "if [[ ! -f build/tools/phpdoc ]] ; then mkdir -p build/tools && wget --output-document=build/tools/phpdoc https://phpdoc.org/phpDocumentor.phar && chmod +x build/tools/phpdoc; fi"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+            "php": "8.0.17"
+        }
+    },
+    "suggest": {
+        "pear/archive_tar": "Allows tar archives to be created and extracted in taskPack and taskExtract, respectively.",
+        "totten/lurkerlite": "For monitoring filesystem changes in taskWatch",
+        "patchwork/jsqueeze": "For minifying JS files in taskMinify",
+        "natxet/cssmin": "For minifying CSS files in taskMinify"
+    },
+    "conflict": {
+        "codegyre/robo": "*"
+    }
+}

@@ -1,0 +1,61 @@
+{
+	"name" : "phpowermove/docblock",
+	"type" : "library",
+	"description" : "PHP Docblock parser and generator. An API to read and write Docblocks.",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Thomas Gossmann",
+			"homepage" : "http://gos.si"
+		}
+	],
+	"keywords" : [
+		"docblock",
+		"parser",
+		"generator"
+	],
+	"support" : {
+		"issues" : "https://github.com/phpowermove/docblock/issues"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"phpowermove\\docblock\\" : "src/"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"phpowermove\\docblock\\tests\\" : "tests/"
+		}
+	},
+	"require" : {
+		"php" : ">=8.0",
+		"phootwork/collection" : "^3.0",
+		"phootwork/lang": "^3.0"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "^9.0",
+		"phootwork/php-cs-fixer-config": "^0.4",
+		"psalm/phar": "^4.3"
+	},
+	"scripts": {
+		"analytics": "vendor/bin/psalm.phar",
+		"check": [
+			"@test",
+			"@analytics",
+			"@cs-fix"
+		],
+		"coverage:html": "@test --coverage-html coverage/",
+		"coverage:clover": "@test --coverage-clover clover.xml",
+		"cs": "php-cs-fixer fix -v --diff --dry-run",
+		"cs-fix": "php-cs-fixer fix -v --diff",
+		"test": "phpunit --colors=always"
+	},
+	"scripts-descriptions": {
+		"analytics": "Run static analysis tool",
+		"check": "Perform all tests and analysis, required before submitting a pull request",
+		"coverage:html": "Create a code coverage report in html format, into the `coverage/` directory",
+		"coverage:clover": "Create a code coverage report in xml format, into clover.xml file",
+		"cs": "Run code style analysis, without fixing errors",
+		"cs-fix": "Run code style analysis and fix errors",
+		"test": "Run all tests"
+	}
+}

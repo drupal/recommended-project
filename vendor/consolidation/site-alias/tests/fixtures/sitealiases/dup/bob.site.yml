@@ -1,0 +1,4 @@
+dev:
+  root: /other/path/to/bob
+other:
+  root: /other/other/path/to/bob

@@ -1,0 +1,17 @@
+/**
+ * @file
+ * {{ name }} behaviors.
+ */
+(function (Drupal) {
+
+  'use strict';
+
+  Drupal.behaviors.{{ machine_name|camelize(false) }} = {
+    attach (context, settings) {
+
+      console.log('It works!');
+
+    }
+  };
+
+} (Drupal));

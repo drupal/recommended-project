@@ -1,0 +1,142 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function survey_schema() {
+    $schema = [];
+
+  // جدول الاستبيانات.
+  $schema['survey'] = [
+    'description' => 'Stores survey information.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      // اسم الاستبيان.
+      'name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      // قيمة slug لتحويل اسم الاستبيان إلى مسار URL آمن.
+      'slug' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        // نستخدم NULL كقيمة افتراضية (ليس السلسلة 'null').
+        'default' => NULL,
+      ],
+      // حالة الاستبيان: 0 = Draft, 1 = Published.
+      'status' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      // معرف المنشئ.
+      'creator_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      // تاريخ الإنشاء (عادةً يُخزن كـ Unix timestamp).
+      'created_at' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  // جدول ربط الاستبيان بالخدمة.
+  // نفترض أن جدول الخدمات موجود باسم "services" وحقل المفتاح الأساسي فيه هو "id".
+  $schema['survey_service_link'] = [
+    'description' => 'Stores survey-service relationship.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      // معرف الاستبيان.
+      'survey_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      // معرف الخدمة (من نوع المحتوى أو العقد).
+      'service_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      // نوع التريجر: Apply, Approve, Reject.
+      'trigger' => [
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+    'foreign keys' => [
+      'survey_id' => [
+        'table' => 'survey',
+        // العمود المحلي (survey_id) يشير إلى العمود "id" في جدول survey.
+        'columns' => ['survey_id'],
+        'reference' => ['id'],
+      ],
+      'service_id' => [
+        'table' => 'services',
+        'columns' => ['service_id'],
+        'reference' => ['id'],
+      ],
+    ],
+  ];
+
+  // جدول أسئلة الاستبيان.
+  $schema['survey_questions'] = [
+    'description' => 'Stores questions for surveys.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      // معرف الاستبيان الذي تنتمي إليه السؤال.
+      'survey_id' => [
+        'type' => 'int',
+        'not null' => TRUE,
+      ],
+      // نص السؤال.
+      'label' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      // الاسم الآلي للسؤال.
+      'machine_name' => [
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      // نوع السؤال (مثل text, radio, dropdown ...).
+      'type' => [
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      // خيارات السؤال (إن وجدت) بصيغة نصية.
+      'options' => [  
+        'type' => 'text',
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => ['id'],
+    'foreign keys' => [
+      'survey_id' => [
+        'table' => 'survey',
+        // العمود المحلي survey_id يُشير إلى العمود "id" في جدول survey.
+        'columns' => ['survey_id'],
+        'reference' => ['id'],
+      ],
+    ],
+  ];
+
+  return $schema;
+}

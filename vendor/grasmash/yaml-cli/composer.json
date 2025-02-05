@@ -1,0 +1,66 @@
+{
+  "name": "grasmash/yaml-cli",
+  "description": "A command line tool for reading and manipulating yaml files.",
+  "type": "library",
+  "require": {
+    "php": ">=8.0",
+    "symfony/yaml": "^6 || ^7",
+    "symfony/console": "^6 || ^7",
+    "symfony/filesystem": "^6 || ^7",
+    "dflydev/dot-access-data": "^3"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matthew Grasmick"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Grasmash\\YamlCli\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Grasmash\\YamlCli\\Tests\\": "tests/src/"
+    }
+  },
+  "bin": [
+    "bin/yaml-cli"
+  ],
+  "scripts": {
+    "cs": "phpcs",
+    "cbf": "phpcbf",
+    "unit": "phpunit",
+    "lint": [
+      "find src -name '*.php' -print0 | xargs -0 -n1 php -l",
+      "find tests -name '*.php' -print0 | xargs -0 -n1 php -l"
+    ],
+    "test": [
+      "@lint",
+      "@unit",
+      "@cs"
+    ],
+    "coverage": "php -d pcov.enabled=1 vendor/bin/phpunit tests/src --coverage-clover build/logs/clover.xml",
+    "coveralls": [
+      "php-coveralls -vvv"
+    ]
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.0",
+    "phpunit/phpunit": "^9",
+    "php-coveralls/php-coveralls": "^2"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.x-dev"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "8.2.18"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Logger;
+
+{% apply sort_namespaces %}
+use Drupal\Core\Logger\LogMessageParserInterface;
+use Drupal\Core\Logger\RfcLoggerTrait;
+use Psr\Log\LoggerInterface;
+  {% if services %}
+{{ di.use(services) }}
+  {% endif %}
+{% endapply %}
+
+/**
+ * @todo Add a description for the logger.
+ */
+final class {{ class }} implements LoggerInterface {
+
+  use RfcLoggerTrait;
+{% if services %}
+
+  /**
+   * Constructs {{ class|article }} object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {}
+{% endif %}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function log($level, string|\Stringable $message, array $context = []): void {
+    // Convert PSR3-style messages to \Drupal\Component\Render\FormattableMarkup
+    // style, so they can be translated too.
+    $placeholders = $this->parser->parseMessagePlaceholders($message, $context);
+    // @see \Drupal\Core\Logger\LoggerChannel::log() for all available contexts.
+    $rendered_message = strtr($message, $placeholders);
+    // @todo Log the rendered message here.
+{% if SUT_TEST %}
+    \file_put_contents('temporary://logger_test.log', $level . ' -> ' . $rendered_message);
+{% endif %}
+  }
+
+}

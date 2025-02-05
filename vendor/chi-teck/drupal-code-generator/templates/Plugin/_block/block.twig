@@ -1,0 +1,111 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\Block;
+
+{% apply sort_namespaces %}
+  {% if access %}
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
+  {% endif %}
+use Drupal\Core\Block\BlockBase;
+  {% if configurable %}
+use Drupal\Core\Form\FormStateInterface;
+  {% endif %}
+  {% if services %}
+{{ di.use(services) }}
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+  {% endif %}
+{% endapply %}
+
+/**
+ * Provides {{ plugin_label|article|lower }} block.
+ *
+ * @Block(
+ *   id = "{{ plugin_id }}",
+ *   admin_label = @Translation("{{ plugin_label }}"),
+ *   category = @Translation("{{ category }}"),
+ * )
+ */
+final class {{ class }} extends BlockBase {% if services %}implements ContainerFactoryPluginInterface {% endif %}{
+
+{% if services %}
+  /**
+   * Constructs the plugin instance.
+   */
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+{{ di.signature(services) }}
+  ) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): self {
+    return new self(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+{{ di.container(services) }}
+    );
+  }
+
+{% endif %}
+{% if configurable %}
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration(): array {
+    return [
+      'example' => $this->t('Hello world!'),
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockForm($form, FormStateInterface $form_state): array {
+    $form['example'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Example'),
+      '#default_value' => $this->configuration['example'],
+    ];
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state): void {
+    $this->configuration['example'] = $form_state->getValue('example');
+  }
+
+{% endif %}
+  /**
+   * {@inheritdoc}
+   */
+  public function build(): array {
+    $build['content'] = [
+      '#markup' => $this->t('It works!'),
+    ];
+    return $build;
+  }
+{% if access %}
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function blockAccess(AccountInterface $account): AccessResult {
+    // @todo Evaluate the access condition here.
+    return AccessResult::allowedIf(TRUE);
+  }
+{% endif %}
+
+}

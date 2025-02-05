@@ -1,0 +1,94 @@
+<?php
+
+namespace Drupal\survey\Form;
+
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Database\Database;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
+
+/**
+ * Provides a form to attach a survey to a service.
+ */
+class SurveyAttachForm extends FormBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getFormId() {
+    return 'survey_attach_form';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildForm(array $form, FormStateInterface $form_state) {
+    // استرجاع قائمة الاستبيانات المتاحة.
+    $connection = Database::getConnection();
+    $surveys = $connection->select('survey', 's')
+      ->fields('s', ['id', 'name'])
+      ->execute()
+      ->fetchAllKeyed();
+
+    // استرجاع قائمة الخدمات المتاحة (من نوع المحتوى المحدد).
+    $services = $connection->select('node_field_data', 'n')
+      ->fields('n', ['nid', 'title'])
+      ->condition('type', 'service') // استبدل 'service' بنوع المحتوى المناسب.
+      ->execute()
+      ->fetchAllKeyed();
+
+    $form['survey_id'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Select Survey'),
+      '#options' => $surveys,
+      '#required' => TRUE,
+    ];
+
+    $form['service'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Select Service'),
+      '#options' => $services,
+      '#required' => TRUE,
+    ];
+
+    $form['trigger'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Select Trigger'),
+      '#options' => [
+        'apply' => $this->t('Apply'),
+        'approve' => $this->t('Approve'),
+        'reject' => $this->t('Reject'),
+      ],
+      '#required' => TRUE,
+    ];
+
+    $form['actions']['submit'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Attach Survey'),
+    ];
+
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+
+    // إدخال سجل جديد في جدول survey_service.
+    $connection = Database::getConnection();
+    $connection->insert('survey_service')
+      ->fields([
+        'survey_id' => $values['survey_id'],
+        'service_nid' => $values['service'],
+        'trigger' => $values['trigger'],
+      ])
+      ->execute();
+
+    $this->messenger()->addMessage($this->t('Survey attached to service successfully!'));
+    $form_state->setRedirect('survey.list');
+  }
+
+}

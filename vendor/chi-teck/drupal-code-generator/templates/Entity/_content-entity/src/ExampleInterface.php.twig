@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }};
+
+use Drupal\Core\Entity\ContentEntityInterface;
+{% if changed_base_field %}
+use Drupal\Core\Entity\EntityChangedInterface;
+{% endif %}
+{% if author_base_field %}
+use Drupal\user\EntityOwnerInterface;
+{% endif %}
+
+/**
+ * Provides an interface defining {{ entity_type_label|article|lower }} entity type.
+ */
+interface {{ class }}Interface extends ContentEntityInterface{% if author_base_field %}, EntityOwnerInterface{% endif %}{% if changed_base_field %}, EntityChangedInterface{% endif %} {
+
+}

@@ -1,0 +1,137 @@
+{
+  "name": "drush/drush",
+  "description": "Drush is a command line shell and scripting interface for Drupal, a veritable Swiss Army knife designed to make life easier for those of us who spend some of our working hours hacking away at the command prompt.",
+  "homepage": "http://www.drush.org",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "prefer-stable": false,
+  "authors": [
+    { "name": "Moshe Weitzman", "email": "weitzman@tejasa.com" },
+    { "name": "Owen Barton", "email": "drupal@owenbarton.com" },
+    { "name": "Greg Anderson", "email": "greg.1.anderson@greenknowe.org" },
+    { "name": "Jonathan Araña Cruz", "email": "jonhattan@faita.net" },
+    { "name": "Jonathan Hedstrom", "email": "jhedstrom@gmail.com" },
+    { "name": "Christopher Gervais", "email": "chris@ergonlogic.com" },
+    { "name": "Dave Reid", "email": "dave@davereid.net" },
+    { "name": "Damian Lee", "email": "damiankloip@googlemail.com" }
+  ],
+  "support": {
+    "forum": "http://drupal.stackexchange.com/questions/tagged/drush",
+    "slack": "https://drupal.slack.com/messages/C62H9CWQM",
+    "security": "https://github.com/drush-ops/drush/security/advisories"
+  },
+  "bin": [
+    "drush",
+    "drush.php"
+  ],
+  "repositories": {
+    "drupal_org": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  },
+  "require": {
+    "php": ">=8.2",
+    "ext-dom": "*",
+    "composer-runtime-api": "^2.2",
+    "chi-teck/drupal-code-generator": "^3.6 || ^4@alpha",
+    "composer/semver": "^1.4 || ^3",
+    "consolidation/annotated-command": "^4.9.2",
+    "consolidation/config": "^2.1.2 || ^3",
+    "consolidation/filter-via-dot-access-data": "^2.0.2",
+    "consolidation/output-formatters": "^4.3.2",
+    "consolidation/robo": "^4.0.6 || ^5",
+    "consolidation/site-alias": "^4",
+    "consolidation/site-process": "^5.2.0",
+    "dflydev/dot-access-data": "^3.0.2",
+    "grasmash/yaml-cli": "^3.1",
+    "guzzlehttp/guzzle": "^7.0",
+    "laravel/prompts": "^0.1.21",
+    "league/container": "^4.2",
+    "psy/psysh": "~0.12",
+    "symfony/event-dispatcher": "^6 || ^7",
+    "symfony/filesystem": "^6.1 || ^7",
+    "symfony/finder": "^6 || ^7",
+    "symfony/var-dumper": "^6.0 || ^7",
+    "symfony/yaml": "^6.0 || ^7"
+  },
+  "require-dev": {
+    "composer/installers": "^2",
+    "cweagans/composer-patches": "~1.7.3",
+    "drupal/core-recommended": "^10.2.5 || 11.0.x-dev",
+    "drupal/semver_example": "2.3.0",
+    "jetbrains/phpstorm-attributes": "^1.0",
+    "mglaman/phpstan-drupal": "^1.2",
+    "phpunit/phpunit": "^9 || ^10",
+    "rector/rector": "^1",
+    "squizlabs/php_codesniffer": "^3.7"
+  },
+  "conflict": {
+    "drupal/core": "< 10.2",
+    "drupal/migrate_run": "*",
+    "drupal/migrate_tools": "<= 5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Drush\\":            "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Unish\\": "tests/unish",
+      "Custom\\Library\\": "tests/fixtures/lib"
+    },
+    "classmap": [
+        "sut/core/modules/migrate/src"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "cweagans/composer-patches": true
+    },
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "process-timeout": 9600,
+    "platform": {
+      "php": "8.2"
+    }
+  },
+  "scripts": {
+    "cs": "phpcs",
+    "cbf": "phpcbf",
+    "lint": [
+      "find includes -name '*.inc' -print0 | xargs -0 -n1 php -l",
+      "find src -name '*.php' -and ! -path 'src/Attributes/*' -print0 | xargs -0 -n1 php -l",
+      "find tests -name '*.php' -print0 | xargs -0 -n1 php -l"
+    ],
+    "test": [
+      "@lint",
+      "@phpunit",
+      "@cs"
+    ],
+    "api": "php $HOME/bin/doctum.phar --ansi --ignore-parse-errors update doctum-config.php",
+    "doctum-install": "mkdir -p $HOME/bin && curl --output $HOME/bin/doctum.phar https://doctum.long-term.support/releases/latest/doctum.phar && chmod +x $HOME/bin/doctum.phar",
+    "mk:docs": "./drush --uri=dev -v mk:docs",
+    "rector": "rector process",
+    "sut": "./drush --uri=dev",
+    "sut:si": "./drush --uri=dev site:install ${INSTALL_PROFILE:-testing} --sites-subdir=dev --db-url=${UNISH_DB_URL:-mysql://root:password@mariadb/unish_dev?module=mysql} -v",
+    "phpunit": "php -d sendmail_path='true' vendor/bin/phpunit --colors=always --testdox --configuration tests",
+    "unit": "composer phpunit -- --testsuite unit",
+    "integration": "composer phpunit -- --testsuite integration",
+    "functional": "composer phpunit -- --testsuite functional"
+  },
+  "extra": {
+    "installer-paths": {
+      "sut/core": ["type:drupal-core"],
+      "sut/libraries/{$name}": ["type:drupal-library"],
+      "sut/modules/unish/{$name}": ["drupal/devel"],
+      "sut/themes/unish/{$name}": ["drupal/empty_theme"],
+      "sut/modules/contrib/{$name}": ["type:drupal-module"],
+      "sut/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "sut/themes/contrib/{$name}": ["type:drupal-theme"],
+      "sut/drush/contrib/{$name}": ["type:drupal-drush"]
+    }
+  }
+}

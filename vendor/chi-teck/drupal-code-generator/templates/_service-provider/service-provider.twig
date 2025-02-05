@@ -1,0 +1,51 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }};
+
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+{% apply sort_namespaces %}
+{% for interface in interfaces %}
+use Drupal\Core\DependencyInjection\{{ interface }};
+{% endfor %}
+{% endapply %}
+
+/**
+ * Defines a service provider for the {{ name }} module.
+ *
+ * @see https://www.drupal.org/node/2026959
+ */
+final class {{ class }} implements {{ interfaces|join(', ') }} {
+
+{% if provide %}
+  /**
+   * {@inheritdoc}
+   */
+  public function register(ContainerBuilder $container): void {
+    // @DCG Example of how to register a new service.
+    // @code
+    //   $container
+    //     ->register('{{ machine_name }}.example_subscriber', ExampleSubscriber::class)
+    //     ->addTag('event_subscriber')
+    //     ->addArgument(new Reference('entity_type.manager'));
+    // @endcode
+  }
+
+{% endif %}
+{% if modify %}
+  /**
+   * {@inheritdoc}
+   */
+  public function alter(ContainerBuilder $container): void {
+    // @DCG Example of how to swap out existing service.
+    // @code
+    //   if ($container->hasDefinition('logger.dblog')) {
+    //     $container->getDefinition('logger.dblog')
+    //       ->setClass(ExampleLogger::class);
+    //   }
+    // @endcode
+  }
+
+{% endif %}
+}

@@ -1,0 +1,11 @@
+checks:
+    php: true
+filter:
+    excluded_paths:
+        - customize/*
+        - tests/*
+tools:
+    php_sim: true
+    php_pdepend: true
+    php_analyzer: true
+    php_cs_fixer: false

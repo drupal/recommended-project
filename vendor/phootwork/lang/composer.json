@@ -1,0 +1,31 @@
+{
+	"name" : "phootwork/lang",
+	"type" : "library",
+	"description" : "Missing PHP language constructs",
+	"authors" : [{
+			"name" : "Thomas Gossmann",
+			"homepage" : "http://gos.si"
+		}
+	],
+	"license" : "MIT",
+	"keywords" : [
+		"array",
+		"string",
+		"comparison",
+		"comparator"
+	],
+	"support" : {
+		"issues" : "https://github.com/phootwork/phootwork/issues"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"phootwork\\lang\\" : ""
+		}
+	},
+	"require" : {
+		"php" : ">=8.0",
+		"symfony/polyfill-mbstring" : "^1.12",
+		"symfony/polyfill-php81": "^1.22"
+	},
+	"homepage" : "https://phootwork.github.io/lang/"
+}

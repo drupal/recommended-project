@@ -1,0 +1,71 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }};
+
+{% apply sort_namespaces %}
+use Drupal\Core\ParamConverter\ParamConverterInterface;
+use Symfony\Component\Routing\Route;
+  {% if services %}
+{{ di.use(services) }}
+  {% endif %}
+{% endapply %}
+
+/**
+ * @todo Add description for the converter.
+ *
+ * @DCG
+ * To use this converter specify parameter type in a relevant route as follows:
+ * @code
+ * {{ machine_name }}.{{ parameter_type }}_parameter_converter:
+ *   path: example/{record}
+ *   defaults:
+ *     _controller: '\Drupal\{{ machine_name }}\Controller\{{ controller_class }}::build'
+ *   requirements:
+ *     _access: 'TRUE'
+ *   options:
+ *     parameters:
+ *       record:
+ *        type: {{ parameter_type }}
+ * @endcode
+ *
+ * Note that parameter converter for entities already exists in Drupal core.
+ * @see \Drupal\Core\ParamConverter\EntityConverter
+ */
+final class {{ class }} implements ParamConverterInterface {
+{% if services %}
+
+  /**
+   * Constructs {{ class|article }} object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {}
+{% endif %}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function convert($value, $definition, $name, array $defaults): ?string {
+    // @DCG
+    // If the converter returns something different rather than strings make
+    // sure to define an appropriate return type for this method.
+    return match ($value) {
+      '1' => 'alpha',
+      '2' => 'beta',
+      '3' => 'gamma',
+      // NULL will trigger 404 HTTP error.
+      default => NULL,
+    };
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function applies($definition, $name, Route $route): bool {
+    return isset($definition['type']) && $definition['type'] === 'example';
+  }
+
+}

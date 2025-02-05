@@ -1,0 +1,43 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }};
+
+{% apply sort_namespaces %}
+use Drupal\Core\Extension\ModuleUninstallValidatorInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+  {% if services %}
+{{ di.use(services) }}
+  {% endif %}
+{% endapply %}
+
+/**
+ * @todo Add validator description here.
+ */
+final class {{ class }} implements ModuleUninstallValidatorInterface {
+
+  use StringTranslationTrait;
+{% if services %}
+
+  /**
+   * Constructs the object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {}
+{% endif %}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validate($module): array {
+    $reasons = [];
+    if ($module === '{{ machine_name }}') {
+      $reasons[] = $this->t('Some good reason.');
+    }
+    return $reasons;
+  }
+
+}

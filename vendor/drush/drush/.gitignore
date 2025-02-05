@@ -1,0 +1,29 @@
+# Drush uses highest/lowest testing so no use for a lock file.
+composer.lock
+tests/phpunit.xml
+.ddev/config.personal.yaml
+vendor
+box.phar
+drush.phar
+#The mkdocs output directory and generated file.
+site
+gh-pages
+mkdocs.yml
+#The Commands site output directory.
+docs/commands
+docs/generators
+#The Doctum output directories
+api
+.doctum-cache
+# IDE config
+.idea/
+sut/*
+!sut/drush
+sut/drush/sites/*test.site.yml
+!sut/modules
+sut/modules/contrib
+/sandbox/
+.env
+# Test fixtures
+sut/drush/sites/synctest.site.yml
+/tests/.phpunit.result.cache

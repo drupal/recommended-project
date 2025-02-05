@@ -1,0 +1,26 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Primary module hooks for {{ name }} module.
+ */
+
+/**
+ * Implements hook_{{ plugin_type }}_info().
+ */
+function {{ machine_name }}_{{ plugin_type }}_info(): array {
+  return [
+    '{{ machine_name }}.foo' => [
+      'id' => 'foo',
+      'label' => t('Foo'),
+      'description' => t('Foo description.'),
+    ],
+    '{{ machine_name }}.bar' => [
+      'id' => 'bar',
+      'label' => t('Bar'),
+      'description' => t('Bar description.'),
+    ],
+  ];
+}

@@ -1,0 +1,38 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use DrupalCodeGenerator\Application;
+use DrupalCodeGenerator\BootstrapHandler;
+
+$dcg_exit = static function(string $message): never {
+  \fwrite(\STDERR, "\e[0;41m [ERROR] $message \e[0m" . \PHP_EOL);
+  exit(1);
+};
+
+// __DIR__ cannot be used here as it contains a path with symlinks resolved.
+$dcg_path = \str_starts_with($argv[0], '/') ?
+  $argv[0] : \getcwd() . '/' . $argv[0];
+
+// DCG is installed as Composer package.
+$autoload_dir = \dirname($dcg_path) . '/..';
+if (!\file_exists($autoload_dir . '/autoload.php')) {
+  // DCG is installed as Composer project.
+  $autoload_dir = $autoload_dir . '/vendor';
+}
+
+if (!\file_exists($autoload_dir . '/autoload.php')) {
+  $dcg_exit('Could not locate class loader.');
+}
+
+$class_loader = require $autoload_dir . '/autoload.php';
+$bootstrap_handler = new BootstrapHandler($class_loader);
+try {
+  $container = $bootstrap_handler->bootstrap();
+}
+catch (\Exception $exception) {
+  $dcg_exit($exception->getMessage());
+}
+
+Application::create($container)->run();

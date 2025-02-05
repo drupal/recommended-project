@@ -1,0 +1,311 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\Field\FieldType;
+
+{% if random %}
+use Drupal\Component\Utility\Random;
+{% endif %}
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemBase;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+{% if storage_settings or instance_settings %}
+use Drupal\Core\Form\FormStateInterface;
+{% endif %}
+{% if email %}
+use Drupal\Core\Render\Element\Email;
+{% endif %}
+use Drupal\Core\TypedData\DataDefinition;
+
+/**
+ * Defines the '{{ field_id }}' field type.
+ *
+ * @FieldType(
+ *   id = "{{ field_id }}",
+ *   label = @Translation("{{ field_label }}"),
+ *   description = @Translation("Some description."),
+ *   default_widget = "{{ field_id }}",
+ *   default_formatter = "{{ field_id }}_default",
+ * )
+ */
+final class {{ type_class }} extends FieldItemBase {
+
+{% if storage_settings %}
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultStorageSettings(): array {
+    $settings = ['foo' => 'example'];
+    return $settings + parent::defaultStorageSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data): array {
+    $settings = $this->getSettings();
+
+    $element['foo'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Foo'),
+      '#default_value' => $settings['foo'],
+      '#disabled' => $has_data,
+    ];
+
+    return $element;
+  }
+
+{% endif %}
+{% if instance_settings %}
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultFieldSettings(): array {
+    $settings = ['bar' => 'example'];
+    return $settings + parent::defaultFieldSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function fieldSettingsForm(array $form, FormStateInterface $form_state): array {
+    $settings = $this->getSettings();
+
+    $element['bar'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Bar'),
+      '#default_value' => $settings['bar'],
+    ];
+
+    return $element;
+  }
+
+{% endif %}
+  /**
+   * {@inheritdoc}
+   */
+  public function isEmpty(): bool {
+{% set conditions = [] %}
+{% for subfield in subfields %}
+  {% set condition %}
+    {% if subfield.type == 'boolean' %}$this->{{ subfield.machine_name }} != 1{% else %}$this->{{ subfield.machine_name }} === NULL{% endif %}
+  {% endset %}
+  {% set conditions = conditions|merge([condition]) %}
+{% endfor %}
+    return {{ conditions|join(' && ')|raw }};
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition): array {
+
+{% for subfield in subfields %}
+    $properties['{{ subfield.machine_name }}'] = DataDefinition::create('{{ subfield.data_type }}')
+      ->setLabel(t('{{ subfield.name }}'));
+{% endfor %}
+
+    return $properties;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function getConstraints(): array {
+    $constraints = parent::getConstraints();
+
+{% for subfield in subfields %}
+  {% if subfield.list %}
+    $options['{{ subfield.machine_name }}']['AllowedValues'] = array_keys({{ type_class }}::{{ subfield.allowed_values_method }}());
+
+  {% endif %}
+  {% if subfield.required %}
+    {% if subfield.type == 'boolean' %}
+    // NotBlank validator is not suitable for booleans because it does not
+    // recognize '0' as an empty value.
+    $options['{{ subfield.machine_name }}']['AllowedValues']['choices'] = [1];
+    $options['{{ subfield.machine_name }}']['AllowedValues']['message'] = $this->t('This value should not be blank.');
+
+    {% else %}
+    $options['{{ subfield.machine_name }}']['NotBlank'] = [];
+
+      {% if subfield.type == 'email' %}
+    $options['{{ subfield.machine_name }}']['Length']['max'] = Email::EMAIL_MAX_LENGTH;
+
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% if list or required %}
+    $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
+    $constraints[] = $constraint_manager->create('ComplexData', $options);
+{% endif %}
+    // @todo Add more constraints here.
+    return $constraints;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function schema(FieldStorageDefinitionInterface $field_definition): array {
+
+    $columns = [
+{% for subfield in subfields %}
+      '{{ subfield.machine_name }}' => [
+  {% if subfield.type == 'boolean' %}
+        'type' => 'int',
+        'size' => 'tiny',
+  {% elseif subfield.type == 'string' %}
+        'type' => 'varchar',
+        'length' => 255,
+  {% elseif subfield.type == 'text' %}
+        'type' => 'text',
+        'size' => 'big',
+  {% elseif subfield.type == 'integer' %}
+        'type' => 'int',
+        'size' => 'normal',
+  {% elseif subfield.type == 'float' %}
+        'type' => 'float',
+        'size' => 'normal',
+  {% elseif subfield.type == 'numeric' %}
+        'type' => 'numeric',
+        'precision' => 10,
+        'scale' => 2,
+  {% elseif subfield.type == 'email' %}
+        'type' => 'varchar',
+        'length' => Email::EMAIL_MAX_LENGTH,
+  {% elseif subfield.type == 'telephone' %}
+        'type' => 'varchar',
+        'length' => 255,
+  {% elseif subfield.type == 'uri' %}
+        'type' => 'varchar',
+        'length' => 2048,
+  {% elseif subfield.type == 'datetime' %}
+        'type' => 'varchar',
+        'length' => 20,
+  {% endif %}
+      ],
+{% endfor %}
+    ];
+
+    $schema = [
+      'columns' => $columns,
+      // @DCG Add indexes here if necessary.
+    ];
+
+    return $schema;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function generateSampleValue(FieldDefinitionInterface $field_definition): array {
+
+{% if random %}
+    $random = new Random();
+
+{% endif %}
+{% for subfield in subfields %}
+  {% if subfield.list %}
+    $values['{{ subfield.machine_name }}'] = array_rand(self::{{ subfield.allowed_values_method }}());
+
+  {% elseif subfield.type == 'boolean' %}
+    $values['{{ subfield.machine_name }}'] = (bool) mt_rand(0, 1);
+
+  {% elseif subfield.type == 'string' %}
+    $values['{{ subfield.machine_name }}'] = $random->word(mt_rand(1, 255));
+
+  {% elseif subfield.type == 'text' %}
+    $values['{{ subfield.machine_name }}'] = $random->paragraphs(5);
+
+  {% elseif subfield.type == 'integer' %}
+    $values['{{ subfield.machine_name }}'] = mt_rand(-1000, 1000);
+
+  {% elseif subfield.type == 'float' %}
+    $scale = rand(1, 5);
+    $random_decimal = mt_rand() / mt_getrandmax() * (1000 - 0);
+    $values['{{ subfield.machine_name }}'] = floor($random_decimal * pow(10, $scale)) / pow(10, $scale);
+
+  {% elseif subfield.type == 'numeric' %}
+    $scale = rand(10, 2);
+    $random_decimal = -1000 + mt_rand() / mt_getrandmax() * (-1000 - 1000);
+    $values['{{ subfield.machine_name }}'] = floor($random_decimal * pow(10, $scale)) / pow(10, $scale);
+
+  {% elseif subfield.type == 'email' %}
+    $values['{{ subfield.machine_name }}'] = strtolower($random->name()) . '@example.com';
+
+  {% elseif subfield.type == 'telephone' %}
+    $values['{{ subfield.machine_name }}'] = mt_rand(pow(10, 8), pow(10, 9) - 1);
+
+  {% elseif subfield.type == 'uri' %}
+    $tlds = ['com', 'net', 'gov', 'org', 'edu', 'biz', 'info'];
+    $domain_length = mt_rand(7, 15);
+    $protocol = mt_rand(0, 1) ? 'https' : 'http';
+    $www = mt_rand(0, 1) ? 'www' : '';
+    $domain = $random->word($domain_length);
+    $tld = $tlds[mt_rand(0, (count($tlds) - 1))];
+    $values['{{ subfield.machine_name }}'] = "$protocol://$www.$domain.$tld";
+
+  {% elseif subfield.type == 'datetime' %}
+    $timestamp = \Drupal::time()->getRequestTime() - mt_rand(0, 86400 * 365);
+    $values['{{ subfield.machine_name }}'] = gmdate('{{ subfield.date_storage_format }}', $timestamp);
+
+  {% endif %}
+{% endfor %}
+    return $values;
+  }
+
+{% for subfield in subfields %}
+  {% if subfield.list %}
+  /**
+   * Returns allowed values for '{{ subfield.machine_name }}' sub-field.
+   */
+  public static function {{ subfield.allowed_values_method }}(): array {
+    // @todo Update allowed values.
+    return [
+    {% if subfield.type == 'string' %}
+      'alpha' => t('Alpha'),
+      'beta' => t('Beta'),
+      'gamma' => t('Gamma'),
+    {% elseif subfield.type == 'integer' %}
+      123 => 123,
+      456 => 456,
+      789 => 789,
+    {% elseif subfield.type == 'float' %}
+      '12.3' => '12.3',
+      '4.56' => '4.56',
+      '0.789' => '0.789',
+    {% elseif subfield.type == 'numeric' %}
+      '12.35' => '12.35',
+      '45.65' => '45.65',
+      '78.95' => '78.95',
+    {% elseif subfield.type == 'email' %}
+      'alpha@example.com' => 'alpha@example.com',
+      'beta@example.com' => 'beta@example.com',
+      'gamma@example.com' => 'gamma@example.com',
+    {% elseif subfield.type == 'telephone' %}
+      '71234567001' => '+7(123)45-67-001',
+      '71234567002' => '+7(123)45-67-002',
+      '71234567003' => '+7(123)45-67-003',
+    {% elseif subfield.type == 'uri' %}
+      'https://example.com' => 'https://example.com',
+      'https://www.php.net' => 'https://www.php.net',
+      'https://www.drupal.org' => 'https://www.drupal.org',
+    {% elseif subfield.type == 'datetime' %}
+      {% if subfield.date_type == 'date' %}
+      '2018-01-01' => '1 January 2018',
+      '2018-02-01' => '1 February 2018',
+      '2018-03-01' => '1 March 2018',
+      {% else %}
+      '2018-01-01T00:10:10' => '1 January 2018, 00:10:10',
+      '2018-02-01T00:20:20' => '1 February 2018, 00:20:20',
+      '2018-03-01T00:30:30' => '1 March 2018, 00:30:30',
+      {% endif %}
+    {% endif %}
+    ];
+  }
+
+  {% endif %}
+{% endfor %}
+}

@@ -1,0 +1,51 @@
+{
+    "name": "chi-teck/drupal-code-generator",
+    "description": "Drupal code generator",
+    "license": "GPL-2.0-or-later",
+    "bin": [
+        "bin/dcg"
+    ],
+    "autoload": {
+        "psr-4": {
+            "DrupalCodeGenerator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DrupalCodeGenerator\\Tests\\Unit\\": "tests/unit",
+            "DrupalCodeGenerator\\Tests\\Functional\\": "tests/functional"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "php": ">=8.1.0",
+        "ext-json": "*",
+        "psr/event-dispatcher": "^1.0",
+        "psr/log": "^3.0",
+        "symfony/console": "^6.3",
+        "symfony/dependency-injection": "^6.3.2",
+        "symfony/filesystem": "^6.3",
+        "symfony/string": "^6.3",
+        "twig/twig": "^3.4"
+    },
+    "require-dev": {
+        "ext-simplexml": "*",
+        "chi-teck/drupal-coder-extension": "^2.0.0-beta3",
+        "drupal/coder": "8.3.23",
+        "drupal/core": "10.3.x-dev",
+        "phpspec/prophecy-phpunit": "^2.2",
+        "phpunit/phpunit": "^9.6",
+        "squizlabs/php_codesniffer": "^3.9",
+        "symfony/var-dumper": "^6.4",
+        "symfony/yaml": "^6.3",
+        "vimeo/psalm": "^5.22.2"
+    },
+    "conflict": {
+        "squizlabs/php_codesniffer": "<3.6"
+    }
+}

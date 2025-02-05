@@ -1,0 +1,65 @@
+{
+    "name": "consolidation/site-process",
+    "description": "A thin wrapper around the Symfony Process Component that allows applications to use the Site Alias library to specify the target for a remote call.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Greg Anderson",
+            "email": "greg.1.anderson@greenknowe.org"
+        },
+        {
+            "name": "Moshe Weitzman",
+            "email": "weitzman@tejasa.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Consolidation\\SiteProcess\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Consolidation\\SiteProcess\\": "tests/src"
+        }
+    },
+    "require": {
+        "php": ">=8.0.14",
+        "consolidation/config": "^2 || ^3",
+        "consolidation/site-alias": "^3 || ^4",
+        "symfony/process": "^6 || ^7",
+        "symfony/console": "^5.4 || ^6 || ^7"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3",
+        "phpunit/phpunit": "^9"
+    },
+    "scripts": {
+        "cs": "phpcs --standard=PSR2 -n src",
+        "cbf": "phpcbf --standard=PSR2 -n src",
+        "unit": "phpunit --colors=always",
+        "lint": [
+            "find src -name '*.php' -print0 | xargs -0 -n1 php -l",
+            "find tests/src -name '*.php' -print0 | xargs -0 -n1 php -l"
+        ],
+        "test": [
+            "@lint",
+            "@unit",
+            "@cs"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+            "php": "8.2.17"
+        },
+        "allow-plugins": {
+            "ocramius/package-versions": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "5.x-dev"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\Tests\{{ machine_name }}\Kernel;
+
+use Drupal\KernelTests\KernelTestBase;
+
+/**
+ * Test description.
+ *
+ * @group {{ machine_name }}
+ */
+final class {{ class }} extends KernelTestBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected static $modules = ['{{ machine_name }}'];
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp(): void {
+    parent::setUp();
+    // Mock necessary services here.
+  }
+
+  /**
+   * Test callback.
+   */
+  public function testSomething(): void {
+    self::assertTrue(TRUE);
+  }
+
+}

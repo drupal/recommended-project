@@ -1,0 +1,47 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Command;
+
+{% apply sort_namespaces %}
+use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+  {% if services %}
+{{ di.use(services) }}
+  {% endif %}
+{% endapply %}
+
+// phpcs:disable Drupal.Commenting.ClassComment.Missing
+#[AsCommand(
+  name: '{{ command.name }}',
+  description: '{{ command.description }}',
+  aliases: ['{{ command.alias }}'],
+)]
+final class {{ class }} extends Command {
+{% if services %}
+
+  /**
+   * Constructs {{ class|article }} object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {
+{# Parent constructor configures the command. #}
+    parent::__construct();
+  }
+{% endif %}
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function execute(InputInterface $input, OutputInterface $output): int {
+    // @todo Place your code here.
+    $output->writeln('<info>It works!</info>');
+    return self::SUCCESS;
+  }
+
+}

@@ -1,0 +1,28 @@
+.layout--{{ layout_machine_name|u2h }} {
+  display: flex;
+  gap:  1rem;
+  padding: 1rem;
+  outline: solid 1px orange;
+}
+
+.layout--{{ layout_machine_name|u2h }} > .layout__region {
+  padding: 1rem;
+  outline: solid 1px orange;
+}
+
+.layout--{{ layout_machine_name|u2h }} > .layout__region--main {
+  flex-basis: 66%;
+}
+
+.layout--{{ layout_machine_name|u2h }} > .layout__region--sidebar {
+  flex-basis: 33%;
+}
+
+@media all and (max-width: 850px) {
+  .layout--{{ layout_machine_name|u2h }} {
+    flex-direction: column;
+  }
+  .layout--{{ layout_machine_name|u2h }} > .layout__region {
+    flex-basis: auto;
+  }
+}

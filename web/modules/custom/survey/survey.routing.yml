@@ -1,0 +1,119 @@
+survey.add:
+  path: "/survey/add"
+  defaults:
+    _title: "Create Survey"
+    _form: '\Drupal\survey\Form\SurveyForm'
+  requirements:
+    _permission: "access content"
+
+survey.list:
+  path: "/survey/list"
+  defaults:
+    _controller: '\Drupal\survey\Controller\SurveyListController::surveyList'
+    _title: "Survey List"
+  requirements:
+    _permission: "access content"
+
+survey.edit:
+  path: "/survey/{survey_id}/edit"
+  defaults:
+    _form: '\Drupal\survey\Form\SurveyEditForm'
+    _title: "Edit Survey"
+  requirements:
+    _permission: "access content"
+    survey_id: '\d+'
+
+survey.delete:
+  path: "/survey/delete/{survey_id}"
+  defaults:
+    _controller: '\Drupal\survey\Controller\SurveyDeleteController::delete'
+    _title: "Delete Survey"
+  requirements:
+    _permission: "administer site configuration"
+
+survey.detail:
+  path: "/survey/{survey_id}"
+  defaults:
+    _controller: '\Drupal\survey\Controller\SurveyDetailController::surveyDetail'
+    _title: "Survey Details"
+  requirements:
+    _permission: "access content"
+    survey_id: '\d+'
+
+survey.question_add:
+  path: "/survey/{survey_id}/add-question"
+  defaults:
+    _form: '\Drupal\survey\Form\SurveyQuestionForm'
+    _title: "Add Question"
+  requirements:
+    _permission: "access content"
+    survey_id: '\d+'
+
+survey.question_edit:
+  path: "/survey/question/{question_id}/edit"
+  defaults:
+    _form: '\Drupal\survey\Form\SurveyQuestionEditForm'
+    _title: "Edit Question"
+  requirements:
+    _permission: "access content"
+    question_id: '\d+'
+
+survey.question_delete:
+  path: "/survey/question/{question_id}/delete"
+  defaults:
+    _form: '\Drupal\survey\Form\SurveyQuestionDeleteForm'
+    _title: "Delete Question"
+  requirements:
+    _permission: "access content"
+    question_id: '\d+'
+
+
+survey.question_detail:
+  path: "/survey/question/{question_id}/detail"
+  defaults:
+    _controller: '\Drupal\survey\Controller\SurveyDetailController::questionDetail'
+    _title: "Detail Question"
+  requirements:
+    _permission: "access content"
+    question_id: '\d+'
+
+
+
+
+# //////////////////////////////////////////////////////////////////////////////////
+
+# survey.view_by_slug:
+#   path: '/survey/view/{slug}'
+#   defaults:
+#     _controller: '\Drupal\survey\Controller\SurveyDetailController::viewBySlug'
+#     _title: 'عرض الاستبيان'
+#   requirements:
+#     _permission: 'access content'
+#     slug: '[a-z0-9\-]+'  # يسمح بالحروف الصغيرة والأرقام والشرطة فقط.
+
+
+survey.list_submissions:
+  path: '/survey/submissions'
+  defaults:
+    _controller: '\Drupal\survey\Controller\SurveySubmissionController::listSubmissions'
+    _title: 'Survey Submissions'
+  requirements:
+    _permission: 'access content'
+
+
+survey.submission:
+  path: '/survey/{survey_id}/submit'
+  defaults:
+    _form: '\Drupal\survey\Form\SurveySubmissionForm'
+    _title: 'Submit Survey'
+  requirements:
+    _permission: 'access content'
+
+
+survey.submission_search_form:
+  path: '/survey/submission/search'
+  defaults:
+    _form: '\Drupal\survey\Form\SurveySubmissionSearchForm'
+    _title: 'Search Submissions'
+  requirements:
+    _permission: 'access content'

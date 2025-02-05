@@ -1,0 +1,31 @@
+<?php
+
+declare(strict_types=1);
+
+namespace PHPSTORM_META {
+
+  override(
+    \Drupal::service(0),
+    map([
+{% for service_id, class in services %}
+      '{{ service_id }}' => '{{ class }}',
+{% endfor %}
+    ])
+  );
+  override(
+    \Symfony\Component\DependencyInjection\ContainerInterface::get(0),
+    map([
+{% for service_id, class in services %}
+      '{{ service_id }}' => '{{ class }}',
+{% endfor %}
+    ])
+  );
+
+  expectedArguments(
+    \Symfony\Component\DependencyInjection\ContainerInterface::set(),
+    0,
+{% for service_id, class in services %}
+    '{{ service_id }}',
+{% endfor %}
+  );
+}

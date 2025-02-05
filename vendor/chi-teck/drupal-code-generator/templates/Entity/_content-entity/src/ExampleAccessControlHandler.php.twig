@@ -1,0 +1,49 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }};
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityAccessControlHandler;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Defines the access control handler for the {{ entity_type_label|lower }} entity type.
+ *
+ * phpcs:disable Drupal.Arrays.Array.LongLineDeclaration
+ *
+ * @see https://www.drupal.org/project/coder/issues/3185082
+ */
+final class {{ class }}AccessControlHandler extends EntityAccessControlHandler {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account): AccessResult {
+    if ($account->hasPermission($this->entityType->getAdminPermission())) {
+      return AccessResult::allowed()->cachePerPermissions();
+    }
+
+    return match($operation) {
+      'view' => AccessResult::allowedIfHasPermission($account, '{{ permissions.view }}'),
+      'update' => AccessResult::allowedIfHasPermission($account, '{{ permissions.edit }}'),
+      'delete' => AccessResult::allowedIfHasPermission($account, '{{ permissions.delete }}'),
+{% if revisionable %}
+      'delete revision' => AccessResult::allowedIfHasPermission($account, '{{ permissions.delete_revision }}'),
+      'view all revisions', 'view revision' => AccessResult::allowedIfHasPermissions($account, ['{{ permissions.view_revision }}', '{{ permissions.view }}']),
+      'revert' => AccessResult::allowedIfHasPermissions($account, ['{{ permissions.revert_revision }}', '{{ permissions.edit }}']),
+{% endif %}
+      default => AccessResult::neutral(),
+    };
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL): AccessResult {
+    return AccessResult::allowedIfHasPermissions($account, ['{{ permissions.create }}', '{{ permissions.administer }}'], 'OR');
+  }
+
+}

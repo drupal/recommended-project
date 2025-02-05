@@ -1,0 +1,2 @@
+com.dubture.composer.corebuildpath.includes.excludes=<buildpathentry including\="tests/" kind\="src" path\="vendor"/>\n
+eclipse.preferences.version=1

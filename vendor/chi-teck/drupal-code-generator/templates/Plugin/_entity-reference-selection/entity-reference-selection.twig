@@ -1,0 +1,63 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\EntityReferenceSelection;
+
+{% apply sort_namespaces %}
+use Drupal\Core\Entity\Query\QueryInterface;
+{% if configurable %}
+use Drupal\Core\Form\FormStateInterface;
+{% endif %}
+use {{ base_class_full }}{% if base_class == class %} as Base{{ base_class }}{% endif %};
+{% endapply %}
+
+/**
+ * @todo Add plugin description here.
+ *
+ * @EntityReferenceSelection(
+ *   id = "{{ plugin_id }}",
+ *   label = @Translation("{{ plugin_label }}"),
+ *   group = "{{ plugin_id }}",
+ *   entity_types = {"{{ entity_type }}"},
+ * )
+ */
+final class {{ class }} extends {{  base_class == class ? 'Base' ~ base_class : base_class }} {
+
+{% if configurable %}
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration(): array {
+    $default_configuration = [
+      'foo' => 'bar',
+    ];
+    return $default_configuration + parent::defaultConfiguration();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state): array {
+    $form = parent::buildConfigurationForm($form, $form_state);
+
+    $form['foo'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Foo'),
+      '#default_value' => $this->configuration['foo'],
+    ];
+
+    return $form;
+  }
+
+{% endif %}
+  /**
+   * {@inheritdoc}
+   */
+  protected function buildEntityQuery($match = NULL, $match_operator = 'CONTAINS'): QueryInterface {
+    $query = parent::buildEntityQuery($match, $match_operator);
+    // @todo Modify the query here.
+    return $query;
+  }
+
+}

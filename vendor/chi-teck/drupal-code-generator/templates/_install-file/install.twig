@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Install, update and uninstall functions for the {{ name }} module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function {{ machine_name }}_install(): void {
+  \Drupal::messenger()->addStatus(t('Module {{ name }} has been installed.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function {{ machine_name }}_uninstall(): void {
+  \Drupal::messenger()->addStatus(t('Module {{ name }} has been uninstalled.'));
+}

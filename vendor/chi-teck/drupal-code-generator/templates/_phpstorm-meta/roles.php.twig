@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace PHPSTORM_META {
+
+  registerArgumentsSet('roles',
+{% for role in roles %}
+    '{{ role }}',
+{% endfor %}
+  );
+  expectedArguments(\Drupal\user\UserInterface::hasRole(), 0, argumentsSet('roles'));
+  expectedArguments(\Drupal\user\UserInterface::addRole(), 0, argumentsSet('roles'));
+  expectedArguments(\Drupal\user\UserInterface::removeRole(), 0, argumentsSet('roles'));
+
+}

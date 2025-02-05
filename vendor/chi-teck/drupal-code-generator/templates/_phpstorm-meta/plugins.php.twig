@@ -1,0 +1,44 @@
+<?php
+
+declare(strict_types=1);
+
+{# @todo: Add meta for functions and methods that are specific to some plugin types. #}
+namespace PHPSTORM_META {
+{% for plugin in plugins %}
+
+  // -- {{ plugin.manager_id }}.
+{# Using map() to work around PhpStorm bug. #}
+{# @see https://intellij-support.jetbrains.com/hc/en-us/community/posts/360001516519 #}
+  {% if plugin.plugin_interface %}
+  override({{ plugin.manager_class }}::createInstance(), map(['' => '{{ plugin.plugin_interface }}']));
+  override({{ plugin.manager_class }}::getInstance(), map(['' => '{{ plugin.plugin_interface }}|bool']));
+    {% if plugin.manager_interface %}
+  override({{ plugin.manager_interface }}::createInstance(), map(['' => '{{ plugin.plugin_interface }}']));
+  override({{ plugin.manager_interface }}::getInstance(), map(['' => '{{ plugin.plugin_interface }}|bool']));
+    {% endif %}
+  {% endif %}
+  {% if plugin.plugin_ids|length > 0 %}
+    {% set set_name = plugin.manager_id ~ '__plugin_ids' %}
+  registerArgumentsSet('{{ set_name }}',
+    {% for plugin_id in plugin.plugin_ids %}
+    '{{ plugin_id }}',
+     {% endfor %}
+  );
+  expectedArguments({{ plugin.manager_class }}::createInstance(), 0, argumentsSet('{{ set_name }}'));
+  expectedArguments({{ plugin.manager_class }}::getDefinition(), 0, argumentsSet('{{ set_name }}'));
+  expectedArguments({{ plugin.manager_class }}::hasDefinition(), 0, argumentsSet('{{ set_name }}'));
+  expectedArguments({{ plugin.manager_class }}::processDefinition(), 1, argumentsSet('{{ set_name }}'));
+    {% if plugin.manager_interface %}
+  expectedArguments({{ plugin.manager_interface }}::createInstance(), 0, argumentsSet('{{ set_name }}'));
+  expectedArguments({{ plugin.manager_interface }}::getDefinition(), 0, argumentsSet('{{ set_name }}'));
+  expectedArguments({{ plugin.manager_interface }}::hasDefinition(), 0, argumentsSet('{{ set_name }}'));
+  expectedArguments({{ plugin.manager_interface }}::processDefinition(), 1, argumentsSet('{{ set_name }}'));
+    {% endif %}
+  {% endif %}
+  {% if plugin.manager_id == 'validation.constraint' %}
+  expectedArguments(\Drupal\Core\Entity\EntityTypeInterface::addConstraint(), 0, argumentsSet('validation.constraint__plugin_ids'));
+  expectedArguments(\Drupal\Core\TypedData\DataDefinitionInterface::addConstraint(), 0, argumentsSet('validation.constraint__plugin_ids'));
+  {% endif %}
+{% endfor %}
+
+}

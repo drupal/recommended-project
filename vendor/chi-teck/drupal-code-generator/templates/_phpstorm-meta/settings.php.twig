@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+namespace PHPSTORM_META {
+
+  expectedArguments(
+    \Drupal\Core\Site\Settings::get(),
+    0,
+{% for setting in settings %}
+    '{{ setting }}',
+{% endfor %}
+  );
+
+}

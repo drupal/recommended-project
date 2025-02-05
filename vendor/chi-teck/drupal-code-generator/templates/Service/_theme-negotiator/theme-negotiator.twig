@@ -1,0 +1,45 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Theme;
+
+{% apply sort_namespaces %}
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Theme\ThemeNegotiatorInterface;
+  {% if services %}
+{{ di.use(services) }}
+  {% endif %}
+{% endapply %}
+
+/**
+ * Defines a theme negotiator that deals with the active theme on example page.
+ */
+final class {{ class }} implements ThemeNegotiatorInterface {
+{% if services %}
+
+  /**
+   * Constructs the negotiator object.
+   */
+  public function __construct(
+{{ di.signature(services) }}
+  ) {}
+{% endif %}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function applies(RouteMatchInterface $route_match): bool {
+    return $route_match->getRouteName() === '{{ machine_name }}.example';
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function determineActiveTheme(RouteMatchInterface $route_match): ?string {
+    // @DCG Here you can determine the active theme for the request.
+    return 'claro';
+  }
+
+}

@@ -1,0 +1,48 @@
+<?php
+
+declare(strict_types=1);
+
+namespace PHPSTORM_META {
+
+  registerArgumentsSet('routes',
+{% for route in routes %}
+{# Use `raw` filter because some route names contain HTML entities, i.e. '<front>'. #}
+    '{{ route|raw }}',
+{% endfor %}
+  );
+  expectedArguments(\Symfony\Component\Routing\RouteCollection::get(), 0, argumentsSet('routes'));
+  expectedArguments(\Symfony\Component\Routing\RouteCollection::remove(), 0, argumentsSet('routes'));
+  expectedArguments(\Drupal\Core\Url::__construct(), 0, argumentsSet('routes'));
+  expectedArguments(\Drupal\Core\Url::fromRoute(), 0, argumentsSet('routes'));
+  expectedArguments(\Drupal\Core\Link::createFromRoute(), 1, argumentsSet('routes'));
+  expectedReturnValues(\Drupal\Core\Url::getRouteName(), argumentsSet('routes'));
+  expectedReturnValues(\Drupal\Core\Routing\RouteMatchInterface::getRouteName(), argumentsSet('routes'));
+  expectedReturnValues(\Drupal\Core\Menu\ContextualLinkInterface::getRouteName(), argumentsSet('routes'));
+  expectedReturnValues(\Drupal\Core\Menu\LocalActionInterface::getRouteName(), argumentsSet('routes'));
+  expectedReturnValues(\Drupal\Core\Menu\LocalTaskInterface::getRouteName(), argumentsSet('routes'));
+  expectedReturnValues(\Drupal\Core\Menu\MenuLinkInterface::getRouteName(), argumentsSet('routes'));
+  expectedReturnValues(\Drupal\Core\Form\FormStateInterface::setRedirect(), argumentsSet('routes'));
+
+  registerArgumentsSet('routes.route_options',
+{% for option in route_attributes.options %}
+    '{{ option }}',
+{% endfor %}
+  );
+  expectedArguments(\Symfony\Component\Routing\Route::getOption(), 0, argumentsSet('routes.route_options'));
+  expectedArguments(\Symfony\Component\Routing\Route::setOption(), 0, argumentsSet('routes.route_options'));
+  registerArgumentsSet('routes.route_requirements',
+{% for requirement in route_attributes.requirements %}
+    '{{ requirement }}',
+{% endfor %}
+  );
+  expectedArguments(\Symfony\Component\Routing\Route::getRequirement(), 0, argumentsSet('routes.route_requirements'));
+  expectedArguments(\Symfony\Component\Routing\Route::setRequirement(), 0, argumentsSet('routes.route_requirements'));
+  registerArgumentsSet('routes.route_defaults',
+{% for default in route_attributes.defaults %}
+    '{{ default }}',
+{% endfor %}
+  );
+  expectedArguments(\Symfony\Component\Routing\Route::getDefault(), 0, argumentsSet('routes.route_defaults'));
+  expectedArguments(\Symfony\Component\Routing\Route::setDefault(), 0, argumentsSet('routes.route_defaults'));
+
+}

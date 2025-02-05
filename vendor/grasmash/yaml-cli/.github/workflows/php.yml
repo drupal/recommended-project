@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [ 3.x ]
+  pull_request:
+    branches: [ 3.x ]
+
+permissions:
+  contents: read
+
+jobs:
+
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: "ubuntu-latest"
+            php: "8.0"
+            coverage: "none"
+          - os: "ubuntu-latest"
+            php: "8.1"
+            coverage: "none"
+          - os: "ubuntu-latest"
+            php: "8.2"
+            coverage: "pcov"
+          - os: "ubuntu-latest"
+            php: "8.3"
+            coverage: "pcov"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          # Only report coverage once
+          coverage: ${{ matrix.coverage }}
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Un-pin PHP version used for dependency resolution
+        run: composer config --unset platform.php
+
+      - name: Install dependencies; use "update" so that we can get the right dependencies for our php version
+        run: composer -n update --prefer-dist -o
+
+      # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+      # Docs: https://getcomposer.org/doc/articles/scripts.md
+
+      - name: Run test suite
+        if: matrix.coverage == 'none'
+        run: composer run-script test
+
+      - name: Run coverage
+        if: matrix.coverage == 'pcov'
+        run: composer run-script coverage
+
+      - name: Upload coverage results to Coveralls
+        if: matrix.coverage == 'pcov'
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: composer run-script coveralls

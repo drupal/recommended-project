@@ -1,0 +1,9 @@
+default: dev
+dev:
+  root: /path/to/wild
+  uri: https://dev.example.com
+'*':
+  root: /wild/path/to/wild
+  uri: https://${env-name}.example.com
+common:
+  foo: bar

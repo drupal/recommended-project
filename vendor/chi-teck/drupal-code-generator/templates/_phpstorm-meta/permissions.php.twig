@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace PHPSTORM_META {
+
+  registerArgumentsSet('permissions',
+{% for permission in permissions %}
+    '{{ permission }}',
+{% endfor %}
+  );
+  expectedArguments(\Drupal\Core\Session\AccountInterface::hasPermission(), 0, argumentsSet('permissions'));
+  expectedArguments(\Drupal\Core\Access\AccessResult::allowedIfHasPermission(), 1, argumentsSet('permissions'));
+  expectedArguments(\Drupal\user\RoleInterface::allowedIfHasPermission(), 0, argumentsSet('permissions'));
+  expectedArguments(\Drupal\user\RoleInterface::grantPermission(), 0, argumentsSet('permissions'));
+  expectedArguments(\Drupal\user\RoleInterface::revokePermission(), 0, argumentsSet('permissions'));
+
+}

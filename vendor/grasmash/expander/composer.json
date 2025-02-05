@@ -1,0 +1,60 @@
+{
+    "name": "grasmash/expander",
+    "description": "Expands internal property references in PHP arrays file.",
+    "type": "library",
+    "require": {
+        "php": ">=8.0",
+        "dflydev/dot-access-data": "^3.0.0",
+        "psr/log": "^2 | ^3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Grasmick"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Grasmash\\Expander\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Grasmash\\Expander\\Tests\\": "tests/src/"
+        }
+    },
+    "require-dev": {
+        "greg-1-anderson/composer-test-scenarios": "^1",
+        "php-coveralls/php-coveralls": "^2.5",
+        "phpunit/phpunit": "^9",
+        "squizlabs/php_codesniffer": "^3.3"
+    },
+    "scripts": {
+        "cs": "phpcs",
+        "cbf": "phpcbf",
+        "unit": "phpunit",
+        "lint": [
+            "find src -name '*.php' -print0 | xargs -0 -n1 php -l",
+            "find tests -name '*.php' -print0 | xargs -0 -n1 php -l"
+        ],
+        "test": [
+            "@lint",
+            "@unit",
+            "@cs"
+        ],
+        "coverage": "php -d pcov.enabled=1 vendor/bin/phpunit tests/src --coverage-clover build/logs/clover.xml",
+        "coveralls": [
+            "php-coveralls -vvv"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}

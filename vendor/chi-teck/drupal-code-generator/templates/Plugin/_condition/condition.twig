@@ -1,0 +1,98 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Plugin\Condition;
+
+{% apply sort_namespaces %}
+use Drupal\Core\Condition\ConditionPluginBase;
+use Drupal\Core\Form\FormStateInterface;
+  {% if services %}
+{{ di.use(services) }}
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+  {% endif %}
+{% endapply %}
+
+/**
+ * Provides a '{{ plugin_label }}' condition.
+ *
+ * @Condition(
+ *   id = "{{ plugin_id }}",
+ *   label = @Translation("{{ plugin_label }}"),
+ * )
+ */
+final class {{ class }} extends ConditionPluginBase {% if services %}implements ContainerFactoryPluginInterface {% endif %}{
+
+{% if services %}
+  /**
+   * Constructs a new {{ class }} instance.
+   */
+  public function __construct(
+    array $configuration,
+    $plugin_id,
+    $plugin_definition,
+{{ di.signature(services) }}
+  ) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): self {
+    return new self(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+{{ di.container(services) }}
+    );
+  }
+
+{% endif %}
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration(): array {
+    return ['example' => ''] + parent::defaultConfiguration();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildConfigurationForm(array $form, FormStateInterface $form_state): array {
+    $form['example'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Example'),
+      '#default_value' => $this->configuration['example'],
+    ];
+    return parent::buildConfigurationForm($form, $form_state);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitConfigurationForm(array &$form, FormStateInterface $form_state): void {
+    $this->configuration['example'] = $form_state->getValue('example');
+    parent::submitConfigurationForm($form, $form_state);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function summary(): string {
+    return (string) $this->t(
+      'Example: @example', ['@example' => $this->configuration['example']],
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function evaluate(): bool {
+    // @todo Evaluate the condition here.
+    return TRUE;
+  }
+
+}

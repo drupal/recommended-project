@@ -1,0 +1,37 @@
+# Custom library for general purposes.
+example_1:
+  js:
+    js/example-1.js: {}
+  css:
+    component:
+      css/example-1.css: {}
+  dependencies:
+    - core/drupalSettings
+    - {{ machine_name }}/example_2
+
+# Third-party library (self hosted).
+example_2:
+  remote: https://example.com
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://github.com/example/example-2/path/to/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/example-2/source/example-2.js: {}
+  css:
+    component:
+      /libraries/example-2/source/example-2.css: {}
+  dependencies:
+    - core/jquery
+
+# Third-party library (CDN).
+example_3:
+  remote: https://example.com
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://github.com/example/example-3/path/to/LICENSE
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/example/1.0.0/example-3.min.js: {type: external, minified: true}

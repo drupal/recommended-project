@@ -1,0 +1,7 @@
+default: dev
+dev:
+  root: /other/path/to/single
+other:
+  root: /other/other/path/to/single
+common:
+  foo: baz

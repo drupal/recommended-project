@@ -1,0 +1,52 @@
+{% import '@lib/di.twig' as di %}
+<?php
+
+declare(strict_types=1);
+
+namespace Drupal\{{ machine_name }}\Controller;
+
+{% apply sort_namespaces %}
+use Drupal\Core\Controller\ControllerBase;
+  {% if services %}
+use Symfony\Component\DependencyInjection\ContainerInterface;
+{{ di.use(services) }}
+  {% endif %}
+{% endapply %}
+
+/**
+ * Returns responses for {{ name }} routes.
+ */
+final class {{ class }} extends ControllerBase {
+{% if services %}
+
+  /**
+   * The controller constructor.
+   */
+  public function __construct(
+{{ di.signature(services, true) }}
+  ) {}
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container): self {
+    return new self(
+{{ di.container(services) }}
+    );
+  }
+{% endif %}
+
+  /**
+   * Builds the response.
+   */
+  public function __invoke(): array {
+
+    $build['content'] = [
+      '#type' => 'item',
+      '#markup' => $this->t('It works!'),
+    ];
+
+    return $build;
+  }
+
+}
