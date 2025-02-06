@@ -56,10 +56,8 @@ class SurveySubmissionForm extends FormBase {
             ])
             ->execute();
 
-        // عرض رسالة تأكيد
         \Drupal::messenger()->addMessage($this->t('Survey submitted successfully.'));
 
-        // إعادة التوجيه إلى قائمة الاستبيانات
         $url = Url::fromRoute('survey.list')->toString();
         $form_state->setResponse(new RedirectResponse($url));
     }

@@ -101,34 +101,25 @@ class SurveyQuestionForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         $values = $form_state->getValues();
     
-        // قراءة الخيارات المدخلة
         $options = NULL;
         if (in_array($values['type'], ['dropdown', 'radio', 'checkbox'])) {
-            // التحقق من وجود القيمة في options
             $options_input = isset($values['options_wrapper']['options']) ? trim($values['options_wrapper']['options']) : '';
     
-            // التحقق من أن القيمة غير فارغة
             if (!empty($options_input)) {
-                // تقسيم الخيارات على أساس الفاصلة وتحويلها إلى مصفوفة بعد تنظيف القيم
                 $options_array = array_filter(array_map('trim', explode(',', $options_input)));
     
-                // تأكد من أن المصفوفة غير فارغة
                 if (!empty($options_array)) {
-                    // تحويل المصفوفة إلى سلسلة `serialized`
                     $options = serialize($options_array);
                 }
             }
         }
     
-        // قم باضافة رسالة سجل للتحقق من القيم المدخلة
         \Drupal::logger('survey')->notice('<pre>' . print_r($options, TRUE) . '</pre>');
     
-        // إذا كانت القيمة NULL، يتم التحقق من أنها فارغة قبل إدخالها في قاعدة البيانات
         if ($options === NULL) {
             \Drupal::logger('survey')->notice('No options to save.');
         }
     
-        // حفظ البيانات في قاعدة البيانات
         $connection = Database::getConnection();
         $connection->insert('survey_questions')
             ->fields([
@@ -136,11 +127,10 @@ class SurveyQuestionForm extends FormBase {
                 'label' => $values['label'],
                 'machine_name' => $values['machine_name'],
                 'type' => $values['type'],
-                'options' => $options, // تخزين الخيار كـ serialized
+                'options' => $options, 
             ])
             ->execute();
     
-        // إضافة رسالة نجاح
         $this->messenger()->addMessage($this->t('Question added successfully!'));
         $form_state->setRedirect('survey.detail', ['survey_id' => $values['survey_id']]);
     }

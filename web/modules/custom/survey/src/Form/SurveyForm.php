@@ -59,7 +59,6 @@ class SurveyForm extends FormBase {
       '#value' => $this->t('Create Survey'),
     ];
 
-    // إضافة JavaScript لتوليد الـ "Slug" تلقائيًا.
     $form['#attached']['library'][] = 'survey/survey_slug';
 
     return $form;

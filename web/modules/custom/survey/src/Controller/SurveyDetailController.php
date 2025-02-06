@@ -129,7 +129,6 @@ class SurveyDetailController extends ControllerBase
             ];
         }
     
-        // فك تشفير الخيارات إذا كانت موجودة
         $options_list = [];
         if (!empty($question->options)) {
             $options = unserialize($question->options);

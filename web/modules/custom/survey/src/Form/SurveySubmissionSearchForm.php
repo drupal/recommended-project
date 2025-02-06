@@ -18,11 +18,9 @@ class SurveySubmissionSearchForm extends FormBase {
       ->fields('s', ['id', 'slug']);
     $result = $query->execute();
 
-    // إنشاء استعلام عدّ (count query)
     $count_query = $query->countQuery();
     $count_result = $count_query->execute()->fetchField();
 
-    // تسجيل الاستعلام والنتائج
     \Drupal::logger('survey')->notice('استعلام الاستطلاعات: ' . $query->__toString());
     \Drupal::logger('survey')->notice('عدد النتائج: ' . $count_result);
 

@@ -121,7 +121,6 @@ class SurveyQuestionEditForm extends FormBase {
     public function submitForm(array &$form, FormStateInterface $form_state) {
         $values = $form_state->getValues();
 
-        // معالجة حقل الخيارات: التحقق من النوع ثم قراءة الحقل وتنسيقه.
         $options = NULL;
         if (in_array($values['type'], ['dropdown', 'radio', 'checkbox'])) {
         $options_input = isset($values['options_wrapper']['options']) ? trim($values['options_wrapper']['options']) : '';

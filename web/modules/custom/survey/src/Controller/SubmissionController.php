@@ -11,12 +11,9 @@ class SubmissionController extends ControllerBase {
   public function listSubmissions() {
     $build = [];
     
-    // إنشاء نموذج بحث بسيط.
     $build['search_form'] = \Drupal::formBuilder()->getForm('Drupal\survey\Form\SurveySubmissionSearchForm');
     
-    // عرض جدول النتائج بعد معالجة معايير البحث.
-    // يمكن استخدام Database API لجلب النتائج بناءً على معايير البحث.
-    // مثال:
+  
     $survey_id = \Drupal::request()->query->get('survey_id');
     $query = \Drupal::database()->select('survey_submission', 'ss')
       ->fields('ss');
@@ -25,7 +22,6 @@ class SubmissionController extends ControllerBase {
     }
     $results = $query->execute()->fetchAll();
 
-    // تجهيز جدول العرض.
     $header = [
       $this->t('ID'),
       $this->t('Survey'),

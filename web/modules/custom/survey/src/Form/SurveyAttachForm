@@ -24,17 +24,15 @@ class SurveyAttachForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    // استرجاع قائمة الاستبيانات المتاحة.
     $connection = Database::getConnection();
     $surveys = $connection->select('survey', 's')
       ->fields('s', ['id', 'name'])
       ->execute()
       ->fetchAllKeyed();
 
-    // استرجاع قائمة الخدمات المتاحة (من نوع المحتوى المحدد).
     $services = $connection->select('node_field_data', 'n')
       ->fields('n', ['nid', 'title'])
-      ->condition('type', 'service') // استبدل 'service' بنوع المحتوى المناسب.
+      ->condition('type', 'service') 
       ->execute()
       ->fetchAllKeyed();
 
@@ -77,7 +75,6 @@ class SurveyAttachForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
 
-    // إدخال سجل جديد في جدول survey_service.
     $connection = Database::getConnection();
     $connection->insert('survey_service')
       ->fields([
