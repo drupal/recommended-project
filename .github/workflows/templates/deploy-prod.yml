@@ -39,7 +39,7 @@ jobs:
           ref: ${{ github.event.release.tag_name }}
 
       # - name: 'Setup nodejs'
-      #   uses: actions/setup-node@v3
+      #   uses: actions/setup-node@v4
       #   with:
       #     node-version-file: 'web/themes/custom/frontend/.nvmrc'
 
@@ -47,6 +47,7 @@ jobs:
         uses: eaudeweb/drupal-install-action@1.x
         with:
           dev: false
+      #    php: /usr/bin/php8.3
 
       - name: 'Create release archive'
         id: artifact
@@ -84,10 +85,12 @@ jobs:
     steps:          
       - name: 'Update the Drupal instance'
         id: release
-        uses: eaudeweb/drupal-update-action@v1.2
+        uses: eaudeweb/drupal-update-action@1.x
         with:
           path: /var/www/html/example.org
           enable_maintenance_mode: ${{ inputs.enable_maintenance_mode }}
+      #    statuscake_api_key: ${{ secrets.STATUSCAKE_API_KEY }}
+      #    statuscake_test_id: ${{ secrets.PROD_STATUSCAKE_ID }}
 
       - name: 'Cleanup old releases'
         uses: eaudeweb/drupal-cleanup-action@1.x

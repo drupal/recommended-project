@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 1
 
       # - name: 'Setup nodejs'
-      #   uses: actions/setup-node@v3
+      #   uses: actions/setup-node@v4
       #   with:
       #     node-version-file: 'web/themes/custom/frontend/.nvmrc'
 
@@ -27,6 +27,7 @@ jobs:
         uses: eaudeweb/drupal-install-action@1.x
         with:
           dev: false
+      #    php: /usr/bin/php8.3
 
       - name: 'Create release archive'
         id: artifact
@@ -63,7 +64,7 @@ jobs:
     steps:
       - name: 'Update the Drupal instance'
         id: release
-        uses: eaudeweb/drupal-update-action@v1.2
+        uses: eaudeweb/drupal-update-action@1.x
         with:
           path: /var/www/html/test.example.org
 
