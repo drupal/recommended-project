@@ -8,8 +8,6 @@ display:
       fields:
         nothing:
           admin_label: Иконка
-        wid:
-          label: WID
         severity:
           label: Важность
         type:

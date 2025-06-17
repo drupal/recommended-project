@@ -23,6 +23,8 @@ display:
           label: Путь
         count:
           label: Количество
+        daily_count:
+          label: 'Кол-во за день'
         timestamp:
           label: 'Последний доступ'
         langcode:

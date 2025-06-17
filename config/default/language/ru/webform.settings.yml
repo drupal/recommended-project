@@ -1,5 +1,7 @@
 settings:
+  default_form_open_message: 'Эта форма ещё не открыта для отправки.'
   default_form_close_message: 'Извините... Эта форма закрыта для новых отправлений.'
+  default_form_exception_message: 'Невозможно отобразить эту веб-форму. Обратитесь к администратору сайта.'
   default_submit_button_label: Отправить
   default_reset_button_label: Сбросить
   default_delete_button_label: Удалить
