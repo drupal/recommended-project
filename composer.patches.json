@@ -3,9 +3,6 @@
     "drupal/advagg": {
       "#3375725 Deprecated function: Creation of dynamic property": "https://www.drupal.org/files/issues/2024-01-16/deprecated-function-creation-of-dynamic-property-3375725-17.patch"
     },
-    "drupal/backup_migrate": {
-      "#3228379 Failed network - error": "https://www.drupal.org/files/issues/2022-02-02/3228379-download-errors-19.patch"
-    },
     "drupal/core": {
       "#2689459 - If you don't want to translate your URL alias, the original URL alias won't work with your translations": "https://www.drupal.org/files/issues/2024-06-26/2689459_d10.3.0.patch",
       "#3101231 - Fix multilingual site's layout edit context issue with TypeError: Argument 1 passed to UrlHelper::buildQuery() must be of the type array, null given": "https://www.drupal.org/files/issues/2022-02-16/layout-builder-translation-issue-3101231-34.patch",
@@ -19,9 +16,6 @@
     },
     "drupal/layout_builder_st": {
       "#3420063 - Error: Call to a member function getConfig() OverridesSectionStorage.php": "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff"
-    },
-    "drupal/adequate_passwords" : {
-      "#3442322 - Skip password validation when installing a site via CLI" : "https://www.drupal.org/files/issues/2024-04-21/3442322-site-install-cli-skip-validation-2.patch"
     }
   }
 }

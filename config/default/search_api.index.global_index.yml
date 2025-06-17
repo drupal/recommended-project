@@ -7,7 +7,6 @@ dependencies:
     - search_api.server.default_server
   module:
     - node
-    - search_api
 id: global_index
 name: 'Global Index'
 description: ''

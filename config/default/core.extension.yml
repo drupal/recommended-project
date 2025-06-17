@@ -3,7 +3,6 @@ _core:
 module:
   adequate_passwords: 0
   admin_toolbar: 0
-  admin_toolbar_links_access_filter: 0
   admin_toolbar_tools: 0
   advagg: 0
   advagg_bundler: 0
@@ -67,6 +66,7 @@ module:
   layout_discovery: 0
   link: 0
   link_attributes: 0
+  link_attributes_menu_link_content: 0
   locale: 0
   media: 0
   media_library: 0

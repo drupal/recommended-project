@@ -12,7 +12,6 @@ blur_client: false
 blur_storage: false
 blur_minwidth: 0
 noscript: false
-responsive_image: false
 one_pixel: true
 placeholder: ''
 unstyled_extensions: ''
@@ -28,3 +27,4 @@ io:
   rootMargin: 0px
   threshold: '0'
   disconnect: false
+max_region_count: 0

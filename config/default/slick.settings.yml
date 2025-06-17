@@ -3,5 +3,4 @@ _core:
 library: slick
 module_css: true
 slick_css: false
-disable_old_skins: true
 sitewide: 1

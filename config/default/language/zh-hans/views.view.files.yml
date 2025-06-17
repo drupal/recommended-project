@@ -28,7 +28,6 @@ display:
           label: 用于
           alter:
             path: 'admin/content/files/usage/{{ fid }}'
-          format_plural_string: !!binary MSDlpIQDQGNvdW50IOWkhA==
       pager:
         options:
           tags:
