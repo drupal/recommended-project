@@ -82,6 +82,7 @@
         }
     ],
     "require": {
+        "php": "^8.3",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/adequate_passwords": "^1.0",
@@ -147,12 +148,13 @@
         "drupal/tfa": "^1.10",
         "drupal/token": "^1.10",
         "drupal/twig_tweak": "^3.4",
+        "drupal/upgrade_status": "^4.3",
         "drupal/views_bulk_operations": "^4.3",
         "drupal/views_data_export": "^1.6",
         "drupal/webform": "^6.2",
         "drupal/webp": "^1.0@beta",
         "drupal/xmlsitemap": "^1.2",
-        "drush/drush": "^12",
+        "drush/drush": "^13",
         "eaudeweb/edw_modules": "dev-main",
         "eaudeweb/heavy-lifter": "^2",
         "npm-asset/select2": "^4.0",
@@ -190,9 +192,6 @@
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
             "tbachert/spi": true
-        },
-        "platform": {
-            "php": "8.1"
         }
     },
     "extra": {

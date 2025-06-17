@@ -59,6 +59,7 @@ $config['clamav.settings']['mode_daemon_tcpip']['port'] = 3310;
  *
  * @see http://php.net/assert
  * @see https://www.drupal.org/node/2492225
+ * @see https://www.drupal.org/node/3391611 
  *
  * It is strongly recommended that you set zend.assertions=1 in the PHP.ini file
  * (It cannot be changed from .htaccess or runtime) on development machines and
@@ -66,8 +67,7 @@ $config['clamav.settings']['mode_daemon_tcpip']['port'] = 3310;
  *
  * @see https://wiki.php.net/rfc/expectations
  */
-assert_options(ASSERT_ACTIVE, TRUE);
-assert_options(ASSERT_EXCEPTION, TRUE);
+ini_set('zend.assertions', 1);
 
 /**
  * Enable local development services.
