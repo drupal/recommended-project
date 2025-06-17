@@ -8,6 +8,8 @@ display:
       fields:
         nothing:
           admin_label: Icono
+        wid:
+          label: WID
         severity:
           label: Gravedad
         type:

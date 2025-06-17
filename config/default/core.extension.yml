@@ -4,10 +4,6 @@ module:
   adequate_passwords: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
-  advagg: 0
-  advagg_bundler: 0
-  advagg_css_minify: 0
-  advagg_js_minify: 0
   ajax_loader: 0
   allowed_formats: 0
   autologout: 0

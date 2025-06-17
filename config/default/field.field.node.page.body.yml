@@ -7,12 +7,7 @@ dependencies:
     - filter.format.full_html
     - node.type.page
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - full_html
 id: node.page.body
 field_name: body
 entity_type: node

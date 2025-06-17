@@ -28,6 +28,7 @@ display:
           label: 'Используется в'
           alter:
             path: 'admin/content/files/usage/{{ fid }}'
+          format_plural_string: !!binary QGNvdW50INC80LXRgdGC0L4DQGNvdW50INC80LXRgdGC0LADQGNvdW50INC80LXRgdGC
       pager:
         options:
           tags:

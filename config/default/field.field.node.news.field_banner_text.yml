@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_banner_text
+    - filter.format.full_html
     - node.type.news
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - full_html
 id: node.news.field_banner_text
 field_name: field_banner_text
 entity_type: node
@@ -23,5 +19,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - full_html
 field_type: text_long

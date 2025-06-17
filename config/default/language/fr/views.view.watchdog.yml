@@ -8,6 +8,8 @@ display:
       fields:
         nothing:
           admin_label: Icône
+        wid:
+          label: WID
         severity:
           label: Importance
         type:
