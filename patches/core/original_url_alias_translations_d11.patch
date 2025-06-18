@@ -1,0 +1,140 @@
+diff --git a/core/modules/path/src/Plugin/Field/FieldType/PathFieldItemList.php b/core/modules/path/src/Plugin/Field/FieldType/PathFieldItemList.php
+index 08710f94..fb71ebd2 100644
+--- a/core/modules/path/src/Plugin/Field/FieldType/PathFieldItemList.php
++++ b/core/modules/path/src/Plugin/Field/FieldType/PathFieldItemList.php
+@@ -4,6 +4,7 @@ namespace Drupal\path\Plugin\Field\FieldType;
+ 
+ use Drupal\Core\Access\AccessResult;
+ use Drupal\Core\Field\FieldItemList;
++use Drupal\Core\Language\LanguageInterface;
+ use Drupal\Core\Session\AccountInterface;
+ use Drupal\Core\TypedData\ComputedItemListTrait;
+ 
+@@ -20,8 +21,6 @@ class PathFieldItemList extends FieldItemList {
+   protected function computeValue() {
+     // Default the langcode to the current language if this is a new entity or
+     // there is no alias for an existent entity.
+-    // @todo Set the langcode to not specified for untranslatable fields
+-    //   in https://www.drupal.org/node/2689459.
+     $value = ['langcode' => $this->getLangcode()];
+ 
+     $entity = $this->getEntity();
+@@ -35,6 +34,12 @@ class PathFieldItemList extends FieldItemList {
+           'pid' => $path_alias['id'],
+           'langcode' => $path_alias['langcode'],
+         ];
++
++        // Set the langcode to not specified for untranslatable fields.
++        if (!$entity->isTranslatable() || !$this->getFieldDefinition()
++            ->isTranslatable()) {
++          $value['langcode'] = LanguageInterface::LANGCODE_NOT_SPECIFIED;
++        }
+       }
+     }
+ 
+@@ -57,11 +62,30 @@ class PathFieldItemList extends FieldItemList {
+   public function delete() {
+     // Delete all aliases associated with this entity in the current language.
+     $entity = $this->getEntity();
++    
++    // If neither the path field nor entity being deleted is translatable,
++    // delete alias with LANGCODE_NOT_SPECIFIED.
++    if (!$entity->isTranslatable() || !$this->getFieldDefinition()
++        ->isTranslatable()) {
++      $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED;
++    }
++    else {
++      $langcode = $entity->language()->getId();
++    }
++    
+     $path_alias_storage = \Drupal::entityTypeManager()->getStorage('path_alias');
+-    $entities = $path_alias_storage->loadByProperties([
++    $conditions = [
+       'path' => '/' . $entity->toUrl()->getInternalPath(),
+-      'langcode' => $entity->language()->getId(),
+-    ]);
++      'langcode' => $langcode,
++    ];
++    $entity_langcode = $entity->language()->getId();
++    $original_entity_langcode = $entity->getUntranslated()->language()->getId();
++    // If the entity being deleted is not translated, delete the path alias
++    // with the langcode LANGCODE_NOT_SPECIFIED.
++    if ($entity_langcode == $original_entity_langcode) {
++      $conditions['langcode'] = LanguageInterface::LANGCODE_NOT_SPECIFIED;
++    }
++    $entities = $path_alias_storage->loadByProperties($conditions);
+     $path_alias_storage->delete($entities);
+   }
+ 
+diff --git a/core/modules/path/src/Plugin/Field/FieldType/PathItem.php b/core/modules/path/src/Plugin/Field/FieldType/PathItem.php
+index 6dd9111b..d9326a85 100644
+--- a/core/modules/path/src/Plugin/Field/FieldType/PathItem.php
++++ b/core/modules/path/src/Plugin/Field/FieldType/PathItem.php
+@@ -7,6 +7,7 @@ use Drupal\Core\Field\Attribute\FieldType;
+ use Drupal\Core\Field\FieldDefinitionInterface;
+ use Drupal\Core\Field\FieldItemBase;
+ use Drupal\Core\Field\FieldStorageDefinitionInterface;
++use Drupal\Core\Language\LanguageInterface;
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
+ use Drupal\Core\TypedData\DataDefinition;
+ 
+@@ -71,7 +72,15 @@ class PathItem extends FieldItemBase {
+     // existing language of an alias can be kept. That could for example be
+     // unspecified even if the field/entity has a specific langcode.
+     $alias_langcode = ($this->langcode && $this->pid) ? $this->langcode : $this->getLangcode();
+-
++    $moduleHandler = \Drupal::service('module_handler');
++    if ($moduleHandler->moduleExists('content_translation') && !$moduleHandler->moduleExists('workspaces')) {
++      // If either entity or the path field is non-translatable, use 'und'.
++      if (!$entity->isTranslatable() || !$this->getFieldDefinition()
++          ->isTranslatable()) {
++        $alias_langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED;
++      }
++    }
++    
+     // If we have an alias, we need to create or update a path alias entity.
+     if ($this->alias) {
+       if (!$update || !$this->pid) {
+diff --git a/core/modules/path/src/Plugin/Field/FieldWidget/PathWidget.php b/core/modules/path/src/Plugin/Field/FieldWidget/PathWidget.php
+index 83792952..368772e9 100644
+--- a/core/modules/path/src/Plugin/Field/FieldWidget/PathWidget.php
++++ b/core/modules/path/src/Plugin/Field/FieldWidget/PathWidget.php
+@@ -6,6 +6,7 @@ use Drupal\Core\Field\Attribute\FieldWidget;
+ use Drupal\Core\Field\FieldItemListInterface;
+ use Drupal\Core\Field\WidgetBase;
+ use Drupal\Core\Form\FormStateInterface;
++use Drupal\Core\Language\LanguageInterface;
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
+ use Symfony\Component\Validator\ConstraintViolationInterface;
+ 
+@@ -24,7 +25,11 @@ class PathWidget extends WidgetBase {
+    */
+   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+     $entity = $items->getEntity();
+-
++    $langcode = $items[$delta]->langcode;
++    if (!$entity->get('path')->getFieldDefinition()->isTranslatable()) {
++      $langcode = LanguageInterface::LANGCODE_NOT_SPECIFIED;
++    }
++    
+     $element += [
+       '#element_validate' => [[static::class, 'validateFormElement']],
+     ];
+@@ -38,7 +43,7 @@ class PathWidget extends WidgetBase {
+     ];
+     $element['pid'] = [
+       '#type' => 'value',
+-      '#value' => $items[$delta]->pid,
++      '#value' => $langcode === LanguageInterface::LANGCODE_NOT_SPECIFIED || $items->getLangcode() === $langcode ? $items[$delta]->pid : NULL,
+     ];
+     $element['source'] = [
+       '#type' => 'value',
+@@ -46,7 +51,7 @@ class PathWidget extends WidgetBase {
+     ];
+     $element['langcode'] = [
+       '#type' => 'value',
+-      '#value' => $items[$delta]->langcode,
++      '#value' => $langcode,
+     ];
+ 
+     // If the advanced settings tabs-set is available (normally rendered in the
