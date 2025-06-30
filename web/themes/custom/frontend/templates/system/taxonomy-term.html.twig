@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a taxonomy term.
+ */
+#}
+
+{%
+  set classes = [
+    'term',
+    'term--' ~ term.bundle|clean_class,
+    'term--' ~ view_mode|clean_class,
+    'term--' ~ term.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {% if name %}
+    {{ name }}
+  {% endif %}
+  {{ title_suffix }}
+
+  {{ content }}
+</div>

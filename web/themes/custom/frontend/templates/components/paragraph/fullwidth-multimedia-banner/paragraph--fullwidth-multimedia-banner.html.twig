@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a paragraph.
+ */
+#}
+
+{{- attach_library('frontend/p--fullwidth-multimedia-banner') -}}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--'~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+] %}
+
+<div{{attributes.addClass(classes).setAttribute('id',content.field_section_id.0['#context'].value)}}>
+  <div class="w--top{{ content.field_add_dark_layout_for_image.0['#markup'] ? ' bg-darked' }}">
+    {{- content.field_background_banner -}}
+
+    <div class="w--top--content">
+      {{- content.field_title -}}
+      {{- content.field_button -}}
+    </div>
+  </div>
+
+  {{- content|without('field_title', 'field_button', 'field_background_banner', 'field_add_dark_layout_for_image') -}}
+</div>

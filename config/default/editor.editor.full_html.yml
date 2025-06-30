@@ -11,32 +11,30 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
-      - sourceEditing
+      - link
+      - heading
+      - style
+      - undo
+      - '|'
+      - link
       - '|'
       - bold
-      - italic
       - underline
+      - italic
       - strikethrough
       - subscript
       - superscript
       - '|'
-      - undo
-      - redo
-      - '|'
-      - heading
-      - '|'
-      - link
-      - '-'
+      - alignment
       - bulletedList
       - numberedList
-      - '|'
-      - drupalMedia
+      - outdent
+      - indent
       - '|'
       - blockQuote
       - insertTable
-      - specialCharacters
       - '|'
-      - alignment
+      - drupalMedia
       - '|'
       - removeFormat
       - '|'
@@ -44,6 +42,8 @@ settings:
       - bootstrapGrid
       - '|'
       - code
+      - sourceEditing
+      - horizontalLine
   plugins:
     ckeditor5_alignment:
       enabled_alignments:
@@ -64,7 +64,7 @@ settings:
         startIndex: true
       multiBlock: true
     ckeditor5_paste_filter_pasteFilter:
-      enabled: false
+      enabled: true
       filters:
         -
           enabled: true
@@ -161,9 +161,22 @@ settings:
         - lg
         - xl
         - xxl
+    ckeditor5_style:
+      styles:
+        -
+          label: Button
+          element: '<a class="btn btn-outline btn-primary">'
+        -
+          label: 'Read more link'
+          element: '<a class="read-more-link">'
     editor_advanced_link_link:
       enabled_attributes:
+        - aria-label
+        - class
+        - id
+        - rel
         - target
+        - title
     media_media:
       allow_view_mode_override: false
 image_upload:

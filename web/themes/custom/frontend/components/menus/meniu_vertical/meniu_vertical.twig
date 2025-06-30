@@ -1,0 +1,82 @@
+{#
+/**
+  * @file
+  * Menu vertical component.
+  *
+  * Available properties:
+  * - icon (string) (default: icon)
+  *
+  * Availabel Utility classes -> uc
+  * - menu_vertical_uc (array) (default: '')
+  *
+  * Availabel attributes -> att
+  * - menu_vertical_att (Drupal\Core\Template\Attribute)
+  *
+  * Availabel slots
+  * - content: The content for the button
+  *
+  * usage example: @see README.md
+  *
+  */
+#}
+
+{# Set default value #}
+{% set icon = icon|default('<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/></svg>') %}
+
+{# Array add in macros #}
+{% set comp_vars = {
+  'icon': icon,
+  'class': [],
+} %}
+
+{# Render component #}
+{% import _self as menus %}
+
+<nav class="c--nav c--nav--{{ menu_name }}">
+  {{ menus.menu_links(items, attributes, 0, comp_vars) }}
+</nav>
+
+{% macro menu_links(items, attributes, menu_level, comp_vars) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% set ul_classes = [
+      menu_level == 0 ? '',
+    ] %}
+
+    <ul{{attributes.addClass(ul_classes)}}>
+      {% for item in items %}
+        {% set classes_list = [
+          'nav-item',
+          item.below ? 'is-dropdown',
+        ] %}
+
+        {% set classes_link = [
+          'nav-link',
+          'nav-link--level-'~menu_level,
+          item.in_active_trail ? 'active',
+          item.below ? 'is-collapsed',
+        ] %}
+
+        <li{{item.attributes.addClass(classes_list)}}>
+          {% if item.below %}
+            <details class="nav-details"{{ item.in_active_trail ? ' open' }}>
+              <summary>
+                {{ link(item.title, item.url, { 'class': classes_link}) }}
+
+                <span class="toggle" aria-hidden="true">
+                  {{- comp_vars.icon|raw -}}
+                </span>
+              </summary>
+
+              <div class="details-content">
+                {{ menus.menu_links(item.below, attributes, menu_level + 1, comp_vars) }}
+              </div>
+            </details>
+          {% else %}
+            {{ link(item.title, item.url, { 'class': classes_link }) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

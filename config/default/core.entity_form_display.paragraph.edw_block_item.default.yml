@@ -1,0 +1,40 @@
+uuid: 6ff83d42-23e4-436c-8177-8113cd5e12e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_block_item.field_block
+    - paragraphs.paragraphs_type.edw_block_item
+  module:
+    - block_field
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: UqKiyuTIQ0c7ZUV-yp4R3uxyFZokPw0UelNclLnu5iY
+id: paragraph.edw_block_item.default
+targetEntityType: paragraph
+bundle: edw_block_item
+mode: default
+content:
+  field_block:
+    type: block_field_default
+    weight: 0
+    region: content
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

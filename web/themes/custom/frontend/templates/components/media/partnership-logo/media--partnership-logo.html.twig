@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to present a media item.
+ */
+#}
+
+
+<a href="{{ content.field_url.0 }}" alt="{{ content.field_media_image_1.0['#item'].alt }}">
+  {{ content|without('field_url') }}
+</a>

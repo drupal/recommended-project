@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Frontend override for a field.
+ */
+#}
+
+{%
+  set classes = [
+    'field',
+    field_name|clean_class,
+    'd-flex',
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {% for item in items %}
+    {{ item.content }}
+    <svg width="16" height="21" viewbox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.6531 11.9751L2 11.9751L2 10.2251L12.6531 10.2251L7.75313 5.3251L9 4.1001L16 11.1001L9 18.1001L7.75313 16.8751L12.6531 11.9751Z" fill="#647A0F"/>
+    </svg>
+  {% endfor %}
+</div>

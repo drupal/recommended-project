@@ -1,0 +1,17 @@
+uuid: 16d95c06-2ae3-47dd-b3e1-a9d867126ec7
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: zgmgOM135LthHOnYLSAufXMIimcGrC1CGVMhrWSQUy0
+id: edw_accordion
+label: Accordion
+icon_uuid: null
+icon_default: null
+description: 'Accordions are a collection of collapsible items, each of which is composed by the following fields: an icon, a title and a long text.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

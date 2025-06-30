@@ -1,0 +1,25 @@
+uuid: 5cc927bf-a519-4f49-8b77-1323dbe01ca5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery_display_mode
+    - paragraphs.paragraphs_type.edw_gallery
+  module:
+    - options
+_core:
+  default_config_hash: STSquJS3GbqLxBW0OHezWm2iZGG8t_rKg715asnW9CU
+id: paragraph.edw_gallery.field_gallery_display_mode
+field_name: field_gallery_display_mode
+entity_type: paragraph
+bundle: edw_gallery
+label: 'Gallery mode'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: inline
+default_value_callback: ''
+settings: {  }
+field_type: list_string

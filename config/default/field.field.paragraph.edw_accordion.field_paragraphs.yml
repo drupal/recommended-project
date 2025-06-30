@@ -1,0 +1,60 @@
+uuid: 9c272985-9a0d-4167-9cac-95a57cf41b0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.edw_accordion
+    - paragraphs.paragraphs_type.edw_accordion_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: gKRwjTh7j9jjIoOMsmGZXrp4Z8v2r3dL4zqavmNpGMQ
+id: paragraph.edw_accordion.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: edw_accordion
+label: 'Accordion items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      edw_accordion_item: edw_accordion_item
+    negate: 0
+    target_bundles_drag_drop:
+      edw_accordion:
+        weight: 5
+        enabled: false
+      edw_accordion_item:
+        weight: 6
+        enabled: true
+      edw_carousel:
+        weight: 13
+        enabled: false
+      edw_carousel_item:
+        weight: 14
+        enabled: false
+      edw_container:
+        weight: 15
+        enabled: false
+      edw_gallery:
+        weight: 16
+        enabled: false
+      edw_image:
+        weight: 17
+        enabled: false
+      edw_tab:
+        weight: 18
+        enabled: false
+      edw_tabs:
+        weight: 19
+        enabled: false
+      edw_view:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

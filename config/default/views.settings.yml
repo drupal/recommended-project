@@ -10,7 +10,7 @@ ui:
     performance_statistics: false
     preview_information: true
     sql_query:
-      enabled: false
+      enabled: true
       where: above
     display_embed: false
   always_live_preview: true

@@ -1,0 +1,26 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Page layout
+status: experimental
+description: 'Page layout description'
+
+props:
+  type: object
+  properties:
+    page_layout_classes:
+      type: array
+      items:
+        type: string
+      title: Page layout Classes
+      default: []
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+slots:
+  header:
+    title: header
+    description: Default content text for the tab.
+  content:
+    title: Content
+    description: Default content text for the tab.
+  footer:
+    title: Footer
+    description: Default content text for the tab.

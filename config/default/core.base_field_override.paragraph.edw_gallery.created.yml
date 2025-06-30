@@ -1,0 +1,18 @@
+uuid: 59c5538a-ad53-4e2e-8525-191b02bd6133
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_gallery
+id: paragraph.edw_gallery.created
+field_name: created
+entity_type: paragraph
+bundle: edw_gallery
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

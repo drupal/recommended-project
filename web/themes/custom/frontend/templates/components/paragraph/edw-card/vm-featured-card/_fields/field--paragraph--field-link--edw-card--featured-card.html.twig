@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Frontend override for a field.
+ */
+#}
+
+{% set classes = [
+  'field',
+  field_name|clean_class,
+] %}
+
+<div{{attributes.addClass(classes)}}>
+  {% for item in items %}
+    <a href="{{ item.content }}" class="text-secondary fw-semibold read-more-link">
+      {{- "Read more"|t -}}
+    </a>
+  {% endfor %}
+</div>

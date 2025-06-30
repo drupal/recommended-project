@@ -1,0 +1,43 @@
+.paragraph--edw-card--default {
+  --card-bg: var(--c-gray-100);
+  --card-sy: 40px;
+  --card-sx: 40px;
+  --card-body--direction: column;
+
+  margin-inline: calc(var(--card-sy) * -1);
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &.body-img {
+    .card-body {
+      gap: 30px;
+    }
+
+    .field-media {
+      flex: 0 0 min(45%, 540px);
+    }
+  }
+
+  ul {
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-top: 8px;
+    }
+  }
+
+  @media (--lg) {
+    &.img-right {
+      --card-body--direction: row-reverse;
+    }
+
+    &.img-left {
+      --card-body--direction: row;
+    }
+  }
+}

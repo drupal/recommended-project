@@ -1,0 +1,21 @@
+uuid: e9e8db1f-a18b-4007-9b3b-55a5d116dbcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.edw_card
+  module:
+    - options
+id: paragraph.edw_card.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: edw_card
+label: Color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

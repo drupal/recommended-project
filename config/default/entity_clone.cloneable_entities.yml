@@ -1,0 +1,5 @@
+cloneable_entities:
+  - media
+  - node
+  - taxonomy_term
+  - paragraph

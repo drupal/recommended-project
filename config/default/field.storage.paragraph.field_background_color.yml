@@ -1,0 +1,35 @@
+uuid: 1326240f-f9b2-49ea-999d-7b86678e1190
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: qeyxPjEGedceUH7EgDidKgSALYVB3vuGkAG1TQ_fw8M
+id: paragraph.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: primary
+      label: Primary
+    -
+      value: secondary
+      label: Secondary
+    -
+      value: background_1
+      label: 'Gray Ultralight'
+    -
+      value: background_2
+      label: Black
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

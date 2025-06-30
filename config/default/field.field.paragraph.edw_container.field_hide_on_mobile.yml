@@ -1,0 +1,23 @@
+uuid: d7a63db9-b733-467f-a02b-bcfc179710da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hide_on_mobile
+    - paragraphs.paragraphs_type.edw_container
+_core:
+  default_config_hash: 6uFRwk-oLPGdCGQ9AC35ph2eVcZaxXm7M0G2AzIFdPI
+id: paragraph.edw_container.field_hide_on_mobile
+field_name: field_hide_on_mobile
+entity_type: paragraph
+bundle: edw_container
+label: 'Hide on mobile'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,22 @@
+uuid: 8ad3e7de-59dd-4412-8729-4726fa28384d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_accordion
+id: paragraph.edw_accordion.status
+field_name: status
+entity_type: paragraph
+bundle: edw_accordion
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,21 @@
+uuid: b5255863-3f00-47d8-b695-623eeb00e0f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.edw_rich_text
+_core:
+  default_config_hash: gWSYm9ioUAFUeX0Ly94JPAPa8MiWEAybL_iYd2fugVA
+id: paragraph.edw_rich_text.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: edw_rich_text
+label: Title
+description: 'An optional title to show above the text.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

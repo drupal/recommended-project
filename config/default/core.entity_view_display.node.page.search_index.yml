@@ -1,0 +1,102 @@
+uuid: c31ed011-3eff-449a-8bba-899e8c5e660b
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.page.body
+    - field.field.node.page.field_banner_content
+    - field.field.node.page.field_banner_image
+    - field.field.node.page.field_content
+    - field.field.node.page.field_image
+    - field.field.node.page.field_metatags
+    - field.field.node.page.layout_builder__translation
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_builder_restrictions
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks:
+        'Content fields':
+          - 'field_block:node:page:uid'
+          - 'field_block:node:page:created'
+          - 'field_block:node:page:changed'
+          - 'field_block:node:page:type'
+          - 'field_block:node:page:revision_default'
+          - 'field_block:node:page:default_langcode'
+          - 'field_block:node:page:nid'
+          - 'field_block:node:page:langcode'
+          - 'extra_field_block:node:page:links'
+          - 'field_block:node:page:menu_link'
+          - 'field_block:node:page:field_metatags'
+          - 'field_block:node:page:promote'
+          - 'field_block:node:page:status'
+          - 'field_block:node:page:revision_timestamp'
+          - 'field_block:node:page:vid'
+          - 'field_block:node:page:revision_log'
+          - 'field_block:node:page:revision_translation_affected'
+          - 'field_block:node:page:revision_uid'
+          - 'field_block:node:page:sticky'
+          - 'field_block:node:page:content_translation_outdated'
+          - 'field_block:node:page:content_translation_source'
+          - 'field_block:user:user:changed'
+          - 'field_block:user:user:created'
+          - 'field_block:user:user:default_langcode'
+          - 'field_block:user:user:mail'
+          - 'field_block:user:user:init'
+          - 'field_block:user:user:langcode'
+          - 'field_block:user:user:access'
+          - 'field_block:user:user:login'
+          - 'extra_field_block:user:user:member_for'
+          - 'field_block:user:user:name'
+          - 'field_block:user:user:preferred_admin_langcode'
+          - 'field_block:user:user:preferred_langcode'
+          - 'field_block:user:user:roles'
+          - 'field_block:user:user:timezone'
+          - 'field_block:user:user:uid'
+          - 'field_block:user:user:status'
+      allowlisted_blocks:
+        Webform:
+          - webform_block
+        core:
+          - page_title_block
+      restricted_categories:
+        - 'Chaos Tools'
+        - Forms
+        - Menus
+        - System
+id: node.page.search_index
+targetEntityType: node
+bundle: page
+mode: search_index
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_banner_content: true
+  field_banner_image: true
+  field_banner_text: true
+  field_image: true
+  field_metatags: true
+  langcode: true
+  layout_builder__layout: true
+  layout_builder__translation: true
+  links: true
+  search_api_excerpt: true

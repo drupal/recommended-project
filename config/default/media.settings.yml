@@ -3,4 +3,4 @@ _core:
 icon_base_uri: 'public://media-icons/generic'
 iframe_domain: null
 oembed_providers_url: 'https://oembed.com/providers.json'
-standalone_url: false
+standalone_url: true

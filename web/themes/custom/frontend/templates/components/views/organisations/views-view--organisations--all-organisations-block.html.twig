@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Frontend override for a main view template.
+ */
+#}
+{{ attach_library('frontend/v--grid--organisations') }}
+
+{%
+  set classes = [
+    'view',
+    'view--' ~ id|clean_class,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'bgf-primary',
+    'py-100',
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+
+  {% if rows %}
+    <div class="view-content bg-white rounded p--4 grid-supporters toggleable-grid close">
+      {{ rows }}
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+
+  {% if exposed %}
+    <div class="view-filters">
+      {{ exposed }}
+    </div>
+  {% endif %}
+
+  {% if footer %}
+    <div class="view-footer">
+      <button class="js--show-all btn btn-secondary" type="button">
+        {{- footer -}}
+      </button>
+    </div>
+  {% endif %}
+</div>

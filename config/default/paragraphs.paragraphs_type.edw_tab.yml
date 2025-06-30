@@ -1,0 +1,17 @@
+uuid: 9e3ac34b-feef-47cb-b31a-fa08397f9992
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: XsujEF3eIDnkAxu065tQyXNZr4EW054BZPfH6RLjIMY
+id: edw_tab
+label: Tab
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

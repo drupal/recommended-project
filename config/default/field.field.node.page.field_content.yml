@@ -1,0 +1,110 @@
+uuid: 572d07ae-f8c8-4709-a94b-c9d77db490d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.page
+    - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.edw_accordion
+    - paragraphs.paragraphs_type.edw_block_item
+    - paragraphs.paragraphs_type.edw_card
+    - paragraphs.paragraphs_type.edw_carousel
+    - paragraphs.paragraphs_type.edw_container
+    - paragraphs.paragraphs_type.edw_content_reference
+    - paragraphs.paragraphs_type.edw_gallery
+    - paragraphs.paragraphs_type.edw_image
+    - paragraphs.paragraphs_type.edw_rich_text
+    - paragraphs.paragraphs_type.edw_view
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: UprUC-CjXQf1drib3g7n740sWEH8wOeG2RdJhR6t8-Y
+id: node.page.field_content
+field_name: field_content
+entity_type: node
+bundle: page
+label: Content
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      edw_accordion: edw_accordion
+      edw_card: edw_card
+      edw_carousel: edw_carousel
+      edw_container: edw_container
+      edw_content_reference: edw_content_reference
+      edw_gallery: edw_gallery
+      edw_image: edw_image
+      edw_rich_text: edw_rich_text
+      edw_view: edw_view
+      cards: cards
+      edw_block_item: edw_block_item
+    negate: 0
+    target_bundles_drag_drop:
+      cards:
+        weight: 21
+        enabled: true
+      edw_accordion:
+        weight: -37
+        enabled: true
+      edw_accordion_item:
+        weight: -36
+        enabled: false
+      edw_block_item:
+        weight: 22
+        enabled: true
+      edw_button:
+        weight: -35
+        enabled: false
+      edw_card:
+        weight: -34
+        enabled: true
+      edw_carousel:
+        weight: -33
+        enabled: true
+      edw_carousel_item:
+        weight: -32
+        enabled: false
+      edw_columns:
+        weight: -31
+        enabled: false
+      edw_container:
+        weight: -30
+        enabled: true
+      edw_content_reference:
+        weight: -29
+        enabled: true
+      edw_gallery:
+        weight: -28
+        enabled: true
+      edw_image:
+        weight: -27
+        enabled: true
+      edw_links_block:
+        weight: -25
+        enabled: false
+      edw_quote:
+        weight: -24
+        enabled: false
+      edw_rich_text:
+        weight: -23
+        enabled: true
+      edw_tab:
+        weight: -21
+        enabled: false
+      edw_tabs:
+        weight: -22
+        enabled: false
+      edw_view:
+        weight: -20
+        enabled: true
+      layout_columns:
+        weight: -26
+        enabled: false
+field_type: entity_reference_revisions

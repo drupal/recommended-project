@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ */
+#}
+
+{{ attach_library('frontend/n--news--full') }}
+
+{% set classes = [
+  'node',
+  'node--' ~ node.bundle|clean_class,
+  view_mode ? 'node--' ~ view_mode|clean_class,
+  view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+] %}
+
+<article{{attributes.addClass(classes)}}>
+  <div class="article-top-gr"></div>
+
+  <div class="container">
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <div class="node--header">
+      {{- content.field_news_types -}}
+      <h1{{title_attributes.addClass('node--title','h2')}}>
+        {{- label.0 -}}
+      </h1>
+      {{- content.field_image -}}
+    </div>
+
+    <div{{content_attributes.addClass('node--content','d-flex')}}>
+      {{- content|without('field_news_types', 'field_image',) -}}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,65 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Content layout sidebar (cls)
+status: experimental
+description: 'Content layout sidebar description'
+
+props:
+  type: object
+  properties:
+    comp_att:
+      type: Drupal\Core\template\Attribute
+      title: Component attribute
+      description: Wrapper component attributes
+
+    slotSidebar_att:
+      type: Drupal\Core\template\Attribute
+      title: Component attribute
+      description: Wrapper component attributes
+
+    slotContent_att:
+      type: Drupal\Core\template\Attribute
+      title: Component attribute
+      description: Wrapper component attributes
+
+    cls__layout_type:
+      type: string
+      title: Layout type
+      description: Layout type [col_1, col_1_full, col_2_sidebar].
+      default: col_1
+      enum:
+        - col_1
+        - col_1_full
+        - col_2_sidebar
+        - full
+
+    comp_classes:
+      type: array
+      items:
+        type: string
+      title: Content layout sidebar classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+    slotSidebar_classes:
+      type: array
+      items:
+        type: string
+      title: Content layout sidebar classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+    slotContent_classes:
+      type: array
+      items:
+        type: string
+      title: Content layout sidebar classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+slots:
+  cls_addons:
+    title: Addons
+    description: "Addons slot used for (like exemple) title_prefix or title_suffix or some other information."
+  sidebar:
+    title: sidebar
+    description: Default content text for the tab.
+  content:
+    title: Content
+    description: Default content text for the tab.

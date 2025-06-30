@@ -1,0 +1,40 @@
+{#
+/**
+  * @file
+  * Page layout component.
+  *
+  * Available properties:
+  * - page_layout_classes: []
+  *
+  * usage example: @see README.md
+  */
+#}
+
+{% set page_layout_attributes = page_layout_attributes ?: create_attribute() %}
+
+{%
+  set page_layout_classes = [
+    'page-layout',
+    'min-height',
+  ]|merge(page_layout_classes ?: [])
+%}
+
+{% set page_layout_attributes = page_layout_attributes.addClass(page_layout_classes) %}
+
+<div{{page_layout_attributes}}>
+  {{- page.top_region -}}
+
+  {% block header %}
+    {%- include '@frontend/components/sections/header/header--default.html.twig' with {} -%}
+  {% endblock %}
+
+  {% block content %}
+    {% include "frontend:section-main" %}
+  {% endblock %}
+
+  {% block footer %}
+    {% include '@edwt/components/sections/footer/footer.html.twig' %}
+  {% endblock %}
+
+  {{- page.bottom_fixed -}}
+</div>

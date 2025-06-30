@@ -1,0 +1,17 @@
+uuid: 3b78176a-d17f-4db5-860a-436e73b3d6f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: q--QKnR3K2ISSxtRCS_H7qKq_4_jXGcXOAqMUSWZTjw
+id: edw_block_item
+label: 'Block reference'
+icon_uuid: null
+icon_default: null
+description: 'Simple block used to add custom content.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

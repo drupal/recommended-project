@@ -1,0 +1,47 @@
+uuid: ba1bc553-df7b-483d-bf19-0eef55e80931
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: xXp8Ker_YKUZuvGWl5gEtzS8_UpdtCa9MyUbwgPB50M
+id: paragraph.field_columns_layout
+field_name: field_columns_layout
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '100'
+      label: 100%
+    -
+      value: 50-50
+      label: 50%-50%
+    -
+      value: 25-75
+      label: 25%-75%
+    -
+      value: 75-25
+      label: 75%-25%
+    -
+      value: 33-66
+      label: 33%-66%
+    -
+      value: 66-33
+      label: 66%-33%
+    -
+      value: 33-33-33
+      label: 33%-33%-33%
+    -
+      value: 25-25-25-25
+      label: 25%-25%-25%-25%
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,6 @@
+.block--logo-list {
+  .block--content {
+    display: flex;
+    gap: 60px;
+  }
+}

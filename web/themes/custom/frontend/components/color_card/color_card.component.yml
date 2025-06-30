@@ -1,0 +1,65 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Color card
+status: stable
+version: 1.0.0
+group: Frontend
+description: Card with many colors
+
+# Props.
+props:
+  type: object
+  properties:
+    # properties
+    color_card__color:
+      type: ['string', 'null']
+      title: Card color
+
+    color_card__link_icon:
+      type: ['boolean', 'null']
+      title: Card link color
+
+    # values
+    color_card__context_label:
+      type: ['string', 'null']
+      title: Context Label
+
+    color_card__title:
+      type: ['string', 'null']
+      title: Title
+
+    color_card__content:
+      type: string
+      title: Content
+
+    color_card__image:
+      type: ['array', 'string', 'null']
+      title: Content
+
+    color_card__links:
+      type: ['string', 'object', 'array', 'null']
+      title: Links
+
+    # uc -> utility_classes
+    color_card_uc:
+      type: array
+      items:
+        type: string
+      title: Color card Utility Classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+      default: []
+
+    # att -> attributes
+    color_card_att:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: A list of HTML attributes for the Color card.
+
+# Slots.
+slots:
+  slot_content:
+    title: Content slot
+    description: Default content text for the Color card.
+
+  slot_links:
+    title: Links slot
+    description: Links for the Color card.

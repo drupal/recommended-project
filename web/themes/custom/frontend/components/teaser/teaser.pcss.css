@@ -1,0 +1,72 @@
+.card--teaser {
+  display: var(--card--teaser_display, flex);
+  overflow: var(--card--teaser_overflow, hidden);
+
+  &.card--direction-horizontal {
+    flex-direction: var(--card--direction-horizontal_direction, column);
+    border-radius: var(--br);
+
+    .card-body > a {
+      margin-block-start: 20px;
+    }
+
+    .field-body {
+      flex-grow: 1;
+    }
+  }
+
+  .card--title:not(:empty) {
+    --_h-mb: 20px;
+  }
+
+  .card--body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+
+  .card--img {
+    & > div {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.term--organizations--teaser {
+    .field-image {
+      padding: 20px;
+      background: var(--c-white);
+    }
+    .card--img {
+      img {
+        object-fit: contain;
+        max-height: 274px;
+      }
+    }
+  }
+
+  &:has(.img--out) {
+    .card--body {
+      padding: var(--_card_s);
+    }
+  }
+
+  &:has(.img--in) {
+    gap: var(--_card_s);
+    padding: var(--_card_s);
+  }
+
+  @media (--md) {
+    --card--direction-horizontal_direction: row;
+
+    .card--img {
+      flex: 1 0 240px;
+    }
+  }
+}

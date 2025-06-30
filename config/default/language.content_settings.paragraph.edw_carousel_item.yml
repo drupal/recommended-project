@@ -1,0 +1,20 @@
+uuid: c54f0ee6-684c-47a5-bc3f-9939efc9203c
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_carousel_item
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+_core:
+  default_config_hash: zEpHeMz1U_3BcNY1si6hxLztoCFO-gJRyAsAsJVxDGg
+id: paragraph.edw_carousel_item
+target_entity_type_id: paragraph
+target_bundle: edw_carousel_item
+default_langcode: site_default
+language_alterable: true

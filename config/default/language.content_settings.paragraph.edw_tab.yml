@@ -1,0 +1,20 @@
+uuid: 3c05c2a7-5ba3-415f-a3db-99f253e75443
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_tab
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+_core:
+  default_config_hash: 40FFvVlbJDHPRtydAga2pv4J9K8j3-GNQtUzrY84QnM
+id: paragraph.edw_tab
+target_entity_type_id: paragraph
+target_bundle: edw_tab
+default_langcode: site_default
+language_alterable: true

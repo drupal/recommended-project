@@ -1,0 +1,17 @@
+uuid: 8bd28d8e-0850-4905-af52-716a98886157
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: ZG1QkD8-DBjVylAzOar44Cy5Jq1lzupr3955FoAl0KY
+id: edw_columns
+label: Columns
+icon_uuid: null
+icon_default: null
+description: 'Display multiple paragraphs organized in columns.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

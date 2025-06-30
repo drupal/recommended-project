@@ -1,0 +1,49 @@
+{#
+/**
+  * @file
+  * Page layout component.
+  *
+  * Available properties:
+  * - wsidebar_classes: []
+  *
+  * usage example: @see README.md
+  */
+#}
+
+{% set comp_att = comp_att ?: create_attribute() %}
+{% set slotSidebar_att = slotSidebar_att ?: create_attribute() %}
+{% set slotContent_att = slotContent_att ?: create_attribute() %}
+
+{%
+  set comp_classes = [
+    'comp-sidebar',
+    'grid-container',
+  ]|merge(comp_classes ?: [])
+%}
+
+{% set slotSidebar_classes = [
+  'slot-sidebar',
+]|merge(slotSidebar_classes ?: []) %}
+
+{% set slotContent_classes = [
+  'slot-content',
+]|merge(slotContent_classes ?: []) %}
+
+
+<div{{comp_att.addClass(comp_classes)}}>
+  {% if block('sidebar') is defined %}
+    <button class="js--show-sidebar btn d-lg-none btn-secondary btn-only-icon" aria-expanded="false">
+      {{- "Show sidebar"|t -}}
+    </button>
+
+    <div{{slotSidebar_att.addClass(slotSidebar_classes)}}>
+      {% block sidebar %}{% endblock %}
+    </div>
+  {% endif %}
+
+  {% if block('content') is defined %}
+    <div{{slotContent_att.addClass(slotContent_classes)}}>
+      {% block content %}{% endblock %}
+    </div>
+  {% endif %}
+</div>

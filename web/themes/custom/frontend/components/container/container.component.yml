@@ -1,0 +1,70 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Container
+status: experimental
+description: Container description.
+props:
+  type: object
+  properties:
+    # fields value
+    container_bg_color:
+      type: string
+      title: Container background color
+      description: Container background color.
+      default: ''
+
+    container_bg_media:
+      type: string
+      title: Container media
+      description: Container background image.
+      default: ''
+
+    container_content:
+      type: string
+      title: Container content
+
+    # uc -> utility_classes
+    container_uc:
+      type: array
+      title: Utility Classes
+      description: An array of additional utility classes to add to the list group item.
+      items:
+        type: string
+      default: []
+
+    container_slot_media_uc:
+      type: array
+      title: Content slot classes
+      description: An array of additional utility classes to add to the list group item.
+      items:
+        type: string
+      default: []
+
+    container_slot_content_uc:
+      type: array
+      title: Content slot classes
+      description: An array of additional utility classes to add to the list group item.
+      items:
+        type: string
+      default: []
+
+    # att -> attributes
+    container_att:
+      type: Drupal\Core\Template\Attribute
+      default: {}
+
+    container_slot_media_att:
+      type: Drupal\Core\Template\Attribute
+      default: {}
+
+    container_slot_content_att:
+      type: Drupal\Core\Template\Attribute
+      default: {}
+
+slots:
+  container_slot_media:
+    title: Container media
+    description: Container slot for media
+
+  container_slot_content:
+    title: Container Content
+    description: Content for container

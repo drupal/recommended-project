@@ -1,0 +1,17 @@
+.node--full {
+  padding-block: 40px;
+
+  &:has(.paragraph--edw-container:first-child .paragraph--edw-carousel),
+  &:has(.wrap > .p_pb:first-child) {
+    padding-block-start: 0;
+  }
+
+  &:has(.paragraph--edw-container:last-child .paragraph--edw-carousel),
+  &:has(.wrap > .p_pb:last-child) {
+    padding-block-end: 0;
+  }
+}
+
+.node--full:has(.slot-content > [class*="bg-background"]:first-child) {
+  padding-top: 0;
+}

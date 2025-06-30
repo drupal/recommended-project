@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ */
+#}
+
+{% set classes = [
+  'node',
+  'node--' ~ node.bundle|clean_class,
+  view_mode ? 'node--' ~ view_mode|clean_class,
+  view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  'position-relative',
+] %}
+
+{% embed "frontend:card" with {
+    attributes: attributes.addClass(classes),
+    card_title: label,
+    card_subtitle: content.field_summary,
+    card_link_url: url,
+    card_link_utility_classes: ['btn-link'],
+    card_title_prefix: title_prefix,
+    card_title_suffix: title_suffix,
+    card_image_content: content.field_date_range,
+    card_media: content.field_banner_image
+  }
+%}
+  {% block slot_card_image_top %}
+    <div class="card-image">
+      <div class="card-image-overlay">
+        {{ content_type_label }}
+        {{ content.field_date_range }}
+      </div>
+      {{ parent() }}
+    </div>
+  {% endblock %}
+  {% set card_link_text %}
+    {{ 'Read more'|t }}
+    {% include "@frontend/icons/angle-right.svg" %}
+  {% endset %}
+{% endembed %}

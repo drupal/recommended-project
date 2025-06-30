@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
+    - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
     - image.style.medium
     - media.type.image
   module:
-    - image
+    - svg_image
 id: media.image.media_library
 targetEntityType: media
 bundle: image
@@ -27,6 +28,7 @@ content:
     region: content
 hidden:
   created: true
+  field_caption: true
   field_media_image: true
   langcode: true
   name: true

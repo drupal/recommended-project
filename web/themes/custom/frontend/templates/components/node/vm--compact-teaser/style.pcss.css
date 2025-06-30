@@ -1,0 +1,113 @@
+.node--compact-teaser {
+  &.card {
+    --_card_bg: var(--c-gray-ultralight);
+    --_card_bg_h: var(--c-white);
+    --_card-title_c_h: var(--c-highlight);
+    --_card_bw: 0;
+    --_card_pb: 24px;
+    --_card_pi: 24px;
+    --_card_bw: 2px;
+    --_card_bc: transparent;
+    --_card_bc_h: var(--c-highlight);
+    --_card-tt: var(--transition-base);
+
+    transition: var(--_card-tt);
+
+    &:hover {
+      --_card_bc: var(--_card_bc_h);
+      --_card-title_c: var(--_card-title_c_h);
+    }
+  }
+
+  .card-image {
+    width: 100%;
+    height: 140px;
+    transition: all 0.4s ease;
+    flex: 1 0 auto;
+    position: absolute;
+    top: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      display: block;
+      background: var(--c-moss-700) linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: 1;
+    }
+
+    .field-banner-image {
+      position: relative;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: block;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+        z-index: 1;
+      }
+
+      &, * {
+        height: 100%;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &-overlay {
+      position: absolute;
+      inset: 72px 32px 24px;
+      z-index: 3;
+      font-size: 14px;
+    }
+  }
+
+  .card-header {
+    --_card-cap_bg: transparent;
+    --_card-cap_pb: var(--_card_pb);
+    --_card-cap_pi: var(--_card_pi) 6px;
+    --_card_bw: transparent;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    color: #666666;
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    transition: all 0.4s ease;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+  }
+
+  .card-title {
+    transition: all 0.4s ease;
+  }
+
+  .card-subtitle {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    font-size: 16px;
+  }
+
+  .card-link {
+    --link-c: var(--c-highlight);
+    --btn-bg_h: transparent;
+    --btn-fs: 12px;
+    --btn-c_h: var(--_card_bc);
+
+    transition: var(--_card-tt);
+    margin-top: auto;
+    align-self: start;
+  }
+}

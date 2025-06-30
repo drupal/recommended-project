@@ -1,0 +1,17 @@
+uuid: 2c87a923-17aa-4e4a-9845-d6bc2ec5ae33
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: LjYnqqQcKkp0Htie0PDhmm5xnnasoIn12HTzNRn8NZU
+id: edw_links_block
+label: 'Links block'
+icon_uuid: null
+icon_default: null
+description: 'A set of links with an optional title as heading.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

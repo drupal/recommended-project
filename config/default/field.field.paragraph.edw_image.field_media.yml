@@ -1,0 +1,31 @@
+uuid: ea6b91ad-cc78-4341-9c30-00a632a2b4c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_media
+    - media.type.image
+    - paragraphs.paragraphs_type.edw_image
+_core:
+  default_config_hash: kVvtfQ5mmkbpklG7RsTDgNAGFOb922FQ42QL7froC4A
+id: paragraph.edw_image.field_media
+field_name: field_media
+entity_type: paragraph
+bundle: edw_image
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: created
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

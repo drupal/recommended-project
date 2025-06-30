@@ -23,7 +23,7 @@ sc__gray_700: '#000000'
 sc__gray_800: '#151515'
 sc__gray_900: '#212529'
 sc__primary: '#109d12'
-sc__secondary: '#dee2e6'
+sc__secondary: '#026bd4'
 sc__info: '#28a745'
 sc__danger: '#ffc107'
 sc__light: '#f3f3f3'
@@ -102,7 +102,7 @@ logo:
   use_default: 1
 favicon:
   use_default: 1
-sg__status_message_type: alerts
+sg__status_message_type: toast
 sr__extra_class_header: ''
 sf__size: ''
 sf__weight: ''
@@ -118,3 +118,13 @@ style:
     table: ''
   colors:
     table: ''
+sr__clean_top_page: 0
+sr__class_top_page: ''
+sr__container_top_page: none
+sr__container_position_top_page: before
+sr__extra_class_top_page: ''
+sr__clean_footer_bottom: 0
+sr__class_footer_bottom: ''
+sr__container_footer_bottom: none
+sr__container_position_footer_bottom: before
+sr__extra_class_footer_bottom: ''

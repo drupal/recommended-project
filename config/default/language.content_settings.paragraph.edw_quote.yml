@@ -1,0 +1,20 @@
+uuid: d9f44330-7617-4f52-a40b-36ab84bf7315
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_quote
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+_core:
+  default_config_hash: 5FTzFID7oqOIlE1pP3tXsiACtxYC9NL9uomgHRcrf84
+id: paragraph.edw_quote
+target_entity_type_id: paragraph
+target_bundle: edw_quote
+default_langcode: site_default
+language_alterable: true

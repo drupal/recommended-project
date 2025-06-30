@@ -1,0 +1,23 @@
+uuid: a299d963-37bd-4074-940b-120444381800
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number_of_columns
+    - paragraphs.paragraphs_type.edw_columns
+  module:
+    - options
+_core:
+  default_config_hash: ypydSSvo3NYzrvrFwe-ovGcddKN7ClVctMG4sNe9p5Q
+id: paragraph.edw_columns.field_number_of_columns
+field_name: field_number_of_columns
+entity_type: paragraph
+bundle: edw_columns
+label: 'Number of columns'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

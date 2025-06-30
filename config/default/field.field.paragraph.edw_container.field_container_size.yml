@@ -1,0 +1,23 @@
+uuid: fd37881c-53ca-4597-a8f3-bc5322425cce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_container_size
+    - paragraphs.paragraphs_type.edw_container
+  module:
+    - options
+_core:
+  default_config_hash: 3C_EIV4pYhI_1TSkX_Zoe1KVpfZYoPHTgixYEl52Q50
+id: paragraph.edw_container.field_container_size
+field_name: field_container_size
+entity_type: paragraph
+bundle: edw_container
+label: 'Container size'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

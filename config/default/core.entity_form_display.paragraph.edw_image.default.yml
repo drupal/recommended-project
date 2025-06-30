@@ -1,0 +1,40 @@
+uuid: 31933868-1b57-4b5d-9147-4498e2ee4dd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_image.field_media
+    - field.field.paragraph.edw_image.field_sticky_to_margin
+    - paragraphs.paragraphs_type.edw_image
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: Pv9RU1IZ-1tW-vqZi-29J5qCbTl6WCfPfpZ3ZNbVaeI
+id: paragraph.edw_image.default
+targetEntityType: paragraph
+bundle: edw_image
+mode: default
+content:
+  field_media:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_sticky_to_margin: true
+  status: true

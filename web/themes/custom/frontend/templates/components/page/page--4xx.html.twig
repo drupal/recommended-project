@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * EDWT override to display a single page.
+ *
+ * @see page.html.twig
+ */
+#}
+
+{#{% extends "@frontend/templates/components/page/user/page--user.html.twig" %}#}
+
+{%
+  set comp_classes = [
+    'page--4xx',
+  ]
+%}
+
+{%
+  set main_classes = [
+    'grid-container',
+    'grid-container_sm',
+  ]
+%}
+
+{% include "frontend:page-layout" with {
+  uc: comp_classes,
+  uc_main: main_classes
+} %}

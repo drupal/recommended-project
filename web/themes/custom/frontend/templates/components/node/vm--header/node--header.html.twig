@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ */
+#}
+
+{% block node_attach %}
+  {{ attach_library('frontend/n--header') }}
+{% endblock %}
+
+{% set classes = [
+  'node',
+  'node--' ~ node.bundle|clean_class,
+  view_mode ? 'node--' ~ view_mode|clean_class,
+  view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  'js--hero-header',
+  'main-content-w0',
+  'position-relative',
+] %}
+
+{% embed "edwt:hero-header" with {
+  attributes: attributes.addClass(classes),
+  media: content.field_banner_image,
+  body: content.field_banner_content,
+  title: label
+}
+%}
+  {% block slot_hero_header_title %}
+    {{ drupal_breadcrumb() }}
+    <h1{{title_attributes.addClass('h1','node--title')}}>
+      {{ parent() }}
+    </h1>
+  {% endblock %}
+
+  {% block slot_hero_header_body %}
+    <div class="container">
+      {{ parent() }}
+    </div>
+  {% endblock %}
+{% endembed %}

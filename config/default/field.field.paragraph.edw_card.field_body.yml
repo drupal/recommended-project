@@ -1,0 +1,27 @@
+uuid: 6f5aded7-4606-4115-b460-071224fba052
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.edw_card
+  module:
+    - allowed_formats
+    - text
+_core:
+  default_config_hash: NUR0W4Du-zjmWj8sqwccsbKraLdU-tO1z71vhxd2W_k
+id: paragraph.edw_card.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: edw_card
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

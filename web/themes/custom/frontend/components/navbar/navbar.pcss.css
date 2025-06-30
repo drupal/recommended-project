@@ -1,0 +1,112 @@
+:root {
+  --_top_height: var(--_header_height);
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 0fr;
+  column-gap: var(--gutter);
+
+  transition: all var(--tt) linear;
+
+  .slot-branding {
+    grid-area: 1 / 1 / 2 / 2;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .slot-btns {
+    grid-area: 1 / 3 / 2 / 4;
+
+    gap: var(--w-btn--s, 0px);
+  }
+
+  .slot-nav,
+  .slot-search {
+    transition: all var(--tt) linear;
+  }
+
+  .slot-nav {
+    grid-area: 2 / 1 / 3 / -1;
+    width: 100%;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .slot-search {
+    justify-self: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    position: relative;
+    top: 0.5rem;
+    width: 20%;
+    grid-row: 3;
+    grid-column: 1 / 4;
+
+    @media (--md) {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+  }
+
+  &:has(.animated-btn--search[aria-expanded="true"]) {
+    .slot-search {
+      opacity: 1;
+      pointer-events: all;
+      width: 100%;
+
+      @media (--switchUp) {
+        width: 80%;
+      }
+    }
+  }
+
+  &:has(.animated-btn--menu[aria-expanded="true"]) {
+    --_navbar_mob_bg: var(--navbar_mob_bg, var(--c-primary));
+
+    grid-template-rows: auto 1fr;
+    height: calc(100vh - var(--drupal-displace-offset-top, 0px));
+    height: calc(100dvh - var(--drupal-displace-offset-top, 0px));
+
+    background-color: var(--_navbar_mob_bg);
+    box-shadow: 0 0 0 100vmax var(--_navbar_mob_bg);
+    clip-path: inset(0 -100vmax);
+  }
+
+  @media (--switchDown) {
+    .slot-nav {
+      overflow: hidden;
+    }
+  }
+  @media (--switchUp) {
+    .animated-btn--menu {
+      display: none;
+    }
+
+    .slot-nav,
+    .slot-btns {
+      align-self: start;
+    }
+
+    .slot-search {
+      top: 1rem;
+    }
+
+    .slot-nav {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    &:has(.animated-btn--search[aria-expanded="true"]) {
+      .slot-nav {
+        opacity: 0;
+        pointer-events: none;
+        overflow: clip;
+
+        .region-nav-main {
+          transform: translateX(-100%);
+        }
+      }
+    }
+  }
+}

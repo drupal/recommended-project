@@ -1,0 +1,15 @@
+uuid: d1bee647-29b6-4cc0-8470-786c515241ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: layout_columns
+label: 'Layout columns'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

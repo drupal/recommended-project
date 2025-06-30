@@ -1,0 +1,22 @@
+uuid: cb715cd9-dccd-46f1-a451-e8617c52d141
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_tabs
+id: paragraph.edw_tabs.status
+field_name: status
+entity_type: paragraph
+bundle: edw_tabs
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

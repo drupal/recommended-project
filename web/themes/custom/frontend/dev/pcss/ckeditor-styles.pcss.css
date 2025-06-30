@@ -1,0 +1,49 @@
+&,
+.ck-style-panel {
+  .read-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    &::after {
+      content: "";
+      background-color: currentColor;
+      display: inline-block;
+      width: 16px;
+      height: 20px;
+      mask: url("/themes/custom/frontend/icons/arrow.svg") top left / cover;
+      vertical-align: middle;
+    }
+  }
+
+  :where(h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6 .h6,) {
+    &.color-primary {
+      color: var(--c-primary) !important;
+    }
+    &.color-secondary {
+      color: var(--c-secondary) !important;
+    }
+  }
+
+  [class*=bg-] {
+    --link-c: var(--_bg--c);
+    background-color: var(--_bg--bg);
+    color: var(--_bg--c)
+}
+
+  .bg-background_1 {
+    --_bg--bg: var(--c-gray-ultralight);
+    --_bgf--bg: var(--c-gray-ultralight);
+  }
+
+  .bg-background_2 {
+    --_bg--bg: var(--c-coffee-800);
+    --_bgf--bg: var(--c-coffee-800);
+  }
+
+  .bg-background_3 {
+    --_bg--bg: var(--c-moss-800);
+    --_bgf--bg: var(--c-moss-800);
+  }
+
+}

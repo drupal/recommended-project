@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Frontend Component.
+ */
+#}
+
+{{ attach_library('frontend/s--header') }}
+
+{% set header_attribute = create_attribute() %}
+
+{% set header_classes = [
+  'pl--header',
+  'p--header',
+  'header-default',
+  'grid-container',
+] %}
+
+<header{{header_attribute.setAttribute('id','header').addclass(header_classes)}}>
+  {% embed "frontend:navbar" %}
+    {% block branding %}
+      {{ page.branding }}
+    {% endblock %}
+
+    {% block nav %}
+      {{ page.nav_main }}
+    {% endblock %}
+
+    {% block search %}
+      {{ page.nav_additional }}
+    {% endblock %}
+  {% endembed %}
+</header>

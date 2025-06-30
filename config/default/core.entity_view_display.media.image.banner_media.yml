@@ -1,0 +1,58 @@
+uuid: 6ce65b1e-f622-4f45-8fb6-71c3a5a3d226
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.banner_media
+    - field.field.media.image.field_caption
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.hero_banner
+  module:
+    - layout_builder
+    - responsive_image
+    - sdc_display
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  sdc_display:
+    enabled: false
+    component:
+      machine_name: ''
+    mappings:
+      static:
+        props: {  }
+        slots: {  }
+      dynamic:
+        props: {  }
+        slots: {  }
+id: media.image.banner_media
+targetEntityType: media
+bundle: image
+mode: banner_media
+content:
+  field_media_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: hero_banner
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      sdc_display:
+        enabled: 0
+        component:
+          machine_name: null
+          show_deprecated: 0
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_caption: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

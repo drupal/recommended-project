@@ -1,1 +1,11 @@
-!function($,Drupal){Drupal.behaviors.frontend_general={attach:function(context,settings){}}}(jQuery,Drupal);
+/**
+ * @file
+ * Description.
+ */
+
+// (function ($, Drupal) {
+//   Drupal.behaviors.general = {
+//     attach: function (context, settings) {
+//     }
+//   };
+// })(jQuery, Drupal);

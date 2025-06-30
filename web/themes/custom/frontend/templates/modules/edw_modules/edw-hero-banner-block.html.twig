@@ -1,0 +1,13 @@
+<div class="hero-block">
+  {% if image %}
+    {{ image }}
+    <div class="container">
+      <div class="title-subtitle">
+        <h1>{{ title }}</h1>
+        {% if summary %}
+          <div class="summary max-3-lines">{{ summary | raw }}</div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>

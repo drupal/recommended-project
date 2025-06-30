@@ -1,0 +1,17 @@
+uuid: 4f65ee82-8d9b-471b-b350-faa14ae60446
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: q3J5yA4HcCesBr692oVldQKXdZLcwcOTQ7rRJP81AwQ
+id: edw_accordion_item
+label: 'Accordion item'
+icon_uuid: null
+icon_default: null
+description: 'Single accordion, to be used exclusively in conjunction with the "Accordion" paragraph type.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

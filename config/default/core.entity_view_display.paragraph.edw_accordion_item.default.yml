@@ -1,0 +1,36 @@
+uuid: 129e3104-bd8d-408e-b166-b88a9d939618
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_accordion_item.field_paragraphs
+    - field.field.paragraph.edw_accordion_item.field_title
+    - paragraphs.paragraphs_type.edw_accordion_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: LlMMTXIfuhfQkvTj9DDkBC8YYZctAOpUfUonHa_BOSc
+id: paragraph.edw_accordion_item.default
+targetEntityType: paragraph
+bundle: edw_accordion_item
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

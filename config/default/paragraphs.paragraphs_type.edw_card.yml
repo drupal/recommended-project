@@ -1,0 +1,17 @@
+uuid: 9cdc4ee2-dfb9-4379-8296-782af54647af
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: KR5Ge4lTPP6P7DeYsnB0PsFkhBcLxOvXywOo-qn9gyo
+id: edw_card
+label: Card
+icon_uuid: null
+icon_default: null
+description: 'Single card item with title, link, and body, to show information as a card.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

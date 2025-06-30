@@ -1,0 +1,13 @@
+uuid: 01adc03f-9919-4f50-9d34-52f4435f2b46
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: LEJeHjo-k9WbrfGN-92QoCvkilzORyDRD1q8xocufqY
+id: paragraph.thumbnail_secondary
+label: 'Thumbnail secondary'
+description: ''
+targetEntityType: paragraph
+cache: true

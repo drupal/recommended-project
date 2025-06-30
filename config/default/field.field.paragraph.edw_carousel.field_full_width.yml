@@ -1,0 +1,25 @@
+uuid: b578af19-e04f-49fa-a290-1b48b463e052
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_full_width
+    - paragraphs.paragraphs_type.edw_carousel
+_core:
+  default_config_hash: fk--PZu0FsRmG5HlTzu74OycGRWdVJLvJ7mbn8aKbls
+id: paragraph.edw_carousel.field_full_width
+field_name: field_full_width
+entity_type: paragraph
+bundle: edw_carousel
+label: 'Display as full width'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

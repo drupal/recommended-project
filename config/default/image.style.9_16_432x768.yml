@@ -1,0 +1,26 @@
+uuid: e6a38c8a-f339-4a37-8e29-feac94f55ef4
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.9_16
+  module:
+    - crop
+name: 9_16_432x768
+label: '9:16 (432x768)'
+effects:
+  8c9de0ac-49cd-4283-ac06-4dbe4aeaa29d:
+    uuid: 8c9de0ac-49cd-4283-ac06-4dbe4aeaa29d
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: '9_16'
+      automatic_crop_provider: null
+  b11b8f88-7cc6-4006-b1c9-581ba56ab739:
+    uuid: b11b8f88-7cc6-4006-b1c9-581ba56ab739
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 432
+      height: 768
+      anchor: center-center

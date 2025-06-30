@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a formatted colorbox image field.
+ *
+ * Available variables:
+ * - image: A collection of image data.
+ * - url: An URL the image can be linked to.
+ * - attributes: Link attributes.
+ *
+ * @see template_preprocess_colorbox_formatter()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<a href="{{ url }}" aria-controls="colorbox" aria-label="{{ attributes['data-cbox-img-attrs']|raw }}" role="button" {{ attributes.setAttribute('data-colorbox-gallery', 'gallery-all') }}>{{ image }}</a>

@@ -1,0 +1,21 @@
+/* .node--event--teaser {
+  background-color: var(--c-gray-100);
+  border-radius: var(--br);
+  padding: var(--gutter);
+  display: flex;
+  flex-direction: column;
+
+  .field-date-range {
+    margin-block-end: 16px;
+    font-size: var(--fs-sm);
+    color: var(--c-gray-500);
+  }
+
+  a {
+    flex-grow: 1;
+  }
+
+  .field-countries {
+    margin-block-start: 16px;
+  }
+} */

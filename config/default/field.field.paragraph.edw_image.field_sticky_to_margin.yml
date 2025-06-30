@@ -1,0 +1,23 @@
+uuid: f8b7c40f-94de-40b4-a7ce-f3ee5d4a6513
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sticky_to_margin
+    - paragraphs.paragraphs_type.edw_image
+_core:
+  default_config_hash: 6_a9wcNQH4ZxCBjcvO0jLvULLtjQ_7AiGfe4BxoKRdY
+id: paragraph.edw_image.field_sticky_to_margin
+field_name: field_sticky_to_margin
+entity_type: paragraph
+bundle: edw_image
+label: 'Sticky to screen margin'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

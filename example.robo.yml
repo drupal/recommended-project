@@ -16,9 +16,10 @@ sites:
         excluded_commands: []
         extra_commands: []
       develop:
-        admin_username: username
+        admin_username: admin@example.com
         modules:
           - field_ui
           - views_ui
           - webform_ui
+          - single_content_sync
           - stage_file_proxy

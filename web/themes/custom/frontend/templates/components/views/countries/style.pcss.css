@@ -1,0 +1,35 @@
+.grid-countries {
+  --gc-layout-gap: 0px;
+  --gc-column-count: 4;
+  --gc-item--min-width: 220px;
+
+  --gap-count: calc(var(--gc-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--gc-layout-gap));
+  --gc-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--gc-column-count)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--gc-item--min-width), var(--gc-item--max-width)), 1fr)
+  );
+  grid-template-rows: repeat(4, auto);
+  grid-gap: var(--gc-layout-gap);
+  border-radius: var(--br);
+  padding: 20px;
+
+  &.close {
+    grid-auto-rows: 0px;
+  }
+
+  & > div {
+    overflow: hidden;
+  }
+}
+
+.view-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}

@@ -7,7 +7,7 @@ dependencies:
 id: primaryadminactions
 theme: edwt
 region: content
-weight: -3
+weight: -1
 provider: null
 plugin: local_actions_block
 settings:

@@ -1,0 +1,21 @@
+uuid: da62f73e-fd9f-4e87-acc5-5b4e39c6e8c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.edw_gallery
+_core:
+  default_config_hash: 7NX62x6xaTbv-wcguBeuH-2JmMUQZnyL0vUyLwa3KlE
+id: paragraph.edw_gallery.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: edw_gallery
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

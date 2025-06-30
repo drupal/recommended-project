@@ -1,0 +1,17 @@
+uuid: 3fdd42e3-5881-4e6c-94e8-d88d1da24c90
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: hMxFVod8rRHjKcCxrvZMvU-Rf-lM-hIBzoBxMhVxdZc
+id: edw_gallery
+label: Gallery
+icon_uuid: null
+icon_default: null
+description: 'A collection of video and image media.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

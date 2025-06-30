@@ -1,0 +1,24 @@
+uuid: 10a7a9bb-9bb4-4ffc-b853-d6f061742e21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.edw_gallery
+  module:
+    - text
+_core:
+  default_config_hash: B-Yy0WRacjwCxzcM4kSZ-pHrBQ37j7twrSZdfJipotY
+id: paragraph.edw_gallery.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: edw_gallery
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

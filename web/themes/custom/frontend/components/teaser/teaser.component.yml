@@ -1,0 +1,113 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Teaser
+status: stable
+description: 'A teaser is a flexible and extensible content container.'
+group: Cards
+props:
+  type: object
+  properties:
+    comp_tag:
+      type: string
+      title: Teader Body HTML Tag
+      default: div
+      enum:
+        - div
+        - section
+    direction:
+      type: string
+      title: Teader direction
+      default: horizontal
+      enum:
+        - horizontal
+        - vertical
+    title:
+      type: string
+      title: Teaser Title
+    title_tag:
+      type: string
+      title: Teaser Title HTML Tag
+      default: h3
+      enum:
+        - div
+        - span
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+    body:
+      type: string
+      title: Teaser Body
+    link_url:
+      type: string
+      title: Teaser Link URL
+    link_text:
+      type: string
+      title: Teaser Link text
+    media:
+      type: string
+      title: Teaser media
+    img_src:
+      type: string
+      title: Teaser image Source URL
+    img_alt:
+      type: string
+      title: Teaser image alternative text
+    img_position:
+      type: string
+      title: Image tosition
+      default: start
+      enum:
+        - start
+        - end
+    img_style:
+      type: string
+      title: Image style
+      default: out
+      enum:
+        - out
+        - in
+
+    uc:
+      type: array
+      items:
+        type: string
+      title: Title Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the teaser title component.
+      default: []
+    title_uc:
+      type: array
+      items:
+        type: string
+      title: Body Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the teaser body component.
+    img_uc:
+      type: array
+      items:
+        type: string
+      title: Body Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the teaser body component.
+    body_uc:
+      type: array
+      items:
+        type: string
+      title: Body Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the teaser body component.
+      default: []
+
+slots:
+  slot_img_start:
+    title: Teaser Image start
+    description: Slot for the start image of the teaser.
+
+  slot_img_end:
+    title: Teaser Image end
+    description: Slot for the end image of the teaser.
+
+  slot_body:
+    title: Teaser Body
+    description: Slot for the body of the teaser.
+
+  slot_links:
+    title: Teaser Links
+    description: Slot for the link section of the teaser.

@@ -1,0 +1,64 @@
+uuid: 7f32f829-f463-4d5d-b400-17c641b3bf82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_gallery.field_body
+    - field.field.paragraph.edw_gallery.field_gallery_display_mode
+    - field.field.paragraph.edw_gallery.field_gallery_items
+    - field.field.paragraph.edw_gallery.field_title
+    - paragraphs.paragraphs_type.edw_gallery
+  module:
+    - sdc_display
+    - text
+third_party_settings:
+  sdc_display:
+    enabled: false
+    component:
+      machine_name: ''
+    mappings:
+      static:
+        props: {  }
+        slots: {  }
+      dynamic:
+        props: {  }
+        slots: {  }
+_core:
+  default_config_hash: R8S8kIE8Jv74n0IsU8EnaJBpYe-G4F22o7MIwOfzkQM
+id: paragraph.edw_gallery.default
+targetEntityType: paragraph
+bundle: edw_gallery
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_gallery_items:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings:
+      sdc_display:
+        enabled: 0
+        component:
+          machine_name: null
+          show_deprecated: 0
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_gallery_display_mode: true
+  search_api_excerpt: true

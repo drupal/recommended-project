@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_news_type
     - node.type.news
-    - taxonomy.vocabulary.news_types
 id: node.news.field_news_type
 field_name: field_news_type
 entity_type: node
@@ -19,8 +18,7 @@ default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
   handler_settings:
-    target_bundles:
-      news_types: news_types
+    target_bundles: {  }
     sort:
       field: name
       direction: asc

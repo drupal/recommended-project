@@ -1,0 +1,27 @@
+uuid: b087631e-963a-4e3a-88c5-b763722704b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_image.field_media
+    - field.field.paragraph.edw_image.field_sticky_to_margin
+    - paragraphs.paragraphs_type.edw_image
+_core:
+  default_config_hash: xgWrpWNaP7DTWz6gxqLC80LYOJ9wkc4fmppNjMHhQoc
+id: paragraph.edw_image.default
+targetEntityType: paragraph
+bundle: edw_image
+mode: default
+content:
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_sticky_to_margin: true
+  search_api_excerpt: true

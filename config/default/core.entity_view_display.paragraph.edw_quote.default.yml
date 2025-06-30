@@ -1,0 +1,35 @@
+uuid: c9eef1cf-61d7-4df5-ac6f-c607374f2caf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_quote.field_description
+    - field.field.paragraph.edw_quote.field_title
+    - paragraphs.paragraphs_type.edw_quote
+  module:
+    - text
+_core:
+  default_config_hash: '-U3v2UoG7QsPJrmeg8VaJQ_9Jx9yxvFjbOV1pmhnt-c'
+id: paragraph.edw_quote.default
+targetEntityType: paragraph
+bundle: edw_quote
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_title: true
+  search_api_excerpt: true

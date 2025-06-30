@@ -1,0 +1,23 @@
+uuid: 2ba3e346-c62c-465d-9622-e2953fc57e5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: JOxArmj2AAyspOoQamrZfRNEDwvbGRGVlFjw0iOZTXo
+id: edw_container
+label: Container
+icon_uuid: null
+icon_default: null
+description: 'Container building block that contain, wrap, and align your content.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: true
+    available_layouts:
+      layout_onecol: 'One column'
+      layout_twocol_section: 'Two column'
+      layout_threecol_section: 'Three column'
+      layout_threecol_25_50_25: 'Three column 25/50/25'
+      layout_threecol_33_34_33: 'Three column 33/34/33'
+      layout_fourcol_section: 'Four column'

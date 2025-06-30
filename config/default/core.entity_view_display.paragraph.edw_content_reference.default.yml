@@ -1,0 +1,36 @@
+uuid: fb921ba7-59fe-4488-9e3e-bf448a98e869
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_content_reference.field_entities
+    - field.field.paragraph.edw_content_reference.field_number_of_columns
+    - field.field.paragraph.edw_content_reference.field_title
+    - paragraphs.paragraphs_type.edw_content_reference
+_core:
+  default_config_hash: ln1gavkWNgE2lJbIlujkly66WI_4NI5zQBmyaSSvupI
+id: paragraph.edw_content_reference.default
+targetEntityType: paragraph
+bundle: edw_content_reference
+mode: default
+content:
+  field_entities:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_number_of_columns: true
+  search_api_excerpt: true

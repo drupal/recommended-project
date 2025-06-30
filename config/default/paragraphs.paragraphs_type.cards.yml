@@ -1,0 +1,15 @@
+uuid: 28a7738a-8945-4193-8aac-283b229b8864
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+id: cards
+label: Cards
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

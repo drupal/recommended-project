@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a paragraph.
+ */
+#}
+
+{{- attach_library('frontend/p--edw-slider') -}}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--'~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  content.field_classes.0 ? content.field_classes.0['#context']['value'],
+  content.field_background_color.0 ? content.field_background_color.0['#markup'] : '',
+  'pt-50',
+  'pb-100',
+] %}
+
+<div{{attributes.addClass(classes).setAttribute('id',content.field_section_id.0['#context'].value)}}>
+  <div class="container">
+    {{- content|without('field_section_id', 'field_classes', 'field_background_color', 'field_container_size' ) -}}
+  </div>
+</div>

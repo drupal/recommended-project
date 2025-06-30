@@ -1,0 +1,48 @@
+uuid: 44b13548-bb97-4aa0-862d-d91682cb5905
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_tab.field_paragraphs
+    - field.field.paragraph.edw_tab.field_title
+    - paragraphs.paragraphs_type.edw_tab
+  module:
+    - field_layout
+    - layout_discovery
+    - layout_paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: 9e2xy4Kuzfp4JR62uUJ2ZbxFL2vNSIQoeLVwApYv2GA
+id: paragraph.edw_tab.default
+targetEntityType: paragraph
+bundle: edw_tab
+mode: default
+content:
+  field_paragraphs:
+    type: layout_paragraphs
+    weight: 1
+    region: content
+    settings:
+      view_mode: default
+      preview_view_mode: default
+      form_display_mode: default
+      nesting_depth: 0
+      require_layouts: 0
+      empty_message: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  translation: true

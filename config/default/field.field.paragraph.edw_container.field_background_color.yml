@@ -1,0 +1,23 @@
+uuid: 22c8eca8-5911-4e02-b0ab-e7ea936de3b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.edw_container
+  module:
+    - options
+_core:
+  default_config_hash: 3qQpi2xSEz6O8W24aXNCiwXGISRX59JCIOdBQ9sHvd4
+id: paragraph.edw_container.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: edw_container
+label: 'Background color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

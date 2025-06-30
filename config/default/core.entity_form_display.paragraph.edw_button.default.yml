@@ -1,0 +1,41 @@
+uuid: 1317ceb5-0f28-4fda-93d4-be2355e89560
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_button.field_button_variant
+    - field.field.paragraph.edw_button.field_link
+    - paragraphs.paragraphs_type.edw_button
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: qJ-PeGRYYXo59njkeGttlXbFGk1f90az03a2m3VTEkA
+id: paragraph.edw_button.default
+targetEntityType: paragraph
+bundle: edw_button
+mode: default
+content:
+  field_button_variant:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,91 @@
+.color-card {
+  --_color-card_c: var(--color-card_c, var(--body-c));
+  --color-card_p: 24px;
+  --link-c: var(--_color-card_c);
+  --_btn-c: var(--c-coffee-600);
+
+  border: 1px solid var(--color-card_bc, var(--c-gray-ultralight));
+  background: var(--color-card_bg, var(--c-gray-ultralight));
+  border-radius: var(--br);
+  display: var(--color-grid_d, flex);
+  flex-direction: var(--color-grid_fd, row);
+  gap: var(--color-grid_gap, 0px);
+  position: var(--color-grid_p, relative);
+
+  .w-content {
+    padding-block:var(--color-card--content_pb, var(--color-card_p));
+    padding-inline:var(--color-card--content_pi, var(--color-card_p));
+    display: var(--color-grid--content_d, flex);
+    flex-direction: var(--color-grid--content_fd, column);
+    gap: var(--color-grid--content_gap, 12px);
+  }
+
+  .w-img {
+    flex: 1 0 var(--color-card_img_w, 200px);
+    padding-inline: var(--color-card_img_pi, 20px);
+    padding-block: var(--color-card_img_pb, 20px);
+    align-content: var(--color-card_img_ac, center);
+    background: var(--c-white);
+  }
+
+  .title {
+    color: var(--_color-card_c);
+  }
+
+  .links {
+    flex-grow: 1;
+    min-height: var(--color-grid--links_minh, 60px);
+    display: var(--color-grid--links_d, grid);
+    align-items: var(--color-grid--links_align-i, flex-end);
+
+    .field__items {
+      display: var(--color-grid_d, grid);
+      gap: var(--color-grid_gap, 12px);
+
+      & > .field__item {
+        min-width: 0px;
+      }
+    }
+
+    .btn {
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: calc(100% - 0px);
+
+      svg {
+        margin-inline-end: 12px;
+      }
+    }
+  }
+
+
+  &[class*="isColor--"] {
+    --_btn-c: var(--_color-card_c);
+  }
+
+  &.isColor--background_2 {
+    --color-card_c: var(--c-coffee-500);
+    --color-card_bg: var(--c-coffee-800);
+  }
+
+  &.isColor--background_3 {
+    --color-card_c: var(--c-moss-700);
+    --color-card_bg: var(--c-moss-800);
+  }
+}
+
+.paragraph--cards {
+  display: grid;
+  grid-template-columns: var(--p--cards_gtc, 1fr);
+  gap: 20px;
+
+  @container (width > 700px) {
+    --p--cards_gtc: 1fr 1fr;
+
+    & > .color-card:nth-child(odd):last-child {
+      grid-column: span 2;
+    }
+  }
+}

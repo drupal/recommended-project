@@ -1,0 +1,42 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Views box
+status: stable
+group: Frontend
+
+# Props.
+props:
+  type: object
+  properties:
+    # properties
+    # values
+    views_box_title:
+      type: ['string', 'null']
+      title: Views box title
+
+    views_box_more:
+      type: ['string', 'object', 'null']
+      title: Views box more
+
+    views_box_content:
+      type: ['string', 'object', 'null']
+      title: Views box content
+
+    # uc -> utility_classes
+    views_box_uc:
+      type: ['array', 'null']
+      items:
+        type: string
+      title: Views box Utility Classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+      default: []
+
+    # att -> attributes
+    views_box_att:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: A list of HTML attributes for the Views box.
+
+slots:
+  slot_content:
+    title: Content
+    description: Default content text for the Views box.

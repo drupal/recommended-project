@@ -1,0 +1,22 @@
+uuid: 0ad589a9-ea3d-42c4-a8bc-f908574f1adc
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_links_block
+id: paragraph.edw_links_block.status
+field_name: status
+entity_type: paragraph
+bundle: edw_links_block
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

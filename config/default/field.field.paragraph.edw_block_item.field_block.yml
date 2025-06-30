@@ -1,0 +1,30 @@
+uuid: c165342d-8c07-4106-940c-58740880076f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_block
+    - paragraphs.paragraphs_type.edw_block_item
+  module:
+    - block_field
+_core:
+  default_config_hash: '-KgKXlOeLeLezwd-_ITNoNO2uPXXm8BFqWmI9bJF17g'
+id: paragraph.edw_block_item.field_block
+field_name: field_block
+entity_type: paragraph
+bundle: edw_block_item
+label: Block
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      edw_content: edw_content
+      edw_hero_banner: edw_hero_banner
+      'system_menu_block:main': 'system_menu_block:main'
+      'system_menu_block:tools': 'system_menu_block:tools'
+field_type: block_field

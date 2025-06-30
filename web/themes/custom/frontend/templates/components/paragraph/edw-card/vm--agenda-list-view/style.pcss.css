@@ -1,0 +1,21 @@
+.paragraph--edw-card--agenda-list-view {
+  --link-c: var(--c-gray-800);
+
+  background-color: var(--c-white);
+  border: 1px solid var(--c-gray-300);
+  border-radius: var(--br-sm);
+
+  .field-title {
+    margin-bottom: 15px;
+  }
+
+  .node--content {
+    padding: 25px;
+  }
+
+  &.linked {
+    .field-title {
+      color: var(--c-primary);
+    }
+  }
+}

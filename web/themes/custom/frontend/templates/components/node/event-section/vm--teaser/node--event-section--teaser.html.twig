@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ */
+#}
+
+{{ attach_library('frontend/n--event-section--teaser') }}
+
+{% set classes = [
+  'node',
+  'node--' ~ node.bundle|clean_class,
+  view_mode ? 'node--' ~ view_mode|clean_class,
+  view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  'card',
+  'position-relative',
+] %}
+
+<article{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <a href={{url}} class="stretched-link">
+    <h2{{title_attributes.addClass('h4','mb-0','node--title')}}>
+      {{- label -}}
+    </h2>
+  </a>
+
+  {{- content -}}
+</article>

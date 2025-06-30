@@ -8,8 +8,8 @@ dependencies:
     - edwt
 id: simplesearchform
 theme: edwt
-region: header
-weight: -3
+region: nav_additional
+weight: -4
 provider: null
 plugin: simple_search_form_block
 settings:

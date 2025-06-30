@@ -1,0 +1,29 @@
+uuid: 211d71ad-fe39-47af-a676-7da5e3572ec3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_carousel.field_full_width
+    - field.field.paragraph.edw_carousel.field_paragraphs
+    - paragraphs.paragraphs_type.edw_carousel
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: kyUy7i1rS3zGaL6TFshBj8ZPW14CM9z_3Xt2Ou0xXyM
+id: paragraph.edw_carousel.default
+targetEntityType: paragraph
+bundle: edw_carousel
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_full_width: true
+  search_api_excerpt: true

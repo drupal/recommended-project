@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Frontend override to display a block.
+ */
+#}
+
+{{ attach_library('frontend/b--book-navigation') }}
+
+{% set classes = [
+  'block',
+  'block--book-navigation',
+] %}
+
+<div{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {{ content }}
+</div>

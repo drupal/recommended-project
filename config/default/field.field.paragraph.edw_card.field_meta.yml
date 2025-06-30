@@ -1,0 +1,21 @@
+uuid: 85a8a024-fe98-4be3-80fa-b9b4a977113b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_meta
+    - paragraphs.paragraphs_type.edw_card
+_core:
+  default_config_hash: acQLoGBsy5OlFfO6W8HrspVoixh70Acpf_RU1OHuJ4I
+id: paragraph.edw_card.field_meta
+field_name: field_meta
+entity_type: paragraph
+bundle: edw_card
+label: 'Primary meta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,87 @@
+uuid: 404c85dd-74de-4802-96a5-b34b19aca466
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_card.field_background_color
+    - field.field.paragraph.edw_card.field_body
+    - field.field.paragraph.edw_card.field_link
+    - field.field.paragraph.edw_card.field_media
+    - field.field.paragraph.edw_card.field_meta
+    - field.field.paragraph.edw_card.field_title
+    - paragraphs.paragraphs_type.edw_card
+  module:
+    - link
+    - options
+    - sdc_display
+    - text
+third_party_settings:
+  sdc_display:
+    enabled: false
+    component:
+      machine_name: ''
+    mappings:
+      static:
+        props: {  }
+        slots: {  }
+      dynamic:
+        props: {  }
+        slots: {  }
+_core:
+  default_config_hash: l1nx-X0nqb-2J993jotZu_1J78RD4i48DqfPri7Ic6g
+id: paragraph.edw_card.default
+targetEntityType: paragraph
+bundle: edw_card
+mode: default
+content:
+  field_background_color:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: true
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      sdc_display:
+        enabled: 0
+        component:
+          machine_name: null
+          show_deprecated: 0
+    weight: 3
+    region: content
+  field_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: card
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_meta: true
+  search_api_excerpt: true

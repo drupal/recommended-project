@@ -1,0 +1,27 @@
+uuid: 1451111e-2684-4561-9556-ba5ed6807e58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_tabs.field_paragraphs
+    - paragraphs.paragraphs_type.edw_tabs
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: 2l36hgZO0ppROG_ZZmpTfDRrXE5QaR-6Hh5sRi-ojbY
+id: paragraph.edw_tabs.default
+targetEntityType: paragraph
+bundle: edw_tabs
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

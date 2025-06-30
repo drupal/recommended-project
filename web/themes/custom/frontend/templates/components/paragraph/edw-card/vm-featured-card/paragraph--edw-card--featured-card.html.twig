@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a paragraph.
+ */
+#}
+
+
+{{ attach_library('frontend/n--featured-card') }}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--'~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  'card',
+  content.field_image_position.0 ? 'body-img',
+  content.field_image_position.0 ? content.field_image_position.0['#markup'] : 'img-default',
+  'node--featured-card',
+] %}
+
+<div{{attributes.addClass(classes)}}>
+  <div class="node--link">
+    {{- content.field_media -}}
+    <div class="node__content card-body">
+      <h4 class="paragraph--title">
+        <a href="{{ content.field_link.0['#plain_text'] }}">
+          {{ content.field_title }}
+        </a>
+      </h4>
+      {{- content|without('field_title', 'field_image_position', 'field_media', 'field_link') -}}
+    </div>
+  </div>
+</div>

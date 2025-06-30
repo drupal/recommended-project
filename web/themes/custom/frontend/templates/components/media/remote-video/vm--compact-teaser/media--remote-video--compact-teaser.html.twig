@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to present a media item.
+ */
+#}
+
+{%
+  set classes = [
+    'card',
+    'card--compact-teaser',
+  ]
+%}
+
+{% include "frontend:card_teaser" with {
+  bundle: "Video"|t,
+  date: content.created,
+  title: name,
+  c_url: content.field_media_oembed_video|render,
+} %}

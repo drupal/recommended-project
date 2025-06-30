@@ -1,0 +1,17 @@
+uuid: 537e5f72-724c-492b-8e03-caf9f6b81ece
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: vVRx6itnk3qNU71EQvvK7J_WwYhyjYOKMPSKiUbL2wU
+id: edw_tabs
+label: Tabs
+icon_uuid: null
+icon_default: null
+description: "List with tabs\t"
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

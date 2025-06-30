@@ -1,0 +1,27 @@
+uuid: 0e7ab224-b88a-4dee-8517-8e6c0dbc29a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.edw_carousel_item
+  module:
+    - allowed_formats
+    - text
+_core:
+  default_config_hash: 4A1gW74G_wf1aWCzqEdIM89bf_eTiNIFF1ABeCa4Bto
+id: paragraph.edw_carousel_item.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: edw_carousel_item
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

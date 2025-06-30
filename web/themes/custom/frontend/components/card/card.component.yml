@@ -1,0 +1,186 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Card
+status: stable
+description: 'A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options. If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.'
+group: Cards
+props:
+  type: object
+  properties:
+    card_tag:
+      type: string
+      title: Card HTML tag
+      default: div
+      enum:
+        - div
+        - section
+    card_body:
+      type: string
+      title: Card Body
+    card_body_tag:
+      type: string
+      title: Card Body HTML Tag
+      default: div
+      enum:
+        - div
+        - section
+    card_title:
+      type: string
+      title: Card Title
+    card_title_tag:
+      type: string
+      title: Card Title HTML Tag
+      default: h3
+      enum:
+        - div
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+    card_subtitle:
+      type: ['string', 'null']
+      title: Card Subtitle
+    card_subtitle_tag:
+      type: string
+      title: Card Subtitle HTML Tag
+      default: h5
+      enum:
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+    card_text_tag:
+      type: string
+      title: Card Text HTML Tag
+      default: p
+      enum:
+        - p
+        - span
+        - div
+    card_link_text:
+      type: string
+      title: Card Link Text
+    card_link_url:
+      type: string
+      title: Card Link URL
+    card_media:
+      type: ['string', 'null']
+      title: Card Media
+    card_image_src:
+      type: string
+      title: Card Image Source URL
+    card_image_alt:
+      type: string
+      title: Card Image Alternative Text
+    card_image_cap:
+      type: string
+      title: Image Caption Position
+      default: ''
+      enum:
+        - ''
+        - top
+        - bottom
+    card_image_overlays:
+      type: boolean
+      title: Use Image Overlays?
+      default: false
+    card_header:
+      type: string
+      title: Card Header
+    card_footer:
+      type: string
+      title: Card Footer
+    card_border:
+      type: boolean
+      title: Has Card Border?
+      default: false
+
+    card_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the card component.
+      default: []
+    card_title_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Title Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the card title component.
+      default: []
+    card_subtitle_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Subtitle Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the card subtitle component.
+      default: []
+    card_header_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Header Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the card header component.
+      default: []
+    card_body_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Body Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the card body component.
+      default: []
+    card_text_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Text Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the card text component.
+      default: []
+    card_link_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Link Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the card link component.
+      default: []
+    card_footer_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Footer Utility Classes
+      description: An array of utility classes. These can be used to add extra classes or custom CSS classes to the card footer component.
+      default: []
+    card_title_prefix:
+      type: array
+      items:
+        type: string
+      title: Components Title Prefix
+      description: Additional output populated by modules, intended to be displayed in front of the components title tag that appears in the template.
+      default: []
+    card_title_suffix:
+      type: array
+      items:
+        type: string
+      title: Components Title Suffix
+      description: Additional output populated by modules, intended to be displayed after the components title tag that appears in the template.
+      default: []
+slots:
+  slot_card_image_top:
+    title: Card Image Top
+    description: Slot for the top image of the card.
+  slot_card_image_bottom:
+    title: Card Image Bottom
+    description: Slot for the bottom image of the card.
+  slot_card_body:
+    title: Card Body
+    description: Slot for the body of the card.
+  slot_card_links:
+    title: Card Links
+    description: Slot for the link section of the card.
+  slot_card_footer:
+    title: Card Footer
+    description: Slot for the footer of the card.

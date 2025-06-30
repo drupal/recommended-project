@@ -16,4 +16,5 @@ general_settings:
     unified_fields:
       enabled: true
       weight: 2
+  visual_default_view_mode: default
   visual_inline_theme: default

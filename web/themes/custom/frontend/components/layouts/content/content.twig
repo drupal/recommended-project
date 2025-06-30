@@ -1,0 +1,58 @@
+{#
+/**
+  * @file
+  * Page layout component.
+  *
+  * Available properties:
+  * - wsidebar_classes: []
+  * - cls__layout_type: Layout type [col_1, col_1_full, col_2_sidebar]
+  *
+  * usage example: @see README.md
+  */
+#}
+
+{# Set default value #}
+{% set cls__layout_type = cls__layout_type ?: 'col_1' %}
+
+{# Set Attributes #}
+{% set comp_att = comp_att ?: create_attribute() %}
+{% set slotSidebar_att = slotSidebar_att ?: create_attribute() %}
+{% set slotContent_att = slotContent_att ?: create_attribute() %}
+
+{% set gridContent = cls__layout_type starts with 'col_2' %}
+
+{%
+  set comp_classes = [
+    'grid-container',
+    gridContent ? 'comp-sidebar',
+    gridContent ? 'cls--layout-type_' ~ cls__layout_type|clean_class,
+  ]|merge(comp_classes ?: [])
+%}
+
+{% set slotSidebar_classes = [
+  'slot-sidebar',
+]|merge(slotSidebar_classes ?: []) %}
+
+{% set slotContent_classes = [
+  'slot-content',
+]|merge(slotContent_classes ?: []) %}
+
+<div{{comp_att.addClass(comp_classes)}}>
+  {% block cls_addons %}{% endblock %}
+
+  {% if block('sidebar') is defined and cls__layout_type starts with 'col_2' %}
+    <button class="js--show-sidebar btn d-lg-none btn-secondary btn-only-icon" aria-expanded="false">
+      {{- "Show sidebar"|t -}}
+    </button>
+
+    <div{{slotSidebar_att.addClass(slotSidebar_classes)}}>
+      {% block sidebar %}{% endblock %}
+    </div>
+  {% endif %}
+
+  {% if block('content') is defined %}
+    <div{{slotContent_att.addClass(slotContent_classes)}}>
+      {% block content %}{% endblock %}
+    </div>
+  {% endif %}
+</div>

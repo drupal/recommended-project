@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Frontend override to display a block.
+ */
+#}
+
+
+{% extends "block.html.twig" %}
+
+{% set attributes = attributes.addClass('block--logo-list') %}
+
+{% block attach %}
+  {{ attach_library('frontend/b--logo-list') }}
+{% endblock %}

@@ -1,0 +1,31 @@
+uuid: 54cf26f6-0fee-4de1-a735-2713eaf5c91f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_media
+    - media.type.image
+    - paragraphs.paragraphs_type.edw_container
+_core:
+  default_config_hash: sVqXHSbCdUTTqSvhUXzP2OFB-0AN0RNu9H_IZEaC128
+id: paragraph.edw_container.field_background_media
+field_name: field_background_media
+entity_type: paragraph
+bundle: edw_container
+label: 'Background image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

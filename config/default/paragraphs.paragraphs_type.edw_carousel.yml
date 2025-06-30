@@ -1,0 +1,17 @@
+uuid: 0a0d080b-44a6-42ce-99a3-8eaf8a564004
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: 7WjPR2sUSkGf_6iiHZeFWpeU-BOLwZ2UOdNzr97tVr0
+id: edw_carousel
+label: Carousel
+icon_uuid: null
+icon_default: null
+description: 'Allows editors to create a carousel similar to a banner with multiple slides.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

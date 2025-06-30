@@ -1,0 +1,133 @@
+{#
+/**
+ * @file
+ * Template for a Teaser component.
+ *
+ * Available config:
+  * - comp_tag: (optional) Component tab.
+  * - direction: (optional) Component direction (horizontal|vertical).
+  * - body: (optional) Card body (text).
+  * - media: (optional) Card media, instead of using teaser_image_*.
+  * - link_url: (optional) Card link URL.
+  * - link_text: (optional) Card link text.
+  * - img_style: (optional) Image style (out|in).
+  * - img_src: (optional) Card image source.
+  * - img_alt: (optional) Card image alt text.
+  * - img_cap: (optional) Card image caption.
+  * - title_tag: (optional) Card title tag.
+  * - ut (utility_classes): (optional) Any additional classes to add to the teaser.
+  * - img_uc: (optional) Any additional classes to add to the image.
+ */
+#}
+
+{# Set default value #}
+{% set comp_tag = comp_tag|default('div') %}
+{% set direction = direction|default('horizontal') %}
+{% set img_position = img_position|default('start') %}
+{% set img_style = img_style|default('out') %}
+
+{# Create attributres #}
+{% set attributes = attributes ?: create_attribute() %}
+{% set title_attributes = title_attributes ?: create_attribute() %}
+{% set body_attributes = body_attributes ?: create_attribute() %}
+{% set img_attributes = img_attributes ?: create_attribute() %}
+
+{% set uc_classes = [
+  'card--teaser',
+  'card--direction-' ~ direction,
+  'position-relative',
+]|merge(uc ?: []) %}
+
+{% set title_classes = [
+  'card--title',
+]|merge(title_uc ?: []) %}
+
+{% set body_classes = [
+  'card-body',
+]|merge(body_uc ?: []) %}
+
+{% set img_style_classes = [
+  'img--' ~ img_style,
+] %}
+
+{% set img_classes = [
+  'card--img',
+]|merge(img_uc ?: [])|merge(img_style_classes ?: []) %}
+
+
+{# Add extra attributes like: alt, target etc #}
+{% if teaser_image_alt %}
+  {% set teaser_image_attributes = teaser_image_attributes.setAttribute('alt', teaser_image_alt ) %}
+{% endif %}
+
+{# set vars userd in many places #}
+{% set varImg %}
+  {% if media|render or img_src %}
+    <div {{ img_attributes.addClass(img_classes)}}>
+      {% if media|render %}
+        {{ media }}
+      {% elseif img_src %}
+        {%
+          include 'edwt:image' with {
+            src: img_src,
+            image_uc: img_classes
+          }
+        %}
+      {% endif %}
+    </div>
+  {% endif %}
+{% endset %}
+
+{# Component #}
+{% apply spaceless %}
+  {% embed 'frontend:card' with {
+    card_utility_classes: uc_classes,
+    card_body_tag: 'section',
+    card_tag: comp_tag,
+  } %}
+    {% block slot_card %}
+      {% block slot_img_start %}
+        {% if img_position == 'start' %}
+          {{ varImg }}
+        {% endif %}
+      {% endblock %}
+
+      <div {{ body_attributes.addClass(body_classes) }}>
+        {% block slot_body %}
+          {% if title %}
+            {%
+              include 'edwt:heading' with {
+                heading_html_tag: title_tag,
+                content: title,
+                heading_attributes: title_attributes,
+                heading_utility_classes: title_classes,
+              }
+            %}
+          {% endif %}
+
+          {{ body }}
+
+          {% block slot_links %}
+            {% if link_url %}
+              <a href={{ link_url }} class="stretched-link mt-auto">
+                {% if link_text %}
+                  {{ link_text }}
+                {% else %}
+                  <span class="visually-hidden">
+                    {{ link_text }}
+                  </span>
+                {% endif %}
+              </a>
+            {% endif %}
+          {% endblock %}
+        {% endblock %}
+      </div>
+
+      {% block slot_img_end %}
+        {% if img_position == 'end' %}
+          {{ varImg }}
+        {% endif %}
+      {% endblock %}
+    {% endblock %}
+  {% endembed %}
+{% endapply %}

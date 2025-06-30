@@ -9,7 +9,7 @@ dependencies:
 id: mainpagecontent
 theme: edwt
 region: content
-weight: -2
+weight: 0
 provider: null
 plugin: system_main_block
 settings:

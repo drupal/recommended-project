@@ -1,0 +1,36 @@
+uuid: 04e02486-3380-4ef9-a027-1227edf7771c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_tab.field_paragraphs
+    - field.field.paragraph.edw_tab.field_title
+    - paragraphs.paragraphs_type.edw_tab
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: RfR-YuACrWsZIG15GwwvWl9n2HfUei62PCyIk2PECPY
+id: paragraph.edw_tab.default
+targetEntityType: paragraph
+bundle: edw_tab
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

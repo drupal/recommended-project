@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Frontend override for a field.
+ */
+#}
+{%
+  set classes = [
+    'field',
+    field_name|clean_class,
+    field_type|clean_class ~ '--' ~ field_name|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {% if not label_hidden %}
+    <div{{title_attributes.addClass(title_classes)}}>
+      {{- label -}}
+      {{- label_display == 'inline' ? ':' }}
+    </div>
+  {% endif %}
+
+  {% if multiple %}
+    <div class="field__items">
+    {% endif %}
+    {% for item in items %}
+      {% set btn_classes = [
+        'btn-clear',
+        items|length < 2 ? "stretched-link",
+      ] %}
+
+      <div{{item.attributes.addClass('field__item')}}>
+        {% include 'edwt:button' with {
+          url: item.content['#url']|render,
+          button_utility_classes: btn_classes,
+          content: item.content['#title'],
+          button_html_tag: 'a',
+          slot_icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M-692,1178h-16a4,4,0,0,1-4-4v-16a4,4,0,0,1,4-4h16a4,4,0,0,1,4,4v16A4,4,0,0,1-692,1178Zm-9.467-12.234a.692.692,0,0,0-.691.691,3.463,3.463,0,0,0,3.459,3.459h2.074a3.463,3.463,0,0,0,3.459-3.459,3.462,3.462,0,0,0-3.459-3.458.692.692,0,0,0-.691.691.692.692,0,0,0,.691.692,2.077,2.077,0,0,1,2.075,2.074,2.078,2.078,0,0,1-2.075,2.075H-698.7a2.078,2.078,0,0,1-2.075-2.075A.692.692,0,0,0-701.467,1165.766Zm-2.074-2.767a3.462,3.462,0,0,0-3.459,3.458,3.463,3.463,0,0,0,3.459,3.459.692.692,0,0,0,.691-.691.692.692,0,0,0-.691-.692,2.078,2.078,0,0,1-2.075-2.075,2.077,2.077,0,0,1,2.075-2.074h2.074a2.077,2.077,0,0,1,2.075,2.074.693.693,0,0,0,.692.692.692.692,0,0,0,.691-.692,3.462,3.462,0,0,0-3.459-3.458Z" transform="translate(712 -1154)" fill="currentColor"/></g></svg>',
+        } %}
+      </div>
+    {% endfor %}
+    {% if multiple %}
+    </div>
+  {% endif %}
+</div>

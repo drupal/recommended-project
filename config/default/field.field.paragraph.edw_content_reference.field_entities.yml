@@ -1,0 +1,33 @@
+uuid: ca07231e-2e38-4b53-b413-69a1152667d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_entities
+    - node.type.news
+    - node.type.page
+    - paragraphs.paragraphs_type.edw_content_reference
+_core:
+  default_config_hash: kVkRwJTY6yOt6bSNYei1ffnuwoFDwdje5-Z4JTlmI9M
+id: paragraph.edw_content_reference.field_entities
+field_name: field_entities
+entity_type: paragraph
+bundle: edw_content_reference
+label: 'Related content'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      news: news
+      page: page
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: null
+field_type: entity_reference

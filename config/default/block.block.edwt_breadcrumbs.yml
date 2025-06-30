@@ -1,0 +1,20 @@
+uuid: b008fd4f-f2f2-4d5b-b225-04089a25950f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - edwt
+id: edwt_breadcrumbs
+theme: edwt
+region: content
+weight: -4
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

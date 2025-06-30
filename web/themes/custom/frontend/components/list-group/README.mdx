@@ -1,0 +1,48 @@
+# List group
+
+List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.
+
+## Bootstrap Documentation
+
+https://getbootstrap.com/docs/5.3/components/list-group/
+
+
+## Component Properties
+
+The List group component takes a variety of properties to customize its appearance and content:
+
+- `list_group_html_tag` (string) (default: 'ul'): The HTML tag to use for the list group.
+- `list_group_item_html_tag` (string) (default: 'li'): The HTML tag to use for the list group items.
+- `list_group_item_variants` (array) (default: []): An array of variants to apply to the list group items.
+- `list_group_utility_classes` (array) (default: []): An array of utility classes to apply to the list group.
+- `list_group_item_utility_classes` (array) (default: []): An array of utility classes to apply to the list group items.
+- `list_group_attributes` (array) (default: []): An array of attributes to apply to the list group.
+- `list_group_item_attributes` (array) (default: []): An array of attributes to apply to the list group items.
+- `list_group_items` (array) (default: []): An array of items to display in the list group.
+- `numbered` (bool) (default: false): Add numbers to the list group items.
+- `horizontal` (bool) (default: false): Display the list group items horizontally.
+- `horizontal_breakpoint` (string) (default: 'md'): The breakpoint at which to switch to horizontal list group items.
+
+## Usage:
+
+```twig
+{%
+  include 'radix:list-group' with {
+    numbered: true,
+    horizontal: true,
+    horizontal_breakpoint: 'lg',
+    list_group_item_variants: 'danger',
+    list_group_items: [
+      {
+        content: 'First item',
+      },
+      {
+        content: 'Second item',
+      },
+      {
+        content: 'Third item',
+      },
+    ]
+  }
+%}
+```

@@ -1,0 +1,18 @@
+uuid: ebd43ddf-6728-47d6-b0fd-2c8d5bd9e2b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_carousel
+id: paragraph.edw_carousel.created
+field_name: created
+entity_type: paragraph
+bundle: edw_carousel
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

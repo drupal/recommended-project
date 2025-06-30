@@ -1,0 +1,32 @@
+uuid: 1c489012-27a5-469c-bd59-edc9d8c31777
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.edw_accordion_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: moR9ZA7CbCWUAB10v_IXVywGV0mvFYcoLjT98cUfYsU
+id: paragraph.edw_accordion_item.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: edw_accordion_item
+label: Content
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      edw_rich_text: edw_rich_text
+    negate: 0
+    target_bundles_drag_drop:
+      edw_rich_text:
+        weight: 16
+        enabled: true
+field_type: entity_reference_revisions

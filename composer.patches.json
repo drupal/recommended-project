@@ -4,7 +4,7 @@
       "#3375725 Deprecated function: Creation of dynamic property": "https://www.drupal.org/files/issues/2024-01-16/deprecated-function-creation-of-dynamic-property-3375725-17.patch"
     },
     "drupal/core": {
-      "#2689459 - If you don't want to translate your URL alias, the original URL alias won't work with your translations": "patches/core/original_url_alias_translations_d11.patch",
+      "#2689459 - If you don't want to translate your URL alias, the original URL alias won't work with your translations": "https://www.drupal.org/files/issues/2025-06-20/2689459_d11.1.x.patch",
       "#3101231 - Fix multilingual site's layout edit context issue with TypeError: Argument 1 passed to UrlHelper::buildQuery() must be of the type array, null given": "https://www.drupal.org/files/issues/2022-02-16/layout-builder-translation-issue-3101231-34.patch",
       "#2842858 - Basic Auth module conflicts with server-level \"Site Lock\" implementations": "https://www.drupal.org/files/issues/2021-01-19/basic_auth_1.patch"
     },
@@ -16,6 +16,9 @@
     },
     "drupal/layout_builder_st": {
       "#3420063 - Error: Call to a member function getConfig() OverridesSectionStorage.php": "https://git.drupalcode.org/project/layout_builder_st/-/merge_requests/6.diff"
+    },
+    "drupal/pathauto": {
+      "#3531848 - Declaration of Drupal\\pathauto\\PathautoFieldItemList::computeValue() must be compatible with Drupal\\path\\Plugin\\Field\\FieldType\\PathFieldItemList::computeValue()": "patches/pathauto/declaration-of-compute-value-must-be-compatible.patch"
     }
   }
 }

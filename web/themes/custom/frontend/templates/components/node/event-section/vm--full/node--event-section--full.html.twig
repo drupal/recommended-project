@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ *
+ */
+#}
+
+{{ attach_library('frontend/n--page--full') }}
+
+{%
+  set classes = [
+    'node',
+    'node--' ~ node.bundle|clean_class,
+    view_mode ? 'node--' ~ view_mode|clean_class,
+    view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  ]
+%}
+
+{% set meetingURL = url('entity.node.canonical', {'node': node.field_event.target_id}) %}
+
+<article{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <header class="js--hero-header page-layout-header main-content-w0">
+    <div class="container">
+      <h1{{title_attributes.addClass('h1','node--title')}}>
+        {{- label -}}
+      </h1>
+
+      <a href={{- meetingURL -}}>
+        {{ "Back to: "|t }}{{- node.field_event.entity.title.value -}}
+      </a>
+    </div>
+  </header>
+
+  {{- content -}}
+</article>

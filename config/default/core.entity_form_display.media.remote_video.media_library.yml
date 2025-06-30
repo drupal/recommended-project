@@ -6,6 +6,11 @@ dependencies:
     - core.entity_form_mode.media.media_library
     - field.field.media.remote_video.field_media_oembed_video
     - media.type.remote_video
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: media.remote_video.media_library
 targetEntityType: media
 bundle: remote_video

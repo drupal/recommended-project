@@ -1,6 +1,6 @@
 {
     "name": "eaudeweb/recommended-project",
-    "description": "Project template for Drupal 9 projects with a relocated document root",
+    "description": "Project template for Drupal 11 projects with a relocated document root",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/drupal",
@@ -14,7 +14,8 @@
             "url": "https://packages.drupal.org/8",
             "exclude": [
                 "drupal/password_strength",
-                "drupal/layout_builder_st"
+                 "drupal/layout_builder_st",
+                 "drupal/node_access_grants"
             ]
         },
         {
@@ -60,11 +61,59 @@
         },
         {
             "type": "git",
-            "url": "git@github.com:eaudeweb/edw_modules.git"
+            "url": "https://github.com/eaudeweb/edw_blocks.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_decoupled.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_demo_data.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_event.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_group.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_media.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_paragraphs.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_person.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_project.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_utilities.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_themes.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/eaudeweb/edw_document.git"
         },
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.drupalcode.org/issue/node_access_grants-3494785"
         }
     ],
     "require": {
@@ -77,11 +126,13 @@
         "drupal/allowed_formats": "^3.0",
         "drupal/autologout": "^1.6",
         "drupal/backup_migrate": "^5.1",
+        "drupal/better_exposed_filters": "^7.0",
         "drupal/blazy": "^3.0",
+        "drupal/block_field": "^1.0@RC",
         "drupal/bootstrap_layout_builder": "^2.0",
         "drupal/captcha": "^2.0",
         "drupal/ckeditor5_paste_filter": "^1.1",
-        "drupal/ckeditor_accordion": "^2.2",
+        "drupal/ckeditor_accordion": "^2.3",
         "drupal/ckeditor_bs_grid": "^2.0",
         "drupal/clamav": "^2.1",
         "drupal/conditional_fields": "^4.0@alpha",
@@ -94,13 +145,16 @@
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.2",
         "drupal/edw_healthcheck": "^1.27",
-        "drupal/edwt": "^4.0",
+        "drupal/edwt": "^4.1@beta",
         "drupal/elogger": "^1.1",
         "drupal/encrypt": "^3.2",
+        "drupal/entity_clone": "^2.1@beta",
+        "drupal/entity_embed": "^1.6",
         "drupal/environment_indicator": "^4.0",
         "drupal/extlink": "^2.0",
-        "drupal/facets": "^2.0",
-        "drupal/field_group": "^3.6",
+        "drupal/facets": "^3.0",
+        "drupal/field_group": "^4.0",
+        "drupal/gin": "^5.0",
         "drupal/honeypot": "^2.2",
         "drupal/image_widget_crop": "^3.0",
         "drupal/imce": "^3.1",
@@ -109,6 +163,7 @@
         "drupal/layout_builder_modal": "^1.3",
         "drupal/layout_builder_restrictions": "^3.0",
         "drupal/layout_builder_st": "dev-custom",
+        "drupal/layout_paragraphs": "^2.1",
         "drupal/link_attributes": "^2.1",
         "drupal/media_library_edit": "^3.0",
         "drupal/media_library_form_element": "^2.1",
@@ -117,11 +172,13 @@
         "drupal/metatag": "^2.1",
         "drupal/oembed_lazyload": "^2.0",
         "drupal/optional_end_date": "^1.4",
+        "drupal/paragraphs": "^1.19",
         "drupal/pathauto": "^1.13",
         "drupal/real_aes": "^2.5",
         "drupal/recaptcha": "^3.4",
         "drupal/redirect": "^1.11",
         "drupal/remove_username": "^1.3",
+        "drupal/sdc_display": "^2.0@beta",
         "drupal/search_api": "^1.38",
         "drupal/select2": "^2.0",
         "drupal/simple_search_form": "^1.6",
@@ -130,16 +187,29 @@
         "drupal/smart_trim": "^2.2",
         "drupal/smtp": "^1.4",
         "drupal/spamspan": "^3.2",
+        "drupal/svg_image": "^3.1",
         "drupal/tfa": "^2.0@alpha",
-        "drupal/token": "^1.10",
+        "drupal/token": "^1.15",
         "drupal/twig_tweak": "^3.4",
         "drupal/views_bulk_operations": "^4.3",
-        "drupal/views_data_export": "^1.6",
+        "drupal/views_data_export": "^1.5",
+        "drupal/viewsreference": "^2.0@beta",
         "drupal/webform": "^6.3@beta",
         "drupal/webp": "^1.0@beta",
         "drupal/xmlsitemap": "^2.0",
         "drush/drush": "^13",
-        "eaudeweb/edw_modules": "^2.0",
+        "eaudeweb/edw_blocks": "^1.0",
+        "eaudeweb/edw_decoupled": "^1.0",
+        "eaudeweb/edw_demo_data": "^1.0",
+        "eaudeweb/edw_document": "^1.0",
+        "eaudeweb/edw_event": "^1.0",
+        "eaudeweb/edw_group": "^1.0",
+        "eaudeweb/edw_media": "^1.0",
+        "eaudeweb/edw_paragraphs": "^1.0",
+        "eaudeweb/edw_person": "^1.0",
+        "eaudeweb/edw_project": "^1.0",
+        "eaudeweb/edw_themes": "^1.0",
+        "eaudeweb/edw_utilities": "^1.0",
         "eaudeweb/heavy-lifter": "^2",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0",
@@ -169,12 +239,12 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
-            "drupal/core-composer-scaffold": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
             "oomphinc/composer-installers-extender": true,
             "php-http/discovery": true,
+            "phpstan/extension-installer": true,
             "tbachert/spi": true
         }
     },
@@ -234,11 +304,22 @@
         ],
         "post-install-cmd": [
             "@remove-git-folders",
-            "bash -c 'vendor/bin/cghooks update > /dev/null 2>&1 || true'"
+            "bash -c 'vendor/bin/cghooks update > /dev/null 2>&1 || true'",
+            "cd web/themes/contrib/edwt/ && npm install",
+            "cd web/themes/custom/frontend/ && npm install && npm run build"
         ],
         "post-update-cmd": [
             "@remove-git-folders"
         ],
-        "post-drupal-scaffold-cmd": []
+        "post-drupal-scaffold-cmd": [],
+        "theme-build": [
+            "cd web/themes/contrib/edwt/ && npm install",
+            "cd web/themes/custom/frontend/ && npm install && npm run build"
+        ],
+        "theme-watch": [
+            "Composer\\Config::disableProcessTimeout",
+            "cd web/themes/contrib/edwt/ && npm install",
+            "cd web/themes/custom/frontend/ && npm install && npm run watch"
+        ]
     }
 }

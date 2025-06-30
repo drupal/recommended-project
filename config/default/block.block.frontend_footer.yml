@@ -1,4 +1,4 @@
-uuid: 3b1dd000-73d2-453c-9963-fd8ff7b83724
+uuid: 193fb055-c0c8-4463-b01b-7c7b591dcc08
 langcode: en
 status: true
 dependencies:
@@ -8,12 +8,10 @@ dependencies:
     - system
   theme:
     - frontend
-_core:
-  default_config_hash: 52G3PSgNgSIRf1SMGe9PxvxSIeYRZwBHg9U6wdJz1M0
 id: frontend_footer
 theme: frontend
 region: footer
-weight: -6
+weight: -5
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

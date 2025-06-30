@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Frontend override for a field.
+ */
+#}
+
+{{ attach_library('edwt/badge') }}
+
+{%
+  set classes = [
+    'field',
+    field_name|clean_class,
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {% for item in items %}
+    <div{{item.attributes.addClass('badge')}}>{{ item.content }}</div>
+  {% endfor %}
+</div>

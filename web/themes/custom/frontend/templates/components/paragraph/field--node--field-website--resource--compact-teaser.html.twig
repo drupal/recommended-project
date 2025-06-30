@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Frontend override for a field.
+ */
+#}
+{%
+  set classes = [
+    'field',
+    field_name|clean_class,
+    field_type|clean_class ~ '--' ~ field_name|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {% if not label_hidden %}
+    <div{{title_attributes.addClass(title_classes)}}>
+      {{- label -}}
+      {{- label_display == 'inline' ? ':' }}
+    </div>
+  {% endif %}
+
+  {% if items|length > 1 %}
+    <div class="field__items">
+    {% endif %}
+    {% for item in items %}
+      {% set btn_classes = [
+        'btn-clear',
+        items|length < 2 ? "stretched-link",
+      ] %}
+
+      {% set iconPosition = items|length < 2 ? "only" : "" %}
+
+      {% set button_context = {
+        icon_position: iconPosition,
+        url: item.content['#url']|render,
+        button_utility_classes: btn_classes,
+        content: item.content['#title'],
+        button_html_tag: 'a',
+      } %}
+
+      {% if items|length < 2 %}
+        {% set button_context = button_context|merge({
+          slot_icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.1313 8.75H2V7.25H11.1313L6.93125 3.05L8 2L14 8L8 14L6.93125 12.95L11.1313 8.75Z" fill="currentColor"/></svg>'
+        }) %}
+      {% endif %}
+
+      <div{{item.attributes.addClass('field__item')}}>
+        {% include 'edwt:button' with button_context %}
+      </div>
+    {% endfor %}
+    {% if items|length > 1 %}
+    </div>
+  {% endif %}
+</div>

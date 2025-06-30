@@ -1,0 +1,51 @@
+uuid: 5c13fd2f-def1-495c-8dcb-04258afcb3ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.layout_columns.field_background_color
+    - field.field.paragraph.layout_columns.field_background_media
+    - field.field.paragraph.layout_columns.field_container_size
+    - paragraphs.paragraphs_type.layout_columns
+  module:
+    - media
+    - options
+    - sdc_display
+third_party_settings:
+  sdc_display:
+    enabled: false
+    component:
+      machine_name: ''
+    mappings:
+      static:
+        props: {  }
+        slots: {  }
+      dynamic:
+        props: {  }
+        slots: {  }
+id: paragraph.layout_columns.default
+targetEntityType: paragraph
+bundle: layout_columns
+mode: default
+content:
+  field_background_color:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_background_media:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_container_size: true
+  search_api_excerpt: true

@@ -7,6 +7,7 @@ dependencies:
     - filter.format.full_html
     - node.type.page
   module:
+    - allowed_formats
     - text
 id: node.page.body
 field_name: body

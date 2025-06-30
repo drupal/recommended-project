@@ -1,0 +1,79 @@
+uuid: 5f6858d2-8e7e-4f58-9a9f-b86862298267
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.edw_columns
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: D7WMBqr9BLFqPHlHU8gNfCJUc2m6wB85OXsx1LVSz0c
+id: paragraph.edw_columns.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: edw_columns
+label: Items
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      edw_accordion:
+        weight: 18
+        enabled: false
+      edw_accordion_item:
+        weight: 19
+        enabled: false
+      edw_button:
+        weight: 20
+        enabled: false
+      edw_card:
+        weight: 17
+        enabled: false
+      edw_carousel:
+        weight: 22
+        enabled: false
+      edw_carousel_item:
+        weight: 23
+        enabled: false
+      edw_columns:
+        weight: 24
+        enabled: false
+      edw_container:
+        weight: 25
+        enabled: false
+      edw_content_reference:
+        weight: 26
+        enabled: false
+      edw_gallery:
+        weight: 27
+        enabled: false
+      edw_image:
+        weight: 28
+        enabled: false
+      edw_links_block:
+        weight: 20
+        enabled: false
+      edw_quote:
+        weight: 23
+        enabled: false
+      edw_rich_text:
+        weight: 24
+        enabled: false
+      edw_tab:
+        weight: 32
+        enabled: false
+      edw_tabs:
+        weight: 33
+        enabled: false
+      edw_view:
+        weight: 34
+        enabled: false
+field_type: entity_reference_revisions

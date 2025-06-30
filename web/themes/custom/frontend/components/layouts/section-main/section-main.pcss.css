@@ -1,0 +1,30 @@
+.page--4xx,
+.page--user {
+  .section_main {
+    --page-userr_s: 60px;
+    --_page-user_pb: var(--page-user_pb, var(--page-userr_s));
+
+    padding-block: var(--_page-user_pb);
+  }
+}
+
+.page--4xx {
+  display: flex;
+  flex-direction: column;
+
+  & > .main-content {
+    flex-grow: 1;
+    align-items: center;
+    font-size: 36px;
+    text-align: center;
+    text-wrap: balance;
+  }
+}
+
+.page--user {
+  form {
+    background: var(--c-gray-100);
+    padding: var(--gutter);
+    border-radius: var(--br);
+  }
+}

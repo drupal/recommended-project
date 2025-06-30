@@ -1,0 +1,20 @@
+uuid: 6264e397-ba22-411f-8db7-0c899ca33fb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_rich_text
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+_core:
+  default_config_hash: aG7Sot20SlQ3bdEXLS6dgvt-zSAK8NHEE0B_tpkXaxI
+id: paragraph.edw_rich_text
+target_entity_type_id: paragraph
+target_bundle: edw_rich_text
+default_langcode: site_default
+language_alterable: true

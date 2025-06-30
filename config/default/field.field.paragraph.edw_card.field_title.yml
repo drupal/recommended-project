@@ -1,0 +1,21 @@
+uuid: def43674-3200-428d-b625-40223ad6040d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.edw_card
+_core:
+  default_config_hash: GAr06h02juXSYcHlXFncHmRuxRJqKlc0HYGbVHNn0aE
+id: paragraph.edw_card.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: edw_card
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

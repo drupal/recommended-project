@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Template for a Section main component.
+ *
+ * Available config:
+ * - uc: (optional) Utility classes.
+ * - uc_main: (optional) Utility classes main section.
+*/
+#}
+
+{# Create attributres #}
+{% set attributes = attributes ?: create_attribute() %}
+{% set main_attributes = main_attributes ?: create_attribute() %}
+
+{% set uc_classes = [
+  'flex-grow-1',
+]|merge(uc ?: []) %}
+
+{% set main_classes = [
+  'section_main',
+]|merge(uc_main ?: []) %}
+
+{% set attributes = attributes.setAttribute('role', 'main' ) %}
+
+
+<main {{ attributes.addClass(uc_classes)}}>
+  {{ page.hero }}
+
+  {% block slot_highlighted %}
+    <section class="highlighted page-layout-header">
+      {% if node %}
+        {{ node|view('header') }}
+      {% else %}
+        {{ page.highlighted }}
+      {% endif %}
+    </section>
+  {% endblock %}
+
+  {% block slot_content %}
+    {{ page.breadcrumb }}
+
+    <section{{ main_attributes.addclass(main_classes) }}>
+      {{ page.content }}
+    </section>
+  {% endblock %}
+
+  {% block slot_bottom %}
+    <section class="content-bottom">
+      {{ page.content_bottom }}
+    </section>
+  {% endblock %}
+</main>

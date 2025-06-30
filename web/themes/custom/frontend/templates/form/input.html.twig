@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * EDWT override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+
+{%
+  set classes = [
+    attributes.hasClass('button') ? 'btn btn-secondary' : 'form-control',
+  ]
+%}
+
+<input{{attributes.addClass(classes)}}/>{{ children }}

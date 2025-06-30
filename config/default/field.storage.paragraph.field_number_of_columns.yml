@@ -1,0 +1,29 @@
+uuid: fd4b2c72-5dd0-4340-9e43-d8d7031ec5c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: ItjydkV8K0eFLzF53A--DX3v1yCW6RFCnGbti7Od0mU
+id: paragraph.field_number_of_columns
+field_name: field_number_of_columns
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: Vertical
+    -
+      value: '2'
+      label: Horizontal
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

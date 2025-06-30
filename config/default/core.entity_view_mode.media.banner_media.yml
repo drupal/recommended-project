@@ -1,0 +1,11 @@
+uuid: 8ce03251-fda2-4e1b-8e58-a0a44aa8bbab
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.banner_media
+label: 'Banner media'
+description: ''
+targetEntityType: media
+cache: true

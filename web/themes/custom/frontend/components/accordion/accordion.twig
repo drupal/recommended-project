@@ -1,0 +1,126 @@
+{#
+/**
+  * @file
+  * Accordion component.
+  *
+  * Bootstrap Documentation
+  * https://getbootstrap.com/docs/5.3/components/accordion/
+  *
+  * Full List Utility Classes
+  * https://github.com/twbs/bootstrap/blob/v5.3.0/dist/css/bootstrap.css#L214
+  *
+  * Available properties:
+  * - title (string) (default: '')
+  * - title_tag (string) (default: 'h2')
+  * - title_link: (link object) (default: {})
+  * - title_attributes: (drupal attrs)
+  * - id (int) (default: accordion-random(1000))
+  * - flush (boolean) (default: false)
+  * - items (array) (default: []): format: [
+  *     {
+  *       title: (string),
+  *       title_tag: (string),
+  *       content: (block),
+  *       stay_open (boolean) (default: false)
+  *     },
+  *   ]
+  * - open_item_id (int) (default: 0)
+  *
+  * usage example: @see README.md
+  *
+  */
+#}
+{% apply spaceless %}
+
+{% set title = title|default('') %}
+{% set title_tag = title_tag|default('h2') %}
+{% set title_link = title_link|default({}) %}
+{% set title_attributes = title_attributes ?: create_attribute() %}
+{% set id = id|default('accordion-' ~ random(1000)) %}
+{% set flush = flush ?? false %}
+{% set items = items|default([]) %}
+{% set open_item_id = open_item_id|default(0) %}
+
+{%
+  set accordion_classes = [
+    'accordion'
+  ]|merge(accordion_utility_classes ?: [])
+%}
+
+{%
+  set accordion_item_classes = [
+    'accordion-item'
+  ]|merge(accordion_item_utility_classes ?: [])
+%}
+
+{% if flush %}
+  {% set accordion_classes = accordion_classes|merge(['accordion-flush']) %}
+{% endif %}
+
+{% set accordion_attributes = accordion_attributes ?: create_attribute() %}
+{% set accordion_item_attributes = accordion_item_attributes ?: create_attribute() %}
+{% set accordion_attributes = accordion_attributes.addClass(accordion_classes).setAttribute('id', id) %}
+
+{% if items is not empty %}
+  <div {{ accordion_attributes.addClass(accordion_classes) }}>
+    {% if title is not empty %}
+      {%
+        include 'frontend:heading' with {
+          heading_html_tag: 'h2',
+          content: title,
+          heading_attributes: title_attributes,
+        }
+      %}
+    {% endif %}
+
+    {% for item in items %}
+      {% set content = item.content|default('') %}
+      {% set open_item = open_item_id == loop.index %}
+      {%
+        set button_classes = [
+          'accordion-button',
+          'text-wrap',
+        ]
+      %}
+
+      {% if not open_item %}
+        {% set button_classes = button_classes|merge(['collapsed']) %}
+      {% endif %}
+
+      {% if content %}
+        <div {{ accordion_item_attributes.addClass(accordion_item_classes) }}>
+          {% set item_title_tag = item.title_tag|default('h3') %}
+
+          <{{item_title_tag}} class="accordion-header" id="heading-{{ id }}-{{ loop.index }}">
+            {%
+              set button_attributes = create_attribute()
+                .addClass(button_classes)
+                .setAttribute('data-bs-toggle', 'collapse')
+                .setAttribute('autocomplete', 'off')
+                .setAttribute('data-bs-target', '#collapse-' ~ id ~ '-' ~ loop.index)
+                .setAttribute('aria-controls', 'collapse-' ~ id ~ '-' ~ loop.index)
+                .setAttribute('aria-expanded', open_item ? 'true' : 'false')
+            %}
+
+            {%
+              include 'edwt:button' with {
+                content: item.title,
+                button_attributes,
+              }
+            %}
+          </{{item_title_tag}}>
+
+          <div id="collapse-{{ id }}-{{ loop.index }}" class="accordion-collapse collapse{{ open_item ? ' show' }}" aria-labelledby="heading-{{ id }}-{{ loop.index }}" role="region" {% if not item.stay_open %} data-bs-parent="#{{ id }}" {% endif %}>
+            <div class="accordion-body">
+              {% block content %}
+                {{ content }}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% endapply %}

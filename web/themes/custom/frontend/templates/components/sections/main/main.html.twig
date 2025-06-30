@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * EDWT Component.
+ */
+#}
+
+{% set main_container = create_attribute() %}
+
+{%
+  set main_container_classes = [
+    'main-content',
+    'grid-container',
+  ]
+%}
+
+{{ page.hero }}
+<section class="highlighted page-layout-header grid-container">
+  {{ page.breadcrumb }}
+</section>
+
+<section{{main_container.addclass(main_container_classes)}}>
+  {{ page.content }}
+</section>
+
+<section class="content-bottom">
+  {{ page.content_bottom }}
+</section>

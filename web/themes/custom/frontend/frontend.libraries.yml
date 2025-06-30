@@ -1,22 +1,243 @@
 # Libraries for the configuration the Eau de Web Theme theme.
+theme-fonts:
+  css:
+    theme:
+      "https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap":
+        { type: external, minified: true }
+
 global-styling:
   css:
     theme:
-      css/fonts.css: {}
       css/vars.css: {}
-      css/general.css: {}
-      css/dark-mode.css: {}
-      css/header.css: { }
-      css/footer.css: { }
+      css/utilities.css: {}
+      css/global.css: {}
+      css/button.css: {}
+      css/container.css: {}
+      css/ckeditor-styles.css: {}
+  dependencies:
+    - edwt/button
+    - edwt/button
+    - edwt/table
+
+# Sections.
+s--header:
+  css:
+    component:
+      css/components/sections/header/style.css: { minified: true }
+  dependencies:
+    - edwt/s--header
+# Components.
+cl--pledges-map:
+  css:
+    component:
+      css/modules/gmp_map/pledges-map.css: { minified: true }
+# Fields.
+# Node.
+n--card:
+  css:
+    component:
+      css/components/node/vm--card/style.css: { minified: true }
+  dependencies:
+    - edwt/card
+
+n--header:
+  css:
+    component:
+      css/components/node/vm--header/style.css: { minified: true }
+
+n--teaser:
+  css:
+    component:
+      css/components/node/vm--teaser/style.css: { minified: true }
+
+n--compact-teaser:
+  css:
+    component:
+      css/components/node/vm--compact-teaser/style.css: { minified: true }
+
+n--event--full:
+  css:
+    component:
+      css/components/node/event/vm--full/style.css: { minified: true }
   js:
-    js/script.js: {}
+    templates/components/node/event/vm--full/script.js: { minified: false }
+  dependencies:
+    - core/drupal
+    - core/jquery
 
-node--teaser:
+n--event--teaser:
   css:
     component:
-      css/components/content/node--teaser.css: {}
+      css/components/node/event/vm--teaser/style.css: { minified: true }
 
-slick:
+n--event-section--teaser:
   css:
     component:
-      css/components/slick/slick.css: {}
+      css/components/node/event-section/vm--teaser/style.css: { minified: true }
+
+n--news--card:
+  css:
+    component:
+      css/components/node/news/vm--card/style.css: { minified: true }
+  dependencies:
+    - frontend/n--card
+
+n--news--full:
+  css:
+    component:
+      css/components/node/news/vm--full/style.css: { minified: true }
+
+n--featured-card:
+  css:
+    component:
+      css/components/node/vm--featured-card/style.css: { minified: true }
+  dependencies:
+    - frontend/n--card
+
+n--page--full:
+  css:
+    component:
+      css/components/node/vm--full/style.css: { minified: true }
+
+# Media.
+# Views.
+v--see-all-toggle:
+  js:
+    templates/components/views/see-all-toggle.js: { minified: false }
+  dependencies:
+    - core/drupal
+    - core/jquery
+
+w--countries:
+  css:
+    component:
+      css/components/views/countries/style.css: { minified: true }
+  dependencies:
+    - frontend/v--see-all-toggle
+
+v--unformatted--resources-highlights:
+  css:
+    component:
+      css/components/views/resources/highlights-block/style.css:
+        { minified: true }
+  # js:
+  #   templates/components/views/countries/script.js: { minified: false }
+  # dependencies:
+  #   - core/drupal
+  #   - core/jquery
+
+v--grid--organisations:
+  css:
+    component:
+      css/components/views/organisations/style.css: { minified: true }
+  dependencies:
+    - frontend/v--see-all-toggle
+
+# Menu.
+# Block short "b--".
+b--system-branding:
+  css:
+    component:
+      css/components/block/system-branding/style.css: { minified: true }
+
+b--logo-list:
+  css:
+    component:
+      css/components/block/logo-list/style.css: { minified: true }
+
+b--book-navigation:
+  css:
+    component:
+      css/components/block/book-navigation/style.css: { minified: true }
+
+# Paragraphs.
+p--edw-container:
+  css:
+    component:
+      css/components/paragraph/edw-container/style.css: { minified: true }
+
+p--edw-slider:
+  css:
+    component:
+      css/components/paragraph/edw-slider/style.css: { minified: true }
+
+p--edw-card--default:
+  css:
+    component:
+      css/components/paragraph/edw-card/vm-default/style.css: { minified: true }
+  dependencies:
+    - frontend/n--card
+
+p--edw-card--agenda-list-view:
+  css:
+    component:
+      css/components/paragraph/edw-card/vm--agenda-list-view/style.css:
+        { minified: true }
+
+p--carousel-slide--main:
+  css:
+    component:
+      css/components/paragraph/carousel-slide/vm-main/style.css:
+        { minified: true }
+
+p--views-block--default--page:
+  css:
+    component:
+      css/components/paragraph/carousel-slide/vm-main/style.css:
+        { minified: true }
+
+p--text-paragraphs--default:
+  css:
+    component:
+      css/components/paragraph/text-paragraphs/vm--default/style.css:
+        { minified: true }
+
+p--text-box--default:
+  css:
+    component:
+      css/components/paragraph/text-box/vm--default/style.css:
+        { minified: true }
+
+p--responsive-grid:
+  css:
+    component:
+      css/components/paragraph/responsive-grid/style.css: { minified: true }
+
+p--fullwidth-multimedia-banner:
+  css:
+    component:
+      css/components/paragraph/fullwidth-multimedia-banner/style.css:
+        { minified: true }
+
+# term.
+t--countries--list-view:
+  css:
+    component:
+      css/components/taxonomy/countries/vm--list-view/style.css:
+        { minified: true }
+
+t--organizations--teaser:
+  css:
+    component:
+      css/components/taxonomy/organizations/vm--teaser/style.css:
+        { minified: true }
+
+t--themes--teaser:
+  css:
+    component:
+      css/components/taxonomy/themes/vm--teaser/style.css:
+        { minified: true }
+
+t--organizations--logo:
+  css:
+    component:
+      css/components/taxonomy/organizations/vm--logo/style.css:
+        { minified: true }
+# Modules.
+# Custom.
+# Forms.
+# Layouts.
+layout:
+  css:
+    component:
+      css/layout.css: { minified: true }

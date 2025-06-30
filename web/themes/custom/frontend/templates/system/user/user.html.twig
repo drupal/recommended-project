@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to present all user data.
+ */
+#}
+
+<article{{attributes.addClass('container')}}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</article>

@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Frontend override for a field.
+ */
+#}
+
+{% set classes = [
+  'field',
+  field_name|clean_class,
+  'h2',
+] %}
+
+<h4{{attributes.addClass(classes)}}>
+  {% for item in items %}
+    {{ item.content }}
+  {% endfor %}
+</h4>

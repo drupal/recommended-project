@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ *
+ */
+#}
+
+{{ attach_library('frontend/n--page--full') }}
+
+{%
+  set classes = [
+    'node',
+    'node--' ~ node.bundle|clean_class,
+    view_mode ? 'node--' ~ view_mode|clean_class,
+    view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  ]
+%}
+
+{% if content %}
+  {% embed "frontend:content" with {
+    comp_att: attributes,
+    comp_classes: classes,
+  } %}
+
+    {% block cls_addons %}
+      {{- title_prefix -}}
+      {{- title_suffix -}}
+    {% endblock %}
+
+    {% block content %}
+      {{- content -}}
+    {% endblock %}
+  {% endembed %}
+{% endif %}

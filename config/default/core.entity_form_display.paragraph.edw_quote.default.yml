@@ -1,0 +1,49 @@
+uuid: eb4b10ba-337c-4856-86e3-e3ef0175ffca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_quote.field_description
+    - field.field.paragraph.edw_quote.field_title
+    - paragraphs.paragraphs_type.edw_quote
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: 6JgMfa_c3yFQtAts2WrbieYeymcYzXGxK8HGHNPsYu4
+id: paragraph.edw_quote.default
+targetEntityType: paragraph
+bundle: edw_quote
+mode: default
+content:
+  field_description:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

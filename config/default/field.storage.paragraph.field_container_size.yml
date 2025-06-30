@@ -1,0 +1,32 @@
+uuid: 29027e82-e560-4d52-b010-c40c9fc55033
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: j54ji-54epmA85ZHdOU1o5Y-Pfke4z5jRkdjk5qRX9Y
+id: paragraph.field_container_size
+field_name: field_container_size
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: small
+      label: Small
+    -
+      value: medium
+      label: Normal
+    -
+      value: full
+      label: Full
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

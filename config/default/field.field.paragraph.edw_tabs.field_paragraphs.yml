@@ -1,0 +1,31 @@
+uuid: be44553b-75b4-4c63-b503-8c6d31340660
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.edw_tabs
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: b96so-7MZB9G8tmgtJ8pFl-5AtU3hASjNtWeFkiZo98
+id: paragraph.edw_tabs.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: edw_tabs
+label: Tabs
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      edw_tab:
+        weight: 48
+        enabled: true
+field_type: entity_reference_revisions

@@ -1,0 +1,48 @@
+uuid: 49ea953e-c71e-427d-89a9-7704a3ca38c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_carousel.field_full_width
+    - field.field.paragraph.edw_carousel.field_paragraphs
+    - paragraphs.paragraphs_type.edw_carousel
+  module:
+    - field_layout
+    - layout_discovery
+    - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: Kkj8Hn5VPqIurDa1-w12X9nOIXVSpAak0BA6qpIxSzY
+id: paragraph.edw_carousel.default
+targetEntityType: paragraph
+bundle: edw_carousel
+mode: default
+content:
+  field_paragraphs:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: edw_carousel_item
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        convert: '0'
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_full_width: true
+  status: true

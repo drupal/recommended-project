@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a formatted colorbox image field.
+ *
+ * Available variables:
+ * - image: A collection of image data.
+ * - url: An URL the image can be linked to.
+ * - attributes: Link attributes.
+ *
+ * @see template_preprocess_colorbox_formatter()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('frontend/module--colorbox-media-remote-video') }}
+
+<div {{ attributes.setAttribute('data-colorbox-gallery', 'gallery-all') }}>{{ image }}</div>

@@ -1,0 +1,27 @@
+uuid: 9a2581c1-1173-40a7-a4b8-329581e64a1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.edw_rich_text
+  module:
+    - allowed_formats
+    - text
+_core:
+  default_config_hash: pVIDv67zmXGXKdHeK2KB3L4zyvqze0oZRlk-Eot5OAQ
+id: paragraph.edw_rich_text.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: edw_rich_text
+label: Text
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

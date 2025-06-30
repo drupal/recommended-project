@@ -1,0 +1,18 @@
+uuid: b71e5f31-3c72-4e5b-bd6a-28cc2f5decc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_card
+id: paragraph.edw_card.created
+field_name: created
+entity_type: paragraph
+bundle: edw_card
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

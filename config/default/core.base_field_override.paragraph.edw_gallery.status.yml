@@ -1,0 +1,22 @@
+uuid: 8ce98aac-f76d-4595-8e96-a7ddb2f718e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_gallery
+id: paragraph.edw_gallery.status
+field_name: status
+entity_type: paragraph
+bundle: edw_gallery
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

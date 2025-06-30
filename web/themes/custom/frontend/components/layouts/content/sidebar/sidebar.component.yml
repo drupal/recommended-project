@@ -1,0 +1,51 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Content layout sidebar
+status: experimental
+description: 'Content layout sidebar description'
+
+props:
+  type: object
+  properties:
+    comp_att:
+      type: Drupal\Core\template\Attribute
+      title: Component attribute
+      description: Wrapper component attributes
+
+    slotSidebar_att:
+      type: Drupal\Core\template\Attribute
+      title: Component attribute
+      description: Wrapper component attributes
+
+    slotContent_att:
+      type: Drupal\Core\template\Attribute
+      title: Component attribute
+      description: Wrapper component attributes
+
+    comp_classes:
+      type: array
+      items:
+        type: string
+      title: Content layout sidebar classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+    slotSidebar_classes:
+      type: array
+      items:
+        type: string
+      title: Content layout sidebar classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+    slotContent_classes:
+      type: array
+      items:
+        type: string
+      title: Content layout sidebar classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+slots:
+  sidebar:
+    title: sidebar
+    description: Default content text for the tab.
+  content:
+    title: Content
+    description: Default content text for the tab.

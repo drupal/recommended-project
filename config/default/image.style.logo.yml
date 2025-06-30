@@ -1,0 +1,15 @@
+uuid: 3701fb9d-4da6-40ad-9048-f0a249c1e754
+langcode: en
+status: true
+dependencies: {  }
+name: logo
+label: 'Logo (h:70px)'
+effects:
+  7451c439-ccdd-42c0-abd5-a96647bb81d6:
+    uuid: 7451c439-ccdd-42c0-abd5-a96647bb81d6
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 70
+      upscale: true

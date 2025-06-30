@@ -1,0 +1,17 @@
+uuid: 837417f5-1fbe-42b0-ae4e-420d8b75873b
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: KNqzMFLxhy-erIf3bLD7uW07bJJZIDMCNlSIfaLqq-A
+id: edw_quote
+label: Quote
+icon_uuid: null
+icon_default: null
+description: 'Editors will be able to add the quotation to the specific content type where Quote paragraph type is attached.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

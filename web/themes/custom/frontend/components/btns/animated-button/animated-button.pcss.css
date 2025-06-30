@@ -1,0 +1,128 @@
+.animated-btn {
+  --_abtn_w: 24px;
+  --_abtn_h: 24px;
+  --btn-px: var(--_btn-py);
+  --_btn--ai--c: var(--btn--ai--c, var(--c-primary));
+
+  position: relative;
+
+  .w--icon {
+    position: relative;
+    width: var(--_abtn_w);
+    height: var(--_abtn_h);
+    transform: translateY(-1px);
+  }
+}
+
+.animated-btn--menu {
+  --_btn-mm_span-h: 2px;
+  --_btn-mm_span-p-between: 4px;
+
+  & span {
+    display: block;
+    height: var(--_btn-mm_span-h);
+    width: var(--_abtn_w);
+    background: var(--_btn--ai--c);
+    position: absolute;
+    transform-origin: center;
+    transition: all 0.3s;
+
+    &:nth-child(1) {
+      top: calc(
+        50% - var(--_btn-mm_span-h) - var(--_btn-mm_span-p-between) - 1px
+      );
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+    }
+
+    &:nth-child(3) {
+      top: calc(
+        50% + var(--_btn-mm_span-h) + var(--_btn-mm_span-p-between) + 1px
+      );
+    }
+  }
+
+  &[aria-expanded="true"] {
+    span {
+      &:nth-child(1) {
+        -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+        top: 50%;
+      }
+
+      &:nth-child(2) {
+        background-color: transparent;
+      }
+
+      &:nth-child(3) {
+        -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        transform: rotate(135deg);
+        top: 50%;
+      }
+    }
+  }
+}
+
+.animated-btn--search {
+  --_btn-ai-icon_w: 2px;
+
+  transform: translateY(-1px);
+  isolation: isolate;
+  z-index: 2;
+
+  .circle {
+    border: var(--_btn-ai-icon_w) solid var(--_btn--ai--c);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: 15px;
+    width: 15px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+  }
+
+  .line {
+    position: absolute;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 10px;
+      height: var(--_btn-ai-icon_w);
+      width: 7px;
+      background: var(--_btn--ai--c);
+      position: absolute;
+      left: 2px;
+      top: 17px;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform: rotate(45deg);
+    }
+  }
+
+  &[aria-expanded="true"] {
+    .circle {
+      background-color: transparent;
+      transform: scale(0);
+    }
+
+    .line {
+      &::before,
+      &::after {
+        width: 18px;
+        top: 11px;
+        left: -9px;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

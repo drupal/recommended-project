@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * files-group-by-language.html.twig
+ *
+ * Available variables:
+ *  - rows: Array with files grouped by language code.
+ */
+#}
+{% if rows %}
+  {% if rows[current_language] is not empty %}
+    {% set active_tab = current_language  %}
+  {% elseif rows[current_language] is empty and rows['en'] is not empty %}
+    {% set active_tab = 'en'  %}
+  {% else %}
+    {% set active_tab = false %}
+  {% endif %}
+
+  <span class="document document-files">
+    {% for lang, items in rows %}
+      {{ loop.first ? '(' }}
+
+      {% if items %}
+        {% for item in items %}
+          <a href= {{ item.content['#file'].uri.value|file_url }} class="file-link">
+            {{ lang }}
+          </a>
+
+          {{ loop.last ? '' : ',' }}
+        {% endfor %}
+      {% endif %}
+
+      {{ loop.last ? ')' }}
+    {% endfor %}
+  </span>
+{% endif %}

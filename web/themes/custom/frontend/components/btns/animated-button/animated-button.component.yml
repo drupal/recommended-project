@@ -1,0 +1,83 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Button
+status: experimental
+description: Use Bootstrap custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+props:
+  type: object
+  properties:
+    button_html_tag:
+      type: string
+      title: The HTML tag to use for the button (button | a). Defaults to `button`.
+      default: button
+      enum:
+        - button
+        - a
+    url:
+      type: ['string', 'null']
+      title: URL Link
+      description: URL link for the button when the HTML tag is an anchor link.
+    id:
+      type: string
+      title: ID
+      description: The ID of the button.
+    icon:
+      type: string
+      title: Icon
+      description: Icon type.
+      default: search
+      enum:
+        - search
+        - menu
+    color:
+      type: string
+      title: Color
+      description: Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras thrown in for more control.
+      default: link
+      enum:
+        - primary
+        - secondary
+        - success
+        - danger
+        - warning
+        - info
+        - dark
+        - light
+        - link
+    outline:
+      type: boolean
+      title: Outline
+      description: In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the .btn-outline-* ones to remove all background images and colors on any button.
+      default: false
+    expanded:
+      type: string
+      title: Expanded
+      description: Button aria-expanded
+      default: 'false'
+      enum:
+        - 'false'
+        - 'true'
+    size:
+      type: string
+      title: Size
+      description: Bootstrap button size
+      default: ''
+      enum:
+        - ''
+        - btn-sm
+        - btn-lg
+    disabled:
+      type: boolean
+      title: Disabled
+      description: Disabled button
+      default: false
+    button_utility_classes:
+      type: array
+      items:
+        type: string
+      title: Button Utility Classes
+      default: []
+      description: An array of utility classes. Use to add extra Bootstrap utility classes or custom CSS classes over to this component.
+    button_attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: A list of HTML attributes for the button.

@@ -1,0 +1,39 @@
+uuid: b62f0901-857a-454b-b5a4-728b9acf10c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_links_block.field_links
+    - field.field.paragraph.edw_links_block.field_title
+    - paragraphs.paragraphs_type.edw_links_block
+  module:
+    - link
+_core:
+  default_config_hash: '--bKqAXxCXUC65J6kvVOPjsLRgkFPQQNf3xnh_O1sYU'
+id: paragraph.edw_links_block.default
+targetEntityType: paragraph
+bundle: edw_links_block
+mode: default
+content:
+  field_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

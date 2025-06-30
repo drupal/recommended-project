@@ -1,0 +1,18 @@
+uuid: ee55b6bc-5280-4dd5-a981-69f2212b0c5b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - edwt
+id: edwt_pagetitle
+theme: edwt
+region: content
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

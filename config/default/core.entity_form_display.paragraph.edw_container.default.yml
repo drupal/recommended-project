@@ -1,0 +1,52 @@
+uuid: ae9ae7f0-34e7-4ab8-ac99-e36074f6ecb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_container.field_background_color
+    - field.field.paragraph.edw_container.field_background_media
+    - field.field.paragraph.edw_container.field_container_size
+    - field.field.paragraph.edw_container.field_hide_on_mobile
+    - field.field.paragraph.edw_container.field_paragraphs
+    - paragraphs.paragraphs_type.edw_container
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: FFoUfD3RuVC3K2seIxGU8RqtwSEs3oGTiyb51vF2UJQ
+id: paragraph.edw_container.default
+targetEntityType: paragraph
+bundle: edw_container
+mode: default
+content:
+  field_background_color:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_background_media:
+    type: media_library_widget
+    weight: 2
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  layout_paragraphs_fields:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_container_size: true
+  field_hide_on_mobile: true
+  field_paragraphs: true
+  status: true
+  translation: true

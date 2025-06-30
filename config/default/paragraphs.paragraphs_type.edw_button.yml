@@ -1,0 +1,17 @@
+uuid: 22bbad4d-991c-4bc2-8299-57581217b31c
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: _nzVujE65P4DpdzpmgBqzB7CEUzA8yRvcA0pQ0cL_S8
+id: edw_button
+label: Button
+icon_uuid: null
+icon_default: null
+description: 'Simple button item with title and different variants.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

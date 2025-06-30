@@ -1,0 +1,28 @@
+.comp-container {
+  --_comp-container_pb: var(--comp-container_pb, 80px);
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-areas: "stack";
+
+  & > * {
+    grid-area: stack;
+  }
+
+  .comp-container--media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .comp-container--content {
+    padding-block: var(--_comp-container_pb);
+  }
+}

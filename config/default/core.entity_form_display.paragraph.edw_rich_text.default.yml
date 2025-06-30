@@ -1,0 +1,49 @@
+uuid: 670f1527-b291-4d6a-b8b5-e2c992561fd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_rich_text.field_body
+    - field.field.paragraph.edw_rich_text.field_title
+    - paragraphs.paragraphs_type.edw_rich_text
+  module:
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: XXPvW-2gHVGy3iaBZYwMI5Up4Aq1l7gIY2vuZNvdq5w
+id: paragraph.edw_rich_text.default
+targetEntityType: paragraph
+bundle: edw_rich_text
+mode: default
+content:
+  field_body:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

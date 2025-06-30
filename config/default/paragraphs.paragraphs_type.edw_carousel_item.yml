@@ -1,0 +1,17 @@
+uuid: 24ae9b3f-f173-498e-bbd9-1dd2e3bfd0ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: d-OaKRgh5gfockh6-VXGfHy9TaO3bGP9eU8wPG9xsmc
+id: edw_carousel_item
+label: 'Carousel item'
+icon_uuid: null
+icon_default: null
+description: 'Single carousel item, to be used exclusively in conjunction with the "Carousel" paragraph type.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

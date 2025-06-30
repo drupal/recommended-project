@@ -1,0 +1,8 @@
+.paragraph--text-box {
+  &.columns-two {
+    .field-textbox-content {
+      columns: 2;
+      column-gap: 60px;
+    }
+  }
+}

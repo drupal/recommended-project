@@ -1,0 +1,50 @@
+uuid: d649af12-5736-4fb6-8198-3cac1255605f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.layout_columns.field_background_color
+    - field.field.paragraph.layout_columns.field_background_media
+    - field.field.paragraph.layout_columns.field_container_size
+    - paragraphs.paragraphs_type.layout_columns
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.layout_columns.default
+targetEntityType: paragraph
+bundle: layout_columns
+mode: default
+content:
+  field_background_color:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_background_media:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_container_size:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  layout_paragraphs_fields:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

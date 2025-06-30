@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Frontend Component.
+ */
+#}
+
+{% set navbar_attribute = create_attribute() %}
+
+{% set navbar_classes = [
+  'navbar',
+] %}
+
+<nav{{navbar_attribute.addclass(navbar_classes)}}>
+  <div class="slot-branding"> {% block branding %}{% endblock %}
+    </div>
+
+    <div class="slot-btns">
+      <div class="w-btns">
+        {% include 'frontend:animated-button' with {
+        color: 'link',
+        icon: 'search',
+        button_utility_classes: ['js--toggler', 'animated-btn--search']
+      } %}
+
+        {% include 'frontend:animated-button' with {
+        color: 'link',
+        icon: 'menu',
+        button_utility_classes: ['js--toggler', 'animated-btn--main-menu']
+      } %}
+      </div>
+    </div>
+
+    <div class="slot-nav"> {% block nav %}{% endblock %}
+      </div>
+
+      <div class="slot-search"> {% block search %}{% endblock %}
+        </div>
+      </nav>
+
+      {{-page.header-}}

@@ -2,8 +2,11 @@ uuid: 49200f46-ab18-4d7d-9bed-8e5a1038b704
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.teaser
   module:
     - blazy
+    - entity_embed
     - media
     - slick
     - spamspan
@@ -26,6 +29,12 @@ filters:
         img: img
         iframe: iframe
       use_data_uri: '0'
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: 100
+    settings: {  }
   filter_align:
     id: filter_align
     provider: filter
@@ -68,7 +77,9 @@ filters:
     weight: 100
     settings:
       default_view_mode: default
-      allowed_view_modes: {  }
+      allowed_view_modes:
+        default: default
+        teaser: teaser
       allowed_media_types: {  }
   slick_filter:
     id: slick_filter
@@ -76,16 +87,28 @@ filters:
     status: false
     weight: 4
     settings:
+      caption:
+        alt: '0'
+        title: '0'
       optionset: default
+      by_delta: null
       layout: ''
+      admin_uri: '/admin/config/content/formats/manage/full_html?destination=/admin/config/content/formats'
       background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
       loading: ''
-      preload: false
       responsive_image_style: ''
+      box_style: ''
       image_style: ''
       media_switch: ''
       ratio: ''
       thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      style: ''
       skin: ''
       overridables:
         arrows: '0'
@@ -102,3 +125,5 @@ filters:
       thumbnail_effect: ''
       thumbnail_position: ''
       override: false
+      preserve_keys: false
+      visible_items: null

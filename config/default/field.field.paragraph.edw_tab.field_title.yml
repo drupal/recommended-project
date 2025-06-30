@@ -1,0 +1,21 @@
+uuid: 68578407-7666-480a-b002-452a9d8b354e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.edw_tab
+_core:
+  default_config_hash: VMyejPnovdWwdSMiCwU0EULsBLB1jRZePVojeUKzybk
+id: paragraph.edw_tab.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: edw_tab
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

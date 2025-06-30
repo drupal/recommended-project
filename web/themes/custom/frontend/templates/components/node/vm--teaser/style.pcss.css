@@ -1,0 +1,118 @@
+.node--teaser {
+  &.card {
+    --_card_bg: white;
+    --_card_bw: 0;
+    padding-top: 140px;
+    box-shadow: 0px 6px 8px 0px #00000014;
+
+    .card-image-overlay {
+      color: white;
+    }
+
+    &:hover {
+      --card_c: white;
+      --_card-title_c: var(--card_c);
+      --link-c: var(--card_c);
+
+      .card-image {
+        height: 100%;
+      }
+
+      .card-body {
+      }
+
+      .card-link {
+        --link-c_h: white;
+      }
+    }
+  }
+
+  .card-image {
+    width: 100%;
+    height: 140px;
+    transition: all 0.4s ease;
+    flex: 1 0 auto;
+    position: absolute;
+    top: 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      display: block;
+      background: var(--c-coffee-700) linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: 1;
+    }
+
+    .field-banner-image {
+      position: relative;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        display: block;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+        z-index: 1;
+      }
+
+      &, * {
+        height: 100%;
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-overlay {
+      position: absolute;
+      inset: 72px 32px 24px;
+      z-index: 3;
+      font-size: 14px;
+    }
+  }
+
+  .card-body {
+    --_card_pb: 24px;
+    --_card_pi: 32px;
+
+    flex: 1 1 auto;
+    transition: all 0.4s ease;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title {
+    transition: all 0.4s ease;
+  }
+
+  .card-subtitle {
+    flex-grow: 1;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    margin-block-start: 12px;
+  }
+
+  .card-link {
+    --link-c: var(--c-highlight);
+    --btn-bg_h: transparent;
+    --btn-fs: 13px;
+    --_btn-py: 0;
+    --_btn-px: 0;
+
+    margin-block-start: 24px;
+    align-self: start;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}

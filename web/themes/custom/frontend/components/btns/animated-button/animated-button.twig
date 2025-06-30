@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Template for a button component.
+ *
+ * Available config:
+ * - button_html_tag: The HTML tag to use for the button (button | a). Defaults to `button`.
+ * - url: URL link for the button when the HTML tag is an anchor link.
+ * - id: Optional ID for the button
+ * - color: Bootstrap includes several predefined button styles, each serving its own
+ *          semantic purpose, with a few extras thrown in for more control.
+ *          (primary | secondary | success | danger | warning | info | dark | light | link)
+ * - outline: (true|false) In need of a button, but not the hefty background colors they bring?
+ *            Replace the default modifier classes with the `.btn-outline-*` ones to remove all
+ *            background images and colors on any button.
+ * - size: (btn-sm | btn-lg) Bootstrap button size
+ * - disabled: (true|false) Disabled button
+ * - button_attributes: Attributes array.
+ * - button_utility_classes: An array of utility classes.
+ * - content: The content for the button
+ */
+#}
+
+{% set button_attributes = button_attributes ?: create_attribute() %}
+
+{% set button_html_tag = button_html_tag ?? 'button' %}
+{% set id = id ?? '' %}
+{% set expanded = expanded ?? 'false' %}
+{% set size = size ? [size] : [] %}
+{% set disabled_classes = disabled ? ['disabled'] : [] %}
+{% set button_color  = (color != '') ? [((outline == true) ? 'btn-outline-' : 'btn-') ~ color] : [] %}
+
+{%
+  set button_classes = [
+    'btn',
+    'animated-btn',
+    'animated-btn--' ~ icon,
+  ]|merge(button_color)|merge(size)|merge(disabled_classes)|merge(button_utility_classes ?: [])
+%}
+
+{% if button_html_tag == 'a' %}
+  {% set button_attributes = button_attributes.setAttribute('href', url ?? '') %}
+  {% if disabled == true %}
+    {% set button_attributes = button_attributes.setAttribute('aria-disabled', 'true' ) %}
+    {% set button_attributes = button_attributes.setAttribute('tabindex', '-1' ) %}
+  {% endif %}
+{% endif %}
+
+{% set button_attributes = button_attributes.setAttribute('aria-expanded', expanded) %}
+
+{% if id %}
+  {% set button_attributes = button_attributes.setAttribute('id', id) %}
+{% endif %}
+
+<{{button_html_tag}} {{ button_attributes.addClass(button_classes) }}>
+  <div class="w--icon">
+    <span class="circle"></span>
+    <span class="line"></span>
+    <span></span>
+  </div>
+</{{button_html_tag}}>

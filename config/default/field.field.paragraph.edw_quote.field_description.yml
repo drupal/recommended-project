@@ -1,0 +1,27 @@
+uuid: d3898c35-11a1-4b2a-9940-add7ef4606c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.edw_quote
+  module:
+    - allowed_formats
+    - text
+_core:
+  default_config_hash: b9A3xsQHfaoeTSDw_n4AYWyEikPCMU_EXPD4MrMNeO4
+id: paragraph.edw_quote.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: edw_quote
+label: 'Quote text'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

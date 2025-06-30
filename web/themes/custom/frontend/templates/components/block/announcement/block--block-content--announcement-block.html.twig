@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Frontend override to display a block.
+ */
+#}
+
+{{ attach_library('edwt/alert') }}
+
+{% set classes = [
+  'block',
+  'block--announcement-block',
+  content.field_background_color.0 ? content.field_background_color.0['#markup'],
+] %}
+
+{% set title_classes = [
+  'block--title',
+] %}
+
+{% set content_classes = [
+  'alert',
+  'alert-dismissible',
+  'fade',
+  'show',
+  'mb-0',
+  'text-sm',
+] %}
+
+<div{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {% if label %}
+    <h3{{title_attributes.addClass(title_classes)}}>
+      {{- label -}}
+    </h3>
+  {% endif %}
+
+  <div class="container">
+    <div{{content_attributes.addClass(content_classes)}}>
+      {{- content|without('field_background_color') -}}
+
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+</div>

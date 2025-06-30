@@ -1,0 +1,27 @@
+uuid: 34b387cf-e035-43b6-908a-350f1eb034f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.edw_container
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: Qpwnqw29BVnwRsreIr7hZpQMVpolEX2NWHb3an5MPns
+id: paragraph.edw_container.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: edw_container
+label: Content
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+field_type: entity_reference_revisions

@@ -1,0 +1,85 @@
+{#
+/**
+  * @file
+  * color_card component.
+  *
+  * Available properties:
+  * - color_card__color (string|null) (default: false)
+  * - color_card__context_label (string|null) (default: false)
+  * - color_card__title (string) (default: false)
+  * - color_card__content (string) (default: false)
+  * - color_card__links (string|object|array|null) (default: false)
+  *
+  * Availabel Utility classes -> uc
+  * - color_card_uc (array) (default: '')
+  *
+  * Availabel attributes -> att
+  * - color_card_att (Drupal\Core\Template\Attribute)
+  *
+  * Availabel slots
+  * - slot_content: Default content text for the Color card.
+  * - slot_links: Links for the Color card.
+  *
+  * usage example: @see README.md
+  *
+  */
+#}
+
+{# Set default value #}
+{% set color_card__context_label = color_card__context_label|default(null) %}
+{% set color_card__title = color_card__title|default(null) %}
+{% set color_card__content = color_card__content|default(null) %}
+{% set color_card__links = color_card__links|default(null) %}
+{% set color_card__image = color_card__image|default(null) %}
+
+{# Create attributres #}
+{% set color_card_att = color_card_att ?: create_attribute() %}
+
+{# Component classes #}
+{% set color_card_classes = [
+    'color-card',
+    color_card__color ? 'isColored',
+    color_card__color ? 'isColor--' ~ color_card__color,
+]|merge(color_card_uc ?: []) %}
+
+{# Render component #}
+<div{{ color_card_att.addClass(color_card_classes) }}>
+  <div class="w-content">
+    <div class="w">
+      {% if color_card__context_label %}
+        <div class="context-label">
+          {{- color_card__context_label -}}
+        </div>
+      {% endif %}
+
+      {% if color_card__title %}
+        <h3 class="title">
+          {{- color_card__title -}}
+        </h3>
+      {% endif %}
+    </div>
+
+    {% block slot_content %}
+      {% if color_card__content %}
+        <div class="content">
+          {{- color_card__content -}}
+        </div>
+      {% endif %}
+    {% endblock %}
+
+    {% block slot_links %}
+      {% if color_card__links %}
+        <div class="links">
+          {{- color_card__links -}}
+        </div>
+      {% endif %}
+    {% endblock %}
+  </div>
+
+
+  {% if color_card__image %}
+    <div class="w-img">
+      {{ color_card__image }}
+    </div>
+  {% endif %}
+</div>

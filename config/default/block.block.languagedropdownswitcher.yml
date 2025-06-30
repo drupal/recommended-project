@@ -8,8 +8,8 @@ dependencies:
     - frontend
 id: languagedropdownswitcher
 theme: frontend
-region: header
-weight: 0
+region: top_region
+weight: -5
 provider: null
 plugin: 'language_dropdown_block:language_interface'
 settings:

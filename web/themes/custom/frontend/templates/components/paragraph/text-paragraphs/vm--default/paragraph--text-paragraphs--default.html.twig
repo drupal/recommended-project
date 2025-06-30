@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a paragraph.
+ */
+#}
+
+{{- attach_library('frontend/p--text-paragraphs--default') -}}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--'~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  'py-150',
+] %}
+
+<div{{attributes.addClass(classes).setAttribute('id',content.field_section_id.0['#context'].value)}}>
+  {{- content|without('field_section_id') -}}
+</div>

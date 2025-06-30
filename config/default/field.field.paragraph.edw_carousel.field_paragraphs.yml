@@ -1,0 +1,60 @@
+uuid: 5f6a5ced-4152-4db7-992e-99ac9cd58014
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraphs
+    - paragraphs.paragraphs_type.edw_carousel
+    - paragraphs.paragraphs_type.edw_carousel_item
+  module:
+    - entity_reference_revisions
+_core:
+  default_config_hash: oz4RD40M_gE7M3x5DFFKdRK7-_HquVYxiuK-2wtxRcc
+id: paragraph.edw_carousel.field_paragraphs
+field_name: field_paragraphs
+entity_type: paragraph
+bundle: edw_carousel
+label: 'Carousel items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      edw_carousel_item: edw_carousel_item
+    negate: 0
+    target_bundles_drag_drop:
+      edw_accordion:
+        weight: 11
+        enabled: false
+      edw_accordion_item:
+        weight: 12
+        enabled: false
+      edw_carousel:
+        weight: 34
+        enabled: false
+      edw_carousel_item:
+        weight: 35
+        enabled: true
+      edw_container:
+        weight: 15
+        enabled: false
+      edw_gallery:
+        weight: 16
+        enabled: false
+      edw_image:
+        weight: 17
+        enabled: false
+      edw_tab:
+        weight: 18
+        enabled: false
+      edw_tabs:
+        weight: 19
+        enabled: false
+      edw_view:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

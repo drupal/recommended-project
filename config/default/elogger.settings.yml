@@ -3,17 +3,12 @@ _core:
 format: 'Elogger: [elogger:event_type] ON [elogger:module] BY [user:[elogger:user:name] (ID:user:[elogger:user:uid]) with Roles: [elogger:user:roles:join:,] - Message: [elogger:log_message]'
 modules:
   admin_toolbar: admin_toolbar
-  admin_toolbar_links_access_filter: admin_toolbar_links_access_filter
-  admin_toolbar_tools: admin_toolbar_tools
   advagg: advagg
-  advagg_bundler: advagg_bundler
-  advagg_css_minify: advagg_css_minify
-  advagg_js_minify: advagg_js_minify
   ajax_loader: ajax_loader
   allowed_formats: allowed_formats
-  autologout: autologout
   backup_migrate: backup_migrate
   basic_auth: basic_auth
+  better_exposed_filters: better_exposed_filters
   blazy: blazy
   block: block
   block_content: block_content
@@ -23,10 +18,10 @@ modules:
   ckeditor5_paste_filter: ckeditor5_paste_filter
   ckeditor_accordion: ckeditor_accordion
   ckeditor_bs_grid: ckeditor_bs_grid
-  clamav: clamav
   conditional_fields: conditional_fields
   config_translation: config_translation
   contextual: contextual
+  countries_import: countries_import
   crop: crop
   csv_serialization: csv_serialization
   ctools: ctools
@@ -34,6 +29,7 @@ modules:
   datetime_range: datetime_range
   dblog: dblog
   diff: diff
+  draggableviews: draggableviews
   dynamic_page_cache: dynamic_page_cache
   easy_breadcrumb: easy_breadcrumb
   editor: editor
@@ -41,15 +37,24 @@ modules:
   edw_blocks: edw_blocks
   edw_healthcheck: edw_healthcheck
   edw_modules: edw_modules
+  embed: embed
   encrypt: encrypt
+  entity_browser: entity_browser
+  entity_clone: entity_clone
+  entity_embed: entity_embed
+  entity_reference_revisions: entity_reference_revisions
+  entityqueue: entityqueue
   environment_indicator: environment_indicator
   extlink: extlink
   facets: facets
   field: field
   field_group: field_group
+  field_layout: field_layout
+  field_ui: field_ui
   file: file
+  file_replace: file_replace
+  file_to_media: file_to_media
   filter: filter
-  honeypot: honeypot
   image: image
   image_captcha: image_captcha
   image_widget_crop: image_widget_crop
@@ -57,13 +62,13 @@ modules:
   lang_dropdown: lang_dropdown
   language: language
   layout_builder: layout_builder
-  layout_builder_browser: layout_builder_browser
-  layout_builder_modal: layout_builder_modal
   layout_builder_restrictions: layout_builder_restrictions
   layout_builder_st: layout_builder_st
   layout_discovery: layout_discovery
+  layout_paragraphs: layout_paragraphs
   link: link
   link_attributes: link_attributes
+  link_attributes_menu_link_content: link_attributes_menu_link_content
   locale: locale
   media: media
   media_library: media_library
@@ -82,10 +87,10 @@ modules:
   oembed_lazyload: oembed_lazyload
   optional_end_date: optional_end_date
   options: options
-  password_strength: password_strength
   path: path
   path_alias: path_alias
   phpass: phpass
+  rabbit_hole: rabbit_hole
   real_aes: real_aes
   recaptcha: recaptcha
   redirect: redirect
@@ -114,13 +119,14 @@ modules:
   user: user
   views_bulk_operations: views_bulk_operations
   views_data_export: views_data_export
+  views_ui: views_ui
   webform: webform
   webp: webp
   pathauto: pathauto
   xmlsitemap: xmlsitemap
   content_translation: content_translation
-  password_policy: password_policy
   views: views
+  paragraphs: paragraphs
   minimal: minimal
 log_message_templates:
   entity_create: 'The <strong>{entity_type}</strong> {entity} was created by {user} on <em>[current-date:long]</em>.'

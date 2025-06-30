@@ -1,0 +1,68 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Navbar
+status: experimental
+description: 'Navbar description'
+
+props:
+  type: object
+  properties:
+    comp_att:
+      type: Drupal\Core\template\Attribute
+      title: Component attribute
+      description: Wrapper component attributes
+
+    slotBranding_att:
+      type: Drupal\Core\template\Attribute
+      title: Component branding attribute
+      description: Component Branding attributes
+
+    slotNav_att:
+      type: Drupal\Core\template\Attribute
+      title: Component navigation attribute
+      description: Component navigation attributes
+
+    slotSearch_att:
+      type: Drupal\Core\template\Attribute
+      title: Component search attribute
+      description: Component search attributes
+
+
+    comp_classes:
+      type: array
+      items:
+        type: string
+      title: Navbar classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+    slotBranding_classes:
+      type: array
+      items:
+        type: string
+      title: Navbar branding classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+    slotNav_classes:
+      type: array
+      items:
+        type: string
+      title: Navbar navigation classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+    slotSearch_classes:
+      type: array
+      items:
+        type: string
+      title: Navbar Search classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+
+
+slots:
+  branding:
+    title: Branding
+    description: Slot branding description.
+  nav:
+    title: Content
+    description: Slot content description.
+  search:
+    title: Content
+    description: Slot search description.

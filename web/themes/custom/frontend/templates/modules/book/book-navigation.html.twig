@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Default theme implementation to navigate books.
+ *
+ * Presented under nodes that are a part of book outlines.
+ *
+ * Available variables:
+ * - tree: The immediate children of the current node rendered as an unordered
+ *   list.
+ * - current_depth: Depth of the current node within the book outline. Provided
+ *   for context.
+ * - prev_url: URL to the previous node.
+ * - prev_title: Title of the previous node.
+ * - parent_url: URL to the parent node.
+ * - parent_title: Title of the parent node. Not printed by default. Provided
+ *   as an option.
+ * - next_url: URL to the next node.
+ * - next_title: Title of the next node.
+ * - has_links: Flags TRUE whenever the previous, parent or next data has a
+ *   value.
+ * - book_id: The book ID of the current outline being viewed. Same as the node
+ *   ID containing the entire outline. Provided for context.
+ * - book_url: The book/node URL of the current outline being viewed. Provided
+ *   as an option. Not used by default.
+ * - book_title: The book/node title of the current outline being viewed.
+ *
+ * @see template_preprocess_book_navigation()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if tree or has_links %}
+  {% if book_url %}
+    <a href="{{ book_url }}" rel="prev" title="{{ 'Go to home page'|t }}" class="pref-link">
+      <svg width="16" height="15" viewbox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.4538 13.0876V10.2305C14.4538 9.63527 14.2455 9.12931 13.8288 8.71265C13.4122 8.29598 12.9062 8.08765 12.311 8.08765H5.75741L8.32884 10.6591L7.31098 11.6591L3.02527 7.37336L7.31098 3.08765L8.32884 4.08765L5.75741 6.65908H12.311C13.2991 6.65908 14.1413 7.00729 14.8378 7.70372C15.5342 8.40015 15.8824 9.24241 15.8824 10.2305V13.0876H14.4538Z" fill="#DFDFDD"/>
+      </svg>
+
+      {{- book_title -}}
+    </a>
+  {% endif %}
+
+  {% if has_links and not book_url %}
+    <nav class="navigation--book" role="navigation" aria-labelledby="book-label-{{ book_id }}">
+      {{ tree }}
+      <ul>
+        {% if prev_url %}
+          <li>
+            Previous page:
+            <a href="{{ prev_url }}" rel="prev" title="{{ 'Go to previous page'|t }}">
+              <b>{{ '‹'|t }}</b>
+              {{ prev_title }}</a>
+          </li>
+        {% endif %}
+
+        {% if parent_url %}
+          <li>
+            <a href="{{ parent_url }}" title="{{ 'Go to parent page'|t }}">{{ parent_title }}</a>
+          </li>
+        {% endif %}
+
+        {% if next_url %}
+          <li>
+            Read more:
+            <a href="{{ next_url }}" rel="next" title="{{ 'Go to next page'|t }}">{{ next_title }}
+              <b>{{ '›'|t }}</b>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    {% endif %}
+  </nav>
+
+  {% if book_link.link_title %}
+    <h2 class="book--title">
+      {{- book_link.link_title -}}
+    </h2>
+  {% endif %}
+{% endif %}

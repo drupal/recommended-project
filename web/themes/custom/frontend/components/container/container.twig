@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Container Component.
+ *
+ * Proprietes
+ *  container_bg_color: string|null (default: null)
+ *  container_bg_media: string|null (default: null)
+ *  container_content: string (default: null)
+ *
+ * Utility classes
+ *  container_uc: component wrapper classes
+ *  container_slot_media_uc: Media wrapper classes
+ *  container_slot_content_uc: Content wrapper classes
+ *
+ * Attributes
+ *  container_att
+ *  container_slot_media_att
+ *  container_slot_content_att
+ *
+ * Slots
+ *  container_slot_media
+ *  container_slot_content
+ */
+#}
+
+{# Set default value #}
+{% set container_bg_color = container_bg_color ?: 'bg-' ~ container_bg_color %}
+{% set container_bg_media = container_bg_media|default(false) %}
+
+{# Create attributres #}
+{% set container_att = container_att ?: create_attribute() %}
+{% set container_slot_media_att = container_slot_media_att ?: create_attribute() %}
+{% set container_slot_content_att = container_slot_content_att ?: create_attribute() %}
+
+{# Component classes #}
+{%
+  set classes = [
+    'comp-container',
+  ]|merge(container_uc ?: [])
+%}
+
+{%
+  set media_classes = [
+    'comp-container--media',
+  ]|merge(container_slot_media_uc ?: [])
+%}
+
+{%
+  set content_classes = [
+    'comp-container--content',
+  ]|merge(container_slot_content_uc ?: [])
+%}
+
+{# Render component #}
+<div{{ container_att.addClass(classes) }}>
+  <div{{ container_slot_media_att.addClass(media_classes) }}>
+    {%- block container_slot_media -%}
+      {{- container_bg_media -}}
+    {%- endblock -%}
+  </div>
+
+  <div{{ container_slot_content_att.addClass(content_classes) }}>
+    {%- block container_slot_content -%}
+      {{- container_content -}}
+    {%- endblock -%}
+  </div>
+</div>

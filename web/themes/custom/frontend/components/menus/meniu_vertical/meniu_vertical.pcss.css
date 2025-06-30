@@ -1,0 +1,81 @@
+.c--nav {
+  --c--nav_fs: 16px;
+  --c--nav_p: 20px;
+  --c--nav_spacer: 12px;
+  --c--nav_bg: var(--c-gray-100);
+
+  --link-c: var(--link-dark_c);
+  --link-c_h: var(--link-dark_c_h);
+
+  font-size: var(--c--nav_fs);
+  padding-inline: var(--c--nav_p);
+  padding-block: calc(var(--c--nav_p) - var(--c--nav_spacer));
+  border-radius: var(--br);
+  background: var(--c--nav_bg);
+  line-height: 22px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+    ul {
+      padding-inline-start: var(--c--nav_spacer);
+    }
+  }
+
+  .nav-link {
+    padding-block: var(--c--nav_spacer);
+  }
+
+}
+
+.nav-details {
+  & > summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--c--nav_toggle_c, var(--link-c));
+
+    a {
+      flex-grow: 1;
+    }
+
+    &:not(:has(a)):hover {
+      color: var(--link-c_h);
+    }
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:0 0 32px;
+    aspect-ratio: 1;
+    border-radius: var(--br);
+
+    &:hover {
+      color: var(--link-c_h);
+    }
+  }
+
+  &[open] {
+    --c--nav_toggle_c: var(--link-dark_c_h);
+
+    summary {
+      --link-c: var(--link-dark_c_h);
+    }
+  }
+}
+
+/* Custom styles for Rio menu. */
+.c--nav {
+  li {
+    &:not(:first-child) {
+      border-block-start: 1px dashed var(--c-primary_lighter);
+    }
+  }
+}

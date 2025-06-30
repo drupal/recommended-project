@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ */
+#}
+
+{% extends "node--card.html.twig" %}
+
+{% block node_attach %}
+  {{ attach_library('frontend/n--news--card') }}
+{% endblock %}
+
+{% block node_content %}
+  {{- content.field_news_types -}}
+
+  <div class="field-date">
+    {{- content.field_date -}}
+  </div>
+
+  <h2{{title_attributes.addClass('h5','mb-0','node--title')}}>
+    {{- label -}}
+  </h2>
+{% endblock %}

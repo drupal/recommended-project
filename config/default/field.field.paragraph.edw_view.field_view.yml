@@ -1,0 +1,43 @@
+uuid: 5934af58-a3d4-4514-8c48-b7e5b10abd25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view
+    - paragraphs.paragraphs_type.edw_view
+  module:
+    - viewsreference
+_core:
+  default_config_hash: V2xVFVf6DQ_c6QzWi9m13cHzYpfnYm-QpS4423QXxp4
+id: paragraph.edw_view.field_view
+field_name: field_view
+entity_type: paragraph
+bundle: edw_view
+label: View
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  plugin_types:
+    block: block
+    embed: embed
+  preselect_views:
+    documents: documents
+    documents_events: documents_events
+    homepage_highlights: homepage_highlights
+    media: media
+    meetings: meetings
+    organizations: organizations
+    resource: resource
+    search: search
+    themes: themes
+  enabled_settings:
+    title: title
+    argument: argument
+field_type: viewsreference

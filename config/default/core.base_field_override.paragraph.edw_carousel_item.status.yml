@@ -1,0 +1,22 @@
+uuid: 165e7444-b1fd-4476-b5fd-5cdf17ae039b
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_carousel_item
+id: paragraph.edw_carousel_item.status
+field_name: status
+entity_type: paragraph
+bundle: edw_carousel_item
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

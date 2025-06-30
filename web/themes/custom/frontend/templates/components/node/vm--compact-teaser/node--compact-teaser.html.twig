@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ */
+#}
+
+{% set classes = [
+  'node',
+  'node--' ~ node.bundle|clean_class,
+  view_mode ? 'node--' ~ view_mode|clean_class,
+  view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+] %}
+
+{% set varDate %}
+  {% if content.field_date_range.0 %}
+    {{- content.field_date_range.0 -}}
+  {% else %}
+    {{- date.0|date('U')|format_date("european_date") -}}
+  {% endif %}
+{% endset %}
+
+{% include "frontend:card_teaser" with {
+  card_teaser_uc: classes,
+  title: label.0,
+  date: varDate,
+  c_url: url,
+} %}

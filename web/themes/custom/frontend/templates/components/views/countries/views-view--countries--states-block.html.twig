@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Frontend override for a main view template.
+ */
+#}
+
+{{ attach_library('frontend/w--countries') }}
+
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if rows %}
+    <div class="bg-light grid-countries toggleable-grid close">
+      {{- rows -}}
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+
+  {% if more %}
+    {{ more }}
+  {% endif %}
+
+  {% if footer %}
+    <div class="view-footer">
+      <button class="js--show-all btn-participants btn btn-secondary" type="button">
+        {{- footer -}}
+      </button>
+    </div>
+  {% endif %}
+</div>

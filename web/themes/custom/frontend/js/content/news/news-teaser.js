@@ -1,1 +1,0 @@
-!function($,Drupal){Drupal.behaviors.newsTeaser={attach:function(context,settings){}}}(jQuery,Drupal);

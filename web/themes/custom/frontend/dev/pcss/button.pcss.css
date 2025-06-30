@@ -1,0 +1,9 @@
+.btn.btn-primary {
+  --btn-c_h: #fff;
+  --_btn-bg: var(--c-primary)
+}
+
+.btn.btn-secondary {
+  --btn-c_h: #fff;
+  --_btn-bg: var(--c-secondary)
+}

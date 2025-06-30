@@ -1,0 +1,48 @@
+.paragraph--fullwidth-multimedia-banner {
+  .w--top {
+    position: relative;
+    border-radius: var(--br-sm);
+    overflow: hidden;
+
+    &.bg-darked {
+      &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 55%);
+        z-index: 1;
+      }
+    }
+  }
+
+  .w--top--content {
+    --link-c: var(--c-white);
+
+    color: var(--c-white);
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    margin-inline: auto;
+    max-width: 500px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .field-title {
+    font-size: 32px;
+    font-weight: var(--fw-bold);
+  }
+
+  .field-button {
+    --body-fw: var(--fw-bold);
+  }
+
+  .field-description-long {
+    margin-top: 10px;
+    padding-bottom: 40px;
+    max-width: 900px;
+    margin-inline: auto;
+    font-size: 14px;
+  }
+}

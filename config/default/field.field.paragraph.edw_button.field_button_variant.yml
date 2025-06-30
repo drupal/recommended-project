@@ -1,0 +1,25 @@
+uuid: 438eddab-1062-42a5-84dd-fd1cbc754bda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_variant
+    - paragraphs.paragraphs_type.edw_button
+  module:
+    - options
+_core:
+  default_config_hash: wDDdXfoIKF2ueLkyQJnC98muC5xXfcjyEAg7fJqHMb4
+id: paragraph.edw_button.field_button_variant
+field_name: field_button_variant
+entity_type: paragraph
+bundle: edw_button
+label: Variant
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: link
+default_value_callback: ''
+settings: {  }
+field_type: list_string

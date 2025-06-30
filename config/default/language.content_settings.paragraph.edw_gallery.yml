@@ -1,0 +1,18 @@
+uuid: c7d08538-c6a8-4e79-bd91-d70073237f16
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_gallery
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.edw_gallery
+target_entity_type_id: paragraph
+target_bundle: edw_gallery
+default_langcode: site_default
+language_alterable: false

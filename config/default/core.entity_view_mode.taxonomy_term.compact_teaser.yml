@@ -1,0 +1,11 @@
+uuid: 54bdf74b-b0d1-409b-aa9d-6db085ccdf18
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.compact_teaser
+label: 'Compact Teaser'
+description: ''
+targetEntityType: taxonomy_term
+cache: true

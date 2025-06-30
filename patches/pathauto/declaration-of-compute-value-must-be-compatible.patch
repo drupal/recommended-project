@@ -1,0 +1,13 @@
+diff --git a/src/PathautoFieldItemList.php b/src/PathautoFieldItemList.php
+index 300675c..f0cfac8 100644
+--- a/src/PathautoFieldItemList.php
++++ b/src/PathautoFieldItemList.php
+@@ -29,7 +29,7 @@ class PathautoFieldItemList extends PathFieldItemList {
+   /**
+    * @{inheritdoc}
+    */
+-  protected function computeValue() {
++  protected function computeValue(): void {
+     parent::computeValue();
+ 
+     // For a new entity, default to creating a new alias.

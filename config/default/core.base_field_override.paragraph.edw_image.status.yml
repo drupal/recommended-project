@@ -1,0 +1,22 @@
+uuid: b8c3af32-cda9-4b77-80db-442e41ed2d66
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_image
+id: paragraph.edw_image.status
+field_name: status
+entity_type: paragraph
+bundle: edw_image
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

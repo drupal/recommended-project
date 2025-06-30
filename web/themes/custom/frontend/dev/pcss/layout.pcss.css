@@ -1,0 +1,42 @@
+.layout {
+  --layout--layout-gap: 10px;
+  --layout--cell-min-width: 100px;
+
+  &,
+  &--onecol-section {
+    --layout--column-count: 1;
+  }
+
+
+  &--twocol-section {
+    --layout--column-count: 2;
+  }
+
+  &--threecol-section {
+    --layout--column-count: 3;
+  }
+
+  &--fourcol-section {
+    --layout--column-count: 4;
+  }
+}
+
+.layout {
+  /* .views-view-responsive-grid--vertical {
+    margin-bottom: calc(var(--layout--layout-gap) * -1);
+    column-width: var(--layout--cell-min-width);
+    column-count: var(--layout--column-count);
+    column-gap: var(--layout--layout-gap);
+  } */
+
+  --layout--gap-count: calc(var(--layout--column-count) - 1);
+  --layout--total-gap-width: calc(var(--layout--gap-count) * var(--layout--layout-gap));
+  --layout-item--max-width: calc((100% - var(--layout--total-gap-width)) / var(--layout--column-count));
+  --layout-item--calculated-min-width: min(100%,var(--layout--cell-min-width));
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(max(var(--layout-item--calculated-min-width),var(--layout-item--max-width)),1fr));
+  gap: var(--layout--layout-gap);
+}
+
+

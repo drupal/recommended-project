@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a view of unformatted rows.
+ */
+#}
+
+{% for row in rows %}
+  <div>
+    {{- row.content -}}
+  </div>
+{% endfor %}

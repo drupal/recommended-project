@@ -1,0 +1,21 @@
+uuid: 136bc5da-bf7c-4bb4-809a-51ce1fba6a80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_color
+    - paragraphs.paragraphs_type.layout_columns
+  module:
+    - options
+id: paragraph.layout_columns.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+bundle: layout_columns
+label: 'Background color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

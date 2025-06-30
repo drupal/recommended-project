@@ -1,0 +1,21 @@
+.paragraph--responsive-grid {
+  --rg-layout-gap: 0px;
+  --rg-column-count: 3;
+  --rg-item--min-width: 200px;
+
+  --gap-count: calc(var(--rg-column-count) - 1);
+  --total-gap-width: calc(var(--gap-count) * var(--rg-layout-gap));
+  --rg-item--max-width: calc(
+    (100% - var(--total-gap-width)) / var(--rg-column-count)
+  );
+
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(max(var(--rg-item--min-width), var(--rg-item--max-width)), 1fr)
+  );
+
+  grid-template-rows: repeat(2, auto);
+  grid-gap: var(--rg-layout-gap);
+  border-radius: var(--br);
+}

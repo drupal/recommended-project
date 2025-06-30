@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * EDWT theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+
+{% block attach %}{% endblock %}
+
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+  ]
+%}
+
+{% if content %}
+  {% if wrapper %}
+    {{ content }}
+  {% else %}
+    {% if 'none' not in container.type and 'before' in container.position %}
+      <div class="{{ container.type }}">
+      {% endif %}
+      <div{{attributes.addClass(classes)}}>
+        {% if 'none' not in container.type and 'after' in container.position %}
+          <div class="{{ container.type }}">
+            {% if not (extra_classes is empty) %}
+              <div class="{{ extra_classes }}">
+              {% endif %}
+            {% endif %}
+            {{ content }}
+            {% if 'none' not in container.type and 'after' in container.position %}
+              {% if not (extra_classes is empty) %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      {% if 'none' not in container.type and 'before' in container.position %}
+      </div>
+    {% endif %}
+  {% endif %}
+{% endif %}

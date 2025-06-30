@@ -1,0 +1,75 @@
+{#
+/**
+  * @file
+  * Card teaser component.
+  *
+  * Available properties:
+  * - bundle (string) (default: false)
+  * - date (string) (default: false)
+  * - title (string) (default: false)
+  * - url (string) (default: false)
+  *
+  * Availabel Utility classes -> uc
+  * - card_teaser_uc (array) (default: '')
+  *
+  * Availabel attributes -> att
+  * - card_teaser_att (Drupal\Core\Template\Attribute)
+  *
+  * Availabel slots
+  * - slot_date: Date info for the Card teaser.
+  * - slot_title:Title for the Card teaser.
+  * - slot_link: Link for the Card teaser.
+  *
+  * usage example: @see README.md
+  *
+  */
+#}
+
+{# Set default value #}
+{% set card_teaser_heading_tag = card_teaser_heading_tag|default('h3') %}
+{% set bundle = bundle|default(null) %}
+{% set date = date|default(null) %}
+{% set title = title|default(null) %}
+{% set c_url = c_url|default(null) %}
+
+{# Create attributres #}
+{% set card_teaser_att = card_teaser_att ?: create_attribute() %}
+
+{# Component classes #}
+{% set card_teaser_classes = [
+  'c__card_teaser',
+]|merge(card_teaser_uc ?: []) %}
+
+{# Render component #}
+{% embed "frontend:card" with {
+  card_utility_classes: card_teaser_classes,
+} %}
+  {% block slot_card_body %}
+    {% block slot_date %}
+      <div class="w-date">
+        {{- bundle -}}
+        {{- date -}}
+      </div>
+    {% endblock %}
+
+    {% block slot_title %}
+      <{{ card_teaser_heading_tag }} class="card--title">
+        {{- title -}}
+      </{{ card_teaser_heading_tag }}>
+    {% endblock %}
+
+    {% block slot_link %}
+      {% if c_url is iterable %}
+        {{- c_url -}}
+      {% elseif c_url %}
+        {% include 'edwt:button' with {
+          button_utility_classes: ['stretched-link', 'btn-clear', 'btn-card_teaser'],
+          content: null,
+          url: c_url,
+          button_html_tag: 'a',
+          slot_icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.1313 8.75H2V7.25H11.1313L6.93125 3.05L8 2L14 8L8 14L6.93125 12.95L11.1313 8.75Z" fill="currentColor"/></svg>',
+        } %}
+      {% endif %}
+    {% endblock %}
+  {% endblock %}
+{% endembed %}

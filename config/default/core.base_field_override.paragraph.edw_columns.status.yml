@@ -1,0 +1,22 @@
+uuid: 1213c6bb-ca4c-4b9a-b6ce-07f266b475c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_columns
+id: paragraph.edw_columns.status
+field_name: status
+entity_type: paragraph
+bundle: edw_columns
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,32 @@
+.card {
+  --card-br: 10px;
+  --card-sy: 20px 25px;
+  --card-sx: 64px 25px;
+
+  overflow: hidden;
+  position: relative;
+
+  .card-body {
+    display: flex;
+    flex-direction: var(--card-body--direction, column);
+    gap: 10px;
+    background-color: var(--card-body-bg, var(--c-gray-100));
+    transition: background-color var(--tt) linear;
+  }
+
+  .h5 {
+    --h-fw: var(--fw-semibold);
+    --h-lh: 31px;
+    --h-c: var(--c-dark);
+
+    transition: color var(--tt) linear;
+  }
+
+  .node--link {
+    --link-decoration: none;
+
+    display: flex;
+    flex-direction: var(--card-link--direction, column);
+    flex-grow: 1;
+  }
+}

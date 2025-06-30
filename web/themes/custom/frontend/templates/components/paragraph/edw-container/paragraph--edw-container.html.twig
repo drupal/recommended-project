@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a paragraph.
+ */
+#}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--'~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  content.field_background_color.0 ? 'bg-' ~ content.field_background_color.0['#markup'],
+  content.field_background_color.0 ? 'p_pb',
+  content.field_background_media.0 ? 'p_pb',
+] %}
+
+{% embed 'edw_paragraphs_container:container' with {
+    container_attributes: attributes,
+    container_classes: classes,
+} %}
+  {% block container_slot_main %}
+    {{ content.field_background_media }}
+    {{- content|without('field_background_color', 'field_background_media') -}}
+  {% endblock %}
+{% endembed %}

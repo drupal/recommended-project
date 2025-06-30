@@ -1,0 +1,29 @@
+uuid: 1bdf299b-3395-44fd-b1bd-038fd292efc6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: iO1r5EuEbLWu8ceb2_5DvMxUKQcWUPdUfaDZ6soJsGw
+id: paragraph.field_gallery_display_mode
+field_name: field_gallery_display_mode
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: inline
+      label: Inline
+    -
+      value: thumbnails
+      label: Thumbnails
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

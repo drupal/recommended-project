@@ -4,46 +4,60 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
+    - field.field.media.image.field_caption
     - field.field.media.image.field_media_image
     - image.style.thumbnail
     - media.type.image
   module:
+    - field_layout
     - image_widget_crop
+    - imce
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: media.image.media_library
 targetEntityType: media
 bundle: image
 mode: media_library
 content:
+  field_caption:
+    type: string_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
   field_media_image:
     type: image_widget_crop
-    weight: 1
+    weight: 0
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
       crop_preview_image_style: crop_thumbnail
       crop_list:
-        - hero_banner
+        - '3_4'
         - '16_9'
         - '21_10'
         - '26_10'
         - '4_3'
+        - '9_16'
+        - hero_banner
       crop_types_required: {  }
       warn_multiple_usages: true
       show_crop_area: false
       show_default_crop: true
-    third_party_settings: {  }
-  name:
-    type: string_textfield
-    weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      imce:
+        enabled: false
 hidden:
   created: true
   langcode: true
+  name: true
   path: true
   status: true
   uid: true

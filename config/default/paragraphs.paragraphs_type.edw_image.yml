@@ -1,0 +1,17 @@
+uuid: d298cb86-6cca-4c26-845b-0f862b2c1640
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: GSEaiR_8svtgN1gAXyXZTh4HkRIPxstLGY4KWf7VkQs
+id: edw_image
+label: Image
+icon_uuid: null
+icon_default: null
+description: 'A simple component, used to add an image.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

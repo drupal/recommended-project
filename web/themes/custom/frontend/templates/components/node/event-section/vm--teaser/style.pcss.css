@@ -1,0 +1,11 @@
+.node--event-section--teaser {
+  background-color: var(--c-gray-100);
+  border-radius: var(--br);
+  padding: var(--gutter);
+  display: flex;
+  flex-direction: column;
+
+  .field-summary {
+    margin-block-start: 20px;
+  }
+}

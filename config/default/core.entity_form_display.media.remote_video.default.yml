@@ -8,6 +8,11 @@ dependencies:
   module:
     - media
     - path
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: media.remote_video.default
 targetEntityType: media
 bundle: remote_video

@@ -1,0 +1,64 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Card teaser
+status: stable
+props:
+  type: object
+  properties:
+    # properties
+    card_teaser_heading_tag:
+      type: 'string'
+      title: Card teaser heading tag
+      enum:
+        - 'div'
+        - 'h3'
+      default: 'h3'
+
+    # values
+    bundle:
+      type: ['string', 'null']
+      title: Bundle
+      description: The bundle of the entity.
+
+    date:
+      type: ['string', 'null']
+      title: Date
+      examples: []
+
+    title:
+      type: ['string', 'null']
+      title: Title
+      examples: []
+
+    c_url:
+      type: ['string', 'object', 'null']
+      title: url
+      examples: []
+
+    # uc -> utility_classes
+    card_teaser_uc:
+      type: array
+      items:
+        type: string
+      title: Card teaser Utility Classes
+      description: An array of utility classes. Use to add extra classes or custom CSS classes over to this component.
+      default: []
+
+    # att -> attributes
+    card_teaser_att:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: A list of HTML attributes for the Card teaser.
+
+# Slots.
+slots:
+  slot_date:
+    title: Content
+    description: Date info for the Card teaser.
+
+  slot_title:
+    title: Title
+    description: Title for the Card teaser.
+
+  slot_link:
+    title: Link
+    description: Link for the Card teaser.

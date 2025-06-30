@@ -1,0 +1,23 @@
+uuid: 0f2c244b-ad4e-4f4e-8afa-1b5739b4ee9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_columns_layout
+    - paragraphs.paragraphs_type.edw_columns
+  module:
+    - options
+_core:
+  default_config_hash: SPRCgTISL0bQRPTPR0rp1axDHgt7NQdETalsFKwH70M
+id: paragraph.edw_columns.field_columns_layout
+field_name: field_columns_layout
+entity_type: paragraph
+bundle: edw_columns
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,39 @@
+uuid: b0e14d37-4d54-4e02-9996-0a3a5bad4812
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_button.field_button_variant
+    - field.field.paragraph.edw_button.field_link
+    - paragraphs.paragraphs_type.edw_button
+  module:
+    - link
+    - options
+_core:
+  default_config_hash: pfI6lhAQg9QhNXH7T5fNFiGu-9tQYtlpsX_HR97sa8g
+id: paragraph.edw_button.default
+targetEntityType: paragraph
+bundle: edw_button
+mode: default
+content:
+  field_button_variant:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

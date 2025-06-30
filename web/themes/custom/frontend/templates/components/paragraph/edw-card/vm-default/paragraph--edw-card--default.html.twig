@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a paragraph.
+ */
+#}
+
+{% set classes = [
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--'~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+] %}
+
+{% include "frontend:card" with {
+  card_title: content.field_title.0|default(),
+  card_body_tag: 'div',
+  card_body: content.field_body,
+  card_link_url:  content.field_link.uri|default(),
+  card_link_text: content.field_link.label|default(),
+  card_border: false,
+  card_utility_classes: [
+    title_suffix.contextual_links ? 'contextual-region',
+  ],
+  card_media: content.field_media,
+  card_image_cap: 'top',
+  card_title_prefix: title_prefix,
+  card_title_suffix: title_suffix,
+} %}

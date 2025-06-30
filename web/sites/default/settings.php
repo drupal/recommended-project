@@ -791,6 +791,7 @@ $settings['config_exclude_modules'] = [
   'purge_ui',
   'help',
   'config',
+  'single_content_sync',
 ];
 
 /**

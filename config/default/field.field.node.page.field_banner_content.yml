@@ -1,0 +1,96 @@
+uuid: 230f3d78-1eca-4873-aa41-47cbd0fc799f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_content
+    - node.type.page
+    - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.edw_block_item
+    - paragraphs.paragraphs_type.edw_card
+    - paragraphs.paragraphs_type.edw_container
+    - paragraphs.paragraphs_type.edw_rich_text
+  module:
+    - entity_reference_revisions
+id: node.page.field_banner_content
+field_name: field_banner_content
+entity_type: node
+bundle: page
+label: 'Banner content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cards: cards
+      edw_block_item: edw_block_item
+      edw_card: edw_card
+      edw_container: edw_container
+      edw_rich_text: edw_rich_text
+    negate: 0
+    target_bundles_drag_drop:
+      cards:
+        weight: 21
+        enabled: true
+      edw_accordion:
+        weight: 22
+        enabled: false
+      edw_accordion_item:
+        weight: 23
+        enabled: false
+      edw_block_item:
+        weight: 24
+        enabled: true
+      edw_button:
+        weight: 25
+        enabled: false
+      edw_card:
+        weight: 26
+        enabled: true
+      edw_carousel:
+        weight: 27
+        enabled: false
+      edw_carousel_item:
+        weight: 28
+        enabled: false
+      edw_columns:
+        weight: 29
+        enabled: false
+      edw_container:
+        weight: 30
+        enabled: true
+      edw_content_reference:
+        weight: 31
+        enabled: false
+      edw_gallery:
+        weight: 32
+        enabled: false
+      edw_image:
+        weight: 33
+        enabled: false
+      edw_links_block:
+        weight: 34
+        enabled: false
+      edw_quote:
+        weight: 35
+        enabled: false
+      edw_rich_text:
+        weight: 36
+        enabled: true
+      edw_tab:
+        weight: 37
+        enabled: false
+      edw_tabs:
+        weight: 38
+        enabled: false
+      edw_view:
+        weight: 39
+        enabled: false
+      layout_columns:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

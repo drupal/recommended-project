@@ -1,0 +1,39 @@
+.paragraph--text-paragraphs--default {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: 1fr 66%;
+  grid-auto-rows: auto;
+  gap: 30px 60px;
+  grid-template-areas:
+    "title title"
+    "field1 field1"
+    "field2 img"
+    "btn img";
+
+  .field-title {
+    grid-area: title;
+  }
+
+  .field-paragraph-1 {
+    grid-area: field1;
+    padding-bottom: 30px;
+  }
+
+  .field-paragraph-2 {
+    grid-area: field2;
+  }
+
+  .field-button {
+    grid-area: btn;
+  }
+
+  .field-paragraph-3 {
+    grid-area: img;
+    position: relative;
+    margin-right: calc((100vw - var(--container-mw)) / -4);
+
+    img {
+      width: 100%;
+    }
+  }
+}

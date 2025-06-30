@@ -7,7 +7,14 @@ dependencies:
     - field.field.block_content.html.body
   module:
     - allowed_formats
+    - field_layout
+    - layout_discovery
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
 id: block_content.html.default
 targetEntityType: block_content
 bundle: html

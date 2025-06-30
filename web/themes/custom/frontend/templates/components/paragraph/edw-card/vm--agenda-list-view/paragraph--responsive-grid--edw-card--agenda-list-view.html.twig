@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a paragraph.
+ */
+#}
+
+{{- attach_library('frontend/p--edw-card--agenda-list-view') -}}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  'position-relative',
+  view_mode ? 'paragraph--'~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  content.field_image_position.0 ? 'body-img',
+  content.field_image_position.0 ? content.field_image_position.0['#markup'] : 'img-default',
+  content.field_link.0 ? 'linked',
+] %}
+
+{% set link = content.field_link.0|render %}
+
+{% if content.field_link.0 %}
+  <a{{attributes.addClass(classes).setAttribute('href',link)}}>
+  {% else %}
+    <div{{attributes.addClass(classes)}}>
+    {% endif %}
+
+    {%- if not content.field_image_position.0 -%}
+      {{- content.field_media -}}
+    {% endif %}
+
+    <div class="node--content">
+      {%- if content.field_image_position.0 -%}
+        {{- content.field_media -}}
+      {% endif %}
+
+      {{- content|without('field_image_position', 'field_media', 'field_link') -}}
+    </div>
+
+    {% if content.field_link.0 %}
+    </a>
+{% else %}
+  </div>
+{% endif %}

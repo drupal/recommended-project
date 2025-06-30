@@ -1,0 +1,50 @@
+{#
+/**
+  * @file
+  * Views box component.
+  *
+  * Available properties:
+  * - views_box_title (string|null) (default: null)
+  * - views_box_more (string|null) (default: null)
+  * - views_box_content (string|null) (default: null)
+  *
+  * Availabel Utility classes -> uc
+  * - views_box_uc (array) (default: '')
+  *
+  * Availabel attributes -> att
+  * - views_box_att (Drupal\Core\Template\Attribute)
+  *
+  * Availabel slots
+  * - slot_content: The content for the button
+  *
+  * usage example: @see README.md
+  *
+  */
+#}
+
+{# Set default value #}
+{% set views_box_title = views_box_title|default(null) %}
+{% set views_box_more = views_box_more|default(null) %}
+{% set views_box_content = views_box_content|default(null) %}
+
+{# Create attributres #}
+{% set views_box_att = views_box_att ?: create_attribute() %}
+
+{# Component classes #}
+{%
+  set views_box_classes = [
+    'c--views-box',
+  ]|merge(views_box_uc ?: [])
+%}
+
+{# Render component #}
+<div{{ views_box_att.addClass(views_box_classes) }}>
+  <div class="w-header">
+    {{- views_box_title -}}
+    {{- views_box_more -}}
+  </div>
+
+  {% block slot_content %}
+    {{- views_box_content -}}
+  {% endblock %}
+</div>

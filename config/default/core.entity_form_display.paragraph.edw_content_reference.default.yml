@@ -1,0 +1,47 @@
+uuid: 103f36ae-7a08-4eb8-bb0b-e106048c67b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_content_reference.field_entities
+    - field.field.paragraph.edw_content_reference.field_number_of_columns
+    - field.field.paragraph.edw_content_reference.field_title
+    - paragraphs.paragraphs_type.edw_content_reference
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: hzMO0GIWJnz5CZuVr0zQA4TO4MfV8nVhO7-gqfuUfOY
+id: paragraph.edw_content_reference.default
+targetEntityType: paragraph
+bundle: edw_content_reference
+mode: default
+content:
+  field_entities:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_number_of_columns: true
+  status: true
+  translation: true

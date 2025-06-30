@@ -1,80 +1,15 @@
 :root {
-  --body-font-family: 'Open Sans';
-  --body-font-size: 18px;
-  --body-color: #050505;
-  --body-bg: #fff;
 
-  --root-font-size: 1rem;
-  --base-font-size: 1rem;
-  --small-font-size: .875em;
-  --base-font-weight: 400;
-  --transition-base: all .2s ease-in-out;
+  /* RIO theme */
+  --c-moss-800: #EDF3EE;
+  --c-moss-700: #1A4D44;
+  --c-moss-600: #133933;
+  --c-coffee-800: #F9F5EC;
+  --c-coffee-700: #C28C71;
+  --c-coffee-600: #A16345;
+  --c-coffee-500: #814C31;
+  --c-highlight: var(--c-primary);
+  --c-gray-ultralight: #F7F7F7;
 
-  --link-color: #003adf;
-  --link-hover-color: #154eec;
-  --link-color-h: #154eec;
-  --link-decoration: underline;
-
-  --spacer: 1rem;
-
-  --border-width: 1px;
-  --border-color: var(--c-gray-300);
-  --border-style: solid;
-  --border-radius: .375rem;
-  --border-radius-sm: .25rem;
-  --border-radius-lg: .5rem;
-
-  --hr-margin-y: var(--spacer);
-  --hr-color: inherit;
-  --hr-border-width: var(--border-width);
-  --hr-border-color: transparent;
-  --hr-opacity: 0.25;
-
-  --headings-margin-bottom: .5rem;
-  --headings-font-family: 'Source Sans Pro';
-  --headings-font-style: null;
-  --headings-font-weight: 700;
-  --headings-line-height: 1.2;
-  --headings-color: #000;
-
-  --h1-font-size: 2.5rem;
-  --h2-font-size: 2rem;
-  --h3-font-size: 1.75rem;
-  --h4-font-size: 1.5rem;
-  --h5-font-size: 1.25rem;
-  --h6-font-size: 1rem;
-
-  --font-weight-lighter: lighter;
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-bolder: bolder;
-
-  --c-black: #000;
-  --c-white: #fff;
-  --c-gray: #6c757d;
-  --c-gray-dark: #343a40;
-  --c-gray-100: #f8f9fa;
-  --c-gray-200: #e9ecef;
-  --c-gray-300: #dee2e6;
-  --c-gray-400: #ced4da;
-  --c-gray-500: #adb5bd;
-  --c-gray-600: #6c757d;
-  --c-gray-700: #495057;
-  --c-gray-800: #343a40;
-  --c-gray-900: #212529;
-  --c-primary-h: #2a766a;
-  --c-secondary: #6c757d;
-  --c-success: #198754;
-  --c-info: #0dcaf0;
-  --c-warning: #ffc107;
-  --c-danger: #dc3545;
-  --c-light: #f8f9fa;
-  --c-dark: #212529;
-  --c-body-color: #212529;
-  --c-body-bg: #fff;
-
-  --nav-link-color: #000;
-  --c-primary: #109E13;
+  --c-secondary: #3C9F53;
 }

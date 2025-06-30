@@ -1,0 +1,35 @@
+.colorbox-media-video.cboxElement {
+  --meg-v--icon-s: 80px;
+  --meg-v--bg-o: 0.5;
+
+  position: relative;
+  display: block;
+
+  &:after {
+    content: "";
+    transition: var(--transition-time) all;
+    position: absolute;
+    inset: 0;
+    background-color: var(--mint);
+    opacity: var(--meg-v--bg-o, 0);
+  }
+
+  &:before {
+    content: "";
+    width: var(--meg-v--icon-s);
+    height: var(--meg-v--icon-s);
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='40' fill='%23006666'/%3E%3Cpath d='M62 38.2679C63.3333 39.0378 63.3333 40.9622 62 41.732L30.5 59.9186C29.1667 60.6884 27.5 59.7261 27.5 58.1865L27.5 21.8135C27.5 20.2739 29.1667 19.3116 30.5 20.0814L62 38.2679Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--transition-time) all;
+    z-index: 1;
+  }
+
+  &:hover {
+    --meg-v--icon-s: 70px;
+    --meg-v--bg-o: 0.25;
+  }
+}

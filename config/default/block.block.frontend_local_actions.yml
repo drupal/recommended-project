@@ -8,7 +8,7 @@ _core:
   default_config_hash: eD9_f9u7wCrrNgfo4PdcI1xF9SRfrXjt2PEDkvUIHFw
 id: frontend_local_actions
 theme: frontend
-region: content
+region: highlighted
 weight: -3
 provider: null
 plugin: local_actions_block

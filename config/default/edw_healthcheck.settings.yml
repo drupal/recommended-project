@@ -7,10 +7,6 @@ edw_healthcheck:
     critical: 2
     unknown: 3
   min_report_severity: 1
-  statuspage:
-    path: edw_healthcheck
-    enabled: true
-    controller: '\Drupal\edw_healthcheck\Controller\EDWHealthCheckPageController::content'
   components:
     core:
       enabled: true
@@ -22,3 +18,13 @@ edw_healthcheck:
       enabled: true
     enabled_modules:
       enabled: true
+    status_report:
+      enabled: 1
+    inactive_accounts:
+      enabled: 1
+    log_report:
+      enabled: 1
+  statuspage:
+    path: edw_healthcheck
+    enabled: true
+    controller: '\Drupal\edw_healthcheck\Controller\EDWHealthCheckPageController::content'

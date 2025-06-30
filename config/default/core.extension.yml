@@ -9,15 +9,18 @@ module:
   autologout: 0
   backup_migrate: 0
   basic_auth: 0
+  better_exposed_filters: 0
   blazy: 0
   block: 0
   block_content: 0
+  block_field: 0
   breakpoint: 0
   captcha: 0
   ckeditor5: 0
   ckeditor5_paste_filter: 0
   ckeditor_accordion: 0
   ckeditor_bs_grid: 0
+  cl_editorial: 0
   clamav: 0
   conditional_fields: 0
   config_translation: 0
@@ -35,14 +38,32 @@ module:
   editor_advanced_link: 0
   edw_blocks: 0
   edw_healthcheck: 0
-  edw_modules: 0
+  edw_media: 0
+  edw_media_image: 0
+  edw_paragraphs: 0
+  edw_paragraphs_accordion: 0
+  edw_paragraphs_base: 0
+  edw_paragraphs_block: 0
+  edw_paragraphs_carousel: 0
+  edw_paragraphs_container: 0
+  edw_paragraphs_gallery: 0
+  edw_paragraphs_image: 0
+  edw_paragraphs_tabs: 0
+  edw_paragraphs_view: 0
+  edw_utilities: 0
   elogger: 0
+  embed: 0
   encrypt: 0
+  entity_clone: 0
+  entity_embed: 0
+  entity_reference_revisions: 0
   environment_indicator: 0
   extlink: 0
   facets: 0
   field: 0
   field_group: 0
+  field_layout: 0
+  field_ui: 0
   file: 0
   filter: 0
   honeypot: 0
@@ -60,6 +81,7 @@ module:
   layout_builder_restrictions: 0
   layout_builder_st: 0
   layout_discovery: 0
+  layout_paragraphs: 0
   link: 0
   link_attributes: 0
   link_attributes_menu_link_content: 0
@@ -91,6 +113,8 @@ module:
   remove_username: 0
   responsive_image: 0
   rest: 0
+  sdc_display: 0
+  sdc_tags: 0
   search_api: 0
   search_api_db: 0
   select2: 0
@@ -101,6 +125,7 @@ module:
   smart_trim: 0
   smtp: 0
   spamspan: 0
+  svg_image: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -112,15 +137,18 @@ module:
   user: 0
   views_bulk_operations: 0
   views_data_export: 0
+  viewsreference: 0
   webform: 0
   webp: 0
   pathauto: 1
   xmlsitemap: 1
   content_translation: 10
   views: 10
+  paragraphs: 11
   minimal: 1000
 theme:
   edwt: 0
   claro: 0
   frontend: 0
+  gin: 0
 profile: minimal

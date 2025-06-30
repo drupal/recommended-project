@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * The views infinite scroll pager template.
+ */
+#}
+
+{% if items.next %}
+  <ul{{attributes}}>
+    <li class="pager__item d-flex justify-content-center pt-5">
+      <a class="btn btn-primary" href="{{ items.next.href }}" title="{{ 'Load more items'|t }}" rel="next">{{ options.button_text }}</a>
+    </li>
+  </ul>
+{% endif %}

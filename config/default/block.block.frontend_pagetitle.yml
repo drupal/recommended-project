@@ -1,0 +1,24 @@
+uuid: c8b6ed4b-2c6e-423c-aa45-7cde433bd12b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - frontend
+id: frontend_pagetitle
+theme: frontend
+region: highlighted
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/node\r\n/node/*"

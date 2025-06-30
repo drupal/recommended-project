@@ -1,0 +1,17 @@
+uuid: fead3d0e-bdf3-4d52-aea8-0b6daf27ce05
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_paragraphs
+_core:
+  default_config_hash: I_PoZDgtl3mp5RKpfn7gOTRJbPmmpAjs9LPXdZfSfrw
+id: edw_content_reference
+label: 'Content reference'
+icon_uuid: null
+icon_default: null
+description: 'Display content reference, organized in columns.'
+behavior_plugins:
+  layout_paragraphs:
+    enabled: false
+    available_layouts: {  }

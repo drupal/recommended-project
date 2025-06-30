@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Frontend override to display a node.
+ */
+#}
+
+{{ attach_library('frontend/n--featured-card') }}
+
+{% set classes = [
+  'node',
+  'node--' ~ node.bundle|clean_class,
+  view_mode ? 'node--' ~ view_mode|clean_class,
+  view_mode ? 'node--' ~ node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  'card',
+] %}
+
+<article{{attributes.addClass(classes)}}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="node--link">
+    {{ content.field_image }}
+
+    <div{{content_attributes.addClass('node__content','card-body')}}>
+      {{- content.field_resource_type -}}
+      {{- content.field_news_types -}}
+
+      {% if content.field_date.0 %}
+        {{ content.field_date }}
+      {% endif %}
+
+      <h2{{title_attributes.addClass('h5','mb-0')}}>
+        {{- label.0 -}}
+      </h2>
+
+      {{ content|without('field_image', 'field_link', 'field_date', 'field_resource_type', 'field_news_types') }}
+
+      {% if content.field_link.0 %}
+        {{ content.field_link }}
+      {% else %}
+        <a class="text-secondary fw-semibold read-more-link" href={{ url }} rel="bookmark">
+          {{ 'Read more'|t }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</article>

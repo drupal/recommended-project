@@ -1,0 +1,20 @@
+uuid: 603709f2-b249-4e91-b4b3-22f9aadbb9b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.edw_accordion_item
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '1'
+_core:
+  default_config_hash: P0OxpjmIuiOBxXzUZ_Hje_MXhc-NkQJi9UHOxs2SU5Q
+id: paragraph.edw_accordion_item
+target_entity_type_id: paragraph
+target_bundle: edw_accordion_item
+default_langcode: site_default
+language_alterable: true

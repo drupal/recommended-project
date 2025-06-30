@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Frontend theme implementation to display a paragraph.
+ */
+#}
+
+{{- attach_library('frontend/p--responsive-grid') -}}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--'~ paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+] %}
+
+{% set inStyle = [
+  content.field_maximum_number_of_columns.0 ? '--rg-column-count:' ~ content.field_maximum_number_of_columns.0['#markup'] ~ ';',
+  content.field_grid_gutter_spacing.0 ? '--rg-layout-gap:' ~ content.field_grid_gutter_spacing.0['#markup'] ~ 'px;',
+  content.field_minimum_grid_cell_width.0 ? '--rg-item--min-width:' ~ content.field_minimum_grid_cell_width.0['#markup'] ~ ';',
+] %}
+
+<div{{attributes.addClass(classes).setAttribute('style',inStyle)}}>
+  {{- content|without('field_maximum_number_of_columns', 'field_minimum_grid_cell_width', 'field_grid_gutter_spacing') -}}
+</div>

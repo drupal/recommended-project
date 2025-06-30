@@ -1,0 +1,25 @@
+uuid: e574f0d8-6820-4bdc-ad28-82b27d6d3223
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_block_item.field_block
+    - paragraphs.paragraphs_type.edw_block_item
+  module:
+    - block_field
+_core:
+  default_config_hash: lJOZgtkXICoi2Pn3iCL1XBdVrxdLlAmLPLGa4DqtXAY
+id: paragraph.edw_block_item.default
+targetEntityType: paragraph
+bundle: edw_block_item
+mode: default
+content:
+  field_block:
+    type: block_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

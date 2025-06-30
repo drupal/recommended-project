@@ -1,0 +1,61 @@
+uuid: 24580eca-9ca9-4816-8644-bf29e0c8cde3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.edw_gallery.field_body
+    - field.field.paragraph.edw_gallery.field_gallery_display_mode
+    - field.field.paragraph.edw_gallery.field_gallery_items
+    - field.field.paragraph.edw_gallery.field_title
+    - paragraphs.paragraphs_type.edw_gallery
+  module:
+    - field_layout
+    - layout_discovery
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+_core:
+  default_config_hash: 7cGI7r4Tn3R04qNPb5t8xmQu7upMt2cnvAIbkj-bPJU
+id: paragraph.edw_gallery.default
+targetEntityType: paragraph
+bundle: edw_gallery
+mode: default
+content:
+  field_body:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_gallery_display_mode:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_gallery_items:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

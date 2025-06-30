@@ -1,28 +1,46 @@
-name: Frontend Theme
+name: Front-end Theme
 type: theme
-description: 'Theme with Bootstrap 5 css library'
+description: 'Front-end theme based on Eau de Web Theme'
 core_version_requirement: ^8.9 || ^9.0 || ^10 || ^11
 base theme: edwt
 
-stylesheets-remove:
-  - '@classy/css/components/tabs.css'
+ckeditor5-stylesheets:
+  - css/ckeditor5-stylesheets.css
 
 libraries:
   - frontend/global-styling
 
+libraries-override:
+  edwt/theme-fonts: frontend/theme-fonts
+  edwt/edwt--r--footer:
+    css:
+      layout:
+        css/components/region/footer/style.css: css/components/sections/footer/style.css
+
+  share_everywhere/share_everywhere.css:
+    css:
+      theme:
+        css/share_everywhere.css: css/modules/everywhere/style.css
+
+  ckeditor_accordion/accordion.frontend:
+    css:
+      theme:
+        css/accordion.frontend.css: css/modules/accordion.frontend.css
+
 regions:
-  branding: 'Branding'
-  nav_main: 'Main navigation region'
+  top_region: "Top Region"
+  branding: "Branding"
+  nav_main: "Main navigation region"
   header: Header
-  nav_additional: 'Additional navigation region (eg search form, social icons, etc)'
-  hero: 'Hero (full width)'
-  highlighted: Highlighted
+  nav_additional: "Additional navigation region (eg search form, social icons, etc)"
+  modal: "Modal (full width)"
+  hero: "Hero (full width)"
   breadcrumb: Breadcrumbs
-  content: 'Main content'
-  sidebar_first: 'Sidebar first'
-  sidebar_second: 'Sidebar second'
-  footer: Footer
-  footer_second: Footer Second
-  footer_third: Footer Third
-  footer_forth: Footer Forth
-  disable_region: 'Disabled Region'
+  highlighted: Highlighted
+  sidebar: "Sidebar"
+  content: "Main content"
+  content_bottom: "Content bottom"
+  footer: "Footer"
+  footer_bottom: "Footer bottom"
+  bottom_fixed: "Fixed Bottom"
+  disable_region: "Disabled Region"

@@ -1,0 +1,7 @@
+{% if attributes.hasClass('rounded') %}
+  <div class="container-fluid">
+  {% endif %}
+  <div {{ attributes }}>{{ children }}</div>
+  {%if attributes.hasClass('rounded') %}
+  </div>
+{% endif %}

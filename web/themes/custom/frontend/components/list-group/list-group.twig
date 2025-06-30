@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Template for a List group component.
+ *
+ * Available config:
+ * list_group_html_tag: The HTML tag to use for the list group.
+ * list_group_item_html_tag: The HTML tag to use for the list group items.
+ * list_group_item_variants: The variant of the list group items.
+ * list_group_utility_classes: Additional classes to be added to the list group.
+ * list_group_item_utility_classes: Additional classes to be added to the list group items.
+ * list_group_attributes: (drupal attribute) (default: create_attribute())
+ * list_group_item_attributes: (drupal attribute) (default: create_attribute())
+ * list_group_items: (array) (default: [])
+ * numbered: (boolean) (default: false)
+ * horizontal: (boolean) (default: false)
+ * horizontal_breakpoint: (string) (default: '') options: sm, md, lg, xl, xxl
+ */
+#}
+{% apply spaceless %}
+
+{% set list_group_html_tag = list_group_html_tag ?? (numbered ? 'ol' : 'ul') %}
+{% set list_group_item_html_tag = list_group_item_html_tag ?? 'li' %}
+{% set list_group_item_variants = list_group_item_variants ?? '' %}
+{% set numbered = numbered|default(false) %}
+{% set horizontal = horizontal|default(false) %}
+{% set horizontal_breakpoint = horizontal_breakpoint|default('') %}
+
+{%
+  set list_group_classes = [
+    'list-group',
+    numbered ? 'list-group-numbered' : '',
+    horizontal ? 'list-group-horizontal' : '',
+    (horizontal_breakpoint is not empty) and (horizontal) ? 'list-group-horizontal-' ~ horizontal_breakpoint : '',
+  ]|merge(list_group_utility_classes ?: [])
+%}
+
+{%
+  set list_group_item_classes = [
+    'list-group-item',
+    list_group_item_variants is not empty ? 'list-group-item-' ~ list_group_item_variants : '',
+    list_group_item_html_tag == 'a' ? 'list-group-item-action' : '',
+  ]|merge(list_group_item_utility_classes ?: [])
+%}
+
+{% set list_group_attributes = list_group_attributes ?: create_attribute() %}
+{% set list_group_item_attributes = list_group_item_attributes ?: create_attribute() %}
+
+<{{list_group_html_tag}} {{ list_group_attributes.addClass(list_group_classes)}}>
+  {% block list_group_content %}
+    {% if list_group_items is not empty %}
+      {% for item in list_group_items %}
+        <{{list_group_item_html_tag}} {{ list_group_item_attributes.addClass(list_group_item_classes) }}>
+          {{ item.content }}
+        </{{list_group_item_html_tag}}>
+      {% endfor %}
+    {% endif %}
+  {% endblock %}
+</{{list_group_html_tag}}>
+
+{% endapply %}
