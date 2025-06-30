@@ -6,7 +6,7 @@ dependencies:
     - file
 id: edw_healthcheck_role
 label: 'EDW HealthCheck Access Role'
-weight: 2
+weight: -9
 is_admin: null
 permissions:
   - 'delete own files'

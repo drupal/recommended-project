@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2721801590cda6b4e545a02f166cb44f",
+    "content-hash": "b1abfefefca2e5a0cbd4f25a285d2182",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -326,68 +326,6 @@
                 }
             ],
             "time": "2024-07-16T11:13:48+00:00"
-        },
-        {
-            "name": "christian-riesen/otp",
-            "version": "2.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ChristianRiesen/otp.git",
-                "reference": "aab865ae6d356993ad9d51f8a7e8f32b8a54730a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ChristianRiesen/otp/zipball/aab865ae6d356993ad9d51f8a7e8f32b8a54730a",
-                "reference": "aab865ae6d356993ad9d51f8a7e8f32b8a54730a",
-                "shasum": ""
-            },
-            "require": {
-                "paragonie/constant_time_encoding": "^1|^2",
-                "paragonie/random_compat": ">=1",
-                "php": ">=5.6.0",
-                "symfony/polyfill-php56": "^1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7.11 || ^6.0.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Otp\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Riesen",
-                    "email": "chris.riesen@gmail.com",
-                    "homepage": "http://christianriesen.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "One Time Passwords, hotp and totp according to RFC4226 and RFC6238",
-            "homepage": "https://github.com/ChristianRiesen/otp",
-            "keywords": [
-                "googleauthenticator",
-                "hotp",
-                "otp",
-                "rfc4226",
-                "rfc6238",
-                "totp"
-            ],
-            "support": {
-                "issues": "https://github.com/ChristianRiesen/otp/issues",
-                "source": "https://github.com/ChristianRiesen/otp/tree/2.7.0"
-            },
-            "time": "2021-02-23T20:13:30+00:00"
         },
         {
             "name": "composer/installers",
@@ -5672,30 +5610,29 @@
         },
         {
             "name": "drupal/tfa",
-            "version": "1.10.0",
+            "version": "2.0.0-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/tfa.git",
-                "reference": "8.x-1.10"
+                "reference": "2.0.0-alpha4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/tfa-8.x-1.10.zip",
-                "reference": "8.x-1.10",
-                "shasum": "c8314dfff47ad44ab78a1ea962f25e073abc9960"
+                "url": "https://ftp.drupal.org/files/projects/tfa-2.0.0-alpha4.zip",
+                "reference": "2.0.0-alpha4",
+                "shasum": "70b03b6c7868ced71ed0b3ca596ad83e76c2adc0"
             },
             "require": {
                 "chillerlan/php-qrcode": "^1.0.9 || ^2.0 || ^3.2 || ^4.0",
-                "christian-riesen/otp": "^2.1",
-                "drupal/core": "^8 || ^9 || ^10 || ^11",
-                "drupal/encrypt": "~3.0",
-                "php": ">=7.0"
+                "drupal/core": "^10.1 || ^11",
+                "drupal/encrypt": "^3.1",
+                "php": "^8.1",
+                "spomky-labs/otphp": "^11.2"
             },
             "require-dev": {
                 "drupal/encrypt": "*",
                 "drupal/key": "*",
-                "drupal/services": "*",
-                "drush/drush": "^10 || ^11 || ^12 || ^13",
+                "drush/drush": "^11 || ^12 || ^13",
                 "mglaman/phpstan-drupal": "^1.1",
                 "phpstan/extension-installer": "^1.2",
                 "phpstan/phpstan": "^1.9",
@@ -5705,16 +5642,16 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.10",
-                    "datestamp": "1741198609",
+                    "version": "2.0.0-alpha4",
+                    "datestamp": "1732925521",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
                     }
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^9 || ^10 || ^11"
+                        "drush.services.yml": "^11"
                     }
                 }
             },
@@ -8382,6 +8319,54 @@
             "time": "2021-02-03T23:26:27+00:00"
         },
         {
+            "name": "psr/clock",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/clock.git",
+                "reference": "e41a24703d4560fd0acb709162f73b8adfc3aa0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/clock/zipball/e41a24703d4560fd0acb709162f73b8adfc3aa0d",
+                "reference": "e41a24703d4560fd0acb709162f73b8adfc3aa0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Clock\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for reading the clock.",
+            "homepage": "https://github.com/php-fig/clock",
+            "keywords": [
+                "clock",
+                "now",
+                "psr",
+                "psr-20",
+                "time"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/clock/issues",
+                "source": "https://github.com/php-fig/clock/tree/1.0.0"
+            },
+            "time": "2022-11-25T14:36:26+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "2.0.2",
             "source": {
@@ -8964,6 +8949,88 @@
                 "url": "https://github.com/kenwheeler/slick/archive/master.zip"
             },
             "type": "drupal-library"
+        },
+        {
+            "name": "spomky-labs/otphp",
+            "version": "11.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Spomky-Labs/otphp.git",
+                "reference": "2d8ccb5fc992b9cc65ef321fa4f00fefdb3f4b33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Spomky-Labs/otphp/zipball/2d8ccb5fc992b9cc65ef321fa4f00fefdb3f4b33",
+                "reference": "2d8ccb5fc992b9cc65ef321fa4f00fefdb3f4b33",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "paragonie/constant_time_encoding": "^2.0 || ^3.0",
+                "php": ">=8.1",
+                "psr/clock": "^1.0",
+                "symfony/deprecation-contracts": "^3.2"
+            },
+            "require-dev": {
+                "ekino/phpstan-banned-code": "^1.0",
+                "infection/infection": "^0.26|^0.27|^0.28|^0.29",
+                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^9.5.26|^10.0|^11.0",
+                "qossmic/deptrac-shim": "^1.0",
+                "rector/rector": "^1.0",
+                "symfony/phpunit-bridge": "^6.1|^7.0",
+                "symplify/easy-coding-standard": "^12.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OTPHP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent Morselli",
+                    "homepage": "https://github.com/Spomky"
+                },
+                {
+                    "name": "All contributors",
+                    "homepage": "https://github.com/Spomky-Labs/otphp/contributors"
+                }
+            ],
+            "description": "A PHP library for generating one time passwords according to RFC 4226 (HOTP Algorithm) and the RFC 6238 (TOTP Algorithm) and compatible with Google Authenticator",
+            "homepage": "https://github.com/Spomky-Labs/otphp",
+            "keywords": [
+                "FreeOTP",
+                "RFC 4226",
+                "RFC 6238",
+                "google authenticator",
+                "hotp",
+                "otp",
+                "totp"
+            ],
+            "support": {
+                "issues": "https://github.com/Spomky-Labs/otphp/issues",
+                "source": "https://github.com/Spomky-Labs/otphp/tree/11.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Spomky",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/FlorentMorselli",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-06-12T11:22:32+00:00"
         },
         {
             "name": "symfony/console",
@@ -10402,74 +10469,6 @@
                 }
             ],
             "time": "2024-09-09T11:45:10+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php56",
-            "version": "v1.20.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php56.git",
-                "reference": "54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
-                "reference": "54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "type": "metapackage",
-            "extra": {
-                "thanks": {
-                    "url": "https://github.com/symfony/polyfill",
-                    "name": "symfony/polyfill"
-                },
-                "branch-alias": {
-                    "dev-main": "1.20-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 5.6+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php56/tree/v1.20.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-10-23T14:02:19+00:00"
         },
         {
             "name": "symfony/polyfill-php81",
@@ -18293,6 +18292,7 @@
     "stability-flags": {
         "drupal/conditional_fields": 15,
         "drupal/layout_builder_st": 20,
+        "drupal/tfa": 15,
         "drupal/webform": 10,
         "drupal/webp": 10,
         "brainmaestro/composer-git-hooks": 15

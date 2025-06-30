@@ -1,0 +1,13 @@
+uuid: 314f59cc-dea1-49ec-81df-4d49c05197ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - key.key.2fa
+  module:
+    - real_aes
+id: 2fa
+label: 2FA
+encryption_method: real_aes
+encryption_method_configuration: {  }
+encryption_key: 2fa

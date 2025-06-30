@@ -1,37 +1,38 @@
 _core:
   default_config_hash: dE7ohRe7gCL2n0BFaWfocJnskZdQ6wHnzaFTl3O0RJ0
 langcode: en
-enabled: false
+enabled: true
 required_roles:
-  authenticated: authenticated
+  administrator: administrator
+  authenticated: '0'
   edw_healthcheck_role: '0'
 send_plugins: {  }
-login_plugins:
-  tfa_trusted_browser: tfa_trusted_browser
+login_plugins: {  }
 login_plugin_settings:
   tfa_trusted_browser:
     cookie_allow_subdomains: true
     cookie_expiration: 30
     cookie_name: tfa-trusted-browser
 allowed_validation_plugins:
+  tfa_recovery_code: tfa_recovery_code
   tfa_totp: tfa_totp
 default_validation_plugin: tfa_totp
 validation_plugin_settings:
   tfa_recovery_code:
     recovery_codes_amount: 10
-  tfa_totp:
-    time_skew: 2
-    site_name_prefix: 1
-    name_prefix: TFA
-    issuer: 'Drupal website'
   tfa_hotp:
     counter_window: 10
     site_name_prefix: 1
     name_prefix: TFA
     issuer: Drupal
+  tfa_totp:
+    time_skew: 2
+    site_name_prefix: 1
+    name_prefix: TFA
+    issuer: Drupal
 validation_skip: 3
-reset_pass_skip_enabled: false
-encryption: encryption_profile
+users_without_tfa_redirect: true
+encryption: 2fa
 tfa_flood_uid_only: 1
 tfa_flood_window: 300
 tfa_flood_threshold: 6
@@ -43,3 +44,4 @@ mail:
   tfa_disabled_configuration:
     subject: 'Your [site:name] account no longer has two-factor authentication'
     body: "[user:display-name],\r\n\r\nTwo-factor authentication has been disabled on your [site:name] account.\r\n\r\nIf you did not take this action, please contact a site administrator immediately.\r\n\r\n--\r\n[site:name] team"
+reset_pass_skip_enabled: false

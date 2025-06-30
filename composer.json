@@ -130,7 +130,7 @@
         "drupal/smart_trim": "^2.2",
         "drupal/smtp": "^1.4",
         "drupal/spamspan": "^3.2",
-        "drupal/tfa": "^1.10",
+        "drupal/tfa": "^2.0@alpha",
         "drupal/token": "^1.10",
         "drupal/twig_tweak": "^3.4",
         "drupal/views_bulk_operations": "^4.3",
