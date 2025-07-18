@@ -86,6 +86,7 @@ module:
   link_attributes: 0
   link_attributes_menu_link_content: 0
   locale: 0
+  masquerade: 0
   media: 0
   media_library: 0
   media_library_edit: 0
