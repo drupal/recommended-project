@@ -165,6 +165,7 @@
         "drupal/layout_builder_st": "dev-custom",
         "drupal/layout_paragraphs": "^2.1",
         "drupal/link_attributes": "^2.1",
+        "drupal/masquerade": "^2.0",
         "drupal/media_library_edit": "^3.0",
         "drupal/media_library_form_element": "^2.1",
         "drupal/media_responsive_thumbnail": "^2.0",

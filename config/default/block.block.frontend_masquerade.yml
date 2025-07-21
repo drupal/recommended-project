@@ -1,0 +1,21 @@
+uuid: 3df4e7cd-55bc-4743-ae84-1a548eab555a
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+  theme:
+    - frontend
+id: frontend_masquerade
+theme: frontend
+region: footer
+weight: 0
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  label_display: '0'
+  provider: masquerade
+  show_unmasquerade_link: true
+visibility: {  }
