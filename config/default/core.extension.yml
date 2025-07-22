@@ -107,6 +107,8 @@ module:
   path: 0
   path_alias: 0
   phpass: 0
+  protected_pages: 0
+  protected_pages_unpublished: 0
   real_aes: 0
   recaptcha: 0
   redirect: 0

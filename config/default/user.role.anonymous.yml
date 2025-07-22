@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - media
+    - protected_pages
+    - protected_pages_unpublished
     - system
 _core:
   default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
@@ -13,4 +15,6 @@ weight: -7
 is_admin: false
 permissions:
   - 'access content'
+  - 'access protected page password screen'
+  - 'access unpublished nodes with password'
   - 'view media'

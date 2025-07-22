@@ -1,0 +1,26 @@
+_core:
+  default_config_hash: fcx2bfv-TfdQ_hGuvq4GkK3SAeANYibuVJMcEJBGG38
+email:
+  subject: 'Please visit this new page'
+  body: |-
+    Dear friend,
+
+    I just created a new page on my website and wanted to invite you to visit. The page is protected by password. Please find the details below:-
+
+    Page Url = [protected-page-url]
+
+    Page Password = password here
+
+    Thank you.
+    [site-name]
+password:
+  protected_pages_session_expire_time: '0'
+  per_page_or_global: per_page_or_global
+others:
+  protected_pages_title: 'Protected Page -- Enter password'
+  protected_pages_description: 'The page you are trying to view is password protected. Please enter the password below to proceed.'
+  protected_pages_password_fieldset_legend: 'Enter password'
+  protected_pages_password_label: 'Enter password'
+  protected_pages_submit_button_text: Authenticate
+  protected_pages_incorrect_password_msg: 'An incorrect password was submitted. Please check your password and try again.'
+langcode: en

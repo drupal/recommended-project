@@ -19,6 +19,9 @@
     },
     "drupal/pathauto": {
       "#3531848 - Declaration of Drupal\\pathauto\\PathautoFieldItemList::computeValue() must be compatible with Drupal\\path\\Plugin\\Field\\FieldType\\PathFieldItemList::computeValue()": "patches/pathauto/declaration-of-compute-value-must-be-compatible.patch"
+    },
+    "drupal/protected_pages": {
+      "3516484 - Allow anonymous access visitors to view unpublished content": "https://git.drupalcode.org/project/protected_pages/-/merge_requests/35.diff"
     }
   }
 }

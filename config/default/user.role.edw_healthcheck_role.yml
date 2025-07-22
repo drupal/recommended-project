@@ -4,9 +4,11 @@ status: true
 dependencies:
   module:
     - file
+    - protected_pages
 id: edw_healthcheck_role
 label: 'EDW HealthCheck Access Role'
 weight: -9
 is_admin: null
 permissions:
+  - 'access protected page password screen'
   - 'delete own files'

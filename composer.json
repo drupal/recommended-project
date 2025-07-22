@@ -175,6 +175,7 @@
         "drupal/optional_end_date": "^1.4",
         "drupal/paragraphs": "^1.19",
         "drupal/pathauto": "^1.13",
+        "drupal/protected_pages": "^1.7",
         "drupal/real_aes": "^2.5",
         "drupal/recaptcha": "^3.4",
         "drupal/redirect": "^1.11",

@@ -8,6 +8,8 @@ dependencies:
     - file
     - filter
     - media
+    - protected_pages
+    - protected_pages_unpublished
     - system
     - tfa
 _core:
@@ -18,6 +20,8 @@ weight: -8
 is_admin: false
 permissions:
   - 'access content'
+  - 'access protected page password screen'
+  - 'access unpublished nodes with password'
   - 'delete own files'
   - 'setup own tfa'
   - 'use text format webform_default'

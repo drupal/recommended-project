@@ -1,0 +1,31 @@
+uuid: 1238b3e7-0ed6-493f-90ff-94d22c650b1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.html
+    - node.type.news
+    - taxonomy.vocabulary.news_types
+  module:
+    - block_content
+    - content_translation
+    - node
+    - protected_pages
+    - taxonomy
+id: content_manager
+label: 'Content manager'
+weight: 0
+is_admin: false
+permissions:
+  - 'access block library'
+  - 'bypass pages password protection'
+  - 'create html block content'
+  - 'create news content'
+  - 'create terms in news_types'
+  - 'delete any html block content'
+  - 'delete any news content'
+  - 'delete terms in news_types'
+  - 'edit any html block content'
+  - 'edit any news content'
+  - 'edit terms in news_types'
+  - 'translate news_types taxonomy_term'
